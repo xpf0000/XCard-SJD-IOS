@@ -57,6 +57,8 @@ let picOutTime=864000
 let WhiteDefaultIMG = UIColor.whiteColor().image
 
 let APPNVColor = "0894ec".color!
+let APPBtnGrayColor = "cacaca".color!
+let APPOrangeColor = "ff7e00".color!
 let APPGreenColor:UIColor = "87b207".color!
 let APPBGColor:UIColor = "f2f2f2".color!
 let APPBlackColor = "333333".color!

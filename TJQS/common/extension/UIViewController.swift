@@ -76,7 +76,7 @@ extension UIViewController{
     {
         let button=UIButton(type: UIButtonType.Custom)
         button.frame=CGRectMake(0, 0, 22, 22);
-        button.setBackgroundImage("back@2x.png".image, forState: UIControlState.Normal)
+        button.setBackgroundImage("arrow01.png".image, forState: UIControlState.Normal)
         button.showsTouchWhenHighlighted = true
         button.exclusiveTouch = true
         button.addTarget(self, action: #selector(pop), forControlEvents: UIControlEvents.TouchUpInside)

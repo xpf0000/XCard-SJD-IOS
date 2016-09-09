@@ -11,7 +11,18 @@ import UIKit
 
 private var AutoHeightOffYKey : CChar?
 
+typealias XTextChangeBlock = (String)->Void
+
+class XTextChangeBlockModel: NSObject {
+    
+    var block:XTextChangeBlock?
+}
+
+private var XTextChangeBlockKey:CChar = 0
+
 extension UITextField{
+    
+    
     
     var autoHeightOffY:CGFloat
         {
@@ -77,6 +88,74 @@ extension UITextField{
     func keyboardWillBeHidden(aNotification:NSNotification)
     {
         self.viewController?.view.layer.transform = CATransform3DIdentity
+    }
+    
+    
+    
+    private var textChangeBlock:XTextChangeBlockModel?
+        {
+        get
+        {
+            let r = objc_getAssociatedObject(self, &XTextChangeBlockKey) as? XTextChangeBlockModel
+            
+            return r
+        }
+        set {
+            
+            self.willChangeValueForKey("XTextChangeBlockKey")
+            objc_setAssociatedObject(self, &XTextChangeBlockKey, newValue,
+                                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.didChangeValueForKey("XTextChangeBlockKey")
+            
+        }
+        
+    }
+    
+    func removeTextChangeBlock()
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        self.textChangeBlock?.block = nil
+        self.textChangeBlock = nil
+    }
+    
+    func setTextChangeBlock(b:XTextChangeBlock)
+    {
+        self.textChangeBlock?.block = nil
+        self.textChangeBlock = nil
+        
+        let m = XTextChangeBlockModel()
+        m.block = b
+        self.textChangeBlock=m
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(textChange(_:)), name: UITextFieldTextDidChangeNotification, object: self)
+        
+    }
+    
+    
+    
+    func textChange(notic:NSNotification)
+    {
+        if let obj = notic.object as? UITextField
+        {
+            if obj != self
+            {
+                return
+            }
+        }
+        else
+        {
+            return
+        }
+        
+        if let t = notic.object as? UITextField
+        {
+            if t.markedTextRange == nil
+            {
+                let txt = self.text == nil ? "" : self.text!
+                self.textChangeBlock?.block?(txt)
+            }
+        }
+        
     }
     
     

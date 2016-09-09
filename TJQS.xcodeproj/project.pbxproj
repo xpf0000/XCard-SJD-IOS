@@ -93,6 +93,13 @@
 		174ABB761D8253C100D94F3C /* XUICollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ABB751D8253C100D94F3C /* XUICollectionViewFlowLayout.swift */; };
 		174ABB7D1D8258AE00D94F3C /* HomeMiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ABB7B1D8258AE00D94F3C /* HomeMiddleCell.swift */; };
 		174ABB7E1D8258AE00D94F3C /* HomeMiddleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174ABB7C1D8258AE00D94F3C /* HomeMiddleCell.xib */; };
+		174ABB851D8263DC00D94F3C /* XBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ABB841D8263DC00D94F3C /* XBanner.swift */; };
+		174ABB881D829CB700D94F3C /* OpenCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ABB871D829CB700D94F3C /* OpenCardVC.swift */; };
+		174ABB8D1D82B4EE00D94F3C /* card_type0.png in Resources */ = {isa = PBXBuildFile; fileRef = 174ABB891D82B4EE00D94F3C /* card_type0.png */; };
+		174ABB8E1D82B4EE00D94F3C /* card_type1.png in Resources */ = {isa = PBXBuildFile; fileRef = 174ABB8A1D82B4EE00D94F3C /* card_type1.png */; };
+		174ABB8F1D82B4EE00D94F3C /* card_type2.png in Resources */ = {isa = PBXBuildFile; fileRef = 174ABB8B1D82B4EE00D94F3C /* card_type2.png */; };
+		174ABB901D82B4EE00D94F3C /* card_type3.png in Resources */ = {isa = PBXBuildFile; fileRef = 174ABB8C1D82B4EE00D94F3C /* card_type3.png */; };
+		174ABB921D82B66B00D94F3C /* ChooseTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ABB911D82B66B00D94F3C /* ChooseTypeVC.swift */; };
 		1769E0841D6A9745002C9A5B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769E0831D6A9745002C9A5B /* UserModel.swift */; };
 		1769E0861D6AA754002C9A5B /* HtmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769E0851D6AA754002C9A5B /* HtmlVC.swift */; };
 		17808E241D7F0AFC005C25CC /* MyRecordCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17808E221D7F0AFC005C25CC /* MyRecordCell1.swift */; };
@@ -155,8 +162,6 @@
 		17924B3A1D5B76FB002E5529 /* ReactionMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17924A181D5B76FB002E5529 /* ReactionMenuView.xib */; };
 		17924B3D1D5B76FB002E5529 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 17924A1D1D5B76FB002E5529 /* UICollectionViewLeftAlignedLayout.m */; };
 		17924B3F1D5B76FB002E5529 /* XAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17924A1F1D5B76FB002E5529 /* XAlertView.swift */; };
-		17924B401D5B76FB002E5529 /* XBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17924A201D5B76FB002E5529 /* XBanner.swift */; };
-		17924B411D5B76FB002E5529 /* XBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17924A211D5B76FB002E5529 /* XBanner.xib */; };
 		17924B421D5B76FB002E5529 /* XBootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17924A221D5B76FB002E5529 /* XBootView.swift */; };
 		17924B431D5B76FB002E5529 /* XBootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17924A231D5B76FB002E5529 /* XBootView.xib */; };
 		17924B441D5B76FB002E5529 /* XBuyNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17924A241D5B76FB002E5529 /* XBuyNumView.swift */; };
@@ -390,6 +395,13 @@
 		174ABB751D8253C100D94F3C /* XUICollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XUICollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		174ABB7B1D8258AE00D94F3C /* HomeMiddleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMiddleCell.swift; sourceTree = "<group>"; };
 		174ABB7C1D8258AE00D94F3C /* HomeMiddleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeMiddleCell.xib; sourceTree = "<group>"; };
+		174ABB841D8263DC00D94F3C /* XBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XBanner.swift; sourceTree = "<group>"; };
+		174ABB871D829CB700D94F3C /* OpenCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCardVC.swift; sourceTree = "<group>"; };
+		174ABB891D82B4EE00D94F3C /* card_type0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_type0.png; sourceTree = "<group>"; };
+		174ABB8A1D82B4EE00D94F3C /* card_type1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_type1.png; sourceTree = "<group>"; };
+		174ABB8B1D82B4EE00D94F3C /* card_type2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_type2.png; sourceTree = "<group>"; };
+		174ABB8C1D82B4EE00D94F3C /* card_type3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_type3.png; sourceTree = "<group>"; };
+		174ABB911D82B66B00D94F3C /* ChooseTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTypeVC.swift; sourceTree = "<group>"; };
 		1769E0831D6A9745002C9A5B /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1769E0851D6AA754002C9A5B /* HtmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlVC.swift; sourceTree = "<group>"; };
 		17808E221D7F0AFC005C25CC /* MyRecordCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecordCell1.swift; sourceTree = "<group>"; };
@@ -473,8 +485,6 @@
 		17924A1C1D5B76FB002E5529 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
 		17924A1D1D5B76FB002E5529 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		17924A1F1D5B76FB002E5529 /* XAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAlertView.swift; sourceTree = "<group>"; };
-		17924A201D5B76FB002E5529 /* XBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XBanner.swift; sourceTree = "<group>"; };
-		17924A211D5B76FB002E5529 /* XBanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBanner.xib; sourceTree = "<group>"; };
 		17924A221D5B76FB002E5529 /* XBootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XBootView.swift; sourceTree = "<group>"; };
 		17924A231D5B76FB002E5529 /* XBootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBootView.xib; sourceTree = "<group>"; };
 		17924A241D5B76FB002E5529 /* XBuyNumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XBuyNumView.swift; sourceTree = "<group>"; };
@@ -778,6 +788,10 @@
 		174ABB071D82445A00D94F3C /* 共用01 */ = {
 			isa = PBXGroup;
 			children = (
+				174ABB891D82B4EE00D94F3C /* card_type0.png */,
+				174ABB8A1D82B4EE00D94F3C /* card_type1.png */,
+				174ABB8B1D82B4EE00D94F3C /* card_type2.png */,
+				174ABB8C1D82B4EE00D94F3C /* card_type3.png */,
 				174ABB081D82445A00D94F3C /* add.png */,
 				174ABB091D82445A00D94F3C /* arrow01.png */,
 				174ABB0A1D82445A00D94F3C /* arrow02.png */,
@@ -890,6 +904,23 @@
 			path = "首页01";
 			sourceTree = "<group>";
 		};
+		174ABB831D8263DC00D94F3C /* XBanner */ = {
+			isa = PBXGroup;
+			children = (
+				174ABB841D8263DC00D94F3C /* XBanner.swift */,
+			);
+			path = XBanner;
+			sourceTree = "<group>";
+		};
+		174ABB861D829C9600D94F3C /* card */ = {
+			isa = PBXGroup;
+			children = (
+				174ABB871D829CB700D94F3C /* OpenCardVC.swift */,
+				174ABB911D82B66B00D94F3C /* ChooseTypeVC.swift */,
+			);
+			name = card;
+			sourceTree = "<group>";
+		};
 		1792498B1D5B7613002E5529 = {
 			isa = PBXGroup;
 			children = (
@@ -981,6 +1012,7 @@
 				17924AEF1D5B76FB002E5529 /* XEasyListView */,
 				17924AF31D5B76FB002E5529 /* XHorizontalView */,
 				17924AF71D5B76FB002E5529 /* XRefresh */,
+				174ABB831D8263DC00D94F3C /* XBanner */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -996,8 +1028,6 @@
 				17924A181D5B76FB002E5529 /* ReactionMenuView.xib */,
 				17924A1B1D5B76FB002E5529 /* UICollectionViewLeftAlignedLayout */,
 				17924A1F1D5B76FB002E5529 /* XAlertView.swift */,
-				17924A201D5B76FB002E5529 /* XBanner.swift */,
-				17924A211D5B76FB002E5529 /* XBanner.xib */,
 				17924A221D5B76FB002E5529 /* XBootView.swift */,
 				17924A231D5B76FB002E5529 /* XBootView.xib */,
 				17924A241D5B76FB002E5529 /* XBuyNumView.swift */,
@@ -1385,6 +1415,7 @@
 		17AC36EF1D5CB44000FB4E70 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				174ABB861D829C9600D94F3C /* card */,
 				179C20951D61A3070087C33A /* model */,
 				170FBCBB1D60731A00711E8E /* user */,
 				170FBC8E1D604BF000711E8E /* myorder */,
@@ -1536,12 +1567,13 @@
 				174ABB4C1D82445A00D94F3C /* radio01.png in Resources */,
 				174ABB521D82445A00D94F3C /* shop_phone.png in Resources */,
 				174ABB611D82445A00D94F3C /* login01.png in Resources */,
+				174ABB8E1D82B4EE00D94F3C /* card_type1.png in Resources */,
+				174ABB8F1D82B4EE00D94F3C /* card_type2.png in Resources */,
 				17924B4D1D5B76FB002E5529 /* XPhotoChoose.xib in Resources */,
 				174ABB591D82445A00D94F3C /* shop_icon04.png in Resources */,
 				174ABB6E1D82445A00D94F3C /* index_icon10.png in Resources */,
 				174ABB5F1D82445A00D94F3C /* card_type01.png in Resources */,
 				174ABB4F1D82445A00D94F3C /* search.png in Resources */,
-				17924B411D5B76FB002E5529 /* XBanner.xib in Resources */,
 				174ABB5E1D82445A00D94F3C /* info.png in Resources */,
 				174ABB6B1D82445A00D94F3C /* index_icon07.png in Resources */,
 				174ABB421D82445A00D94F3C /* Recharge01.png in Resources */,
@@ -1576,12 +1608,14 @@
 				174ABB491D82445A00D94F3C /* off.png in Resources */,
 				174ABB461D82445A00D94F3C /* add.png in Resources */,
 				1792499D1D5B7613002E5529 /* Main.storyboard in Resources */,
+				174ABB901D82B4EE00D94F3C /* card_type3.png in Resources */,
 				17924AFF1D5B76FB002E5529 /* AGImagePickerController.bundle in Resources */,
 				174ABB4D1D82445A00D94F3C /* radio02.png in Resources */,
 				174ABB431D82445A00D94F3C /* Recharge02.png in Resources */,
 				174ABB6D1D82445A00D94F3C /* index_icon09.png in Resources */,
 				170FBC9C1D605DBB00711E8E /* MyOrderSendingCell.xib in Resources */,
 				174ABB3E1D82445A00D94F3C /* 02首页.jpg in Resources */,
+				174ABB8D1D82B4EE00D94F3C /* card_type0.png in Resources */,
 				174ABB711D82445A00D94F3C /* index_top02.png in Resources */,
 				174ABB661D82445A00D94F3C /* index_icon02.png in Resources */,
 				170FBC961D6050D800711E8E /* MyOrderWaitCell.xib in Resources */,
@@ -1649,6 +1683,7 @@
 				17924B5F1D5B76FB002E5529 /* UIButton.swift in Sources */,
 				17924B1A1D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				170FBCAB1D60612700711E8E /* MyOrderEndedVC.swift in Sources */,
+				174ABB881D829CB700D94F3C /* OpenCardVC.swift in Sources */,
 				17924B471D5B76FB002E5529 /* XCornerRadiusTextField.swift in Sources */,
 				1792499A1D5B7613002E5529 /* ViewController.swift in Sources */,
 				17924B911D5B76FB002E5529 /* SkyRadiusView.m in Sources */,
@@ -1741,6 +1776,7 @@
 				170FBCB11D60654F00711E8E /* MyOrderCancelCell.swift in Sources */,
 				17924BCC1D5B76FC002E5529 /* XHttpHandle.swift in Sources */,
 				17924B051D5B76FB002E5529 /* AGIPCGridItem.m in Sources */,
+				174ABB851D8263DC00D94F3C /* XBanner.swift in Sources */,
 				17924B751D5B76FB002E5529 /* Reflect+Convert.swift in Sources */,
 				17924B351D5B76FB002E5529 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				170FBCCD1D60A61800711E8E /* MyRecordVC2.swift in Sources */,
@@ -1768,13 +1804,13 @@
 				17924B191D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				170FBCC91D60A3A900711E8E /* MyWalletVC.swift in Sources */,
 				17924BBF1D5B76FC002E5529 /* ConstraintMaker.swift in Sources */,
+				174ABB921D82B66B00D94F3C /* ChooseTypeVC.swift in Sources */,
 				17924B2D1D5B76FB002E5529 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				17924B5A1D5B76FB002E5529 /* NSData.swift in Sources */,
 				17924B201D5B76FB002E5529 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				17924B881D5B76FB002E5529 /* XImageOperationManager.swift in Sources */,
 				17924B631D5B76FB002E5529 /* UITextField.swift in Sources */,
 				17924BC31D5B76FC002E5529 /* LayoutConstraint.swift in Sources */,
-				17924B401D5B76FB002E5529 /* XBanner.swift in Sources */,
 				179C206B1D615C010087C33A /* LocationTracker.m in Sources */,
 				170FBCA81D60612700711E8E /* MyOrderEndedCell.swift in Sources */,
 				17924B871D5B76FB002E5529 /* XImageGif.swift in Sources */,

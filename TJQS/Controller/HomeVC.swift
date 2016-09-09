@@ -29,6 +29,7 @@ class HomeCellModel: Reflect {
 class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
     
     let banner = XBanner()
+    let page = UIPageControl()
     
     let topArr:[HomeCellModel] = [HomeCellModel(img: "index_top01.png",title: "办卡"),HomeCellModel(img: "index_top02.png",title: "消费"),HomeCellModel(img: "index_top03.png",title: "充值")]
     let middleArr:[HomeCellModel] = [
@@ -57,23 +58,37 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
         self.title = "车港湾"
         
         banner.frame = CGRectMake(0, 12, swidth, swidth*0.3)
-        banner.hiddenTitle = true
-    
+        page.frame = CGRectMake(0, (12+swidth*0.3)-24, swidth, 24)
+        
         var arr:[XBannerModel] = []
         
         let model = XBannerModel()
-        model.imageURL = "http://pic2.ooopic.com/12/19/25/59b1OOOPIC45.jpg"
+        model.image = "http://pic2.ooopic.com/12/19/25/59b1OOOPIC45.jpg"
         arr.append(model)
         
         let model1 = XBannerModel()
-        model1.imageURL = "http://pic28.nipic.com/20130426/5194434_163415086319_2.jpg"
+        model1.image = "http://pic28.nipic.com/20130426/5194434_163415086319_2.jpg"
         arr.append(model1)
         
         let model2 = XBannerModel()
-        model2.imageURL = "http://www.ahyunmo.com/images/4.jpg"
+        model2.image = "http://www.ahyunmo.com/images/4.jpg"
         arr.append(model2)
         
-        banner.arr = arr
+        banner.bannerArr = arr
+        
+        page.numberOfPages = arr.count
+        page.pageIndicatorTintColor = "dcdcdc".color
+        page.currentPageIndicatorTintColor = APPNVColor
+        
+        banner.Block(index: { [weak self](index, m) in
+            
+            self?.page.currentPage = index
+            
+        }) { [weak self](m) in
+            
+            print(m)
+        }
+
         
         
         
@@ -157,9 +172,6 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
         
     }
     
-    
-
-    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         var cell:UICollectionViewCell!
@@ -183,6 +195,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
             cell.contentView.removeAllSubViews()
             
             cell.contentView.addSubview(banner)
+            cell.contentView.addSubview(page)
             
         default:
             ""
@@ -192,6 +205,24 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
         
         return cell
         
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        switch indexPath.section {
+        case 0:
+            
+            switch indexPath.row {
+            case 0:
+                let vc = "OpenCardVC".VC("Main")
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                ""
+            }
+            
+        default:
+            ""
+        }
     }
     
 
