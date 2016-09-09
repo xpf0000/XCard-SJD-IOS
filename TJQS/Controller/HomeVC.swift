@@ -8,94 +8,192 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeCellModel: Reflect {
     
-    let table = XTableView()
+    var img = ""
+    var title = ""
+    
+    required init() {
+        super.init()
+    }
+    
+    init(img:String,title:String) {
+        
+        super.init()
+        self.img = img
+        self.title = title
+    }
+    
+}
+
+class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+    
+    let banner = XBanner()
+    
+    let topArr:[HomeCellModel] = [HomeCellModel(img: "index_top01.png",title: "办卡"),HomeCellModel(img: "index_top02.png",title: "消费"),HomeCellModel(img: "index_top03.png",title: "充值")]
+    let middleArr:[HomeCellModel] = [
+    HomeCellModel(img: "index_icon01.png",title: "会员管理"),
+    HomeCellModel(img: "index_icon02.png",title: "充值管理"),
+    HomeCellModel(img: "index_icon03.png",title: "消费管理"),
+    HomeCellModel(img: "index_icon04.png",title: "活动管理"),
+    HomeCellModel(img: "index_icon05.png",title: "消息管理"),
+    HomeCellModel(img: "index_icon06.png",title: "卡类管理"),
+    HomeCellModel(img: "index_icon07.png",title: "店铺设置"),
+    HomeCellModel(img: "index_icon08.png",title: "员工管理"),
+    HomeCellModel(img: "index_icon10.png",title: "系统公告"),
+    HomeCellModel(img: "index_icon09.png",title: "设置"),
+    HomeCellModel(img: "index_icon11.png",title: "更多"),
+    HomeCellModel()
+    ]
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.title = "新任务"
-        
     }
     
-    func doRefresh(){
-        
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "车港湾"
         
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        banner.frame = CGRectMake(0, 12, swidth, swidth*0.3)
+        banner.hiddenTitle = true
+    
+        var arr:[XBannerModel] = []
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(doRefresh), name: NoticeWord.MsgChange.rawValue, object: nil)
+        let model = XBannerModel()
+        model.imageURL = "http://pic2.ooopic.com/12/19/25/59b1OOOPIC45.jpg"
+        arr.append(model)
         
-        let imgarr = ["新任务","我的抢单","账号"]
+        let model1 = XBannerModel()
+        model1.imageURL = "http://pic28.nipic.com/20130426/5194434_163415086319_2.jpg"
+        arr.append(model1)
         
-        let arr:Array<UITabBarItem> = (self.tabBarController?.tabBar.items)!
+        let model2 = XBannerModel()
+        model2.imageURL = "http://www.ahyunmo.com/images/4.jpg"
+        arr.append(model2)
         
-        var i=0
-        for item in arr
+        banner.arr = arr
+        
+        
+        
+        self.collectionView?.registerNib("HomeTopCell".Nib, forCellWithReuseIdentifier: "HomeTopCell")
+        self.collectionView?.registerNib("HomeMiddleCell".Nib, forCellWithReuseIdentifier: "HomeMiddleCell")
+        self.collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        if let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         {
-            if screenScale == 3.0
-            {
-                
-                item.image=(imgarr[i]+"@3x.png").image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-                item.selectedImage=(imgarr[i]+"_1@3x.png").image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-            }
-            else
-            {
-                print((imgarr[i]+"@2x.png"))
-                
-                item.image=(imgarr[i]+"@2x.png").image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-                item.selectedImage=(imgarr[i]+"_1@2x.png").image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-            }
+            layout.minimumLineSpacing = 0.0
+            layout.minimumInteritemSpacing = 0.0
+            layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
             
-            item.setTitleTextAttributes([NSForegroundColorAttributeName:APPGreenColor,NSFontAttributeName:UIFont.systemFontOfSize(16.0)], forState: UIControlState.Selected)
-            
-            i += 1;
         }
         
-        self.view.addSubview(table)
-        
-        self.view.backgroundColor = "f2f2f2".color
-        table.backgroundColor = "f2f2f2".color
-        table.frame = CGRectMake(0, 0, swidth, sheight-64)
-        
-        table.cellHeight = 215
-        
-        let v = UIView()
-        v.backgroundColor=UIColor.clearColor()
-        v.frame = CGRectMake(0, 0, swidth, 49)
-        table.tableFooterView = v
-        
-        let h = UIView()
-        h.backgroundColor=UIColor.clearColor()
-        h.frame = CGRectMake(0, 0, swidth, 12)
-        table.tableHeaderView = h
-        
-        table.separatorStyle = .None
-        
-        let url = "http://api.0539cn.com/index.php?c=Order&a=getNewsList&nowpage=[page]&perpage=20"
-        
-        table.setHandle(url, pageStr: "[page]", keys: ["datas"], model: OrderModel.self, CellIdentifier: "HomeCell")
+        self.collectionView?.reloadData()
         
         
-        table.show()
         
-        //table.show()
-        
-//        for _ in 0...5
-//        {
-//            let m = OrderModel()
-//            table.httpHandle.listArr.append(m)
-//        }
-//        
-//        table.reloadData()
         
     }
+    
+    
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        
+        return 3
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        switch indexPath.section {
+        case 0:
+            ""
+            return CGSizeMake(swidth/3.0, swidth/3.0)
+        case 1:
+            ""
+            return CGSizeMake((swidth-3.0)/4.0, swidth/4.0-10)
+        case 2:
+            ""
+            return CGSizeMake(swidth, swidth*0.3)
+        default:
+            ""
+            return CGSizeMake(0.001, 0.001)
+        }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            return middleArr.count
+        case 2:
+            return 1
+        default:
+            return 0
+        }
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        
+        if section == 1
+        {
+            return 1
+        }
+        
+        return 0
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        
+        if section == 1
+        {
+            return 1
+        }
+        
+        return 0
+        
+    }
+    
+    
+
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        var cell:UICollectionViewCell!
+        
+        switch indexPath.section {
+        case 0:
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("HomeTopCell", forIndexPath: indexPath)
+            if let c = cell as? HomeTopCell
+            {
+                c.model = topArr[indexPath.row]
+            }
+        case 1:
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("HomeMiddleCell", forIndexPath: indexPath)
+            if let c = cell as? HomeMiddleCell
+            {
+                c.model = middleArr[indexPath.row]
+            }
+        case 2:
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+            
+            cell.contentView.removeAllSubViews()
+            
+            cell.contentView.addSubview(banner)
+            
+        default:
+            ""
+        }
+        
+        
+        
+        return cell
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -104,7 +202,7 @@ class HomeVC: UIViewController {
     
     deinit
     {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
     }
 
    

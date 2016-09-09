@@ -34,7 +34,14 @@ class XNavigationController: UINavigationController,UINavigationControllerDelega
         navBar.setBackgroundImage(APPNVColor.image, forBarMetrics:.Default)
         navBar.titleTextAttributes=[NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont.boldSystemFontOfSize(20.0)]
         
+        navBar.layer.masksToBounds = true
+        navBar.translucent = false
+        navBar.layer.shadowColor = nil
+        navBar.shadowImage = "088bde".color?.image
+        
     }
+    
+    
     
     func setAlpha(a:CGFloat)
     {

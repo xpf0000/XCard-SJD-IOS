@@ -22,13 +22,13 @@
 //#import "JPUSHService.h" //推送
 #import "XOC.h"
 
-#import "LocationTracker.h"
+//#import "LocationTracker.h"
 
-#import <AMapFoundationKit/AMapFoundationKit.h>
+//#import <AMapFoundationKit/AMapFoundationKit.h>
 
 
-#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
-#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+//#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+//#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
 
 
 #endif /* TJQS_Bridging_Header_h */

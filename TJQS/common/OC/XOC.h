@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "JPUSHService.h"
 
 @interface XOC : NSObject
 
 + (id) classFromName:(NSString*)name;
 + (UIViewController *)activityViewController;
-+(void) initJPush;
 //+ (NSArray*)ShareTypeList;
 @end
