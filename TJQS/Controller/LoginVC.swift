@@ -1,56 +1,90 @@
 //
 //  LoginVC.swift
-//  TJQS
+//  chengshi
 //
-//  Created by 徐鹏飞 on 16/8/14.
-//  Copyright © 2016年 QS. All rights reserved.
+//  Created by X on 15/11/28.
+//  Copyright © 2015年 XSwiftTemplate. All rights reserved.
 //
 
 import UIKit
 
-class LoginVC: UITableViewController {
-
+class LoginVC: UITableViewController,UITextFieldDelegate {
+    
     @IBOutlet var table: UITableView!
     
-    @IBOutlet weak var mobile: UITextField!
+    @IBOutlet var user: UITextField!
     
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet var pass: UITextField!
     
-    @IBAction func doLogin(sender: AnyObject) {
+    @IBOutlet var loginIcon: UIActivityIndicatorView!
+    
+    @IBOutlet var loginButton: UIButton!
+    
+
+    var block:AnyBlock?
+    
+    
+    @IBAction func login(sender: AnyObject) {
         
-        if !mobile.checkNull() || !password.checkNull(){return}
+        if(!user.checkNull() || !pass.checkNull())
+        {
+            return
+        }
         
-        self.view.showWaiting()
+        self.view.endEditing(true)
         
-        let mob = mobile.text!.trim()
-        let pass = password.text!.trim()
-        
-        let url = "http://api.0539cn.com/index.php?c=User&a=login&mob=\(mob)&pass=\(pass)&type=1"
-        
-        XHttpPool.requestJson(url, body: nil, method: .GET) {[weak self] (res) in
+        self.loginButton.enabled = false
+        self.loginIcon.startAnimating()
+        UIView.animateWithDuration(0.25) { () -> Void in
             
-            RemoveWaiting()
+            self.loginButton.titleLabel?.alpha = 0.0
+            self.loginIcon.alpha = 1.0
             
-            if res?["code"].int == 200
+        }
+        
+        let url=APPURL+"Public/Found/?service=User.login"
+        let p = pass.text!.trim()
+        let u = user.text!.trim()
+        let body="password="+p+"&mobile="+u
+        
+        XHttpPool.requestJson(url, body: body, method: .POST) { (o) -> Void in
+            
+            if(o?["data"].dictionaryValue.count > 0)
             {
-                let model = UserModel.parse(json: res!["datas"], replace: nil)
-                
-                DataCache.Share.User = model
-                
-                DataCache.Share.User.save()
-                
-                self?.pop()
-                
-                return
-            }
-            
-            if let msg = res?["message"].string
-            {
-                ShowMessage(msg)
+                if(o!["data"]["code"].intValue == 0 && o?["data"]["info"].arrayValue.count > 0)
+                {
+                    
+//                    DataCache.Share.userModel = UserModel.parse(json: o!["data"]["info"][0], replace: nil)
+//                    DataCache.Share.userModel.password = p
+//                    
+//                    DataCache.Share.userModel.save()
+                    
+                    if(self.block != nil)
+                    {
+                        self.block!("loginSuccess")
+                    }
+                    
+                    NoticeWord.LoginSuccess.rawValue.postNotice()
+                    
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        
+                        
+                    })
+                    
+                    return
+                }
+                else
+                {
+                    self.navigationController?.view.showAlert(o!["data"]["msg"].stringValue, block: nil)
+                    
+                    self.reSetButton()
+                    return
+                }
             }
             else
             {
-                ShowMessage("登录失败,请重试")
+                self.reSetButton()
+                self.navigationController?.view.showAlert("登录失败", block: nil)
             }
             
         }
@@ -59,28 +93,66 @@ class LoginVC: UITableViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.addBackButton()
-        
-        mobile.addEndButton()
-        password.addEndButton()
-        
-    
+    func reSetButton()
+    {
+        self.loginButton.titleLabel?.alpha = 1.0
+        self.loginIcon.alpha = 0.0
+        self.loginIcon.stopAnimating()
+        self.loginButton.enabled = true
     }
     
     
-    let rarr = [1]
+    @IBAction func forget(sender: AnyObject) {
+        
+        let vc = "FBPassVerifyVC".VC("Main")
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.addBackButton()
+        
+        self.user.addEndButton()
+        self.pass.addEndButton()
+        
+        self.user.delegate = self
+        self.pass.delegate = self
+        
+        let view1=UIView()
+        view1.backgroundColor=UIColor.clearColor()
+        table.tableFooterView=view1
+        table.tableHeaderView=view1
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if(textField == self.user)
+        {
+            self.pass.becomeFirstResponder()
+        }
+        else
+        {
+            self.login(self.loginButton)
+        }
+        
+        return true
+    }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        if rarr.contains(indexPath.row)
+        if(indexPath.row == 1)
         {
-            cell.separatorInset=UIEdgeInsetsMake(0, 15, 0, 15)
+            cell.separatorInset=UIEdgeInsetsMake(0, 20, 0, 20)
             if(IOS_Version>=8.0)
             {
                 if #available(iOS 8.0, *) {
-                    cell.layoutMargins=UIEdgeInsetsMake(0, 15, 0, 15)
+                    cell.layoutMargins=UIEdgeInsetsMake(0, 20, 0, 20)
                 } else {
                     // Fallback on earlier versions
                 }
@@ -99,8 +171,6 @@ class LoginVC: UITableViewController {
             }
         }
         
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -117,12 +187,26 @@ class LoginVC: UITableViewController {
             }
         }
     }
-
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.user.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    deinit
+    {
+        //print("LoginVC deinit !!!!!!!!!!")
+    }
     
 }

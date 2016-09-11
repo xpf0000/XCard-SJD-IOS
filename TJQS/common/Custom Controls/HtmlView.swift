@@ -72,6 +72,7 @@ class JSHandle:NSObject,XJSExports
 
 //typealias AnyBlock = (Any?)->Void
 
+@objc
 class HtmlView: UIView,UIWebViewDelegate ,WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler{
 
     var webView:UIView?

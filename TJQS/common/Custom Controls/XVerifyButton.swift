@@ -37,19 +37,6 @@ class XVerifyButton: UIButton {
     private lazy var timeModel:postTimeModel=postTimeModel()
     var type=1
     
-    
-    class func Share() ->XVerifyButton! {
-        
-        struct Once {
-            static var token:dispatch_once_t = 0
-            static var dataCenterObj:XVerifyButton! = nil
-        }
-        dispatch_once(&Once.token, {
-            Once.dataCenterObj = XVerifyButton(type: .Custom)
-        })
-        return Once.dataCenterObj
-    }
-    
     override func willMoveToSuperview(newSuperview: UIView?) {
         
         super.willMoveToSuperview(newSuperview)
@@ -272,8 +259,6 @@ class XVerifyButton: UIButton {
             self.Phone(self.phone)
         }
     }
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

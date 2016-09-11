@@ -124,7 +124,6 @@
 		17924B081D5B76FB002E5529 /* AGPreviewScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 179249E11D5B76FB002E5529 /* AGPreviewScrollView.m */; };
 		17924B091D5B76FB002E5529 /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 179249E31D5B76FB002E5529 /* ALAsset+AGIPC.m */; };
 		17924B0A1D5B76FB002E5529 /* UIButton+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 179249E51D5B76FB002E5529 /* UIButton+AGIPC.m */; };
-		17924B111D5B76FB002E5529 /* HtmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179249EC1D5B76FB002E5529 /* HtmlView.swift */; };
 		17924B171D5B76FB002E5529 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179249F41D5B76FB002E5529 /* NVActivityIndicatorAnimationBallBeat.swift */; };
 		17924B181D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179249F51D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotate.swift */; };
 		17924B191D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179249F61D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
@@ -285,6 +284,11 @@
 		17AC370A1D5CCAF400FB4E70 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AC37091D5CCAF400FB4E70 /* OrderModel.swift */; };
 		17DB52FF1D73C9B30097FE7E /* BreakRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB52FE1D73C9B30097FE7E /* BreakRecordModel.swift */; };
 		17DB53011D73CB390097FE7E /* CashFlowRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB53001D73CB390097FE7E /* CashFlowRecordModel.swift */; };
+		17EB7C7F1D85790B007C0361 /* FBPassVerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB7C7E1D85790B007C0361 /* FBPassVerifyVC.swift */; };
+		17EB7C811D857ED5007C0361 /* FBPassNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB7C801D857ED5007C0361 /* FBPassNewVC.swift */; };
+		17EB7C831D858084007C0361 /* UserFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB7C821D858084007C0361 /* UserFeedVC.swift */; };
+		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
+		17EB7C871D859816007C0361 /* SBCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB7C861D859816007C0361 /* SBCollectionViewFlowLayout.swift */; };
 		17F8CD8F1D5F0C5300570156 /* WaitOrderInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8CD8E1D5F0C5300570156 /* WaitOrderInfoVC.swift */; };
 		17F8CD921D5F0D1E00570156 /* OrderGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8CD901D5F0D1E00570156 /* OrderGoodsCell.swift */; };
 		17F8CD931D5F0D1E00570156 /* OrderGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F8CD911D5F0D1E00570156 /* OrderGoodsCell.xib */; };
@@ -445,7 +449,6 @@
 		179249E31D5B76FB002E5529 /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+AGIPC.m"; sourceTree = "<group>"; };
 		179249E41D5B76FB002E5529 /* UIButton+AGIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AGIPC.h"; sourceTree = "<group>"; };
 		179249E51D5B76FB002E5529 /* UIButton+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AGIPC.m"; sourceTree = "<group>"; };
-		179249EC1D5B76FB002E5529 /* HtmlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlView.swift; sourceTree = "<group>"; };
 		179249F41D5B76FB002E5529 /* NVActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
 		179249F51D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
 		179249F61D5B76FB002E5529 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
@@ -624,6 +627,11 @@
 		17AC37091D5CCAF400FB4E70 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		17DB52FE1D73C9B30097FE7E /* BreakRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakRecordModel.swift; sourceTree = "<group>"; };
 		17DB53001D73CB390097FE7E /* CashFlowRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashFlowRecordModel.swift; sourceTree = "<group>"; };
+		17EB7C7E1D85790B007C0361 /* FBPassVerifyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPassVerifyVC.swift; sourceTree = "<group>"; };
+		17EB7C801D857ED5007C0361 /* FBPassNewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPassNewVC.swift; sourceTree = "<group>"; };
+		17EB7C821D858084007C0361 /* UserFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedVC.swift; sourceTree = "<group>"; };
+		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		17EB7C861D859816007C0361 /* SBCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		17F8CD8E1D5F0C5300570156 /* WaitOrderInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitOrderInfoVC.swift; sourceTree = "<group>"; };
 		17F8CD901D5F0D1E00570156 /* OrderGoodsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderGoodsCell.swift; sourceTree = "<group>"; };
 		17F8CD911D5F0D1E00570156 /* OrderGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderGoodsCell.xib; sourceTree = "<group>"; };
@@ -635,6 +643,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */,
 				179C20901D6175C40087C33A /* libz.tbd in Frameworks */,
 				179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */,
 				179C208C1D6175A70087C33A /* Foundation.framework in Frameworks */,
@@ -734,6 +743,9 @@
 		170FBCBB1D60731A00711E8E /* user */ = {
 			isa = PBXGroup;
 			children = (
+				17EB7C7E1D85790B007C0361 /* FBPassVerifyVC.swift */,
+				17EB7C801D857ED5007C0361 /* FBPassNewVC.swift */,
+				17EB7C821D858084007C0361 /* UserFeedVC.swift */,
 				170FBCBC1D60732C00711E8E /* UserCenterVC.swift */,
 				170FBCBE1D608FA400711E8E /* LoginVC.swift */,
 				170FBCC01D60929F00711E8E /* HowToUserVC.swift */,
@@ -924,20 +936,6 @@
 		1792498B1D5B7613002E5529 = {
 			isa = PBXGroup;
 			children = (
-				179C208F1D6175C40087C33A /* libz.tbd */,
-				179C208D1D6175B30087C33A /* UIKit.framework */,
-				179C208B1D6175A70087C33A /* Foundation.framework */,
-				179C20891D61759C0087C33A /* CoreFoundation.framework */,
-				179C20871D6175910087C33A /* CFNetwork.framework */,
-				179C20811D6172920087C33A /* libstdc++.6.0.9.tbd */,
-				179C207F1D6172850087C33A /* CoreTelephony.framework */,
-				179C207D1D61727E0087C33A /* libsqlite3.0.tbd */,
-				179C207B1D6172760087C33A /* Security.framework */,
-				179C20791D61726E0087C33A /* CoreGraphics.framework */,
-				179C20771D6172660087C33A /* SystemConfiguration.framework */,
-				179C20751D61725F0087C33A /* OpenGLES.framework */,
-				179C20731D6172580087C33A /* QuartzCore.framework */,
-				179C20711D61724D0087C33A /* CoreLocation.framework */,
 				179249961D5B7613002E5529 /* TJQS */,
 				179249AB1D5B7613002E5529 /* TJQSTests */,
 				179249B61D5B7613002E5529 /* TJQSUITests */,
@@ -958,6 +956,7 @@
 		179249961D5B7613002E5529 /* TJQS */ = {
 			isa = PBXGroup;
 			children = (
+				17EB7C7D1D85742D007C0361 /* lib */,
 				179249C51D5B76FB002E5529 /* common */,
 				17AC36EF1D5CB44000FB4E70 /* Controller */,
 				179249971D5B7613002E5529 /* AppDelegate.swift */,
@@ -1022,7 +1021,6 @@
 			children = (
 				1769E0851D6AA754002C9A5B /* HtmlVC.swift */,
 				179249CB1D5B76FB002E5529 /* AGImagePickerController */,
-				179249EC1D5B76FB002E5529 /* HtmlView.swift */,
 				179249F21D5B76FB002E5529 /* NVActivityIndicatorView */,
 				17924A171D5B76FB002E5529 /* ReactionMenuView.swift */,
 				17924A181D5B76FB002E5529 /* ReactionMenuView.xib */,
@@ -1046,6 +1044,7 @@
 				17924A311D5B76FB002E5529 /* XVerifyButton.swift */,
 				17924A331D5B76FB002E5529 /* XWaitingView.swift */,
 				174ABB751D8253C100D94F3C /* XUICollectionViewFlowLayout.swift */,
+				17EB7C861D859816007C0361 /* SBCollectionViewFlowLayout.swift */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -1439,6 +1438,28 @@
 			name = home;
 			sourceTree = "<group>";
 		};
+		17EB7C7D1D85742D007C0361 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				17EB7C841D858AC7007C0361 /* WebKit.framework */,
+				179C208F1D6175C40087C33A /* libz.tbd */,
+				179C208D1D6175B30087C33A /* UIKit.framework */,
+				179C208B1D6175A70087C33A /* Foundation.framework */,
+				179C20891D61759C0087C33A /* CoreFoundation.framework */,
+				179C20871D6175910087C33A /* CFNetwork.framework */,
+				179C20811D6172920087C33A /* libstdc++.6.0.9.tbd */,
+				179C207F1D6172850087C33A /* CoreTelephony.framework */,
+				179C207D1D61727E0087C33A /* libsqlite3.0.tbd */,
+				179C207B1D6172760087C33A /* Security.framework */,
+				179C20791D61726E0087C33A /* CoreGraphics.framework */,
+				179C20771D6172660087C33A /* SystemConfiguration.framework */,
+				179C20751D61725F0087C33A /* OpenGLES.framework */,
+				179C20731D6172580087C33A /* QuartzCore.framework */,
+				179C20711D61724D0087C33A /* CoreLocation.framework */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1507,7 +1528,7 @@
 				TargetAttributes = {
 					179249931D5B7613002E5529 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 24AVM954YM;
+						DevelopmentTeam = QPBSPA49NG;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1652,6 +1673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17924B261D5B76FB002E5529 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				17EB7C831D858084007C0361 /* UserFeedVC.swift in Sources */,
 				170FBC9B1D605DBB00711E8E /* MyOrderSendingCell.swift in Sources */,
 				17924B461D5B76FB002E5529 /* XCamera.swift in Sources */,
 				17924B081D5B76FB002E5529 /* AGPreviewScrollView.m in Sources */,
@@ -1728,6 +1750,7 @@
 				17924B821D5B76FB002E5529 /* UIImage+WebP.m in Sources */,
 				17924B091D5B76FB002E5529 /* ALAsset+AGIPC.m in Sources */,
 				17924BBB1D5B76FC002E5529 /* Constraint.swift in Sources */,
+				17EB7C871D859816007C0361 /* SBCollectionViewFlowLayout.swift in Sources */,
 				17924B011D5B76FB002E5529 /* AGImagePreviewController.m in Sources */,
 				17924B7A1D5B76FB002E5529 /* Reflect.swift in Sources */,
 				17924B041D5B76FB002E5529 /* AGIPCGridCell.m in Sources */,
@@ -1748,7 +1771,6 @@
 				17924B391D5B76FB002E5529 /* ReactionMenuView.swift in Sources */,
 				17924B661D5B76FB002E5529 /* UIViewController.swift in Sources */,
 				17924B861D5B76FB002E5529 /* XImageDownLoader.swift in Sources */,
-				17924B111D5B76FB002E5529 /* HtmlView.swift in Sources */,
 				170FBC981D605BBA00711E8E /* MyOrderWaitInfoVC.swift in Sources */,
 				17924B001D5B76FB002E5529 /* AGImagePickerController.m in Sources */,
 				17924B7D1D5B76FB002E5529 /* XHttpPoolHandle.swift in Sources */,
@@ -1784,6 +1806,7 @@
 				17924B581D5B76FB002E5529 /* array.swift in Sources */,
 				17924B1D1D5B76FB002E5529 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				17924B8D1D5B76FB002E5529 /* baiduMapMM.mm in Sources */,
+				17EB7C7F1D85790B007C0361 /* FBPassVerifyVC.swift in Sources */,
 				179C20691D615C010087C33A /* BackgroundTaskManager.m in Sources */,
 				17924B251D5B76FB002E5529 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				17AC36F21D5CB50000FB4E70 /* HomeVC.swift in Sources */,
@@ -1829,6 +1852,7 @@
 				17924BD21D5B76FC002E5529 /* XHeaderRefreshView.swift in Sources */,
 				170FBCC31D60987C00711E8E /* BreakRecordVC.swift in Sources */,
 				17924AFE1D5B76FB002E5529 /* AGImagePickerController+Helper.m in Sources */,
+				17EB7C811D857ED5007C0361 /* FBPassNewVC.swift in Sources */,
 				17924B8E1D5B76FB002E5529 /* DDCollectionViewFlowLayout.m in Sources */,
 				17924B1E1D5B76FB002E5529 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				17924B221D5B76FB002E5529 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -1992,7 +2016,7 @@
 					"$(PROJECT_DIR)/TJQS/common/Location",
 				);
 				INFOPLIST_FILE = TJQS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2029,7 +2053,7 @@
 					"$(PROJECT_DIR)/TJQS/common/Location",
 				);
 				INFOPLIST_FILE = TJQS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

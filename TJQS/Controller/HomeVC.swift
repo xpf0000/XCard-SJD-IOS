@@ -26,7 +26,7 @@ class HomeCellModel: Reflect {
     
 }
 
-class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCollectionViewDelegateFlowLayout {
     
     let banner = XBanner()
     let page = UIPageControl()
@@ -122,7 +122,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
         switch indexPath.section {
         case 0:
             ""
-            return CGSizeMake(swidth/3.0, swidth/3.0)
+            return CGSizeMake(CGFloat(swidth/300*100), CGFloat(swidth/3.0))
         case 1:
             ""
             return CGSizeMake((swidth-3.0)/4.0, swidth/4.0-10)
@@ -133,6 +133,20 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
             ""
             return CGSizeMake(0.001, 0.001)
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, backgroundColorForSectionAt section: Int) -> UIColor {
+        
+        switch section {
+        case 0:
+            ""
+            return APPNVColor
+            
+        default:
+            ""
+            return APPBGColor
+        }
+
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -219,6 +233,17 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
             default:
                 ""
             }
+            
+        case 1:
+            
+            switch indexPath.row {
+            case 0:
+                let vc = "LoginVC".VC("Main")
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                ""
+            }
+
             
         default:
             ""
