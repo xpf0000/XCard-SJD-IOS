@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="91" id="KGk-i7-Jjw" customClass="MessageCell" customModule="TJQS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="405" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="系统通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnW-sQ-j6i">
+                        <rect key="frame" x="89" y="15" width="68" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="世界最轻婴儿 与灯笼椒等重仅有0.4斤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI9-Yn-uWB">
+                        <rect key="frame" x="89" y="56" width="251" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08-15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiH-uQ-JtV">
+                        <rect key="frame" x="350" y="57" width="43" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="system_msg_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="1A8-6I-P6z">
+                        <rect key="frame" x="10" y="10" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="1A8-6I-P6z" secondAttribute="height" multiplier="1:1" id="wTx-5h-Lv5"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jI9-Yn-uWB" firstAttribute="leading" secondItem="tnW-sQ-j6i" secondAttribute="leading" id="1ud-eU-6Hd"/>
+                    <constraint firstItem="1A8-6I-P6z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3Xk-Li-zFT"/>
+                    <constraint firstItem="JiH-uQ-JtV" firstAttribute="centerY" secondItem="jI9-Yn-uWB" secondAttribute="centerY" id="3vL-f7-o5Y"/>
+                    <constraint firstItem="tnW-sQ-j6i" firstAttribute="leading" secondItem="1A8-6I-P6z" secondAttribute="trailing" constant="9" id="4La-4Q-42d"/>
+                    <constraint firstAttribute="trailing" secondItem="JiH-uQ-JtV" secondAttribute="trailing" constant="12" id="Rqg-7v-F0i"/>
+                    <constraint firstItem="tnW-sQ-j6i" firstAttribute="top" secondItem="1A8-6I-P6z" secondAttribute="top" constant="5" id="eeE-0F-Qwa"/>
+                    <constraint firstItem="jI9-Yn-uWB" firstAttribute="bottom" secondItem="1A8-6I-P6z" secondAttribute="bottom" constant="-6" id="fE4-Ts-kRm"/>
+                    <constraint firstAttribute="bottom" secondItem="1A8-6I-P6z" secondAttribute="bottom" constant="10" id="rta-z0-g6J"/>
+                    <constraint firstItem="JiH-uQ-JtV" firstAttribute="leading" secondItem="jI9-Yn-uWB" secondAttribute="trailing" constant="10" id="sFZ-Tf-Hwl"/>
+                    <constraint firstItem="1A8-6I-P6z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="yb3-WL-lNo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="img" destination="1A8-6I-P6z" id="7HI-5V-Ofh"/>
+                <outlet property="info" destination="jI9-Yn-uWB" id="yF7-Rp-h65"/>
+                <outlet property="mtitle" destination="tnW-sQ-j6i" id="3qv-bv-uN7"/>
+                <outlet property="time" destination="JiH-uQ-JtV" id="6R8-hX-HpT"/>
+            </connections>
+            <point key="canvasLocation" x="266.5" y="272.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="system_msg_icon.png" width="85" height="85"/>
+    </resources>
+</document>
