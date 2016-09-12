@@ -288,6 +288,18 @@
 		17C7FBA11D86880500A3EFCC /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C7FB991D86880500A3EFCC /* BaiduMapAPI_Utils.framework */; };
 		17C7FBA21D86880500A3EFCC /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FB9B1D86880500A3EFCC /* LocationShareModel.m */; };
 		17C7FBA31D86880500A3EFCC /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FB9D1D86880500A3EFCC /* LocationTracker.m */; };
+		17C7FBAC1D8692C700A3EFCC /* YGListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBAB1D8692C700A3EFCC /* YGListVC.swift */; };
+		17C7FBAE1D86962400A3EFCC /* YuangongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBAD1D86962400A3EFCC /* YuangongModel.swift */; };
+		17C7FBB11D86964C00A3EFCC /* YGListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBAF1D86964C00A3EFCC /* YGListCell.swift */; };
+		17C7FBB21D86964C00A3EFCC /* YGListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FBB01D86964C00A3EFCC /* YGListCell.xib */; };
+		17C7FBB41D869B0900A3EFCC /* PowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBB31D869B0900A3EFCC /* PowerListVC.swift */; };
+		17C7FBB61D869BAC00A3EFCC /* PowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBB51D869BAC00A3EFCC /* PowerModel.swift */; };
+		17C7FBB91D869BD200A3EFCC /* PowerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBB71D869BD200A3EFCC /* PowerListCell.swift */; };
+		17C7FBBA1D869BD200A3EFCC /* PowerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FBB81D869BD200A3EFCC /* PowerListCell.xib */; };
+		17C7FBBD1D869F3C00A3EFCC /* GWListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBBB1D869F3C00A3EFCC /* GWListCell.swift */; };
+		17C7FBBE1D869F3C00A3EFCC /* GWListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */; };
+		17C7FBC01D869FDD00A3EFCC /* GWListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */; };
+		17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */; };
 		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -624,6 +636,18 @@
 		17C7FB9B1D86880500A3EFCC /* LocationShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationShareModel.m; sourceTree = "<group>"; };
 		17C7FB9C1D86880500A3EFCC /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
 		17C7FB9D1D86880500A3EFCC /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
+		17C7FBAB1D8692C700A3EFCC /* YGListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YGListVC.swift; sourceTree = "<group>"; };
+		17C7FBAD1D86962400A3EFCC /* YuangongModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YuangongModel.swift; sourceTree = "<group>"; };
+		17C7FBAF1D86964C00A3EFCC /* YGListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YGListCell.swift; sourceTree = "<group>"; };
+		17C7FBB01D86964C00A3EFCC /* YGListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YGListCell.xib; sourceTree = "<group>"; };
+		17C7FBB31D869B0900A3EFCC /* PowerListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerListVC.swift; sourceTree = "<group>"; };
+		17C7FBB51D869BAC00A3EFCC /* PowerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerModel.swift; sourceTree = "<group>"; };
+		17C7FBB71D869BD200A3EFCC /* PowerListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerListCell.swift; sourceTree = "<group>"; };
+		17C7FBB81D869BD200A3EFCC /* PowerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PowerListCell.xib; sourceTree = "<group>"; };
+		17C7FBBB1D869F3C00A3EFCC /* GWListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWListCell.swift; sourceTree = "<group>"; };
+		17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GWListCell.xib; sourceTree = "<group>"; };
+		17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWListVC.swift; sourceTree = "<group>"; };
+		17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GangweiModel.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1322,7 +1346,6 @@
 			children = (
 				17C7FAA91D8682DF00A3EFCC /* ContactUSVC.swift */,
 				17C7FAA31D8682DF00A3EFCC /* AboutVC.swift */,
-				17C7FAA41D8682DF00A3EFCC /* APPConfig.swift */,
 				17C7FAA81D8682DF00A3EFCC /* ConfigVC.swift */,
 			);
 			name = system;
@@ -1359,8 +1382,12 @@
 		17C7FBA71D868B3E00A3EFCC /* model */ = {
 			isa = PBXGroup;
 			children = (
+				17C7FAA41D8682DF00A3EFCC /* APPConfig.swift */,
 				17C7FAC81D8682DF00A3EFCC /* OrderModel.swift */,
 				17C7FACD1D8682DF00A3EFCC /* UserModel.swift */,
+				17C7FBAD1D86962400A3EFCC /* YuangongModel.swift */,
+				17C7FBB51D869BAC00A3EFCC /* PowerModel.swift */,
+				17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */,
 				17C7FAB41D8682DF00A3EFCC /* MessageModel.swift */,
 			);
 			name = model;
@@ -1379,6 +1406,15 @@
 			isa = PBXGroup;
 			children = (
 				17C7FACE1D8682DF00A3EFCC /* YGManageVC.swift */,
+				17C7FBAB1D8692C700A3EFCC /* YGListVC.swift */,
+				17C7FBAF1D86964C00A3EFCC /* YGListCell.swift */,
+				17C7FBB01D86964C00A3EFCC /* YGListCell.xib */,
+				17C7FBB31D869B0900A3EFCC /* PowerListVC.swift */,
+				17C7FBB71D869BD200A3EFCC /* PowerListCell.swift */,
+				17C7FBB81D869BD200A3EFCC /* PowerListCell.xib */,
+				17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */,
+				17C7FBBB1D869F3C00A3EFCC /* GWListCell.swift */,
+				17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */,
 			);
 			name = yuangong;
 			sourceTree = "<group>";
@@ -1543,8 +1579,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C7FBB21D86964C00A3EFCC /* YGListCell.xib in Resources */,
 				17C7FB4E1D86833D00A3EFCC /* Recharge04.png in Resources */,
 				17C7FB6F1D86833D00A3EFCC /* card_type02.png in Resources */,
+				17C7FBBE1D869F3C00A3EFCC /* GWListCell.xib in Resources */,
 				17C7FB6A1D86833D00A3EFCC /* ac_photo.png in Resources */,
 				17C7FB681D86833D00A3EFCC /* shop_icon06.png in Resources */,
 				17C7FAE71D8682DF00A3EFCC /* MyOrderEndedCell.xib in Resources */,
@@ -1571,6 +1609,7 @@
 				17C7FB521D86833D00A3EFCC /* card_type0.png in Resources */,
 				17C7FB6D1D86833D00A3EFCC /* system_msg_icon_u.png in Resources */,
 				17C7FB651D86833D00A3EFCC /* shop_icon03.png in Resources */,
+				17C7FBBA1D869BD200A3EFCC /* PowerListCell.xib in Resources */,
 				17C7FB8B1D86836F00A3EFCC /* Info.plist in Resources */,
 				17C7FB491D86833D00A3EFCC /* 3701店铺设置.jpg in Resources */,
 				17C7FB501D86833D00A3EFCC /* arrow01.png in Resources */,
@@ -1645,6 +1684,7 @@
 			files = (
 				17C7FA061D8682C400A3EFCC /* AGImagePreviewController.m in Sources */,
 				17C7FAD01D8682DF00A3EFCC /* APPConfig.swift in Sources */,
+				17C7FBC01D869FDD00A3EFCC /* GWListVC.swift in Sources */,
 				17C7FA8A1D8682C500A3EFCC /* ConstraintAttributes.swift in Sources */,
 				17C7FA2C1D8682C400A3EFCC /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				17C7FA111D8682C400A3EFCC /* HtmlView.swift in Sources */,
@@ -1663,6 +1703,7 @@
 				17C7FA731D8682C500A3EFCC /* XImageGif.swift in Sources */,
 				17C7FA581D8682C500A3EFCC /* UIImage.swift in Sources */,
 				17C7FA601D8682C500A3EFCC /* Reflect+Parse.swift in Sources */,
+				17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */,
 				17C7FA0F1D8682C400A3EFCC /* UIButton+AGIPC.m in Sources */,
 				17C7FACF1D8682DF00A3EFCC /* AboutVC.swift in Sources */,
 				17C7FA1D1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -1673,6 +1714,7 @@
 				17C7FA501D8682C500A3EFCC /* Dictionary.swift in Sources */,
 				17C7FAA01D8682C500A3EFCC /* XHeaderRefreshView.swift in Sources */,
 				17C7FADD1D8682DF00A3EFCC /* LoginVC.swift in Sources */,
+				17C7FBB11D86964C00A3EFCC /* YGListCell.swift in Sources */,
 				17C7FA4F1D8682C500A3EFCC /* array.swift in Sources */,
 				17C7FA961D8682C500A3EFCC /* XDownLoad.swift in Sources */,
 				17C7FA811D8682C500A3EFCC /* DDCollectionViewFlowLayout.m in Sources */,
@@ -1694,6 +1736,7 @@
 				17C7FAD41D8682DF00A3EFCC /* ConfigVC.swift in Sources */,
 				17C7FA9C1D8682C500A3EFCC /* XHorizontalMainView.swift in Sources */,
 				17C7FA941D8682C500A3EFCC /* ViewController+SnapKit.swift in Sources */,
+				17C7FBB61D869BAC00A3EFCC /* PowerModel.swift in Sources */,
 				17C7FA841D8682C500A3EFCC /* SkyRadiusView.m in Sources */,
 				17C7FA621D8682C500A3EFCC /* Reflect+Class.swift in Sources */,
 				17C7FAEE1D8682DF00A3EFCC /* MyOrderVC.swift in Sources */,
@@ -1744,6 +1787,7 @@
 				17C7FA5E1D8682C500A3EFCC /* UIViewController.swift in Sources */,
 				17C7FAF51D8682DF00A3EFCC /* UpdatePWVC.swift in Sources */,
 				17C7FA491D8682C500A3EFCC /* XWaitingView.swift in Sources */,
+				17C7FBAC1D8692C700A3EFCC /* YGListVC.swift in Sources */,
 				17C7FA901D8682C500A3EFCC /* EdgeInsets.swift in Sources */,
 				17C7FA681D8682C500A3EFCC /* XHttpPool.swift in Sources */,
 				17C7FA031D8682C400A3EFCC /* AGImagePickerController+Helper.m in Sources */,
@@ -1769,6 +1813,7 @@
 				17C7FA321D8682C400A3EFCC /* NVActivityIndicatorView.swift in Sources */,
 				17C7FA481D8682C500A3EFCC /* XVerifyButton.swift in Sources */,
 				17C7FA171D8682C400A3EFCC /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				17C7FBB41D869B0900A3EFCC /* PowerListVC.swift in Sources */,
 				17C7FA251D8682C400A3EFCC /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				17C7FADC1D8682DF00A3EFCC /* HomeVC.swift in Sources */,
 				17C7FA5C1D8682C500A3EFCC /* UITextView.swift in Sources */,
@@ -1787,9 +1832,11 @@
 				17C7FB9F1D86880500A3EFCC /* BackgroundTaskManager.m in Sources */,
 				17C7FA261D8682C400A3EFCC /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				17C7FA0B1D8682C400A3EFCC /* AGIPCPreviewController.m in Sources */,
+				17C7FBBD1D869F3C00A3EFCC /* GWListCell.swift in Sources */,
 				17C7FA641D8682C500A3EFCC /* Reflect+Property.swift in Sources */,
 				17C7FAF71D8682DF00A3EFCC /* UserFeedVC.swift in Sources */,
 				17C7FA1F1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				17C7FBB91D869BD200A3EFCC /* PowerListCell.swift in Sources */,
 				17C7FA511D8682C500A3EFCC /* NSData.swift in Sources */,
 				17C7FA3A1D8682C400A3EFCC /* XBuyNumView.swift in Sources */,
 				17C7FA461D8682C500A3EFCC /* XTextView.swift in Sources */,
@@ -1821,6 +1868,7 @@
 				17C7FA1B1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				17C7FA5A1D8682C500A3EFCC /* UITableViewCell.swift in Sources */,
 				17C7FADE1D8682DF00A3EFCC /* MessageCell.swift in Sources */,
+				17C7FBAE1D86962400A3EFCC /* YuangongModel.swift in Sources */,
 				17C7FAE81D8682DF00A3EFCC /* MyOrderEndedInfoVC.swift in Sources */,
 				17C7FA2F1D8682C400A3EFCC /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				17C7FA221D8682C400A3EFCC /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,

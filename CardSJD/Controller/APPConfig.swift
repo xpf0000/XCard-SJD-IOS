@@ -8,7 +8,7 @@
 
 import UIKit
 
-class APPConfig: Reflect {
+class APPConfigModel: Reflect {
     
     var notic = true
     {
@@ -20,8 +20,8 @@ class APPConfig: Reflect {
     
     func save()
     {
-        APPConfig.delete(name: "APPConfig")
-        APPConfig.save(obj: self, name: "APPConfig")
+        APPConfigModel.delete(name: "APPConfigModel")
+        APPConfigModel.save(obj: self, name: "APPConfigModel")
     }
     
 

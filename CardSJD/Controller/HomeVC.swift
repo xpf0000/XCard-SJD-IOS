@@ -240,9 +240,16 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             case 0:
                 let vc = "LoginVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
+            case 4:
+                let vc = UserMessageVC()
+                self.navigationController?.pushViewController(vc, animated: true)
                 
             case 7:
                 let vc = YGManageVC()
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 9:
+                let vc = "ConfigVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
             default:
                 ""

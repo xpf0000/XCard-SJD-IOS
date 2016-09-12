@@ -138,9 +138,7 @@ class XHorizontalMainView: UICollectionView,UICollectionViewDelegate,UICollectio
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        
-        
+ 
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("mainViewCell", forIndexPath: indexPath)
         
         for item in cell.contentView.subviews

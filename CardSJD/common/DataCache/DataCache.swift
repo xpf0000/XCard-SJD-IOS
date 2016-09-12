@@ -13,15 +13,15 @@ class DataCache: NSObject {
     
     static let Share = DataCache()
     
-    lazy var appConfig = APPConfig()
+    lazy var appConfig = APPConfigModel()
     lazy var User = UserModel()
     
     private override init() {
         super.init()
         
-        if let model = APPConfig.read(name: "APPConfig")
+        if let model = APPConfigModel.read(name: "APPConfigModel")
         {
-            appConfig = model as! APPConfig
+            appConfig = model as! APPConfigModel
         }
         else
         {
