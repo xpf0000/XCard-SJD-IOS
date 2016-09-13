@@ -18,7 +18,8 @@
 #import "AGIPCGridItem.h"
 
 #import "UIImage+WebP.h"
-
+#import "AMBlurView.h"
+#import "FXBlurView.h"
 //#import "JPUSHService.h" //推送
 #import "XOC.h"
 

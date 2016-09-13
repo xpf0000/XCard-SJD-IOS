@@ -127,10 +127,34 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate{
             let alertView = UIAlertView()
             alertView.delegate = self
             alertView.title = "清除缓存"
-            alertView.message = "确定要清除缓存?"
+            alertView.message = "熬枯受淡金风科技啊爽快点积分卡束带结发空就按迪斯科"
             alertView.addButtonWithTitle("取消")
             alertView.addButtonWithTitle("确定")
+            alertView.addButtonWithTitle("A")
+            alertView.addButtonWithTitle("B")
+            alertView.addButtonWithTitle("C")
+            alertView.addButtonWithTitle("D")
+            alertView.addButtonWithTitle("E")
+            alertView.addButtonWithTitle("F")
+            alertView.addButtonWithTitle("G")
+            alertView.addButtonWithTitle("H")
+            alertView.addButtonWithTitle("1")
+            alertView.addButtonWithTitle("2")
+            alertView.addButtonWithTitle("3")
+            alertView.addButtonWithTitle("4")
+            alertView.addButtonWithTitle("5")
+            alertView.addButtonWithTitle("6")
+            alertView.addButtonWithTitle("7")
+            alertView.addButtonWithTitle("8")
             alertView.show()
+        }
+        
+        if(indexPath.row == 2)
+        {
+            let alert = XCommonAlert(title: nil, message: nil, expand: nil, buttons: "取消","确定","A","B","C","D","a","b","c","d","e","1","2","3","4","5")
+            
+            alert.show()
+
         }
         
         if(indexPath.row == 3)

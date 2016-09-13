@@ -300,6 +300,7 @@
 		17C7FBBE1D869F3C00A3EFCC /* GWListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */; };
 		17C7FBC01D869FDD00A3EFCC /* GWListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */; };
 		17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */; };
+		17C909571D878FBE0051A2F2 /* XCommonAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C909561D878FBE0051A2F2 /* XCommonAlert.swift */; };
 		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -648,6 +649,7 @@
 		17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GWListCell.xib; sourceTree = "<group>"; };
 		17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWListVC.swift; sourceTree = "<group>"; };
 		17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GangweiModel.swift; sourceTree = "<group>"; };
+		17C909561D878FBE0051A2F2 /* XCommonAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCommonAlert.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1415,6 +1417,7 @@
 				17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */,
 				17C7FBBB1D869F3C00A3EFCC /* GWListCell.swift */,
 				17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */,
+				17C909561D878FBE0051A2F2 /* XCommonAlert.swift */,
 			);
 			name = yuangong;
 			sourceTree = "<group>";
@@ -1804,6 +1807,7 @@
 				17C7FA8E1D8682C500A3EFCC /* ConstraintRelation.swift in Sources */,
 				17C7FA831D8682C500A3EFCC /* postCommet.m in Sources */,
 				17C7FA8C1D8682C500A3EFCC /* ConstraintItem.swift in Sources */,
+				17C909571D878FBE0051A2F2 /* XCommonAlert.swift in Sources */,
 				17C7FA1E1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				17C7FA4B1D8682C500A3EFCC /* DataCache.swift in Sources */,
 				17C7FAE11D8682DF00A3EFCC /* MyOrderCancelCell.swift in Sources */,

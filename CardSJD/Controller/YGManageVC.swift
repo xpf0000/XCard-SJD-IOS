@@ -18,6 +18,11 @@ class YGManageVC: UIViewController {
         super.viewDidLoad()
         self.addBackButton()
         
+        self.addNvButton(false, img: "add.png", title: nil) {[weak self] (btn) in
+            
+            self?.showAlert()
+        }
+        
         self.title = "员工管理"
         self.view.backgroundColor = APPBGColor
         
@@ -69,6 +74,23 @@ class YGManageVC: UIViewController {
         
 
         
+    }
+    
+    func showAlert()
+    {
+        
+        
+        let alert = XCommonAlert(title: "请输入岗位名称", message: "不输入也可以 哈哈哈", expand: { [weak self]() -> UIView in
+            
+            let view = UIView()
+            view.backgroundColor = APPBtnGrayColor
+            view.frame = CGRectMake(10, 0, XAlertWidth-20, 50)
+            
+            return view
+            
+            }, buttons: nil)
+        
+        alert.show()
     }
 
     override func didReceiveMemoryWarning() {

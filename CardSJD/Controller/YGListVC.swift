@@ -21,7 +21,7 @@ class YGListVC: UIViewController,UITableViewDelegate {
         
         table.frame = CGRectMake(0, 0, swidth, sheight-64-40)
         table.backgroundColor = APPBGColor
-        table.cellHeight = 200
+        table.cellHeight = 90
         
         //        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
         //
