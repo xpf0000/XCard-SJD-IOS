@@ -34,6 +34,23 @@ class GWListCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        if selected
+        {
+            self.deSelect()
+            
+            let alert = XCommonAlert(title: nil, message: nil, buttons: "修改岗位名称","修改岗位权限","取消")
+            
+            alert.show()
+            
+            alert.click({[weak self] (index) -> Bool in
+                
+                
+                return true
+            })
+            
+            
+        }
 
     }
     

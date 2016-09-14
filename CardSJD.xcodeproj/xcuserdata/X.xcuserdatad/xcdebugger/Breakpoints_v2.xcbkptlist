@@ -137,28 +137,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CardSJD/Controller/YGManageVC.swift"
-            timestampString = "495431799.583846"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "showAlert()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CardSJD/Controller/XCommonAlert.swift"
-            timestampString = "495454718.896352"
+            timestampString = "495510851.346668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "initView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardSJD/Controller/XCommonAlert.swift"
-            timestampString = "495454718.896352"
+            timestampString = "495510851.346668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "initView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardSJD/Controller/XCommonAlert.swift"
-            timestampString = "495454718.896352"
+            timestampString = "495510851.346668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "init(title:message:buttons:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardSJD/Controller/XCommonAlert.swift"
-            timestampString = "495454718.896352"
+            timestampString = "495508248.361269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "initView()"
             landmarkType = "5">
             <Locations>
@@ -250,12 +234,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardSJD/Controller/XCommonAlert.swift"
-            timestampString = "495454718.896352"
+            timestampString = "495508248.361269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "initView()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CardSJD/common/extension/UITextField.swift"
+            timestampString = "495514488.197867"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "autoReturn()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

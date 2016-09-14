@@ -23,7 +23,7 @@ class GWListVC: UIViewController {
         
         table.frame = CGRectMake(0, 0, swidth, sheight-64-40)
         table.backgroundColor = APPBGColor
-        table.cellHeight = 70
+        table.cellHeight = 60
         
         //        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
         //

@@ -18,16 +18,23 @@ public enum XAlertStyle : Int {
 }
 
 typealias XAlertExpandBlock = ()->UIView
+typealias XAlertClickBlock = (Int)->Bool
 
 let XAlertWidth = swidth * 0.85
 
 class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
     
     private var expandViewBlock:XAlertExpandBlock?
+    private var clickBlock:XAlertClickBlock?
+    
+    func click(b:XAlertClickBlock)
+    {
+        clickBlock = b
+    }
 
     var type:XAlertStyle = .Alert
     
-    var mainView:UIView!
+    var mainView = UIToolbar()
     
     var btnArr:[String] = []
     
@@ -57,56 +64,17 @@ class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
     
     func initSelf()
     {
-        
-//        if #available(iOS 8.0, *) {
-//            mainView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)) as UIVisualEffectView
-//            
-//            (mainView as! UIVisualEffectView).backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.1)
-//            
-//        } else {
-//            mainView = UIToolbar()
-//            (mainView as! UIToolbar).barTintColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.1)
-//            (mainView as! UIToolbar).translucent = true
-//            //        mainView.layer.shadowColor = UIColor.clearColor().CGColor
-//            (mainView as! UIToolbar).barStyle = .BlackTranslucent
-//        }
-        
-//        mainView = AMBlurView(frame: CGRectZero)
-//        
-//        (mainView as! AMBlurView).blurTintColor = UIColor.whiteColor()
-        
-        mainView = FXBlurView(frame: CGRectZero)
-        //(mainView as! FXBlurView).blurEnabled = true
-        (mainView as! FXBlurView).dynamic = true
-        (mainView as! FXBlurView).blurRadius = 40
-        (mainView as! FXBlurView).backgroundColor = UIColor.whiteColor()
-        
-        
-        
         self.frame = CGRectMake(0, 0, swidth, sheight)
         self.backgroundColor = bgColor
-        
-        
-//        mainView.opaque = false;
-//        mainView.backgroundColor = UIColor.clearColor()
-//        mainView.clearsContextBeforeDrawing = true;
-//        
-        
-        
-       
-        
-//
-//        
-//        self.mainView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        //mainView.tintColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
         self.addSubview(mainView)
         
         mainView.frame = CGRectMake((swidth-XAlertWidth)*0.5, 0, XAlertWidth, 100)
-//        mainView.layer.masksToBounds = true
-//        mainView.layer.cornerRadius = 15.0
-        
+        mainView.barTintColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        mainView.translucent = true
+        mainView.layer.shadowColor = UIColor.clearColor().CGColor
+        mainView.barStyle = .BlackTranslucent
+        mainView.layer.masksToBounds = true
+        mainView.layer.cornerRadius = 15.0
         
     }
     
@@ -176,7 +144,7 @@ class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
         if btnArr.count == 2
         {
             let btnBG=UIView()
-            btnBG.backgroundColor = sepColor
+            btnBG.backgroundColor = UIColor.clearColor()
             mainView.addSubview(btnBG)
             btnBG.frame = CGRectMake(0, h, XAlertWidth, btnH+lineH)
             
@@ -184,11 +152,12 @@ class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
             
             
             let left = UIButton(type: .Custom)
-            left.frame = CGRectMake(0, lineH, XAlertWidth/2.0, btnH)
+            left.frame = CGRectMake(0, lineH, XAlertWidth/2.0+0.25, btnH)
             left.setTitleColor("007aff".color, forState: .Normal)
             left.setTitle(btnArr[0], forState: .Normal)
             left.titleLabel?.font = UIFont.systemFontOfSize(17.0)
-            left.setBackgroundImage(UIColor.whiteColor().image, forState: .Normal)
+            
+            left.setBackgroundImage(UIColor.clearColor().image, forState: .Normal)
             left.setBackgroundImage("eaeaea".color?.image, forState: .Highlighted)
             
             btnBG.addSubview(left)
@@ -196,23 +165,36 @@ class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
             buttonArr.append(left)
             
             let right = UIButton(type: .Custom)
-            right.frame = CGRectMake(XAlertWidth/2.0, lineH, XAlertWidth/2.0, btnH)
+            right.frame = CGRectMake(XAlertWidth/2.0-0.25, lineH, XAlertWidth/2.0+0.25, btnH)
             right.setTitleColor("007aff".color, forState: .Normal)
             right.setTitle(btnArr[1], forState: .Normal)
             right.titleLabel?.font = UIFont.systemFontOfSize(17.0)
-            right.backgroundColor = UIColor.whiteColor()
             
-            right.setBackgroundImage(UIColor.whiteColor().image, forState: .Normal)
+            right.setBackgroundImage(UIColor.clearColor().image, forState: .Normal)
             right.setBackgroundImage("eaeaea".color?.image, forState: .Highlighted)
             
             btnBG.addSubview(right)
             
             buttonArr.append(right)
             
-            let line = UIView()
-            line.backgroundColor = sepColor
-            line.frame = CGRectMake(XAlertWidth/2.0-0.25-SINGLE_LINE_ADJUST_OFFSET, 0, SINGLE_LINE_WIDTH, btnH+0.5)
-            btnBG.addSubview(line)
+            left.layer.masksToBounds = true
+            left.layer.borderColor = sepColor.CGColor
+            left.layer.borderWidth = SINGLE_LINE_WIDTH
+            
+            right.layer.masksToBounds = true
+            right.layer.borderColor = sepColor.CGColor
+            right.layer.borderWidth = SINGLE_LINE_WIDTH
+            
+            
+//            let lineTop = UIView()
+//            lineTop.backgroundColor = sepColor
+//            lineTop.frame = CGRectMake(0, -SINGLE_LINE_ADJUST_OFFSET, XAlertWidth, SINGLE_LINE_WIDTH)
+//            btnBG.addSubview(lineTop)
+//            
+//            let line = UIView()
+//            line.backgroundColor = sepColor
+//            line.frame = CGRectMake(XAlertWidth/2.0-0.25-SINGLE_LINE_ADJUST_OFFSET, 0, SINGLE_LINE_WIDTH, btnH+0.5)
+//            btnBG.addSubview(line)
             
             left.addTarget(self, action: #selector(btnClick(_:)), forControlEvents: .TouchUpInside)
             right.addTarget(self, action: #selector(btnClick(_:)), forControlEvents: .TouchUpInside)
@@ -356,11 +338,21 @@ class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
     @objc
     private func btnClick(sender:UIButton)
     {
-        hide()
+        if let index = buttonArr.indexOf(sender)
+        {
+            hide(index)
+        }
+        
     }
     
-    func hide()
+    func hide(index:Int)
     {
+        if clickBlock?(index) == false
+        {
+            return
+        }
+        
+        
         UIView.animateWithDuration(0.3, animations: {
             
             self.alpha = 0.0
@@ -424,7 +416,7 @@ class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        hide()
+        hide(indexPath.row-1)
         
     }
     
@@ -490,42 +482,5 @@ class XCommonAlert: UIView ,UITableViewDelegate,UITableViewDataSource{
     {
         print("XCommonAlert deinit !!!!!!!!!!!")
     }
-    
-    private class ToolBar:UIAlertView
-    {
-        
-        private override func show() {
-            super.show()
-            
-            
-        }
-        
-        
-        convenience init()
-        {
-            self.init(frame:CGRectZero)
-        }
-        
-        override init(frame: CGRect) {
-            
-            super.init(frame: frame)
-            
-            self.opaque = false;
-            self.backgroundColor = UIColor.clearColor()
-            self.clearsContextBeforeDrawing = true;
-        }
-        
-        
-        
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            
-            self.opaque = false;
-            self.backgroundColor = UIColor.clearColor()
-            self.clearsContextBeforeDrawing = true;
-            
-        }
-    }
-    
     
 }

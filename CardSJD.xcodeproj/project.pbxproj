@@ -21,6 +21,7 @@
 		179C208C1D6175A70087C33A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208B1D6175A70087C33A /* Foundation.framework */; };
 		179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208D1D6175B30087C33A /* UIKit.framework */; };
 		179C20901D6175C40087C33A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208F1D6175C40087C33A /* libz.tbd */; };
+		17C447801D8929D900B63107 /* AddYGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4477F1D8929D900B63107 /* AddYGVC.swift */; };
 		17C7FA031D8682C400A3EFCC /* AGImagePickerController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F92D1D8682C400A3EFCC /* AGImagePickerController+Helper.m */; };
 		17C7FA041D8682C400A3EFCC /* AGImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17C7F92E1D8682C400A3EFCC /* AGImagePickerController.bundle */; };
 		17C7FA051D8682C400A3EFCC /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9301D8682C400A3EFCC /* AGImagePickerController.m */; };
@@ -339,6 +340,7 @@
 		179C208B1D6175A70087C33A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		179C208D1D6175B30087C33A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		179C208F1D6175C40087C33A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		17C4477F1D8929D900B63107 /* AddYGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYGVC.swift; sourceTree = "<group>"; };
 		17C7F92C1D8682C400A3EFCC /* AGImagePickerController+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AGImagePickerController+Helper.h"; sourceTree = "<group>"; };
 		17C7F92D1D8682C400A3EFCC /* AGImagePickerController+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AGImagePickerController+Helper.m"; sourceTree = "<group>"; };
 		17C7F92E1D8682C400A3EFCC /* AGImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AGImagePickerController.bundle; sourceTree = "<group>"; };
@@ -649,7 +651,7 @@
 		17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GWListCell.xib; sourceTree = "<group>"; };
 		17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWListVC.swift; sourceTree = "<group>"; };
 		17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GangweiModel.swift; sourceTree = "<group>"; };
-		17C909561D878FBE0051A2F2 /* XCommonAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCommonAlert.swift; sourceTree = "<group>"; };
+		17C909561D878FBE0051A2F2 /* XCommonAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCommonAlert.swift; path = ../../Controller/XCommonAlert.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -811,6 +813,7 @@
 				17C7F9831D8682C400A3EFCC /* XVerifyButton.swift */,
 				17C7F9841D8682C400A3EFCC /* XWaitingView.swift */,
 				17C7F9851D8682C400A3EFCC /* XWebView.swift */,
+				17C909561D878FBE0051A2F2 /* XCommonAlert.swift */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -1417,7 +1420,7 @@
 				17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */,
 				17C7FBBB1D869F3C00A3EFCC /* GWListCell.swift */,
 				17C7FBBC1D869F3C00A3EFCC /* GWListCell.xib */,
-				17C909561D878FBE0051A2F2 /* XCommonAlert.swift */,
+				17C4477F1D8929D900B63107 /* AddYGVC.swift */,
 			);
 			name = yuangong;
 			sourceTree = "<group>";
@@ -1750,6 +1753,7 @@
 				17C7FAD11D8682DF00A3EFCC /* BreakRecordModel.swift in Sources */,
 				17C7FA4A1D8682C500A3EFCC /* XWebView.swift in Sources */,
 				17C7FAE61D8682DF00A3EFCC /* MyOrderEndedCell.swift in Sources */,
+				17C447801D8929D900B63107 /* AddYGVC.swift in Sources */,
 				17C7FA751D8682C500A3EFCC /* XImageUtil.swift in Sources */,
 				17C7FBA21D86880500A3EFCC /* LocationShareModel.m in Sources */,
 				17C7FA191D8682C400A3EFCC /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,

@@ -78,19 +78,56 @@ class YGManageVC: UIViewController {
     
     func showAlert()
     {
+        if menu.selectIndex == 0 {
         
-        
-        let alert = XCommonAlert(title: "请输入岗位名称", message: "不输入也可以 哈哈哈", expand: { [weak self]() -> UIView in
+            let vc = "AddYGVC".VC("Main")
+            self.navigationController?.pushViewController(vc, animated: true)
             
-            let view = UIView()
-            view.backgroundColor = APPBtnGrayColor
-            view.frame = CGRectMake(10, 0, XAlertWidth-20, 50)
+            return
+        
+        }
+        
+        let text = UITextField()
+        text.frame = CGRectMake(10, 10, XAlertWidth-20, 50-SINGLE_LINE_WIDTH)
+        text.placeholder = "输入点什么吧"
+        text.textAlignment = .Center
+        text.addEndButton()
+        text.autoReturn()
+        
+        let view = UIView()
+        view.frame = CGRectMake(0, 0, XAlertWidth, 60)
+        
+        let line = UIView()
+        line.frame = CGRectMake(0, 10-SINGLE_LINE_ADJUST_OFFSET, XAlertWidth, SINGLE_LINE_WIDTH)
+        line.backgroundColor = "dadade".color
+        
+        view.addSubview(line)
+        view.addSubview(text)
+        
+        
+        let alert = XCommonAlert(title: "请输入岗位名称", message: nil, expand: ({
+            ()->UIView in
+            
             
             return view
             
-            }, buttons: nil)
+        }), buttons: "取消","确定")
+        
+        alert.click({ [weak self](index) -> Bool in
+            
+            print("点击了 \(index)")
+            
+            if index == 1 && !text.checkNull() {return false}
+            
+            text.endEdit()
+            
+            return true
+            
+            })
         
         alert.show()
+        
+        text.autoHeightOpen(44.0, moveView: alert.mainView)
     }
 
     override func didReceiveMemoryWarning() {

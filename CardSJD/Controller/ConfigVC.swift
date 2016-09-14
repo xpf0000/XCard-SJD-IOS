@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfigVC: UITableViewController ,UIAlertViewDelegate{
+class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
     
     @IBOutlet var logoutButton: UIButton!
     
@@ -151,9 +151,8 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate{
         
         if(indexPath.row == 2)
         {
-            let alert = XCommonAlert(title: nil, message: nil, expand: nil, buttons: "取消","确定","A","B","C","D","a","b","c","d","e","1","2","3","4","5")
+
             
-            alert.show()
 
         }
         
@@ -170,6 +169,13 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate{
         }
         
     }
+    
+    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        
+//        return true
+//    }
+    
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         
