@@ -22,6 +22,7 @@
 		179C208C1D6175A70087C33A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208B1D6175A70087C33A /* Foundation.framework */; };
 		179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208D1D6175B30087C33A /* UIKit.framework */; };
 		179C20901D6175C40087C33A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208F1D6175C40087C33A /* libz.tbd */; };
+		17A33A081D8FF57E007650A2 /* TopUpManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */; };
 		17C447801D8929D900B63107 /* AddYGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4477F1D8929D900B63107 /* AddYGVC.swift */; };
 		17C7FA101D8682C400A3EFCC /* HtmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9461D8682C400A3EFCC /* HtmlVC.swift */; };
 		17C7FA111D8682C400A3EFCC /* HtmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9471D8682C400A3EFCC /* HtmlView.swift */; };
@@ -294,6 +295,7 @@
 		17EFD9A31D8F96C800E59478 /* arrow02_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A21D8F96C800E59478 /* arrow02_w.png */; };
 		17EFD9A51D8F99D400E59478 /* MemberInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */; };
 		17EFD9A71D8FBAF300E59478 /* right_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A61D8FBAF300E59478 /* right_more.png */; };
+		5783CA04DB4FD66BD706B98D /* Pods_CardSJD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CB7CC4AF2282230C7EF0B0 /* Pods_CardSJD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -332,6 +334,7 @@
 		179C208B1D6175A70087C33A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		179C208D1D6175B30087C33A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		179C208F1D6175C40087C33A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopUpManageVC.swift; sourceTree = "<group>"; };
 		17C4477F1D8929D900B63107 /* AddYGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYGVC.swift; sourceTree = "<group>"; };
 		17C7F9461D8682C400A3EFCC /* HtmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlVC.swift; sourceTree = "<group>"; };
 		17C7F9471D8682C400A3EFCC /* HtmlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlView.swift; sourceTree = "<group>"; };
@@ -622,6 +625,9 @@
 		17EFD9A21D8F96C800E59478 /* arrow02_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow02_w.png; sourceTree = "<group>"; };
 		17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoVC.swift; sourceTree = "<group>"; };
 		17EFD9A61D8FBAF300E59478 /* right_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_more.png; sourceTree = "<group>"; };
+		26F03C0EDBC96552F6542173 /* Pods-CardSJD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSJD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD.release.xcconfig"; sourceTree = "<group>"; };
+		45CB7CC4AF2282230C7EF0B0 /* Pods_CardSJD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardSJD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B2312B6FA5EF289833D6B3 /* Pods-CardSJD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSJD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -649,6 +655,7 @@
 				179C20761D61725F0087C33A /* OpenGLES.framework in Frameworks */,
 				179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */,
 				179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */,
+				5783CA04DB4FD66BD706B98D /* Pods_CardSJD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +686,8 @@
 				179249AB1D5B7613002E5529 /* CradSJDTests */,
 				179249B61D5B7613002E5529 /* CradSJDUITests */,
 				179249951D5B7613002E5529 /* Products */,
+				99FB745FAF0AD243D7793798 /* Pods */,
+				250756BE081F5682F991E128 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1347,6 +1356,7 @@
 				17CEF30C1D8F72D60018BBAC /* CardTopupVC.swift */,
 				17CEF30E1D8F81FE0018BBAC /* CardTopupDoVC.swift */,
 				17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */,
+				17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */,
 			);
 			name = card;
 			sourceTree = "<group>";
@@ -1421,6 +1431,23 @@
 			name = lib;
 			sourceTree = "<group>";
 		};
+		250756BE081F5682F991E128 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45CB7CC4AF2282230C7EF0B0 /* Pods_CardSJD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99FB745FAF0AD243D7793798 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93B2312B6FA5EF289833D6B3 /* Pods-CardSJD.debug.xcconfig */,
+				26F03C0EDBC96552F6542173 /* Pods-CardSJD.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1428,9 +1455,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 179249BC1D5B7613002E5529 /* Build configuration list for PBXNativeTarget "CardSJD" */;
 			buildPhases = (
+				441FFC894A060B8A23F5193C /* [CP] Check Pods Manifest.lock */,
 				179249901D5B7613002E5529 /* Sources */,
 				179249911D5B7613002E5529 /* Frameworks */,
 				179249921D5B7613002E5529 /* Resources */,
+				EB5C147D39E9FBD89479F1E3 /* [CP] Embed Pods Frameworks */,
+				06CF4904FA2A7B159FFF588B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1630,6 +1660,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06CF4904FA2A7B159FFF588B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		441FFC894A060B8A23F5193C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB5C147D39E9FBD89479F1E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		179249901D5B7613002E5529 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1738,6 +1816,7 @@
 				17CEF3001D8F6C4E0018BBAC /* XPhotoHandle.swift in Sources */,
 				17C7FA971D8682C500A3EFCC /* XDownLoadManager.swift in Sources */,
 				17C7FA131D8682C400A3EFCC /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				17A33A081D8FF57E007650A2 /* TopUpManageVC.swift in Sources */,
 				17C7FAFA1D8682DF00A3EFCC /* YGManageVC.swift in Sources */,
 				17C7FA611D8682C500A3EFCC /* Reflect+Convert.swift in Sources */,
 				17C7FA711D8682C500A3EFCC /* XImageCache.swift in Sources */,
@@ -1960,6 +2039,7 @@
 		};
 		179249BD1D5B7613002E5529 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93B2312B6FA5EF289833D6B3 /* Pods-CardSJD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1997,6 +2077,7 @@
 		};
 		179249BE1D5B7613002E5529 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F03C0EDBC96552F6542173 /* Pods-CardSJD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
