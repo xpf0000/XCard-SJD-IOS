@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1711DA061D8FBEBC00058880 /* XAlertListMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */; };
 		179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20711D61724D0087C33A /* CoreLocation.framework */; };
 		179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20731D6172580087C33A /* QuartzCore.framework */; };
 		179C20761D61725F0087C33A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20751D61725F0087C33A /* OpenGLES.framework */; };
@@ -313,6 +314,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAlertListMenu.swift; sourceTree = "<group>"; };
 		179249941D5B7613002E5529 /* CardSJD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSJD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179249A81D5B7613002E5529 /* CardSJD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSJD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		179249B31D5B7613002E5529 /* CardSJD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSJD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -777,6 +779,7 @@
 				17C7F9841D8682C400A3EFCC /* XWaitingView.swift */,
 				17C7F9851D8682C400A3EFCC /* XWebView.swift */,
 				17C909561D878FBE0051A2F2 /* XCommonAlert.swift */,
+				1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -1676,6 +1679,7 @@
 				17C7FA6C1D8682C500A3EFCC /* Reach.swift in Sources */,
 				17C7FAD41D8682DF00A3EFCC /* ConfigVC.swift in Sources */,
 				17C7FA9C1D8682C500A3EFCC /* XHorizontalMainView.swift in Sources */,
+				1711DA061D8FBEBC00058880 /* XAlertListMenu.swift in Sources */,
 				17C7FA941D8682C500A3EFCC /* ViewController+SnapKit.swift in Sources */,
 				17C7FBB61D869BAC00A3EFCC /* PowerModel.swift in Sources */,
 				17C7FA841D8682C500A3EFCC /* SkyRadiusView.m in Sources */,

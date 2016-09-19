@@ -171,6 +171,13 @@ extension UIView
     {
         self.addSubview(XWaitingView.Share())
     }
+    
+    var windowFrame:CGRect?
+    {
+        let frame = self.superview?.convertRect(self.frame, toView: UIApplication.sharedApplication().keyWindow)
+        
+        return frame
+    }
 
     //旋转 时间 角度
     func revolve(time:NSTimeInterval,angle:CGFloat)
@@ -291,6 +298,105 @@ extension UIView
         self.layer.addAnimation(animation, forKey: nil)
         
     }
+    
+    func bubbleAnimation(dur:NSTimeInterval,delay:NSTimeInterval)
+    {
+        
+        self.layer.removeAnimationForKey("bubble")
+        
+        let  animation = CAKeyframeAnimation(keyPath: "transform")
+        
+        animation.duration = dur;
+        animation.beginTime = CACurrentMediaTime()+delay
+        animation.removedOnCompletion = true;
+        
+        animation.fillMode = kCAFillModeBackwards;
+        
+        var values : Array<AnyObject> = []
+        values.append(NSValue(CATransform3D: CATransform3DMakeScale(0.0, 0.0, 0.0)))
+        values.append(NSValue(CATransform3D: CATransform3DMakeScale(1.3, 1.3, 1.3)))
+        values.append(NSValue(CATransform3D: CATransform3DMakeScale(0.9, 0.9, 0.9)))
+        values.append(NSValue(CATransform3D: CATransform3DMakeScale(1.0, 1.0, 1.0)))
+        
+        animation.values = values;
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.layer.addAnimation(animation, forKey: "bubble")
+        
+    }
+    
+    
+    func rightToLeftAnimation(dur:NSTimeInterval,delay:NSTimeInterval)
+    {
+        
+        self.layer.removeAnimationForKey("RightToLeft")
+        
+        let  animation = CAKeyframeAnimation(keyPath: "transform")
+        
+        animation.duration = dur;
+        animation.beginTime = CACurrentMediaTime()+delay
+        animation.removedOnCompletion = true;
+        
+        animation.fillMode = kCAFillModeBackwards;
+        
+        let values = [
+        NSValue.init(CATransform3D: CATransform3DMakeTranslation(self.layer.bounds.size.width, 0, 0)),
+        NSValue.init(CATransform3D: CATransform3DMakeTranslation(-20, 0, 0)),
+        NSValue.init(CATransform3D: CATransform3DMakeTranslation(10, 0, 0)),
+        NSValue.init(CATransform3D: CATransform3DMakeTranslation(0, 0, 0))
+        ]
+
+        animation.values = values;
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.layer.addAnimation(animation, forKey: "RightToLeft")
+        
+    }
+    
+    func leftToRightAnimation(dur:NSTimeInterval,delay:NSTimeInterval)
+    {
+        
+        self.layer.removeAnimationForKey("leftToRight")
+        
+        let  animation = CAKeyframeAnimation(keyPath: "transform")
+        
+        animation.duration = dur;
+        animation.beginTime = CACurrentMediaTime()+delay
+        animation.removedOnCompletion = true;
+        
+        animation.fillMode = kCAFillModeBackwards;
+        
+        let values = [
+            NSValue.init(CATransform3D: CATransform3DMakeTranslation(-self.layer.bounds.size.width, 0, 0)),
+            NSValue.init(CATransform3D: CATransform3DMakeTranslation(20, 0, 0)),
+            NSValue.init(CATransform3D: CATransform3DMakeTranslation(-10, 0, 0)),
+            NSValue.init(CATransform3D: CATransform3DMakeTranslation(0, 0, 0))
+        ]
+        
+        animation.values = values;
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.layer.addAnimation(animation, forKey: "leftToRight")
+        
+    }
+    
+    func topToBottomAnimation(dur:NSTimeInterval,delay:NSTimeInterval)
+    {
+        self.layer.masksToBounds = true
+        self.clipsToBounds = true
+        let h = self.layer.bounds.size.height
+        self.frame.size.height = 0
+        UIView.animateWithDuration(dur, delay: delay, options: .CurveLinear, animations: { 
+            
+            self.frame.size.height = h
+            
+            }) { (end) in
+                
+                
+        }
+        
+    }
+
+    
+    
+    
     
     func drawCornerRadius(rect:CGRect)
     {

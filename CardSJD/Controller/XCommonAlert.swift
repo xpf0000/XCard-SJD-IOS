@@ -17,6 +17,7 @@ public enum XAlertStyle : Int {
     case Alert
 }
 
+
 typealias XAlertExpandBlock = ()->UIView
 typealias XAlertClickBlock = (Int)->Bool
 

@@ -36,6 +36,36 @@ class MemberInfoVC: UITableViewController {
     
     var hArr:[CGFloat] = [100, 12,100,12,50,0]
     
+    func showMenu(btn:UIButton)
+    {
+        let menu = XAlertListMenu()
+        menu.cellHeight = 50.0
+        menu.alertWidth = swidth * 0.4
+        menu.animation = .RightFlyIn
+        let frame = btn.windowFrame
+        var bg = CGPointZero
+        if let f = frame
+        {
+            bg = f.origin
+            bg.x = SW-menu.alertWidth
+            bg.y = f.origin.y+f.size.height
+        }
+        
+        var arr = ["领卡","编辑资料","删除"]
+        
+        menu.block({[weak self] (index, cell) in
+            if self == nil {return}
+            cell.textLabel?.text = arr[index]
+            cell.textLabel?.font = UIFont.systemFontOfSize(15.0)
+            
+            }) { (index) in
+                
+                print(index)
+        }
+        
+        menu.beginPoint = bg
+        menu.show()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +73,7 @@ class MemberInfoVC: UITableViewController {
         self.title="会员详情"
         
         self.addNvButton(false, img: "right_more.png", title: nil) {[weak self] (btn) in
-            
+            self?.showMenu(btn)
         }
         
         line.backgroundColor = tableView.separatorColor
