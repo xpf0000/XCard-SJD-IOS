@@ -297,6 +297,10 @@
 		17CEF3031D8F6C4E0018BBAC /* XPhotoToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F71D8F6C4E0018BBAC /* XPhotoToolbar.swift */; };
 		17CEF3041D8F6C4E0018BBAC /* XPhotoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F81D8F6C4E0018BBAC /* XPhotoUtil.swift */; };
 		17CEF3051D8F6C4E0018BBAC /* XZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F91D8F6C4E0018BBAC /* XZoomImageView.swift */; };
+		17CEF3081D8F6FBA0018BBAC /* CardTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3061D8F6FBA0018BBAC /* CardTypeCell.swift */; };
+		17CEF3091D8F6FBA0018BBAC /* CardTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CEF3071D8F6FBA0018BBAC /* CardTypeCell.xib */; };
+		17CEF30B1D8F70D80018BBAC /* CardTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF30A1D8F70D80018BBAC /* CardTypeModel.swift */; };
+		17CEF30D1D8F72D60018BBAC /* CardTopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF30C1D8F72D60018BBAC /* CardTopupVC.swift */; };
 		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -629,6 +633,10 @@
 		17CEF2F71D8F6C4E0018BBAC /* XPhotoToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoToolbar.swift; sourceTree = "<group>"; };
 		17CEF2F81D8F6C4E0018BBAC /* XPhotoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoUtil.swift; sourceTree = "<group>"; };
 		17CEF2F91D8F6C4E0018BBAC /* XZoomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZoomImageView.swift; sourceTree = "<group>"; };
+		17CEF3061D8F6FBA0018BBAC /* CardTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTypeCell.swift; sourceTree = "<group>"; };
+		17CEF3071D8F6FBA0018BBAC /* CardTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeCell.xib; sourceTree = "<group>"; };
+		17CEF30A1D8F70D80018BBAC /* CardTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTypeModel.swift; sourceTree = "<group>"; };
+		17CEF30C1D8F72D60018BBAC /* CardTopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTopupVC.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1328,6 +1336,7 @@
 			isa = PBXGroup;
 			children = (
 				17C7FAA41D8682DF00A3EFCC /* APPConfig.swift */,
+				17CEF30A1D8F70D80018BBAC /* CardTypeModel.swift */,
 				17C7FAC81D8682DF00A3EFCC /* OrderModel.swift */,
 				17C7FACD1D8682DF00A3EFCC /* UserModel.swift */,
 				17C7FBAD1D86962400A3EFCC /* YuangongModel.swift */,
@@ -1343,6 +1352,9 @@
 			children = (
 				17C7FAC71D8682DF00A3EFCC /* OpenCardVC.swift */,
 				17C7FAA71D8682DF00A3EFCC /* ChooseTypeVC.swift */,
+				17CEF3061D8F6FBA0018BBAC /* CardTypeCell.swift */,
+				17CEF3071D8F6FBA0018BBAC /* CardTypeCell.xib */,
+				17CEF30C1D8F72D60018BBAC /* CardTopupVC.swift */,
 			);
 			name = card;
 			sourceTree = "<group>";
@@ -1605,6 +1617,7 @@
 				17C7FB721D86833D00A3EFCC /* login03.png in Resources */,
 				17C7FB5F1D86833D00A3EFCC /* shop_phone.png in Resources */,
 				17C7FB471D86833D00A3EFCC /* 02首页.jpg in Resources */,
+				17CEF3091D8F6FBA0018BBAC /* CardTypeCell.xib in Resources */,
 				17C7FB4F1D86833D00A3EFCC /* add.png in Resources */,
 				17C7FB6B1D86833D00A3EFCC /* info.png in Resources */,
 				17C7FB641D86833D00A3EFCC /* shop_icon02.png in Resources */,
@@ -1812,6 +1825,7 @@
 				17C7FA6B1D8682C500A3EFCC /* MRZoomScrollView.swift in Sources */,
 				17C7FAD31D8682DF00A3EFCC /* ChooseTypeVC.swift in Sources */,
 				17C7FAEC1D8682DF00A3EFCC /* MyOrderSendingInfoVC.swift in Sources */,
+				17CEF30D1D8F72D60018BBAC /* CardTopupVC.swift in Sources */,
 				17C7FA2B1D8682C400A3EFCC /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				17C7FA121D8682C400A3EFCC /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				17C7FA9A1D8682C500A3EFCC /* XHttpHandle.swift in Sources */,
@@ -1819,10 +1833,12 @@
 				17C7FA991D8682C500A3EFCC /* XCollectionView.swift in Sources */,
 				17CEF3051D8F6C4E0018BBAC /* XZoomImageView.swift in Sources */,
 				17CEF3021D8F6C4E0018BBAC /* XPhotoPicker.swift in Sources */,
+				17CEF3081D8F6FBA0018BBAC /* CardTypeCell.swift in Sources */,
 				17C7FA281D8682C400A3EFCC /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				17C7FA6E1D8682C500A3EFCC /* UIImage+WebP.m in Sources */,
 				17C7FA881D8682C500A3EFCC /* Regex.swift in Sources */,
 				17CEF2FE1D8F6C4E0018BBAC /* XPhotoChooseCell.swift in Sources */,
+				17CEF30B1D8F70D80018BBAC /* CardTypeModel.swift in Sources */,
 				17C7FA201D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				17C7FADA1D8682DF00A3EFCC /* HomeTopCell.swift in Sources */,
 				17CEF2FC1D8F6C4E0018BBAC /* XCamera.swift in Sources */,

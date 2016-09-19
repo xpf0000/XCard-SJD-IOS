@@ -230,6 +230,10 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             case 0:
                 let vc = "OpenCardVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 2:
+                let vc = "CardTopupVC".VC("Main")
+                self.navigationController?.pushViewController(vc, animated: true)
             default:
                 ""
             }
