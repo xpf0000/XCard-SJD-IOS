@@ -242,7 +242,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             
             switch indexPath.row {
             case 0:
-                let vc = "LoginVC".VC("Main")
+                let vc = "MemberListVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
             case 4:
                 let vc = UserMessageVC()

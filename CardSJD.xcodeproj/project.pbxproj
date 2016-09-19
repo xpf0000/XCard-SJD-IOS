@@ -285,7 +285,14 @@
 		17CEF3111D8F85310018BBAC /* CardConsumeDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */; };
 		17CEF3131D8F87A80018BBAC /* OpenCardInputTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3121D8F87A80018BBAC /* OpenCardInputTableVC.swift */; };
 		17CEF3151D8F88850018BBAC /* OpenCardInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3141D8F88850018BBAC /* OpenCardInputVC.swift */; };
+		17CEF3191D8F8D060018BBAC /* MemberListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3171D8F8D050018BBAC /* MemberListCell.swift */; };
+		17CEF31A1D8F8D060018BBAC /* MemberListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CEF3181D8F8D050018BBAC /* MemberListCell.xib */; };
+		17CEF31C1D8F8DBB0018BBAC /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF31B1D8F8DBB0018BBAC /* MemberModel.swift */; };
+		17CEF31E1D8F8E710018BBAC /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF31D1D8F8E710018BBAC /* MemberListVC.swift */; };
 		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
+		17EFD9A31D8F96C800E59478 /* arrow02_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A21D8F96C800E59478 /* arrow02_w.png */; };
+		17EFD9A51D8F99D400E59478 /* MemberInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */; };
+		17EFD9A71D8FBAF300E59478 /* right_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A61D8FBAF300E59478 /* right_more.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -605,7 +612,14 @@
 		17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardConsumeDoVC.swift; sourceTree = "<group>"; };
 		17CEF3121D8F87A80018BBAC /* OpenCardInputTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCardInputTableVC.swift; sourceTree = "<group>"; };
 		17CEF3141D8F88850018BBAC /* OpenCardInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCardInputVC.swift; sourceTree = "<group>"; };
+		17CEF3171D8F8D050018BBAC /* MemberListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListCell.swift; sourceTree = "<group>"; };
+		17CEF3181D8F8D050018BBAC /* MemberListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberListCell.xib; sourceTree = "<group>"; };
+		17CEF31B1D8F8DBB0018BBAC /* MemberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
+		17CEF31D1D8F8E710018BBAC /* MemberListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		17EFD9A21D8F96C800E59478 /* arrow02_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow02_w.png; sourceTree = "<group>"; };
+		17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoVC.swift; sourceTree = "<group>"; };
+		17EFD9A61D8FBAF300E59478 /* right_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_more.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1079,6 +1093,7 @@
 		17C7FAA21D8682DF00A3EFCC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				17CEF3161D8F8CE50018BBAC /* member */,
 				17C7FBA81D868B8400A3EFCC /* card */,
 				17C7FBA51D868AF500A3EFCC /* home */,
 				17C7FBA71D868B3E00A3EFCC /* model */,
@@ -1096,6 +1111,8 @@
 				17C7FB011D86833D00A3EFCC /* 02首页.jpg */,
 				17C7FB021D86833D00A3EFCC /* 3301消费明细.jpg */,
 				17C7FB031D86833D00A3EFCC /* 3701店铺设置.jpg */,
+				17EFD9A21D8F96C800E59478 /* arrow02_w.png */,
+				17EFD9A61D8FBAF300E59478 /* right_more.png */,
 				17C7FB041D86833D00A3EFCC /* 充值管理01 */,
 				17C7FB0A1D86833D00A3EFCC /* 共用01 */,
 				17C7FB191D86833D00A3EFCC /* 办卡充值01 */,
@@ -1310,6 +1327,7 @@
 				17C7FBB51D869BAC00A3EFCC /* PowerModel.swift */,
 				17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */,
 				17C7FAB41D8682DF00A3EFCC /* MessageModel.swift */,
+				17CEF31B1D8F8DBB0018BBAC /* MemberModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1365,6 +1383,17 @@
 				17CEF2F91D8F6C4E0018BBAC /* XZoomImageView.swift */,
 			);
 			path = XPhoto;
+			sourceTree = "<group>";
+		};
+		17CEF3161D8F8CE50018BBAC /* member */ = {
+			isa = PBXGroup;
+			children = (
+				17CEF3171D8F8D050018BBAC /* MemberListCell.swift */,
+				17CEF3181D8F8D050018BBAC /* MemberListCell.xib */,
+				17CEF31D1D8F8E710018BBAC /* MemberListVC.swift */,
+				17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */,
+			);
+			name = member;
 			sourceTree = "<group>";
 		};
 		17EB7C7D1D85742D007C0361 /* lib */ = {
@@ -1504,6 +1533,7 @@
 				17C7FB4E1D86833D00A3EFCC /* Recharge04.png in Resources */,
 				17C7FB6F1D86833D00A3EFCC /* card_type02.png in Resources */,
 				17C7FBBE1D869F3C00A3EFCC /* GWListCell.xib in Resources */,
+				17EFD9A71D8FBAF300E59478 /* right_more.png in Resources */,
 				17C7FB6A1D86833D00A3EFCC /* ac_photo.png in Resources */,
 				17C7FB681D86833D00A3EFCC /* shop_icon06.png in Resources */,
 				17C7FB661D86833D00A3EFCC /* shop_icon04.png in Resources */,
@@ -1519,6 +1549,7 @@
 				17C7FB7D1D86833D00A3EFCC /* index_icon10.png in Resources */,
 				17C7FB691D86833D00A3EFCC /* shop_icon07.png in Resources */,
 				17C7FADF1D8682DF00A3EFCC /* MessageCell.xib in Resources */,
+				17EFD9A31D8F96C800E59478 /* arrow02_w.png in Resources */,
 				17C7FB541D86833D00A3EFCC /* card_type2.png in Resources */,
 				17C7FB5A1D86833D00A3EFCC /* radio02.png in Resources */,
 				17C7FB7F1D86833D00A3EFCC /* index_top01.png in Resources */,
@@ -1529,6 +1560,7 @@
 				17C7FB6D1D86833D00A3EFCC /* system_msg_icon_u.png in Resources */,
 				17C7FB651D86833D00A3EFCC /* shop_icon03.png in Resources */,
 				17C7FBBA1D869BD200A3EFCC /* PowerListCell.xib in Resources */,
+				17CEF31A1D8F8D060018BBAC /* MemberListCell.xib in Resources */,
 				17C7FB8B1D86836F00A3EFCC /* Info.plist in Resources */,
 				17C7FB491D86833D00A3EFCC /* 3701店铺设置.jpg in Resources */,
 				17C7FB501D86833D00A3EFCC /* arrow01.png in Resources */,
@@ -1618,6 +1650,7 @@
 				17C7FA731D8682C500A3EFCC /* XImageGif.swift in Sources */,
 				17C7FA581D8682C500A3EFCC /* UIImage.swift in Sources */,
 				17C7FA601D8682C500A3EFCC /* Reflect+Parse.swift in Sources */,
+				17EFD9A51D8F99D400E59478 /* MemberInfoVC.swift in Sources */,
 				17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */,
 				17C7FACF1D8682DF00A3EFCC /* AboutVC.swift in Sources */,
 				17C7FA1D1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -1648,6 +1681,7 @@
 				17C7FA841D8682C500A3EFCC /* SkyRadiusView.m in Sources */,
 				17C7FA621D8682C500A3EFCC /* Reflect+Class.swift in Sources */,
 				17CEF2FD1D8F6C4E0018BBAC /* XPhotoBrowse.swift in Sources */,
+				17CEF31E1D8F8E710018BBAC /* MemberListVC.swift in Sources */,
 				17C7FA4C1D8682C500A3EFCC /* Preloading.swift in Sources */,
 				17C7FA451D8682C500A3EFCC /* XProgressView.swift in Sources */,
 				17C7FA2D1D8682C400A3EFCC /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
@@ -1726,6 +1760,7 @@
 				17C7FA331D8682C400A3EFCC /* ReactionMenuView.swift in Sources */,
 				17C7FA591D8682C500A3EFCC /* UINavigationController.swift in Sources */,
 				17C7FA9D1D8682C500A3EFCC /* XHorizontalMenuView.swift in Sources */,
+				17CEF31C1D8F8DBB0018BBAC /* MemberModel.swift in Sources */,
 				17CEF30F1D8F81FE0018BBAC /* CardTopupDoVC.swift in Sources */,
 				17C7FA691D8682C500A3EFCC /* XHttpPoolHandle.swift in Sources */,
 				17CEF3151D8F88850018BBAC /* OpenCardInputVC.swift in Sources */,
@@ -1755,6 +1790,7 @@
 				17C7FAD31D8682DF00A3EFCC /* ChooseTypeVC.swift in Sources */,
 				17CEF30D1D8F72D60018BBAC /* CardTopupVC.swift in Sources */,
 				17C7FA2B1D8682C400A3EFCC /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				17CEF3191D8F8D060018BBAC /* MemberListCell.swift in Sources */,
 				17C7FA121D8682C400A3EFCC /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				17C7FA9A1D8682C500A3EFCC /* XHttpHandle.swift in Sources */,
 				17C7FA6A1D8682C500A3EFCC /* XHttpRequest.swift in Sources */,
