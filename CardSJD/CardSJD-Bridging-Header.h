@@ -11,12 +11,6 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
-#import "AGImagePickerController.h"
-#import "AGImagePickerControllerDefines.h"
-#import "AGIPCToolbarItem.h"
-#import "UIButton+AGIPC.h"
-#import "AGIPCGridItem.h"
-
 #import "UIImage+WebP.h"
 #import "AMBlurView.h"
 #import "FXBlurView.h"

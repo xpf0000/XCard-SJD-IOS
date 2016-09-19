@@ -65,17 +65,6 @@ let APPBlackColor = "333333".color!
 let APPMiddleColor = "666666".color!
 let APPGrayColor = "999999".color!
 
-
-func GetPhoto(delegate:XPhotoDelegate?,vc:UIViewController,maxNum:UInt,block:AnyBlock?)
-{
-    XPhotoChoose.Share().vc = vc
-    XPhotoChoose.Share().block = block
-    XPhotoChoose.Share().delegate = delegate
-    XPhotoChoose.Share().maxNum = maxNum
-    UIApplication.sharedApplication().keyWindow?.addSubview(XPhotoChoose.Share())
-}
-
-
 func RemoveWaiting()
 {
     XWaitingView.Share().removeFromSuperview()

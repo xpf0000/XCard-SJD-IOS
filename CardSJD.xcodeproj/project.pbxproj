@@ -22,19 +22,6 @@
 		179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208D1D6175B30087C33A /* UIKit.framework */; };
 		179C20901D6175C40087C33A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208F1D6175C40087C33A /* libz.tbd */; };
 		17C447801D8929D900B63107 /* AddYGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4477F1D8929D900B63107 /* AddYGVC.swift */; };
-		17C7FA031D8682C400A3EFCC /* AGImagePickerController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F92D1D8682C400A3EFCC /* AGImagePickerController+Helper.m */; };
-		17C7FA041D8682C400A3EFCC /* AGImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17C7F92E1D8682C400A3EFCC /* AGImagePickerController.bundle */; };
-		17C7FA051D8682C400A3EFCC /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9301D8682C400A3EFCC /* AGImagePickerController.m */; };
-		17C7FA061D8682C400A3EFCC /* AGImagePreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9331D8682C400A3EFCC /* AGImagePreviewController.m */; };
-		17C7FA071D8682C400A3EFCC /* AGIPCAlbumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9351D8682C400A3EFCC /* AGIPCAlbumsController.m */; };
-		17C7FA081D8682C400A3EFCC /* AGIPCAssetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9371D8682C400A3EFCC /* AGIPCAssetsController.m */; };
-		17C7FA091D8682C400A3EFCC /* AGIPCGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9391D8682C400A3EFCC /* AGIPCGridCell.m */; };
-		17C7FA0A1D8682C400A3EFCC /* AGIPCGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F93B1D8682C400A3EFCC /* AGIPCGridItem.m */; };
-		17C7FA0B1D8682C400A3EFCC /* AGIPCPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F93D1D8682C400A3EFCC /* AGIPCPreviewController.m */; };
-		17C7FA0C1D8682C400A3EFCC /* AGIPCToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F93F1D8682C400A3EFCC /* AGIPCToolbarItem.m */; };
-		17C7FA0D1D8682C400A3EFCC /* AGPreviewScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9411D8682C400A3EFCC /* AGPreviewScrollView.m */; };
-		17C7FA0E1D8682C400A3EFCC /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9431D8682C400A3EFCC /* ALAsset+AGIPC.m */; };
-		17C7FA0F1D8682C400A3EFCC /* UIButton+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9451D8682C400A3EFCC /* UIButton+AGIPC.m */; };
 		17C7FA101D8682C400A3EFCC /* HtmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9461D8682C400A3EFCC /* HtmlVC.swift */; };
 		17C7FA111D8682C400A3EFCC /* HtmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9471D8682C400A3EFCC /* HtmlView.swift */; };
 		17C7FA121D8682C400A3EFCC /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F94A1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallBeat.swift */; };
@@ -79,15 +66,11 @@
 		17C7FA391D8682C400A3EFCC /* XBootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7F9741D8682C400A3EFCC /* XBootView.xib */; };
 		17C7FA3A1D8682C400A3EFCC /* XBuyNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9751D8682C400A3EFCC /* XBuyNumView.swift */; };
 		17C7FA3B1D8682C400A3EFCC /* XBuyNumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7F9761D8682C400A3EFCC /* XBuyNumView.xib */; };
-		17C7FA3C1D8682C400A3EFCC /* XCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9771D8682C400A3EFCC /* XCamera.swift */; };
 		17C7FA3D1D8682C400A3EFCC /* XCornerRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9781D8682C400A3EFCC /* XCornerRadiusTextField.swift */; };
 		17C7FA3E1D8682C400A3EFCC /* XDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9791D8682C400A3EFCC /* XDeleteAlert.swift */; };
 		17C7FA3F1D8682C400A3EFCC /* XDeleteAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7F97A1D8682C400A3EFCC /* XDeleteAlert.xib */; };
 		17C7FA401D8682C400A3EFCC /* XMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F97B1D8682C400A3EFCC /* XMessage.swift */; };
 		17C7FA411D8682C400A3EFCC /* XNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F97C1D8682C400A3EFCC /* XNavigationController.swift */; };
-		17C7FA421D8682C500A3EFCC /* XPhotoChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F97D1D8682C400A3EFCC /* XPhotoChoose.swift */; };
-		17C7FA431D8682C500A3EFCC /* XPhotoChoose.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7F97E1D8682C400A3EFCC /* XPhotoChoose.xib */; };
-		17C7FA441D8682C500A3EFCC /* XPhotoLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F97F1D8682C400A3EFCC /* XPhotoLib.swift */; };
 		17C7FA451D8682C500A3EFCC /* XProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9801D8682C400A3EFCC /* XProgressView.swift */; };
 		17C7FA461D8682C500A3EFCC /* XTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9811D8682C400A3EFCC /* XTextView.swift */; };
 		17C7FA471D8682C500A3EFCC /* XUICollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9821D8682C400A3EFCC /* XUICollectionViewFlowLayout.swift */; };
@@ -302,6 +285,18 @@
 		17C7FBC01D869FDD00A3EFCC /* GWListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */; };
 		17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */; };
 		17C909571D878FBE0051A2F2 /* XCommonAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C909561D878FBE0051A2F2 /* XCommonAlert.swift */; };
+		17CEF2FA1D8F6C4E0018BBAC /* Checkmark-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CEF2EE1D8F6C4E0018BBAC /* Checkmark-0@2x.png */; };
+		17CEF2FB1D8F6C4E0018BBAC /* Checkmark-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CEF2EF1D8F6C4E0018BBAC /* Checkmark-1@2x.png */; };
+		17CEF2FC1D8F6C4E0018BBAC /* XCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F01D8F6C4E0018BBAC /* XCamera.swift */; };
+		17CEF2FD1D8F6C4E0018BBAC /* XPhotoBrowse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F11D8F6C4E0018BBAC /* XPhotoBrowse.swift */; };
+		17CEF2FE1D8F6C4E0018BBAC /* XPhotoChooseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F21D8F6C4E0018BBAC /* XPhotoChooseCell.swift */; };
+		17CEF2FF1D8F6C4E0018BBAC /* XPhotoChooseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F31D8F6C4E0018BBAC /* XPhotoChooseVC.swift */; };
+		17CEF3001D8F6C4E0018BBAC /* XPhotoHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F41D8F6C4E0018BBAC /* XPhotoHandle.swift */; };
+		17CEF3011D8F6C4E0018BBAC /* XPhotoLibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F51D8F6C4E0018BBAC /* XPhotoLibVC.swift */; };
+		17CEF3021D8F6C4E0018BBAC /* XPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F61D8F6C4E0018BBAC /* XPhotoPicker.swift */; };
+		17CEF3031D8F6C4E0018BBAC /* XPhotoToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F71D8F6C4E0018BBAC /* XPhotoToolbar.swift */; };
+		17CEF3041D8F6C4E0018BBAC /* XPhotoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F81D8F6C4E0018BBAC /* XPhotoUtil.swift */; };
+		17CEF3051D8F6C4E0018BBAC /* XZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF2F91D8F6C4E0018BBAC /* XZoomImageView.swift */; };
 		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -341,32 +336,6 @@
 		179C208D1D6175B30087C33A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		179C208F1D6175C40087C33A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		17C4477F1D8929D900B63107 /* AddYGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYGVC.swift; sourceTree = "<group>"; };
-		17C7F92C1D8682C400A3EFCC /* AGImagePickerController+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AGImagePickerController+Helper.h"; sourceTree = "<group>"; };
-		17C7F92D1D8682C400A3EFCC /* AGImagePickerController+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AGImagePickerController+Helper.m"; sourceTree = "<group>"; };
-		17C7F92E1D8682C400A3EFCC /* AGImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AGImagePickerController.bundle; sourceTree = "<group>"; };
-		17C7F92F1D8682C400A3EFCC /* AGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePickerController.h; sourceTree = "<group>"; };
-		17C7F9301D8682C400A3EFCC /* AGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGImagePickerController.m; sourceTree = "<group>"; };
-		17C7F9311D8682C400A3EFCC /* AGImagePickerControllerDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePickerControllerDefines.h; sourceTree = "<group>"; };
-		17C7F9321D8682C400A3EFCC /* AGImagePreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePreviewController.h; sourceTree = "<group>"; };
-		17C7F9331D8682C400A3EFCC /* AGImagePreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGImagePreviewController.m; sourceTree = "<group>"; };
-		17C7F9341D8682C400A3EFCC /* AGIPCAlbumsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCAlbumsController.h; sourceTree = "<group>"; };
-		17C7F9351D8682C400A3EFCC /* AGIPCAlbumsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCAlbumsController.m; sourceTree = "<group>"; };
-		17C7F9361D8682C400A3EFCC /* AGIPCAssetsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCAssetsController.h; sourceTree = "<group>"; };
-		17C7F9371D8682C400A3EFCC /* AGIPCAssetsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCAssetsController.m; sourceTree = "<group>"; };
-		17C7F9381D8682C400A3EFCC /* AGIPCGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCGridCell.h; sourceTree = "<group>"; };
-		17C7F9391D8682C400A3EFCC /* AGIPCGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCGridCell.m; sourceTree = "<group>"; };
-		17C7F93A1D8682C400A3EFCC /* AGIPCGridItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCGridItem.h; sourceTree = "<group>"; };
-		17C7F93B1D8682C400A3EFCC /* AGIPCGridItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCGridItem.m; sourceTree = "<group>"; };
-		17C7F93C1D8682C400A3EFCC /* AGIPCPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCPreviewController.h; sourceTree = "<group>"; };
-		17C7F93D1D8682C400A3EFCC /* AGIPCPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCPreviewController.m; sourceTree = "<group>"; };
-		17C7F93E1D8682C400A3EFCC /* AGIPCToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCToolbarItem.h; sourceTree = "<group>"; };
-		17C7F93F1D8682C400A3EFCC /* AGIPCToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCToolbarItem.m; sourceTree = "<group>"; };
-		17C7F9401D8682C400A3EFCC /* AGPreviewScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPreviewScrollView.h; sourceTree = "<group>"; };
-		17C7F9411D8682C400A3EFCC /* AGPreviewScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPreviewScrollView.m; sourceTree = "<group>"; };
-		17C7F9421D8682C400A3EFCC /* ALAsset+AGIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+AGIPC.h"; sourceTree = "<group>"; };
-		17C7F9431D8682C400A3EFCC /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+AGIPC.m"; sourceTree = "<group>"; };
-		17C7F9441D8682C400A3EFCC /* UIButton+AGIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AGIPC.h"; sourceTree = "<group>"; };
-		17C7F9451D8682C400A3EFCC /* UIButton+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AGIPC.m"; sourceTree = "<group>"; };
 		17C7F9461D8682C400A3EFCC /* HtmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlVC.swift; sourceTree = "<group>"; };
 		17C7F9471D8682C400A3EFCC /* HtmlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlView.swift; sourceTree = "<group>"; };
 		17C7F94A1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
@@ -413,15 +382,11 @@
 		17C7F9741D8682C400A3EFCC /* XBootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBootView.xib; sourceTree = "<group>"; };
 		17C7F9751D8682C400A3EFCC /* XBuyNumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XBuyNumView.swift; sourceTree = "<group>"; };
 		17C7F9761D8682C400A3EFCC /* XBuyNumView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBuyNumView.xib; sourceTree = "<group>"; };
-		17C7F9771D8682C400A3EFCC /* XCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCamera.swift; sourceTree = "<group>"; };
 		17C7F9781D8682C400A3EFCC /* XCornerRadiusTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCornerRadiusTextField.swift; sourceTree = "<group>"; };
 		17C7F9791D8682C400A3EFCC /* XDeleteAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDeleteAlert.swift; sourceTree = "<group>"; };
 		17C7F97A1D8682C400A3EFCC /* XDeleteAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDeleteAlert.xib; sourceTree = "<group>"; };
 		17C7F97B1D8682C400A3EFCC /* XMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMessage.swift; sourceTree = "<group>"; };
 		17C7F97C1D8682C400A3EFCC /* XNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNavigationController.swift; sourceTree = "<group>"; };
-		17C7F97D1D8682C400A3EFCC /* XPhotoChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoChoose.swift; sourceTree = "<group>"; };
-		17C7F97E1D8682C400A3EFCC /* XPhotoChoose.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XPhotoChoose.xib; sourceTree = "<group>"; };
-		17C7F97F1D8682C400A3EFCC /* XPhotoLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoLib.swift; sourceTree = "<group>"; };
 		17C7F9801D8682C400A3EFCC /* XProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XProgressView.swift; sourceTree = "<group>"; };
 		17C7F9811D8682C400A3EFCC /* XTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTextView.swift; sourceTree = "<group>"; };
 		17C7F9821D8682C400A3EFCC /* XUICollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XUICollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -652,6 +617,18 @@
 		17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWListVC.swift; sourceTree = "<group>"; };
 		17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GangweiModel.swift; sourceTree = "<group>"; };
 		17C909561D878FBE0051A2F2 /* XCommonAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCommonAlert.swift; path = ../../Controller/XCommonAlert.swift; sourceTree = "<group>"; };
+		17CEF2EE1D8F6C4E0018BBAC /* Checkmark-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark-0@2x.png"; sourceTree = "<group>"; };
+		17CEF2EF1D8F6C4E0018BBAC /* Checkmark-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark-1@2x.png"; sourceTree = "<group>"; };
+		17CEF2F01D8F6C4E0018BBAC /* XCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCamera.swift; sourceTree = "<group>"; };
+		17CEF2F11D8F6C4E0018BBAC /* XPhotoBrowse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoBrowse.swift; sourceTree = "<group>"; };
+		17CEF2F21D8F6C4E0018BBAC /* XPhotoChooseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoChooseCell.swift; sourceTree = "<group>"; };
+		17CEF2F31D8F6C4E0018BBAC /* XPhotoChooseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoChooseVC.swift; sourceTree = "<group>"; };
+		17CEF2F41D8F6C4E0018BBAC /* XPhotoHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoHandle.swift; sourceTree = "<group>"; };
+		17CEF2F51D8F6C4E0018BBAC /* XPhotoLibVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoLibVC.swift; sourceTree = "<group>"; };
+		17CEF2F61D8F6C4E0018BBAC /* XPhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoPicker.swift; sourceTree = "<group>"; };
+		17CEF2F71D8F6C4E0018BBAC /* XPhotoToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoToolbar.swift; sourceTree = "<group>"; };
+		17CEF2F81D8F6C4E0018BBAC /* XPhotoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoUtil.swift; sourceTree = "<group>"; };
+		17CEF2F91D8F6C4E0018BBAC /* XZoomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZoomImageView.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -758,6 +735,7 @@
 		17C7F9291D8682C400A3EFCC /* common */ = {
 			isa = PBXGroup;
 			children = (
+				17CEF2ED1D8F6C4E0018BBAC /* XPhoto */,
 				17C7FB941D86880500A3EFCC /* Location */,
 				17C7F92A1D8682C400A3EFCC /* Custom Controls */,
 				17C7F9861D8682C400A3EFCC /* DataCache */,
@@ -785,7 +763,6 @@
 		17C7F92A1D8682C400A3EFCC /* Custom Controls */ = {
 			isa = PBXGroup;
 			children = (
-				17C7F92B1D8682C400A3EFCC /* AGImagePickerController */,
 				17C7F9461D8682C400A3EFCC /* HtmlVC.swift */,
 				17C7F9471D8682C400A3EFCC /* HtmlView.swift */,
 				17C7F9481D8682C400A3EFCC /* NVActivityIndicatorView */,
@@ -798,15 +775,11 @@
 				17C7F9741D8682C400A3EFCC /* XBootView.xib */,
 				17C7F9751D8682C400A3EFCC /* XBuyNumView.swift */,
 				17C7F9761D8682C400A3EFCC /* XBuyNumView.xib */,
-				17C7F9771D8682C400A3EFCC /* XCamera.swift */,
 				17C7F9781D8682C400A3EFCC /* XCornerRadiusTextField.swift */,
 				17C7F9791D8682C400A3EFCC /* XDeleteAlert.swift */,
 				17C7F97A1D8682C400A3EFCC /* XDeleteAlert.xib */,
 				17C7F97B1D8682C400A3EFCC /* XMessage.swift */,
 				17C7F97C1D8682C400A3EFCC /* XNavigationController.swift */,
-				17C7F97D1D8682C400A3EFCC /* XPhotoChoose.swift */,
-				17C7F97E1D8682C400A3EFCC /* XPhotoChoose.xib */,
-				17C7F97F1D8682C400A3EFCC /* XPhotoLib.swift */,
 				17C7F9801D8682C400A3EFCC /* XProgressView.swift */,
 				17C7F9811D8682C400A3EFCC /* XTextView.swift */,
 				17C7F9821D8682C400A3EFCC /* XUICollectionViewFlowLayout.swift */,
@@ -816,39 +789,6 @@
 				17C909561D878FBE0051A2F2 /* XCommonAlert.swift */,
 			);
 			path = "Custom Controls";
-			sourceTree = "<group>";
-		};
-		17C7F92B1D8682C400A3EFCC /* AGImagePickerController */ = {
-			isa = PBXGroup;
-			children = (
-				17C7F92C1D8682C400A3EFCC /* AGImagePickerController+Helper.h */,
-				17C7F92D1D8682C400A3EFCC /* AGImagePickerController+Helper.m */,
-				17C7F92E1D8682C400A3EFCC /* AGImagePickerController.bundle */,
-				17C7F92F1D8682C400A3EFCC /* AGImagePickerController.h */,
-				17C7F9301D8682C400A3EFCC /* AGImagePickerController.m */,
-				17C7F9311D8682C400A3EFCC /* AGImagePickerControllerDefines.h */,
-				17C7F9321D8682C400A3EFCC /* AGImagePreviewController.h */,
-				17C7F9331D8682C400A3EFCC /* AGImagePreviewController.m */,
-				17C7F9341D8682C400A3EFCC /* AGIPCAlbumsController.h */,
-				17C7F9351D8682C400A3EFCC /* AGIPCAlbumsController.m */,
-				17C7F9361D8682C400A3EFCC /* AGIPCAssetsController.h */,
-				17C7F9371D8682C400A3EFCC /* AGIPCAssetsController.m */,
-				17C7F9381D8682C400A3EFCC /* AGIPCGridCell.h */,
-				17C7F9391D8682C400A3EFCC /* AGIPCGridCell.m */,
-				17C7F93A1D8682C400A3EFCC /* AGIPCGridItem.h */,
-				17C7F93B1D8682C400A3EFCC /* AGIPCGridItem.m */,
-				17C7F93C1D8682C400A3EFCC /* AGIPCPreviewController.h */,
-				17C7F93D1D8682C400A3EFCC /* AGIPCPreviewController.m */,
-				17C7F93E1D8682C400A3EFCC /* AGIPCToolbarItem.h */,
-				17C7F93F1D8682C400A3EFCC /* AGIPCToolbarItem.m */,
-				17C7F9401D8682C400A3EFCC /* AGPreviewScrollView.h */,
-				17C7F9411D8682C400A3EFCC /* AGPreviewScrollView.m */,
-				17C7F9421D8682C400A3EFCC /* ALAsset+AGIPC.h */,
-				17C7F9431D8682C400A3EFCC /* ALAsset+AGIPC.m */,
-				17C7F9441D8682C400A3EFCC /* UIButton+AGIPC.h */,
-				17C7F9451D8682C400A3EFCC /* UIButton+AGIPC.m */,
-			);
-			path = AGImagePickerController;
 			sourceTree = "<group>";
 		};
 		17C7F9481D8682C400A3EFCC /* NVActivityIndicatorView */ = {
@@ -1452,6 +1392,25 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		17CEF2ED1D8F6C4E0018BBAC /* XPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				17CEF2EE1D8F6C4E0018BBAC /* Checkmark-0@2x.png */,
+				17CEF2EF1D8F6C4E0018BBAC /* Checkmark-1@2x.png */,
+				17CEF2F01D8F6C4E0018BBAC /* XCamera.swift */,
+				17CEF2F11D8F6C4E0018BBAC /* XPhotoBrowse.swift */,
+				17CEF2F21D8F6C4E0018BBAC /* XPhotoChooseCell.swift */,
+				17CEF2F31D8F6C4E0018BBAC /* XPhotoChooseVC.swift */,
+				17CEF2F41D8F6C4E0018BBAC /* XPhotoHandle.swift */,
+				17CEF2F51D8F6C4E0018BBAC /* XPhotoLibVC.swift */,
+				17CEF2F61D8F6C4E0018BBAC /* XPhotoPicker.swift */,
+				17CEF2F71D8F6C4E0018BBAC /* XPhotoToolbar.swift */,
+				17CEF2F81D8F6C4E0018BBAC /* XPhotoUtil.swift */,
+				17CEF2F91D8F6C4E0018BBAC /* XZoomImageView.swift */,
+			);
+			path = XPhoto;
+			sourceTree = "<group>";
+		};
 		17EB7C7D1D85742D007C0361 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -1595,7 +1554,6 @@
 				17C7FB661D86833D00A3EFCC /* shop_icon04.png in Resources */,
 				17C7FB561D86833D00A3EFCC /* off.png in Resources */,
 				17C7FB4D1D86833D00A3EFCC /* Recharge03.png in Resources */,
-				17C7FA041D8682C400A3EFCC /* AGImagePickerController.bundle in Resources */,
 				17C7FB791D86833D00A3EFCC /* index_icon06.png in Resources */,
 				17C7FB631D86833D00A3EFCC /* shop_icon01.png in Resources */,
 				17C7FB4C1D86833D00A3EFCC /* Recharge02.png in Resources */,
@@ -1630,6 +1588,7 @@
 				17C7FAE21D8682DF00A3EFCC /* MyOrderCancelCell.xib in Resources */,
 				17C7FB511D86833D00A3EFCC /* arrow02.png in Resources */,
 				17C7FAD91D8682DF00A3EFCC /* HomeMiddleCell.xib in Resources */,
+				17CEF2FB1D8F6C4E0018BBAC /* Checkmark-1@2x.png in Resources */,
 				17C7FB731D86833D00A3EFCC /* banner001.png in Resources */,
 				17C7FB601D86833D00A3EFCC /* check01.png in Resources */,
 				17C7FA3F1D8682C400A3EFCC /* XDeleteAlert.xib in Resources */,
@@ -1639,7 +1598,6 @@
 				17C7FB621D86833D00A3EFCC /* face.png in Resources */,
 				17C7FA3B1D8682C400A3EFCC /* XBuyNumView.xib in Resources */,
 				17C7FB571D86833D00A3EFCC /* on.png in Resources */,
-				17C7FA431D8682C500A3EFCC /* XPhotoChoose.xib in Resources */,
 				17C7FB781D86833D00A3EFCC /* index_icon05.png in Resources */,
 				17C7FA341D8682C400A3EFCC /* ReactionMenuView.xib in Resources */,
 				17C7FB5E1D86833D00A3EFCC /* shop_address.png in Resources */,
@@ -1656,6 +1614,7 @@
 				17C7FB4A1D86833D00A3EFCC /* orange_search.png in Resources */,
 				17C7FB751D86833D00A3EFCC /* index_icon02.png in Resources */,
 				17C7FB581D86833D00A3EFCC /* orange_btn.png in Resources */,
+				17CEF2FA1D8F6C4E0018BBAC /* Checkmark-0@2x.png in Resources */,
 				17C7FAF01D8682DF00A3EFCC /* MyOrderWaitCell.xib in Resources */,
 				17C7FB741D86833D00A3EFCC /* index_icon01.png in Resources */,
 				17C7FA391D8682C400A3EFCC /* XBootView.xib in Resources */,
@@ -1688,7 +1647,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C7FA061D8682C400A3EFCC /* AGImagePreviewController.m in Sources */,
 				17C7FAD01D8682DF00A3EFCC /* APPConfig.swift in Sources */,
 				17C7FBC01D869FDD00A3EFCC /* GWListVC.swift in Sources */,
 				17C7FA8A1D8682C500A3EFCC /* ConstraintAttributes.swift in Sources */,
@@ -1703,20 +1661,17 @@
 				17C7FA9B1D8682C500A3EFCC /* XTableView.swift in Sources */,
 				17C7FA801D8682C500A3EFCC /* baiduMapMM.mm in Sources */,
 				17C7FA631D8682C500A3EFCC /* Reflect+Other.swift in Sources */,
-				17C7FA441D8682C500A3EFCC /* XPhotoLib.swift in Sources */,
 				17C7FA9E1D8682C500A3EFCC /* XHorizontalView.swift in Sources */,
 				17C7FA241D8682C400A3EFCC /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				17C7FA731D8682C500A3EFCC /* XImageGif.swift in Sources */,
 				17C7FA581D8682C500A3EFCC /* UIImage.swift in Sources */,
 				17C7FA601D8682C500A3EFCC /* Reflect+Parse.swift in Sources */,
 				17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */,
-				17C7FA0F1D8682C400A3EFCC /* UIButton+AGIPC.m in Sources */,
 				17C7FACF1D8682DF00A3EFCC /* AboutVC.swift in Sources */,
 				17C7FA1D1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
 				17C7FA701D8682C500A3EFCC /* XImageBrowse.swift in Sources */,
 				17C7FAFF1D8682F600A3EFCC /* ViewController.swift in Sources */,
 				17C7FAF61D8682DF00A3EFCC /* UserCenterVC.swift in Sources */,
-				17C7FA0C1D8682C400A3EFCC /* AGIPCToolbarItem.m in Sources */,
 				17C7FA501D8682C500A3EFCC /* Dictionary.swift in Sources */,
 				17C7FAA01D8682C500A3EFCC /* XHeaderRefreshView.swift in Sources */,
 				17C7FADD1D8682DF00A3EFCC /* LoginVC.swift in Sources */,
@@ -1729,15 +1684,11 @@
 				17C7FA5F1D8682C500A3EFCC /* Reflect+ArcFile.swift in Sources */,
 				17C7FA1C1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				17C7FA891D8682C500A3EFCC /* Constraint.swift in Sources */,
-				17C7FA3C1D8682C400A3EFCC /* XCamera.swift in Sources */,
 				17C7FA821D8682C500A3EFCC /* FXBlurView.m in Sources */,
 				17C7FA861D8682C500A3EFCC /* UIString.swift in Sources */,
-				17C7FA0A1D8682C400A3EFCC /* AGIPCGridItem.m in Sources */,
 				17C7FA2E1D8682C400A3EFCC /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				17C7FA4E1D8682C500A3EFCC /* datePicker.swift in Sources */,
-				17C7FA051D8682C400A3EFCC /* AGImagePickerController.m in Sources */,
 				17C7FAE41D8682DF00A3EFCC /* MyOrderCancelInfoVC2.swift in Sources */,
-				17C7FA091D8682C400A3EFCC /* AGIPCGridCell.m in Sources */,
 				17C7FA6C1D8682C500A3EFCC /* Reach.swift in Sources */,
 				17C7FAD41D8682DF00A3EFCC /* ConfigVC.swift in Sources */,
 				17C7FA9C1D8682C500A3EFCC /* XHorizontalMainView.swift in Sources */,
@@ -1745,29 +1696,28 @@
 				17C7FBB61D869BAC00A3EFCC /* PowerModel.swift in Sources */,
 				17C7FA841D8682C500A3EFCC /* SkyRadiusView.m in Sources */,
 				17C7FA621D8682C500A3EFCC /* Reflect+Class.swift in Sources */,
+				17CEF2FD1D8F6C4E0018BBAC /* XPhotoBrowse.swift in Sources */,
 				17C7FAEE1D8682DF00A3EFCC /* MyOrderVC.swift in Sources */,
 				17C7FA4C1D8682C500A3EFCC /* Preloading.swift in Sources */,
 				17C7FA451D8682C500A3EFCC /* XProgressView.swift in Sources */,
-				17C7FA071D8682C400A3EFCC /* AGIPCAlbumsController.m in Sources */,
 				17C7FA2D1D8682C400A3EFCC /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				17C7FAD11D8682DF00A3EFCC /* BreakRecordModel.swift in Sources */,
 				17C7FA4A1D8682C500A3EFCC /* XWebView.swift in Sources */,
 				17C7FAE61D8682DF00A3EFCC /* MyOrderEndedCell.swift in Sources */,
+				17CEF3031D8F6C4E0018BBAC /* XPhotoToolbar.swift in Sources */,
 				17C447801D8929D900B63107 /* AddYGVC.swift in Sources */,
 				17C7FA751D8682C500A3EFCC /* XImageUtil.swift in Sources */,
 				17C7FBA21D86880500A3EFCC /* LocationShareModel.m in Sources */,
 				17C7FA191D8682C400A3EFCC /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				17C7FA981D8682C500A3EFCC /* XDownLoadView.swift in Sources */,
+				17CEF3041D8F6C4E0018BBAC /* XPhotoUtil.swift in Sources */,
 				17C7FA551D8682C500A3EFCC /* string.swift in Sources */,
-				17C7FA421D8682C500A3EFCC /* XPhotoChoose.swift in Sources */,
 				17C7FA411D8682C400A3EFCC /* XNavigationController.swift in Sources */,
 				17C7FA271D8682C400A3EFCC /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
 				17C7FA741D8682C500A3EFCC /* XImageOperationManager.swift in Sources */,
 				17C7FA921D8682C500A3EFCC /* SnapKit.swift in Sources */,
 				17C7FA8D1D8682C500A3EFCC /* ConstraintMaker.swift in Sources */,
-				17C7FA081D8682C400A3EFCC /* AGIPCAssetsController.m in Sources */,
 				17C7FAF11D8682DF00A3EFCC /* MyOrderWaitInfoVC.swift in Sources */,
-				17C7FA0D1D8682C400A3EFCC /* AGPreviewScrollView.m in Sources */,
 				17C7FA161D8682C400A3EFCC /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				17C7FAD81D8682DF00A3EFCC /* HomeMiddleCell.swift in Sources */,
 				17C7FA651D8682C500A3EFCC /* Reflect+Type.swift in Sources */,
@@ -1797,11 +1747,11 @@
 				17C7FBAC1D8692C700A3EFCC /* YGListVC.swift in Sources */,
 				17C7FA901D8682C500A3EFCC /* EdgeInsets.swift in Sources */,
 				17C7FA681D8682C500A3EFCC /* XHttpPool.swift in Sources */,
-				17C7FA031D8682C400A3EFCC /* AGImagePickerController+Helper.m in Sources */,
 				17C7FAF81D8682DF00A3EFCC /* UserMessageVC.swift in Sources */,
 				17C7FA561D8682C500A3EFCC /* UIButton.swift in Sources */,
 				17C7FA381D8682C400A3EFCC /* XBootView.swift in Sources */,
 				17C7FA371D8682C400A3EFCC /* XAlertView.swift in Sources */,
+				17CEF3001D8F6C4E0018BBAC /* XPhotoHandle.swift in Sources */,
 				17C7FA971D8682C500A3EFCC /* XDownLoadManager.swift in Sources */,
 				17C7FA131D8682C400A3EFCC /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				17C7FAFA1D8682DF00A3EFCC /* YGManageVC.swift in Sources */,
@@ -1837,9 +1787,9 @@
 				17C7FAED1D8682DF00A3EFCC /* MyOrderSendingVC.swift in Sources */,
 				17C7FAF21D8682DF00A3EFCC /* MyOrderWaitVC.swift in Sources */,
 				17C7FA691D8682C500A3EFCC /* XHttpPoolHandle.swift in Sources */,
+				17CEF3011D8F6C4E0018BBAC /* XPhotoLibVC.swift in Sources */,
 				17C7FB9F1D86880500A3EFCC /* BackgroundTaskManager.m in Sources */,
 				17C7FA261D8682C400A3EFCC /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
-				17C7FA0B1D8682C400A3EFCC /* AGIPCPreviewController.m in Sources */,
 				17C7FBBD1D869F3C00A3EFCC /* GWListCell.swift in Sources */,
 				17C7FA641D8682C500A3EFCC /* Reflect+Property.swift in Sources */,
 				17C7FAF71D8682DF00A3EFCC /* UserFeedVC.swift in Sources */,
@@ -1848,6 +1798,7 @@
 				17C7FA511D8682C500A3EFCC /* NSData.swift in Sources */,
 				17C7FA3A1D8682C400A3EFCC /* XBuyNumView.swift in Sources */,
 				17C7FA461D8682C500A3EFCC /* XTextView.swift in Sources */,
+				17CEF2FF1D8F6C4E0018BBAC /* XPhotoChooseVC.swift in Sources */,
 				17C7FA401D8682C400A3EFCC /* XMessage.swift in Sources */,
 				17C7FA4D1D8682C500A3EFCC /* Datecalculate.swift in Sources */,
 				17C7FA871D8682C500A3EFCC /* pchHeader.swift in Sources */,
@@ -1857,7 +1808,6 @@
 				17C7FA521D8682C500A3EFCC /* NSDate.swift in Sources */,
 				17C7FA3E1D8682C400A3EFCC /* XDeleteAlert.swift in Sources */,
 				17C7FA531D8682C500A3EFCC /* NSObject.swift in Sources */,
-				17C7FA0E1D8682C400A3EFCC /* ALAsset+AGIPC.m in Sources */,
 				17C7FA101D8682C400A3EFCC /* HtmlVC.swift in Sources */,
 				17C7FA6B1D8682C500A3EFCC /* MRZoomScrollView.swift in Sources */,
 				17C7FAD31D8682DF00A3EFCC /* ChooseTypeVC.swift in Sources */,
@@ -1867,11 +1817,15 @@
 				17C7FA9A1D8682C500A3EFCC /* XHttpHandle.swift in Sources */,
 				17C7FA6A1D8682C500A3EFCC /* XHttpRequest.swift in Sources */,
 				17C7FA991D8682C500A3EFCC /* XCollectionView.swift in Sources */,
+				17CEF3051D8F6C4E0018BBAC /* XZoomImageView.swift in Sources */,
+				17CEF3021D8F6C4E0018BBAC /* XPhotoPicker.swift in Sources */,
 				17C7FA281D8682C400A3EFCC /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				17C7FA6E1D8682C500A3EFCC /* UIImage+WebP.m in Sources */,
 				17C7FA881D8682C500A3EFCC /* Regex.swift in Sources */,
+				17CEF2FE1D8F6C4E0018BBAC /* XPhotoChooseCell.swift in Sources */,
 				17C7FA201D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				17C7FADA1D8682DF00A3EFCC /* HomeTopCell.swift in Sources */,
+				17CEF2FC1D8F6C4E0018BBAC /* XCamera.swift in Sources */,
 				17C7FA181D8682C400A3EFCC /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				17C7FA1B1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				17C7FA5A1D8682C500A3EFCC /* UITableViewCell.swift in Sources */,
@@ -2050,7 +2004,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/JPush",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HFW.cardsjd;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HFW.cardsjd-1";
 				PRODUCT_NAME = CardSJD;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardSJD/CardSJD-Bridging-Header.h";
@@ -2087,7 +2041,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/JPush",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HFW.cardsjd;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HFW.cardsjd-1";
 				PRODUCT_NAME = CardSJD;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardSJD/CardSJD-Bridging-Header.h";

@@ -8,14 +8,22 @@
 
 import UIKit
 
-class GWListVC: UIViewController {
+class GWListVC: UIViewController,UITableViewDelegate {
 
     let table = XTableView()
+    var block:AnyBlock?
+    
+    func getGW(b:AnyBlock)
+    {
+        block = b
+    }
     
     let nameArr = ["经理","出纳","会计","客服","文案"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if block != nil {self.addBackButton()}
         
         self.view.backgroundColor = APPBGColor
         table.backgroundColor = APPBGColor
@@ -31,7 +39,7 @@ class GWListVC: UIViewController {
         //
         //        table.show()
         
-        
+        table.Delegate(self)
         table.setHandle("", pageStr: "", keys: ["data"], model: GangweiModel.self, CellIdentifier: "GWListCell")
         
         for name in nameArr
@@ -44,6 +52,31 @@ class GWListVC: UIViewController {
         table.reloadData()
         
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if block != nil
+        {
+            block?(nameArr[indexPath.row])
+            pop()
+            return
+        }
+        else
+        {
+            let alert = XCommonAlert(title: nil, message: nil, buttons: "修改岗位名称","修改岗位权限","取消")
+            
+            alert.show()
+            
+            alert.click({[weak self] (index) -> Bool in
+                
+                return true
+                })
+        }
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

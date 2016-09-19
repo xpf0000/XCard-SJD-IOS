@@ -97,12 +97,26 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
         switch indexPath.row {
         case 1:
             ""
-            XPhotoLib.Share().getPhoto({ (obj) in
+            let picker = XPhotoPicker()
+            picker.allowsEditing = true
+            
+            picker.getPhoto(self, result: {[weak self] (res) in
                 
+                    let m = res[0]
+                    self?.header.image = m.image
+ 
+            })
+        case 5:
+            ""
+            let vc = GWListVC()
+            vc.title = "选择岗位"
+            vc.getGW({[weak self] (str) in
                 
+                self?.type.text = str as? String
             })
             
-            
+            self.navigationController?.pushViewController(vc, animated: true)
+
         default:
             ""
         }

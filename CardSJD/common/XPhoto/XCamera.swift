@@ -7,51 +7,63 @@
 //
 
 import UIKit
+let SW = UIScreen.mainScreen().bounds.size.width
+let SH = UIScreen.mainScreen().bounds.size.height
+let SC = UIScreen.mainScreen().scale
 
-class XCamera: NSObject ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+typealias XCameraBlock = (UIImage)->Void
+
+class XCamera: UIView ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     lazy var imagePicker:UIImagePickerController = UIImagePickerController()
     weak var vc:UIViewController?
-    var block:AnyBlock?
-    weak var delegate:XPhotoDelegate?
-    
-    
-    class func Share() ->XCamera! {
-        
-        struct Once {
-            static var token:dispatch_once_t = 0
-            static var dataCenterObj:XCamera! = nil
+    var block:XCameraBlock?
+    var canEdit = false
+    {
+        didSet
+        {
+             imagePicker.allowsEditing=canEdit
         }
-        dispatch_once(&Once.token, {
-            Once.dataCenterObj = XCamera()
-        })
-        return Once.dataCenterObj
     }
     
-    override init()
-    {
-        super.init()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
         imagePicker.delegate=self
         imagePicker.sourceType=UIImagePickerControllerSourceType.Camera
         
         imagePicker.allowsEditing=false
         imagePicker.modalTransitionStyle=UIModalTransitionStyle.CoverVertical
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
-    func CameraImage()
+    private func CameraImage()
     {
+
+        self.vc?.view.addSubview(self)
+        
         self.vc?.presentViewController(imagePicker, animated: true) { () -> Void in
             
-            XPhotoChoose.Share().removeFromSuperview()
+            //XPhotoChoose.Share().removeFromSuperview()
         }
     }
     
-    func  CameraImage(vc:UIViewController, block:AnyBlock)
+    func  CameraImage(vc:UIViewController, block:XCameraBlock)
     {
         self.vc=vc
         self.block = block
         
         CameraImage()
+    }
+    
+    func  CameraImage(vc:UIViewController,canEdit:Bool, block:XCameraBlock)
+    {
+        self.canEdit = canEdit
+        CameraImage(vc, block: block)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -76,7 +88,7 @@ class XCamera: NSObject ,UIImagePickerControllerDelegate,UINavigationControllerD
                 // 原始图片可以根据照相时的角度来显示，但UIImage无法判定，于是出现获取的图片会向左转９０度的现象。
                 // 以下为调整图片角度的部分
                 
-                let size = CGSizeMake(swidth*screenScale, image.size.height/image.size.width*swidth*screenScale)
+                let size = CGSizeMake(SW*SC, image.size.height/image.size.width*SW*SC)
                 
                 //print(size)
                 
@@ -103,13 +115,8 @@ class XCamera: NSObject ,UIImagePickerControllerDelegate,UINavigationControllerD
             }
             
             self.block?(image)
-            self.delegate?.XPhotoResult!(image)
             
             vc?.dismissViewControllerAnimated(true, completion: { () -> Void in
-                
-                self.block?(nil)
-                self.delegate?.XPhotoResult!(nil)
-                
                 self.clean()
             })
         }
@@ -118,13 +125,14 @@ class XCamera: NSObject ,UIImagePickerControllerDelegate,UINavigationControllerD
     
     func clean()
     {
-        self.delegate = nil
         self.vc = nil
         self.block = nil
-        XPhotoChoose.Share().allowsEdit = false
-        imagePicker.sourceType=UIImagePickerControllerSourceType.Camera
-        imagePicker.allowsEditing=false
-        imagePicker.modalTransitionStyle=UIModalTransitionStyle.CoverVertical
+        imagePicker.delegate = nil
+        self.removeFromSuperview()
+    }
+    
+    deinit
+    {
     }
 
 

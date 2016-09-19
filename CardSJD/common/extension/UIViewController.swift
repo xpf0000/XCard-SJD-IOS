@@ -134,23 +134,4 @@ extension UIViewController{
         return button
     }
 
-    
-    
-    func getCamera(block:AnyBlock)
-    {
-        XCamera.Share().vc = self
-        XCamera.Share().block = block
-        XCamera.Share().CameraImage()
-        
-    }
-    
-    func getPhoteLib(maxNum:UInt,block:AnyBlock)
-    {
-        XPhotoLib.Share().vc = self
-        XPhotoLib.Share().block = block
-        XPhotoLib.Share().maxNum = maxNum
-        XPhotoLib.Share().getPhoto()
-    }
-    
-
 }
