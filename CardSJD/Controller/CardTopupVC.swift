@@ -26,9 +26,9 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
         super.pop()
     }
     
-    func toChooseType()
+    func toNext()
     {
-        let vc = "ChooseTypeVC".VC("Main")
+        let vc = "CardTopupDoVC".VC("Main")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -63,7 +63,7 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
         
         btn.click {[weak self] (btn) in
             
-            //self?.toChooseType()
+            self?.toNext()
         }
         
         let names = ["充值卡","积分卡","计次卡","打折卡"]

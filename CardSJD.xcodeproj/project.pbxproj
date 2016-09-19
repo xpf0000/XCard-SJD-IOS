@@ -159,8 +159,6 @@
 		17C7FAA11D8682C500A3EFCC /* XRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FA021D8682C400A3EFCC /* XRefresh.swift */; };
 		17C7FACF1D8682DF00A3EFCC /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAA31D8682DF00A3EFCC /* AboutVC.swift */; };
 		17C7FAD01D8682DF00A3EFCC /* APPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAA41D8682DF00A3EFCC /* APPConfig.swift */; };
-		17C7FAD11D8682DF00A3EFCC /* BreakRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAA51D8682DF00A3EFCC /* BreakRecordModel.swift */; };
-		17C7FAD21D8682DF00A3EFCC /* CashFlowRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAA61D8682DF00A3EFCC /* CashFlowRecordModel.swift */; };
 		17C7FAD31D8682DF00A3EFCC /* ChooseTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAA71D8682DF00A3EFCC /* ChooseTypeVC.swift */; };
 		17C7FAD41D8682DF00A3EFCC /* ConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAA81D8682DF00A3EFCC /* ConfigVC.swift */; };
 		17C7FAD51D8682DF00A3EFCC /* ContactUSVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAA91D8682DF00A3EFCC /* ContactUSVC.swift */; };
@@ -175,24 +173,6 @@
 		17C7FADE1D8682DF00A3EFCC /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAB21D8682DF00A3EFCC /* MessageCell.swift */; };
 		17C7FADF1D8682DF00A3EFCC /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FAB31D8682DF00A3EFCC /* MessageCell.xib */; };
 		17C7FAE01D8682DF00A3EFCC /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAB41D8682DF00A3EFCC /* MessageModel.swift */; };
-		17C7FAE11D8682DF00A3EFCC /* MyOrderCancelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAB51D8682DF00A3EFCC /* MyOrderCancelCell.swift */; };
-		17C7FAE21D8682DF00A3EFCC /* MyOrderCancelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FAB61D8682DF00A3EFCC /* MyOrderCancelCell.xib */; };
-		17C7FAE31D8682DF00A3EFCC /* MyOrderCancelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAB71D8682DF00A3EFCC /* MyOrderCancelInfoVC.swift */; };
-		17C7FAE41D8682DF00A3EFCC /* MyOrderCancelInfoVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAB81D8682DF00A3EFCC /* MyOrderCancelInfoVC2.swift */; };
-		17C7FAE51D8682DF00A3EFCC /* MyOrderCancelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAB91D8682DF00A3EFCC /* MyOrderCancelVC.swift */; };
-		17C7FAE61D8682DF00A3EFCC /* MyOrderEndedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FABA1D8682DF00A3EFCC /* MyOrderEndedCell.swift */; };
-		17C7FAE71D8682DF00A3EFCC /* MyOrderEndedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FABB1D8682DF00A3EFCC /* MyOrderEndedCell.xib */; };
-		17C7FAE81D8682DF00A3EFCC /* MyOrderEndedInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FABC1D8682DF00A3EFCC /* MyOrderEndedInfoVC.swift */; };
-		17C7FAE91D8682DF00A3EFCC /* MyOrderEndedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FABD1D8682DF00A3EFCC /* MyOrderEndedVC.swift */; };
-		17C7FAEA1D8682DF00A3EFCC /* MyOrderSendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FABE1D8682DF00A3EFCC /* MyOrderSendingCell.swift */; };
-		17C7FAEB1D8682DF00A3EFCC /* MyOrderSendingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FABF1D8682DF00A3EFCC /* MyOrderSendingCell.xib */; };
-		17C7FAEC1D8682DF00A3EFCC /* MyOrderSendingInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC01D8682DF00A3EFCC /* MyOrderSendingInfoVC.swift */; };
-		17C7FAED1D8682DF00A3EFCC /* MyOrderSendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC11D8682DF00A3EFCC /* MyOrderSendingVC.swift */; };
-		17C7FAEE1D8682DF00A3EFCC /* MyOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC21D8682DF00A3EFCC /* MyOrderVC.swift */; };
-		17C7FAEF1D8682DF00A3EFCC /* MyOrderWaitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC31D8682DF00A3EFCC /* MyOrderWaitCell.swift */; };
-		17C7FAF01D8682DF00A3EFCC /* MyOrderWaitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FAC41D8682DF00A3EFCC /* MyOrderWaitCell.xib */; };
-		17C7FAF11D8682DF00A3EFCC /* MyOrderWaitInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC51D8682DF00A3EFCC /* MyOrderWaitInfoVC.swift */; };
-		17C7FAF21D8682DF00A3EFCC /* MyOrderWaitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC61D8682DF00A3EFCC /* MyOrderWaitVC.swift */; };
 		17C7FAF31D8682DF00A3EFCC /* OpenCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC71D8682DF00A3EFCC /* OpenCardVC.swift */; };
 		17C7FAF41D8682DF00A3EFCC /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC81D8682DF00A3EFCC /* OrderModel.swift */; };
 		17C7FAF51D8682DF00A3EFCC /* UpdatePWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FAC91D8682DF00A3EFCC /* UpdatePWVC.swift */; };
@@ -301,6 +281,10 @@
 		17CEF3091D8F6FBA0018BBAC /* CardTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CEF3071D8F6FBA0018BBAC /* CardTypeCell.xib */; };
 		17CEF30B1D8F70D80018BBAC /* CardTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF30A1D8F70D80018BBAC /* CardTypeModel.swift */; };
 		17CEF30D1D8F72D60018BBAC /* CardTopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF30C1D8F72D60018BBAC /* CardTopupVC.swift */; };
+		17CEF30F1D8F81FE0018BBAC /* CardTopupDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF30E1D8F81FE0018BBAC /* CardTopupDoVC.swift */; };
+		17CEF3111D8F85310018BBAC /* CardConsumeDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */; };
+		17CEF3131D8F87A80018BBAC /* OpenCardInputTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3121D8F87A80018BBAC /* OpenCardInputTableVC.swift */; };
+		17CEF3151D8F88850018BBAC /* OpenCardInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3141D8F88850018BBAC /* OpenCardInputVC.swift */; };
 		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -491,8 +475,6 @@
 		17C7FA021D8682C400A3EFCC /* XRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XRefresh.swift; sourceTree = "<group>"; };
 		17C7FAA31D8682DF00A3EFCC /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		17C7FAA41D8682DF00A3EFCC /* APPConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPConfig.swift; sourceTree = "<group>"; };
-		17C7FAA51D8682DF00A3EFCC /* BreakRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakRecordModel.swift; sourceTree = "<group>"; };
-		17C7FAA61D8682DF00A3EFCC /* CashFlowRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashFlowRecordModel.swift; sourceTree = "<group>"; };
 		17C7FAA71D8682DF00A3EFCC /* ChooseTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTypeVC.swift; sourceTree = "<group>"; };
 		17C7FAA81D8682DF00A3EFCC /* ConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigVC.swift; sourceTree = "<group>"; };
 		17C7FAA91D8682DF00A3EFCC /* ContactUSVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUSVC.swift; sourceTree = "<group>"; };
@@ -507,24 +489,6 @@
 		17C7FAB21D8682DF00A3EFCC /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		17C7FAB31D8682DF00A3EFCC /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		17C7FAB41D8682DF00A3EFCC /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
-		17C7FAB51D8682DF00A3EFCC /* MyOrderCancelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderCancelCell.swift; sourceTree = "<group>"; };
-		17C7FAB61D8682DF00A3EFCC /* MyOrderCancelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCancelCell.xib; sourceTree = "<group>"; };
-		17C7FAB71D8682DF00A3EFCC /* MyOrderCancelInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderCancelInfoVC.swift; sourceTree = "<group>"; };
-		17C7FAB81D8682DF00A3EFCC /* MyOrderCancelInfoVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderCancelInfoVC2.swift; sourceTree = "<group>"; };
-		17C7FAB91D8682DF00A3EFCC /* MyOrderCancelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderCancelVC.swift; sourceTree = "<group>"; };
-		17C7FABA1D8682DF00A3EFCC /* MyOrderEndedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderEndedCell.swift; sourceTree = "<group>"; };
-		17C7FABB1D8682DF00A3EFCC /* MyOrderEndedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderEndedCell.xib; sourceTree = "<group>"; };
-		17C7FABC1D8682DF00A3EFCC /* MyOrderEndedInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderEndedInfoVC.swift; sourceTree = "<group>"; };
-		17C7FABD1D8682DF00A3EFCC /* MyOrderEndedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderEndedVC.swift; sourceTree = "<group>"; };
-		17C7FABE1D8682DF00A3EFCC /* MyOrderSendingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderSendingCell.swift; sourceTree = "<group>"; };
-		17C7FABF1D8682DF00A3EFCC /* MyOrderSendingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderSendingCell.xib; sourceTree = "<group>"; };
-		17C7FAC01D8682DF00A3EFCC /* MyOrderSendingInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderSendingInfoVC.swift; sourceTree = "<group>"; };
-		17C7FAC11D8682DF00A3EFCC /* MyOrderSendingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderSendingVC.swift; sourceTree = "<group>"; };
-		17C7FAC21D8682DF00A3EFCC /* MyOrderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderVC.swift; sourceTree = "<group>"; };
-		17C7FAC31D8682DF00A3EFCC /* MyOrderWaitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderWaitCell.swift; sourceTree = "<group>"; };
-		17C7FAC41D8682DF00A3EFCC /* MyOrderWaitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderWaitCell.xib; sourceTree = "<group>"; };
-		17C7FAC51D8682DF00A3EFCC /* MyOrderWaitInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderWaitInfoVC.swift; sourceTree = "<group>"; };
-		17C7FAC61D8682DF00A3EFCC /* MyOrderWaitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderWaitVC.swift; sourceTree = "<group>"; };
 		17C7FAC71D8682DF00A3EFCC /* OpenCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCardVC.swift; sourceTree = "<group>"; };
 		17C7FAC81D8682DF00A3EFCC /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		17C7FAC91D8682DF00A3EFCC /* UpdatePWVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatePWVC.swift; sourceTree = "<group>"; };
@@ -637,6 +601,10 @@
 		17CEF3071D8F6FBA0018BBAC /* CardTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeCell.xib; sourceTree = "<group>"; };
 		17CEF30A1D8F70D80018BBAC /* CardTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTypeModel.swift; sourceTree = "<group>"; };
 		17CEF30C1D8F72D60018BBAC /* CardTopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTopupVC.swift; sourceTree = "<group>"; };
+		17CEF30E1D8F81FE0018BBAC /* CardTopupDoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTopupDoVC.swift; sourceTree = "<group>"; };
+		17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardConsumeDoVC.swift; sourceTree = "<group>"; };
+		17CEF3121D8F87A80018BBAC /* OpenCardInputTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCardInputTableVC.swift; sourceTree = "<group>"; };
+		17CEF3141D8F88850018BBAC /* OpenCardInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCardInputVC.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1114,7 +1082,6 @@
 				17C7FBA81D868B8400A3EFCC /* card */,
 				17C7FBA51D868AF500A3EFCC /* home */,
 				17C7FBA71D868B3E00A3EFCC /* model */,
-				17C7FBAA1D868BCD00A3EFCC /* other */,
 				17C7FBA41D868AE300A3EFCC /* system */,
 				17C7FBA61D868B0600A3EFCC /* user */,
 				17C7FBA91D868BC000A3EFCC /* yuangong */,
@@ -1351,10 +1318,14 @@
 			isa = PBXGroup;
 			children = (
 				17C7FAC71D8682DF00A3EFCC /* OpenCardVC.swift */,
+				17CEF3121D8F87A80018BBAC /* OpenCardInputTableVC.swift */,
+				17CEF3141D8F88850018BBAC /* OpenCardInputVC.swift */,
 				17C7FAA71D8682DF00A3EFCC /* ChooseTypeVC.swift */,
 				17CEF3061D8F6FBA0018BBAC /* CardTypeCell.swift */,
 				17CEF3071D8F6FBA0018BBAC /* CardTypeCell.xib */,
 				17CEF30C1D8F72D60018BBAC /* CardTopupVC.swift */,
+				17CEF30E1D8F81FE0018BBAC /* CardTopupDoVC.swift */,
+				17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */,
 			);
 			name = card;
 			sourceTree = "<group>";
@@ -1375,33 +1346,6 @@
 				17C4477F1D8929D900B63107 /* AddYGVC.swift */,
 			);
 			name = yuangong;
-			sourceTree = "<group>";
-		};
-		17C7FBAA1D868BCD00A3EFCC /* other */ = {
-			isa = PBXGroup;
-			children = (
-				17C7FAA51D8682DF00A3EFCC /* BreakRecordModel.swift */,
-				17C7FAA61D8682DF00A3EFCC /* CashFlowRecordModel.swift */,
-				17C7FAB51D8682DF00A3EFCC /* MyOrderCancelCell.swift */,
-				17C7FAB61D8682DF00A3EFCC /* MyOrderCancelCell.xib */,
-				17C7FAB71D8682DF00A3EFCC /* MyOrderCancelInfoVC.swift */,
-				17C7FAB81D8682DF00A3EFCC /* MyOrderCancelInfoVC2.swift */,
-				17C7FAB91D8682DF00A3EFCC /* MyOrderCancelVC.swift */,
-				17C7FABA1D8682DF00A3EFCC /* MyOrderEndedCell.swift */,
-				17C7FABB1D8682DF00A3EFCC /* MyOrderEndedCell.xib */,
-				17C7FABC1D8682DF00A3EFCC /* MyOrderEndedInfoVC.swift */,
-				17C7FABD1D8682DF00A3EFCC /* MyOrderEndedVC.swift */,
-				17C7FABE1D8682DF00A3EFCC /* MyOrderSendingCell.swift */,
-				17C7FABF1D8682DF00A3EFCC /* MyOrderSendingCell.xib */,
-				17C7FAC01D8682DF00A3EFCC /* MyOrderSendingInfoVC.swift */,
-				17C7FAC11D8682DF00A3EFCC /* MyOrderSendingVC.swift */,
-				17C7FAC21D8682DF00A3EFCC /* MyOrderVC.swift */,
-				17C7FAC31D8682DF00A3EFCC /* MyOrderWaitCell.swift */,
-				17C7FAC41D8682DF00A3EFCC /* MyOrderWaitCell.xib */,
-				17C7FAC51D8682DF00A3EFCC /* MyOrderWaitInfoVC.swift */,
-				17C7FAC61D8682DF00A3EFCC /* MyOrderWaitVC.swift */,
-			);
-			name = other;
 			sourceTree = "<group>";
 		};
 		17CEF2ED1D8F6C4E0018BBAC /* XPhoto */ = {
@@ -1562,7 +1506,6 @@
 				17C7FBBE1D869F3C00A3EFCC /* GWListCell.xib in Resources */,
 				17C7FB6A1D86833D00A3EFCC /* ac_photo.png in Resources */,
 				17C7FB681D86833D00A3EFCC /* shop_icon06.png in Resources */,
-				17C7FAE71D8682DF00A3EFCC /* MyOrderEndedCell.xib in Resources */,
 				17C7FB661D86833D00A3EFCC /* shop_icon04.png in Resources */,
 				17C7FB561D86833D00A3EFCC /* off.png in Resources */,
 				17C7FB4D1D86833D00A3EFCC /* Recharge03.png in Resources */,
@@ -1597,7 +1540,6 @@
 				17C7FB7C1D86833D00A3EFCC /* index_icon09.png in Resources */,
 				17C7FB481D86833D00A3EFCC /* 3301消费明细.jpg in Resources */,
 				17C7FB591D86833D00A3EFCC /* radio01.png in Resources */,
-				17C7FAE21D8682DF00A3EFCC /* MyOrderCancelCell.xib in Resources */,
 				17C7FB511D86833D00A3EFCC /* arrow02.png in Resources */,
 				17C7FAD91D8682DF00A3EFCC /* HomeMiddleCell.xib in Resources */,
 				17CEF2FB1D8F6C4E0018BBAC /* Checkmark-1@2x.png in Resources */,
@@ -1606,7 +1548,6 @@
 				17C7FA3F1D8682C400A3EFCC /* XDeleteAlert.xib in Resources */,
 				17C7FB881D86836100A3EFCC /* Main.storyboard in Resources */,
 				17C7FB671D86833D00A3EFCC /* shop_icon05.png in Resources */,
-				17C7FAEB1D8682DF00A3EFCC /* MyOrderSendingCell.xib in Resources */,
 				17C7FB621D86833D00A3EFCC /* face.png in Resources */,
 				17C7FA3B1D8682C400A3EFCC /* XBuyNumView.xib in Resources */,
 				17C7FB571D86833D00A3EFCC /* on.png in Resources */,
@@ -1628,7 +1569,6 @@
 				17C7FB751D86833D00A3EFCC /* index_icon02.png in Resources */,
 				17C7FB581D86833D00A3EFCC /* orange_btn.png in Resources */,
 				17CEF2FA1D8F6C4E0018BBAC /* Checkmark-0@2x.png in Resources */,
-				17C7FAF01D8682DF00A3EFCC /* MyOrderWaitCell.xib in Resources */,
 				17C7FB741D86833D00A3EFCC /* index_icon01.png in Resources */,
 				17C7FA391D8682C400A3EFCC /* XBootView.xib in Resources */,
 				17C7FB7E1D86833D00A3EFCC /* index_icon11.png in Resources */,
@@ -1665,7 +1605,6 @@
 				17C7FA8A1D8682C500A3EFCC /* ConstraintAttributes.swift in Sources */,
 				17C7FA2C1D8682C400A3EFCC /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				17C7FA111D8682C400A3EFCC /* HtmlView.swift in Sources */,
-				17C7FAE91D8682DF00A3EFCC /* MyOrderEndedVC.swift in Sources */,
 				17C7FA911D8682C500A3EFCC /* LayoutConstraint.swift in Sources */,
 				17C7FA471D8682C500A3EFCC /* XUICollectionViewFlowLayout.swift in Sources */,
 				17C7FA661D8682C500A3EFCC /* Reflect.swift in Sources */,
@@ -1682,6 +1621,7 @@
 				17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */,
 				17C7FACF1D8682DF00A3EFCC /* AboutVC.swift in Sources */,
 				17C7FA1D1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
+				17CEF3111D8F85310018BBAC /* CardConsumeDoVC.swift in Sources */,
 				17C7FA701D8682C500A3EFCC /* XImageBrowse.swift in Sources */,
 				17C7FAFF1D8682F600A3EFCC /* ViewController.swift in Sources */,
 				17C7FAF61D8682DF00A3EFCC /* UserCenterVC.swift in Sources */,
@@ -1692,7 +1632,6 @@
 				17C7FA4F1D8682C500A3EFCC /* array.swift in Sources */,
 				17C7FA961D8682C500A3EFCC /* XDownLoad.swift in Sources */,
 				17C7FA811D8682C500A3EFCC /* DDCollectionViewFlowLayout.m in Sources */,
-				17C7FAE31D8682DF00A3EFCC /* MyOrderCancelInfoVC.swift in Sources */,
 				17C7FA301D8682C400A3EFCC /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				17C7FA5F1D8682C500A3EFCC /* Reflect+ArcFile.swift in Sources */,
 				17C7FA1C1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
@@ -1701,7 +1640,6 @@
 				17C7FA861D8682C500A3EFCC /* UIString.swift in Sources */,
 				17C7FA2E1D8682C400A3EFCC /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				17C7FA4E1D8682C500A3EFCC /* datePicker.swift in Sources */,
-				17C7FAE41D8682DF00A3EFCC /* MyOrderCancelInfoVC2.swift in Sources */,
 				17C7FA6C1D8682C500A3EFCC /* Reach.swift in Sources */,
 				17C7FAD41D8682DF00A3EFCC /* ConfigVC.swift in Sources */,
 				17C7FA9C1D8682C500A3EFCC /* XHorizontalMainView.swift in Sources */,
@@ -1710,13 +1648,10 @@
 				17C7FA841D8682C500A3EFCC /* SkyRadiusView.m in Sources */,
 				17C7FA621D8682C500A3EFCC /* Reflect+Class.swift in Sources */,
 				17CEF2FD1D8F6C4E0018BBAC /* XPhotoBrowse.swift in Sources */,
-				17C7FAEE1D8682DF00A3EFCC /* MyOrderVC.swift in Sources */,
 				17C7FA4C1D8682C500A3EFCC /* Preloading.swift in Sources */,
 				17C7FA451D8682C500A3EFCC /* XProgressView.swift in Sources */,
 				17C7FA2D1D8682C400A3EFCC /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
-				17C7FAD11D8682DF00A3EFCC /* BreakRecordModel.swift in Sources */,
 				17C7FA4A1D8682C500A3EFCC /* XWebView.swift in Sources */,
-				17C7FAE61D8682DF00A3EFCC /* MyOrderEndedCell.swift in Sources */,
 				17CEF3031D8F6C4E0018BBAC /* XPhotoToolbar.swift in Sources */,
 				17C447801D8929D900B63107 /* AddYGVC.swift in Sources */,
 				17C7FA751D8682C500A3EFCC /* XImageUtil.swift in Sources */,
@@ -1730,7 +1665,6 @@
 				17C7FA741D8682C500A3EFCC /* XImageOperationManager.swift in Sources */,
 				17C7FA921D8682C500A3EFCC /* SnapKit.swift in Sources */,
 				17C7FA8D1D8682C500A3EFCC /* ConstraintMaker.swift in Sources */,
-				17C7FAF11D8682DF00A3EFCC /* MyOrderWaitInfoVC.swift in Sources */,
 				17C7FA161D8682C400A3EFCC /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				17C7FAD81D8682DF00A3EFCC /* HomeMiddleCell.swift in Sources */,
 				17C7FA651D8682C500A3EFCC /* Reflect+Type.swift in Sources */,
@@ -1740,7 +1674,6 @@
 				17C7FA5B1D8682C500A3EFCC /* UITextField.swift in Sources */,
 				17C7FAFE1D8682F600A3EFCC /* AppDelegate.swift in Sources */,
 				17C7FA541D8682C500A3EFCC /* NSString.swift in Sources */,
-				17C7FAEA1D8682DF00A3EFCC /* MyOrderSendingCell.swift in Sources */,
 				17C7FA9F1D8682C500A3EFCC /* XFooterRefreshView.swift in Sources */,
 				17C7FA5D1D8682C500A3EFCC /* UIView.swift in Sources */,
 				17C7FA7F1D8682C500A3EFCC /* AMBlurView.m in Sources */,
@@ -1768,7 +1701,6 @@
 				17C7FA971D8682C500A3EFCC /* XDownLoadManager.swift in Sources */,
 				17C7FA131D8682C400A3EFCC /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				17C7FAFA1D8682DF00A3EFCC /* YGManageVC.swift in Sources */,
-				17C7FAEF1D8682DF00A3EFCC /* MyOrderWaitCell.swift in Sources */,
 				17C7FA611D8682C500A3EFCC /* Reflect+Convert.swift in Sources */,
 				17C7FA711D8682C500A3EFCC /* XImageCache.swift in Sources */,
 				17C7FA8E1D8682C500A3EFCC /* ConstraintRelation.swift in Sources */,
@@ -1777,7 +1709,6 @@
 				17C909571D878FBE0051A2F2 /* XCommonAlert.swift in Sources */,
 				17C7FA1E1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				17C7FA4B1D8682C500A3EFCC /* DataCache.swift in Sources */,
-				17C7FAE11D8682DF00A3EFCC /* MyOrderCancelCell.swift in Sources */,
 				17C7FAD61D8682DF00A3EFCC /* FBPassNewVC.swift in Sources */,
 				17C7FA231D8682C400A3EFCC /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				17C7FA3D1D8682C400A3EFCC /* XCornerRadiusTextField.swift in Sources */,
@@ -1793,13 +1724,11 @@
 				17C7FA721D8682C500A3EFCC /* XImageDownLoader.swift in Sources */,
 				17C7FA291D8682C400A3EFCC /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				17C7FA331D8682C400A3EFCC /* ReactionMenuView.swift in Sources */,
-				17C7FAD21D8682DF00A3EFCC /* CashFlowRecordModel.swift in Sources */,
 				17C7FA591D8682C500A3EFCC /* UINavigationController.swift in Sources */,
 				17C7FA9D1D8682C500A3EFCC /* XHorizontalMenuView.swift in Sources */,
-				17C7FAE51D8682DF00A3EFCC /* MyOrderCancelVC.swift in Sources */,
-				17C7FAED1D8682DF00A3EFCC /* MyOrderSendingVC.swift in Sources */,
-				17C7FAF21D8682DF00A3EFCC /* MyOrderWaitVC.swift in Sources */,
+				17CEF30F1D8F81FE0018BBAC /* CardTopupDoVC.swift in Sources */,
 				17C7FA691D8682C500A3EFCC /* XHttpPoolHandle.swift in Sources */,
+				17CEF3151D8F88850018BBAC /* OpenCardInputVC.swift in Sources */,
 				17CEF3011D8F6C4E0018BBAC /* XPhotoLibVC.swift in Sources */,
 				17C7FB9F1D86880500A3EFCC /* BackgroundTaskManager.m in Sources */,
 				17C7FA261D8682C400A3EFCC /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
@@ -1824,7 +1753,6 @@
 				17C7FA101D8682C400A3EFCC /* HtmlVC.swift in Sources */,
 				17C7FA6B1D8682C500A3EFCC /* MRZoomScrollView.swift in Sources */,
 				17C7FAD31D8682DF00A3EFCC /* ChooseTypeVC.swift in Sources */,
-				17C7FAEC1D8682DF00A3EFCC /* MyOrderSendingInfoVC.swift in Sources */,
 				17CEF30D1D8F72D60018BBAC /* CardTopupVC.swift in Sources */,
 				17C7FA2B1D8682C400A3EFCC /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				17C7FA121D8682C400A3EFCC /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
@@ -1845,9 +1773,9 @@
 				17C7FA181D8682C400A3EFCC /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				17C7FA1B1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				17C7FA5A1D8682C500A3EFCC /* UITableViewCell.swift in Sources */,
+				17CEF3131D8F87A80018BBAC /* OpenCardInputTableVC.swift in Sources */,
 				17C7FADE1D8682DF00A3EFCC /* MessageCell.swift in Sources */,
 				17C7FBAE1D86962400A3EFCC /* YuangongModel.swift in Sources */,
-				17C7FAE81D8682DF00A3EFCC /* MyOrderEndedInfoVC.swift in Sources */,
 				17C7FA2F1D8682C400A3EFCC /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				17C7FA221D8682C400A3EFCC /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				17C7FA211D8682C400A3EFCC /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,

@@ -26,6 +26,10 @@ class ChooseTypeVC: UITableViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        let vc = "OpenCardInputVC".VC("Main")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
