@@ -1,5 +1,5 @@
 //
-//  TopUpManageVC.swift
+//  ConsumeManageVC.swift
 //  CardSJD
 //
 //  Created by X on 16/9/19.
@@ -9,8 +9,7 @@
 import UIKit
 import SwiftCharts
 
-
-class TopUpManageVC: UITableViewController {
+class ConsumeManageVC: UITableViewController {
     
     @IBOutlet var total: UILabel!
     
@@ -32,7 +31,7 @@ class TopUpManageVC: UITableViewController {
     func showChart()
     {
         let labelSettings = ChartLabelSettings(font: ExamplesDefaults.labelFont,fontColor: APPOrangeColor)
-
+        
         let chartPoints1 = [
             self.createChartPoint(0, 0, labelSettings),
             self.createChartPoint(1, 1, labelSettings),
@@ -40,16 +39,16 @@ class TopUpManageVC: UITableViewController {
             self.createChartPoint(3, 4, labelSettings),
             self.createChartPoint(5, 2, labelSettings),
             self.createChartPoint(6, 3, labelSettings)
-            ]
+        ]
         
         let xValues = [
-        ChartAxisValueString("08-20", order: 0, labelSettings: labelSettings),
-        ChartAxisValueString("08-21", order: 1, labelSettings: labelSettings),
-        ChartAxisValueString("08-22", order: 2, labelSettings: labelSettings),
-        ChartAxisValueString("08-23", order: 3, labelSettings: labelSettings),
-        ChartAxisValueString("08-24", order: 4, labelSettings: labelSettings),
-        ChartAxisValueString("08-25", order: 5, labelSettings: labelSettings),
-        ChartAxisValueString("08-26", order: 6, labelSettings: labelSettings)
+            ChartAxisValueString("08-20", order: 0, labelSettings: labelSettings),
+            ChartAxisValueString("08-21", order: 1, labelSettings: labelSettings),
+            ChartAxisValueString("08-22", order: 2, labelSettings: labelSettings),
+            ChartAxisValueString("08-23", order: 3, labelSettings: labelSettings),
+            ChartAxisValueString("08-24", order: 4, labelSettings: labelSettings),
+            ChartAxisValueString("08-25", order: 5, labelSettings: labelSettings),
+            ChartAxisValueString("08-26", order: 6, labelSettings: labelSettings)
         ]
         
         let yValues = [
@@ -65,7 +64,7 @@ class TopUpManageVC: UITableViewController {
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "最近7日", settings: labelSettings))
         
         let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "", settings: labelSettings.defaultVertical()))
-
+        
         let chartFrame = CGRectMake(-10, 0, SW, SW)
         
         // calculate coords space in the background to keep UI smooth
@@ -85,7 +84,7 @@ class TopUpManageVC: UITableViewController {
                 
                 let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: ExamplesDefaults.guidelinesWidth)
                 let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: settings)
-
+                
                 //        self.automaticallyAdjustsScrollViewInsets = false // nested view controller - this is in parent
                 
                 let chart = Chart(
@@ -98,7 +97,7 @@ class TopUpManageVC: UITableViewController {
                     ]
                 )
                 
-              
+                
                 self.chartView.addSubview(chart.view)
                 self.chart = chart
                 
@@ -113,7 +112,7 @@ class TopUpManageVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
-        self.title="充值管理"
+        self.title="消费管理"
         
         let v=UIView()
         v.backgroundColor=UIColor.clearColor()
@@ -138,7 +137,7 @@ class TopUpManageVC: UITableViewController {
         
         if indexPath.row == 2
         {
-            let vc = "TopupDetailVC".VC("Main")
+            let vc = "ConsumeDetailVC".VC("Main")
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

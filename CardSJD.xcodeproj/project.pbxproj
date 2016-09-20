@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1711DA061D8FBEBC00058880 /* XAlertListMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */; };
+		174B55D81D90E38B00DD5431 /* TopupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */; };
+		174B55DB1D90E60F00DD5431 /* TopupDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */; };
+		174B55DC1D90E60F00DD5431 /* TopupDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */; };
+		174B55DE1D90E73600DD5431 /* MoneyDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55DD1D90E73600DD5431 /* MoneyDetailModel.swift */; };
+		174B55E01D90E92A00DD5431 /* ConsumeManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */; };
+		174B55E21D90EB0000DD5431 /* ConsumeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */; };
 		1764BEC41D90D40800C9FB77 /* ExamplesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */; };
 		179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20711D61724D0087C33A /* CoreLocation.framework */; };
 		179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20731D6172580087C33A /* QuartzCore.framework */; };
@@ -318,6 +324,12 @@
 
 /* Begin PBXFileReference section */
 		1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAlertListMenu.swift; sourceTree = "<group>"; };
+		174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopupDetailVC.swift; sourceTree = "<group>"; };
+		174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopupDetailCell.swift; sourceTree = "<group>"; };
+		174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopupDetailCell.xib; sourceTree = "<group>"; };
+		174B55DD1D90E73600DD5431 /* MoneyDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyDetailModel.swift; sourceTree = "<group>"; };
+		174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeManageVC.swift; sourceTree = "<group>"; };
+		174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeDetailVC.swift; sourceTree = "<group>"; };
 		1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesDefaults.swift; sourceTree = "<group>"; };
 		179249941D5B7613002E5529 /* CardSJD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSJD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179249A81D5B7613002E5529 /* CardSJD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSJD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1342,6 +1354,7 @@
 				17C7FBC11D86A02D00A3EFCC /* GangweiModel.swift */,
 				17C7FAB41D8682DF00A3EFCC /* MessageModel.swift */,
 				17CEF31B1D8F8DBB0018BBAC /* MemberModel.swift */,
+				174B55DD1D90E73600DD5431 /* MoneyDetailModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1360,6 +1373,11 @@
 				17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */,
 				17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */,
 				1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */,
+				174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */,
+				174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */,
+				174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */,
+				174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */,
+				174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */,
 			);
 			name = card;
 			sourceTree = "<group>";
@@ -1612,6 +1630,7 @@
 				17C7FAD91D8682DF00A3EFCC /* HomeMiddleCell.xib in Resources */,
 				17CEF2FB1D8F6C4E0018BBAC /* Checkmark-1@2x.png in Resources */,
 				17C7FB731D86833D00A3EFCC /* banner001.png in Resources */,
+				174B55DC1D90E60F00DD5431 /* TopupDetailCell.xib in Resources */,
 				17C7FB601D86833D00A3EFCC /* check01.png in Resources */,
 				17C7FA3F1D8682C400A3EFCC /* XDeleteAlert.xib in Resources */,
 				17C7FB881D86836100A3EFCC /* Main.storyboard in Resources */,
@@ -1743,6 +1762,7 @@
 				17C7FAFF1D8682F600A3EFCC /* ViewController.swift in Sources */,
 				17C7FAF61D8682DF00A3EFCC /* UserCenterVC.swift in Sources */,
 				17C7FA501D8682C500A3EFCC /* Dictionary.swift in Sources */,
+				174B55DB1D90E60F00DD5431 /* TopupDetailCell.swift in Sources */,
 				17C7FAA01D8682C500A3EFCC /* XHeaderRefreshView.swift in Sources */,
 				17C7FADD1D8682DF00A3EFCC /* LoginVC.swift in Sources */,
 				17C7FBB11D86964C00A3EFCC /* YGListCell.swift in Sources */,
@@ -1751,6 +1771,7 @@
 				17C7FA811D8682C500A3EFCC /* DDCollectionViewFlowLayout.m in Sources */,
 				17C7FA301D8682C400A3EFCC /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				17C7FA5F1D8682C500A3EFCC /* Reflect+ArcFile.swift in Sources */,
+				174B55D81D90E38B00DD5431 /* TopupDetailVC.swift in Sources */,
 				17C7FA1C1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				17C7FA891D8682C500A3EFCC /* Constraint.swift in Sources */,
 				17C7FA821D8682C500A3EFCC /* FXBlurView.m in Sources */,
@@ -1784,6 +1805,8 @@
 				17C7FA741D8682C500A3EFCC /* XImageOperationManager.swift in Sources */,
 				17C7FA921D8682C500A3EFCC /* SnapKit.swift in Sources */,
 				17C7FA8D1D8682C500A3EFCC /* ConstraintMaker.swift in Sources */,
+				174B55E01D90E92A00DD5431 /* ConsumeManageVC.swift in Sources */,
+				174B55DE1D90E73600DD5431 /* MoneyDetailModel.swift in Sources */,
 				17C7FA161D8682C400A3EFCC /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				17C7FAD81D8682DF00A3EFCC /* HomeMiddleCell.swift in Sources */,
 				17C7FA651D8682C500A3EFCC /* Reflect+Type.swift in Sources */,
@@ -1850,6 +1873,7 @@
 				17CEF30F1D8F81FE0018BBAC /* CardTopupDoVC.swift in Sources */,
 				17C7FA691D8682C500A3EFCC /* XHttpPoolHandle.swift in Sources */,
 				17CEF3151D8F88850018BBAC /* OpenCardInputVC.swift in Sources */,
+				174B55E21D90EB0000DD5431 /* ConsumeDetailVC.swift in Sources */,
 				17CEF3011D8F6C4E0018BBAC /* XPhotoLibVC.swift in Sources */,
 				17C7FB9F1D86880500A3EFCC /* BackgroundTaskManager.m in Sources */,
 				17C7FA261D8682C400A3EFCC /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
