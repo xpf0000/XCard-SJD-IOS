@@ -36,6 +36,8 @@
 		17B06F721D911E3F0070D242 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F711D911E3F0070D242 /* ActivityModel.swift */; };
 		17B06F741D9121110070D242 /* CreatActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F731D9121110070D242 /* CreatActivityVC.swift */; };
 		17B06F761D9121280070D242 /* CreatActivityTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F751D9121280070D242 /* CreatActivityTableVC.swift */; };
+		17B06F791D91262C0070D242 /* CreatActivityPicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F771D91262C0070D242 /* CreatActivityPicCell.swift */; };
+		17B06F7A1D91262C0070D242 /* CreatActivityPicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B06F781D91262C0070D242 /* CreatActivityPicCell.xib */; };
 		17C447801D8929D900B63107 /* AddYGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4477F1D8929D900B63107 /* AddYGVC.swift */; };
 		17C7FA101D8682C400A3EFCC /* HtmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9461D8682C400A3EFCC /* HtmlVC.swift */; };
 		17C7FA111D8682C400A3EFCC /* HtmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9471D8682C400A3EFCC /* HtmlView.swift */; };
@@ -361,6 +363,8 @@
 		17B06F711D911E3F0070D242 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		17B06F731D9121110070D242 /* CreatActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatActivityVC.swift; sourceTree = "<group>"; };
 		17B06F751D9121280070D242 /* CreatActivityTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatActivityTableVC.swift; sourceTree = "<group>"; };
+		17B06F771D91262C0070D242 /* CreatActivityPicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatActivityPicCell.swift; sourceTree = "<group>"; };
+		17B06F781D91262C0070D242 /* CreatActivityPicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatActivityPicCell.xib; sourceTree = "<group>"; };
 		17C4477F1D8929D900B63107 /* AddYGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYGVC.swift; sourceTree = "<group>"; };
 		17C7F9461D8682C400A3EFCC /* HtmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlVC.swift; sourceTree = "<group>"; };
 		17C7F9471D8682C400A3EFCC /* HtmlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlView.swift; sourceTree = "<group>"; };
@@ -767,6 +771,8 @@
 				17B06F6F1D911D710070D242 /* ActivityListVC.swift */,
 				17B06F731D9121110070D242 /* CreatActivityVC.swift */,
 				17B06F751D9121280070D242 /* CreatActivityTableVC.swift */,
+				17B06F771D91262C0070D242 /* CreatActivityPicCell.swift */,
+				17B06F781D91262C0070D242 /* CreatActivityPicCell.xib */,
 			);
 			name = activity;
 			sourceTree = "<group>";
@@ -1566,7 +1572,7 @@
 				TargetAttributes = {
 					179249931D5B7613002E5529 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = QPBSPA49NG;
+						DevelopmentTeam = 7M7292BGRP;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1622,6 +1628,7 @@
 				17C7FB791D86833D00A3EFCC /* index_icon06.png in Resources */,
 				17C7FB631D86833D00A3EFCC /* shop_icon01.png in Resources */,
 				17C7FB4C1D86833D00A3EFCC /* Recharge02.png in Resources */,
+				17B06F7A1D91262C0070D242 /* CreatActivityPicCell.xib in Resources */,
 				17C7FB611D86833D00A3EFCC /* check02.png in Resources */,
 				17C7FB7A1D86833D00A3EFCC /* index_icon07.png in Resources */,
 				17C7FB531D86833D00A3EFCC /* card_type1.png in Resources */,
@@ -1940,6 +1947,7 @@
 				17C7FA991D8682C500A3EFCC /* XCollectionView.swift in Sources */,
 				17CEF3051D8F6C4E0018BBAC /* XZoomImageView.swift in Sources */,
 				17CEF3021D8F6C4E0018BBAC /* XPhotoPicker.swift in Sources */,
+				17B06F791D91262C0070D242 /* CreatActivityPicCell.swift in Sources */,
 				17CEF3081D8F6FBA0018BBAC /* CardTypeCell.swift in Sources */,
 				17C7FA281D8682C400A3EFCC /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				17C7FA6E1D8682C500A3EFCC /* UIImage+WebP.m in Sources */,

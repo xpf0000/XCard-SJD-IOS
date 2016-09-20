@@ -14,12 +14,22 @@ class ActivityListVC: UIViewController {
     let menu = XHorizontalMenuView()
     let main = XHorizontalMainView()
     
+    func toCreatActivity()
+    {
+        let vc = "CreatActivityVC".VC("Main")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "活动管理"
         self.addBackButton()
         self.view.backgroundColor = APPBGColor
+        
+        self.addNvButton(false, img: "add.png", title: nil) {[weak self] (btn) in
+            self?.toCreatActivity()
+        }
+
         
         menu.main = main
         menu.frame = CGRectMake(0, 0, SW, 40)
