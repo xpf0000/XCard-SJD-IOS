@@ -124,8 +124,6 @@ class ConsumeManageVC: UITableViewController {
         
         showChart()
         
-        
-        
         tableView.reloadData()
         
         

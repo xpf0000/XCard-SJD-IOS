@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityListCell" rowHeight="298" id="KGk-i7-Jjw" customClass="ActivityListCell" customModule="CardSJD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="298"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="297"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQX-Gt-qb1">
+                        <rect key="frame" x="10" y="10" width="379" height="235"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这个东西堪比毒药，但却有很多人爱喝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwE-WW-3ho">
+                        <rect key="frame" x="10" y="255" width="379" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZD-gz-AzP">
+                        <rect key="frame" x="10" y="207" width="379" height="38"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-08-15至2016-09-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbj-DV-8Z3">
+                                <rect key="frame" x="10" y="10" width="169" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nbj-DV-8Z3" firstAttribute="centerY" secondItem="9ZD-gz-AzP" secondAttribute="centerY" id="1i8-Wj-6zc"/>
+                            <constraint firstItem="nbj-DV-8Z3" firstAttribute="leading" secondItem="9ZD-gz-AzP" secondAttribute="leading" constant="10" id="DMm-K0-T0U"/>
+                            <constraint firstAttribute="height" constant="38" id="oYD-nd-CXR"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3S-Ys-PGW">
+                        <rect key="frame" x="0.0" y="285" width="399" height="12"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="6xA-gL-4k6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nwE-WW-3ho" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="62T-qL-I5k"/>
+                    <constraint firstAttribute="trailing" secondItem="nwE-WW-3ho" secondAttribute="trailing" constant="10" id="6we-CD-Lt2"/>
+                    <constraint firstItem="9ZD-gz-AzP" firstAttribute="trailing" secondItem="vQX-Gt-qb1" secondAttribute="trailing" id="9rw-Wi-KxQ"/>
+                    <constraint firstItem="9ZD-gz-AzP" firstAttribute="bottom" secondItem="vQX-Gt-qb1" secondAttribute="bottom" id="BJH-b9-dxx"/>
+                    <constraint firstItem="N3S-Ys-PGW" firstAttribute="top" secondItem="nwE-WW-3ho" secondAttribute="bottom" constant="10" id="C74-ou-TAB"/>
+                    <constraint firstItem="vQX-Gt-qb1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GgD-Fr-mnK"/>
+                    <constraint firstItem="N3S-Ys-PGW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IA0-To-NVd"/>
+                    <constraint firstItem="9ZD-gz-AzP" firstAttribute="leading" secondItem="vQX-Gt-qb1" secondAttribute="leading" id="RXg-gg-F27"/>
+                    <constraint firstAttribute="trailing" secondItem="N3S-Ys-PGW" secondAttribute="trailing" id="ebs-qR-nsW"/>
+                    <constraint firstItem="nwE-WW-3ho" firstAttribute="top" secondItem="vQX-Gt-qb1" secondAttribute="bottom" constant="10" id="gMZ-Uh-zFr"/>
+                    <constraint firstItem="vQX-Gt-qb1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rHv-DQ-dsd"/>
+                    <constraint firstAttribute="trailing" secondItem="vQX-Gt-qb1" secondAttribute="trailing" constant="10" id="sIc-qE-Tsq"/>
+                    <constraint firstAttribute="bottom" secondItem="N3S-Ys-PGW" secondAttribute="bottom" id="xWg-Vo-DXL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="atitle" destination="nwE-WW-3ho" id="gdL-YV-nHg"/>
+                <outlet property="img" destination="vQX-Gt-qb1" id="5PE-db-F2e"/>
+                <outlet property="time" destination="nbj-DV-8Z3" id="h0E-d7-H4d"/>
+            </connections>
+            <point key="canvasLocation" x="281.5" y="272"/>
+        </tableViewCell>
+    </objects>
+</document>

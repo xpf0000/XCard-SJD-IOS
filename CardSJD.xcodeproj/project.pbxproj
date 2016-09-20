@@ -30,6 +30,12 @@
 		179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208D1D6175B30087C33A /* UIKit.framework */; };
 		179C20901D6175C40087C33A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208F1D6175C40087C33A /* libz.tbd */; };
 		17A33A081D8FF57E007650A2 /* TopUpManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */; };
+		17B06F6D1D9117640070D242 /* ActivityListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F6B1D9117640070D242 /* ActivityListCell.swift */; };
+		17B06F6E1D9117640070D242 /* ActivityListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B06F6C1D9117640070D242 /* ActivityListCell.xib */; };
+		17B06F701D911D710070D242 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F6F1D911D710070D242 /* ActivityListVC.swift */; };
+		17B06F721D911E3F0070D242 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F711D911E3F0070D242 /* ActivityModel.swift */; };
+		17B06F741D9121110070D242 /* CreatActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F731D9121110070D242 /* CreatActivityVC.swift */; };
+		17B06F761D9121280070D242 /* CreatActivityTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F751D9121280070D242 /* CreatActivityTableVC.swift */; };
 		17C447801D8929D900B63107 /* AddYGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4477F1D8929D900B63107 /* AddYGVC.swift */; };
 		17C7FA101D8682C400A3EFCC /* HtmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9461D8682C400A3EFCC /* HtmlVC.swift */; };
 		17C7FA111D8682C400A3EFCC /* HtmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9471D8682C400A3EFCC /* HtmlView.swift */; };
@@ -349,6 +355,12 @@
 		179C208D1D6175B30087C33A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		179C208F1D6175C40087C33A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopUpManageVC.swift; sourceTree = "<group>"; };
+		17B06F6B1D9117640070D242 /* ActivityListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityListCell.swift; sourceTree = "<group>"; };
+		17B06F6C1D9117640070D242 /* ActivityListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityListCell.xib; sourceTree = "<group>"; };
+		17B06F6F1D911D710070D242 /* ActivityListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
+		17B06F711D911E3F0070D242 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		17B06F731D9121110070D242 /* CreatActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatActivityVC.swift; sourceTree = "<group>"; };
+		17B06F751D9121280070D242 /* CreatActivityTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatActivityTableVC.swift; sourceTree = "<group>"; };
 		17C4477F1D8929D900B63107 /* AddYGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddYGVC.swift; sourceTree = "<group>"; };
 		17C7F9461D8682C400A3EFCC /* HtmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlVC.swift; sourceTree = "<group>"; };
 		17C7F9471D8682C400A3EFCC /* HtmlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlView.swift; sourceTree = "<group>"; };
@@ -747,6 +759,18 @@
 			path = TJQSUITests;
 			sourceTree = "<group>";
 		};
+		17B06F6A1D91147F0070D242 /* activity */ = {
+			isa = PBXGroup;
+			children = (
+				17B06F6B1D9117640070D242 /* ActivityListCell.swift */,
+				17B06F6C1D9117640070D242 /* ActivityListCell.xib */,
+				17B06F6F1D911D710070D242 /* ActivityListVC.swift */,
+				17B06F731D9121110070D242 /* CreatActivityVC.swift */,
+				17B06F751D9121280070D242 /* CreatActivityTableVC.swift */,
+			);
+			name = activity;
+			sourceTree = "<group>";
+		};
 		17C7F9291D8682C400A3EFCC /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1119,6 +1143,7 @@
 		17C7FAA21D8682DF00A3EFCC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				17B06F6A1D91147F0070D242 /* activity */,
 				17CEF3161D8F8CE50018BBAC /* member */,
 				17C7FBA81D868B8400A3EFCC /* card */,
 				17C7FBA51D868AF500A3EFCC /* home */,
@@ -1346,6 +1371,7 @@
 			isa = PBXGroup;
 			children = (
 				17C7FAA41D8682DF00A3EFCC /* APPConfig.swift */,
+				17B06F711D911E3F0070D242 /* ActivityModel.swift */,
 				17CEF30A1D8F70D80018BBAC /* CardTypeModel.swift */,
 				17C7FAC81D8682DF00A3EFCC /* OrderModel.swift */,
 				17C7FACD1D8682DF00A3EFCC /* UserModel.swift */,
@@ -1620,6 +1646,7 @@
 				17C7FB501D86833D00A3EFCC /* arrow01.png in Resources */,
 				17C7FB5B1D86833D00A3EFCC /* right.png in Resources */,
 				17C7FB711D86833D00A3EFCC /* login02.png in Resources */,
+				17B06F6E1D9117640070D242 /* ActivityListCell.xib in Resources */,
 				17C7FB6E1D86833D00A3EFCC /* card_type01.png in Resources */,
 				17C7FB891D86836100A3EFCC /* LaunchScreen.storyboard in Resources */,
 				17C7FB701D86833D00A3EFCC /* login01.png in Resources */,
@@ -1797,8 +1824,10 @@
 				17C7FA751D8682C500A3EFCC /* XImageUtil.swift in Sources */,
 				17C7FBA21D86880500A3EFCC /* LocationShareModel.m in Sources */,
 				17C7FA191D8682C400A3EFCC /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				17B06F6D1D9117640070D242 /* ActivityListCell.swift in Sources */,
 				17C7FA981D8682C500A3EFCC /* XDownLoadView.swift in Sources */,
 				17CEF3041D8F6C4E0018BBAC /* XPhotoUtil.swift in Sources */,
+				17B06F741D9121110070D242 /* CreatActivityVC.swift in Sources */,
 				17C7FA551D8682C500A3EFCC /* string.swift in Sources */,
 				17C7FA411D8682C400A3EFCC /* XNavigationController.swift in Sources */,
 				17C7FA271D8682C400A3EFCC /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
@@ -1808,9 +1837,11 @@
 				174B55E01D90E92A00DD5431 /* ConsumeManageVC.swift in Sources */,
 				174B55DE1D90E73600DD5431 /* MoneyDetailModel.swift in Sources */,
 				17C7FA161D8682C400A3EFCC /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				17B06F721D911E3F0070D242 /* ActivityModel.swift in Sources */,
 				17C7FAD81D8682DF00A3EFCC /* HomeMiddleCell.swift in Sources */,
 				17C7FA651D8682C500A3EFCC /* Reflect+Type.swift in Sources */,
 				17C7FAF31D8682DF00A3EFCC /* OpenCardVC.swift in Sources */,
+				17B06F701D911D710070D242 /* ActivityListVC.swift in Sources */,
 				17C7FAF91D8682DF00A3EFCC /* UserModel.swift in Sources */,
 				17C7FA571D8682C500A3EFCC /* UIColor.swift in Sources */,
 				17C7FA5B1D8682C500A3EFCC /* UITextField.swift in Sources */,
@@ -1853,6 +1884,7 @@
 				17C7FA1E1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				17C7FA4B1D8682C500A3EFCC /* DataCache.swift in Sources */,
 				17C7FAD61D8682DF00A3EFCC /* FBPassNewVC.swift in Sources */,
+				17B06F761D9121280070D242 /* CreatActivityTableVC.swift in Sources */,
 				17C7FA231D8682C400A3EFCC /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				17C7FA3D1D8682C400A3EFCC /* XCornerRadiusTextField.swift in Sources */,
 				17C7FA321D8682C400A3EFCC /* NVActivityIndicatorView.swift in Sources */,

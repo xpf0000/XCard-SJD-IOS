@@ -250,6 +250,9 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             case 2:
                 let vc = "ConsumeManageVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
+            case 3:
+                let vc = ActivityListVC()
+                self.navigationController?.pushViewController(vc, animated: true)
             case 4:
                 let vc = UserMessageVC()
                 self.navigationController?.pushViewController(vc, animated: true)
