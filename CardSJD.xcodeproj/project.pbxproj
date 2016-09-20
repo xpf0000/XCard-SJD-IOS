@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1711DA061D8FBEBC00058880 /* XAlertListMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */; };
+		1764BEC41D90D40800C9FB77 /* ExamplesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */; };
 		179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20711D61724D0087C33A /* CoreLocation.framework */; };
 		179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20731D6172580087C33A /* QuartzCore.framework */; };
 		179C20761D61725F0087C33A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20751D61725F0087C33A /* OpenGLES.framework */; };
@@ -317,6 +318,7 @@
 
 /* Begin PBXFileReference section */
 		1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAlertListMenu.swift; sourceTree = "<group>"; };
+		1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesDefaults.swift; sourceTree = "<group>"; };
 		179249941D5B7613002E5529 /* CardSJD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSJD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179249A81D5B7613002E5529 /* CardSJD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSJD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		179249B31D5B7613002E5529 /* CardSJD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSJD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1357,6 +1359,7 @@
 				17CEF30E1D8F81FE0018BBAC /* CardTopupDoVC.swift */,
 				17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */,
 				17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */,
+				1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */,
 			);
 			name = card;
 			sourceTree = "<group>";
@@ -1855,6 +1858,7 @@
 				17C7FAF71D8682DF00A3EFCC /* UserFeedVC.swift in Sources */,
 				17C7FA1F1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				17C7FBB91D869BD200A3EFCC /* PowerListCell.swift in Sources */,
+				1764BEC41D90D40800C9FB77 /* ExamplesDefaults.swift in Sources */,
 				17C7FA511D8682C500A3EFCC /* NSData.swift in Sources */,
 				17C7FA3A1D8682C400A3EFCC /* XBuyNumView.swift in Sources */,
 				17C7FA461D8682C500A3EFCC /* XTextView.swift in Sources */,
@@ -2058,7 +2062,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/Location",
 				);
 				INFOPLIST_FILE = CardSJD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2096,7 +2100,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/Location",
 				);
 				INFOPLIST_FILE = CardSJD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
