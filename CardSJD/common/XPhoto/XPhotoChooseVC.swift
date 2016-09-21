@@ -42,6 +42,7 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
+        //self.automaticallyAdjustsScrollViewInsets = false
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 5.0
@@ -214,6 +215,33 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
         
         tempChooseArr.removeAll(keepCapacity: false)
         
+        if let nvBar = self.navigationController?.navigationBar
+        {
+            for item in nvBar.subviews
+            {
+                item.layer.removeAllAnimations()
+                if "\(item)".has("_UINavigationBarBackIndicatorView")
+                {
+                    if item.frame.origin.y > 20
+                    {
+                        item.frame.origin.y -= 20
+                    }
+                    
+                }
+                
+                if "\(item)".has("UINavigationItemView")
+                {
+                    if item.frame.origin.y > 20
+                    {
+                        item.frame.origin.y -= 20.5
+                    }
+                    
+                }
+
+            }
+            
+        }
+        
         
     }
     
@@ -222,6 +250,43 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
         super.didReceiveMemoryWarning()
         
     }
+    
+    
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear !!!!!!")
+        
+        if let nvBar = self.navigationController?.navigationBar
+        {
+            print(nvBar.frame)
+            
+            for item in nvBar.subviews
+            {
+//                if "\(item)".has("_UINavigationBarBackIndicatorView")
+//                {
+//                    item.frame.origin.y += 20
+//                }
+                
+                print(item)
+            }
+
+        }
+
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        //print("viewWillDisappear !!!!!!")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        //print("viewDidDisappear !!!!!!")
+    }
+    
     
 
     deinit

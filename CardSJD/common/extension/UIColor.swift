@@ -24,6 +24,19 @@ extension UIColor
 
     }
     
+    func toImage(size:CGSize)->UIImage
+    {
+        let rect=CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, self.CGColor);
+        CGContextFillRect(context, rect);
+        let theImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return theImage
+    }
+    
     
     
     

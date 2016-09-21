@@ -17,6 +17,42 @@ typealias XPhotoAllChooseBlock = (Bool)->Void
 
 var XPhotoUseVersion7 = false
 
+class XPhotoNavigationController:UINavigationController
+{
+    var statusBarStyle:UIStatusBarStyle = .Default
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.navigationBar.barTintColor = nil
+        self.navigationBar.tintColor=nil
+        self.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        self.navigationBar.titleTextAttributes=nil
+        self.navigationBar.translucent = true
+    }
+    
+    override init(rootViewController: UIViewController) {
+        super.init(rootViewController: rootViewController)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        statusBarStyle = UIApplication.sharedApplication().statusBarStyle
+        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().setStatusBarStyle(statusBarStyle, animated: true)
+    }
+    
+}
 
 extension UIView
 {

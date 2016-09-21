@@ -47,7 +47,10 @@ class XPhotoPicker: UIView,UIActionSheetDelegate {
     
     func getPhoto(vc:UIViewController,result:XPhotoResultBlock)
     {
-        XPhotoHandle.Share.handle()
+        if !self.allowsEditing
+        {
+            XPhotoHandle.Share.handle()
+        }
         
         pushVC = vc
         block = result
@@ -115,7 +118,7 @@ class XPhotoPicker: UIView,UIActionSheetDelegate {
             {
                 let vc = XPhotoLibVC()
                 vc.block = block
-                let nv = UINavigationController(rootViewController: vc)
+                let nv = XPhotoNavigationController(rootViewController: vc)
                 
                 pushVC.presentViewController(nv, animated: true, completion: {
                     

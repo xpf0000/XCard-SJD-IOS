@@ -253,6 +253,16 @@ class XPhotoBrowse: UIViewController,UICollectionViewDelegate,UICollectionViewDa
         
         if let nvBar = self.navigationController?.navigationBar
         {
+            nvBar.frame.size.height = 64.0
+            
+            for item in nvBar.subviews
+            {
+                if "\(item)".has("_UINavigationBarBackIndicatorView")
+                {
+                    item.frame.origin.y += 20
+                }
+            }
+
             let image = color.image
             nvBar.setBackgroundImage(image, forBarMetrics:.Default)
             nvBar.tintColor = UIColor.whiteColor()
@@ -261,15 +271,15 @@ class XPhotoBrowse: UIViewController,UICollectionViewDelegate,UICollectionViewDa
         
     }
     
-    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
+ 
         UIApplication.sharedApplication().statusBarHidden = false
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .None)
         
         if let nvBar = self.navigationController?.navigationBar
         {
+            nvBar.frame.size.height = 44.0
             nvBar.setBackgroundImage(nil, forBarMetrics:.Default)
             nvBar.tintColor = nil
             nvBar.shadowImage = nil

@@ -36,6 +36,8 @@ class XPhotoLibVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         super.viewDidLoad()
         self.title = "照片"
         
+        //self.automaticallyAdjustsScrollViewInsets = false
+        
         let button=UIButton(type: UIButtonType.Custom)
         button.frame=CGRectMake(0, 0, 21, 21);
         button.setTitle("取消", forState: .Normal)
@@ -175,7 +177,6 @@ class XPhotoLibVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         XPhotoHandle.Share.chooseArr.removeAll(keepCapacity: false)
     }
     
@@ -183,6 +184,7 @@ class XPhotoLibVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         super.didReceiveMemoryWarning()
         
     }
+    
     
     deinit
     {
