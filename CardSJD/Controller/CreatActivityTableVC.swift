@@ -225,15 +225,21 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         }
         else
         {
-//            let picker = XPhotoLibVC()
-//            XPhotoLibVC.maxNum = 9
-//            //XPhotoUseVersion7 = true
-//            XPhotoHandle.Share.chooseArr = imgArr
-//            picker.getPhoto(self) {[weak self] (res) in
-//                
-//                self?.imgArr = res
-//                
-//            }
+
+            let alert = XCommonAlert(title: "确认删除?", message: nil, buttons: nil)
+            
+            alert.click({[weak self] (index) -> Bool in
+                if self == nil {return false}
+                
+                print(index)
+                
+                self?.imgArr.removeAtIndex(indexPath.row)
+                collectionView.reloadData()
+                
+                return true
+            })
+            
+            alert.show()
             
         }
         
