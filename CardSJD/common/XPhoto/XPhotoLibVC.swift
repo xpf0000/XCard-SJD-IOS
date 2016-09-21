@@ -21,6 +21,17 @@ class XPhotoLibVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var block:XPhotoResultBlock?
     static var maxNum = 9
     
+    func getPhoto(vc:UIViewController,result:XPhotoResultBlock)
+    {
+        self.block = result
+        let nv = XPhotoNavigationController(rootViewController: self)
+        
+        vc.presentViewController(nv, animated: true, completion: {
+            
+        })
+        
+    }
+    
     //保存照片集合
     //var assets = [ALAsset]()
     
@@ -28,7 +39,6 @@ class XPhotoLibVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     {
         self.dismissViewControllerAnimated(true) { 
             self.block = nil
-            XPhotoHandle.Share.clean()
         }
     }
     

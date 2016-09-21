@@ -38,14 +38,13 @@ class XPhotoBrowse: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     
     func checkChoosed()
     {
-        tool.all.selected = XPhotoHandle.Share.chooseArr.contains(assets[nowRow])
+        tool.all.selected = XPhotoHandle.Share.chooseArr.map{$0.id}.contains(assets[nowRow].id)
     }
     
     func dismiss()
     {
         self.dismissViewControllerAnimated(true) {
             self.block = nil
-            XPhotoHandle.Share.clean()
         }
     }
     
@@ -177,19 +176,7 @@ class XPhotoBrowse: UIViewController,UICollectionViewDelegate,UICollectionViewDa
         
         let asset = assets[nowRow]
         
-        if let index = XPhotoHandle.Share.chooseArr.indexOf(asset)
-        {
-            XPhotoHandle.Share.chooseArr.removeAtIndex(index)
-        }
-        else
-        {
-            if XPhotoHandle.Share.chooseArr.count == XPhotoLibVC.maxNum{return false}
-            XPhotoHandle.Share.chooseArr.append(asset)
-        }
-        
-        //tool.count = XPhotoHandle.Share.chooseArr.count
-        
-        return true
+        return XPhotoHandle.Share.doChoose(asset)
         
     }
     

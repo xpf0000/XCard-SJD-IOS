@@ -50,6 +50,8 @@ class XPhotoNavigationController:UINavigationController
         super.viewWillDisappear(animated)
         
         UIApplication.sharedApplication().setStatusBarStyle(statusBarStyle, animated: true)
+        
+        XPhotoHandle.Share.clean()
     }
     
 }

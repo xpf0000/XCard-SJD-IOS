@@ -27,6 +27,31 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
     
     @IBOutlet var mark: XTextView!
     
+    var imgArr:[XPhotoAssetModel] = []
+    {
+        didSet
+        {
+            picCollection.httpHandle.listArr.removeAll(keepCapacity: false)
+            
+            for item in imgArr
+            {
+                let m = CreatActivityPicModel()
+                m.img = item.image
+                    
+                picCollection.httpHandle.listArr.append(m)
+            }
+            
+            if imgArr.count < 9
+            {
+                let m = CreatActivityPicModel()
+                m.img = "ac_photo.png".image
+                picCollection.httpHandle.listArr.append(m)
+            }
+         
+            picCollection.reloadData()
+        }
+    }
+    
     var headerImg:UIImage?
     {
         didSet
@@ -57,7 +82,8 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         
         picCollection.ViewLayout.scrollDirection = .Horizontal
         picCollection.ViewLayout.itemSize = CGSizeMake(70.0, 70.0)
-        picCollection.ViewLayout.minimumInteritemSpacing = 5.0
+        //picCollection.ViewLayout.minimumInteritemSpacing = 5.0
+        picCollection.ViewLayout.minimumLineSpacing = 5.0
         
         picCollection.setHandle("", pageStr: "", keys: [], model: CreatActivityPicModel.self, CellIdentifier: "CreatActivityPicCell")
         
@@ -186,30 +212,29 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if indexPath.row == (picCollection.httpHandle.listArr.count-1) && picCollection.httpHandle.listArr.count < 9
+        if indexPath.row == (picCollection.httpHandle.listArr.count-1) && imgArr.count < 9
         {
             let picker = XPhotoPicker()
-            picker.maxNum = 9 - picCollection.httpHandle.listArr.count
+            picker.maxNum = 9 - imgArr.count
             picker.getPhoto(self) {[weak self] (res) in
                 
-                for item in res
-                {
-                    let m = CreatActivityPicModel()
-                    m.img = item.image
-                
-                    self?.picCollection.httpHandle.listArr.append(m)
-                }
-                
-                self?.picCollection.reloadData()
-            
-            }
+                self?.imgArr += res
 
-            
-            
+            }
+  
         }
         else
         {
-
+//            let picker = XPhotoLibVC()
+//            XPhotoLibVC.maxNum = 9
+//            //XPhotoUseVersion7 = true
+//            XPhotoHandle.Share.chooseArr = imgArr
+//            picker.getPhoto(self) {[weak self] (res) in
+//                
+//                self?.imgArr = res
+//                
+//            }
+            
         }
         
      

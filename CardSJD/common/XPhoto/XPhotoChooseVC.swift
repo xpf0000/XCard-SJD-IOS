@@ -35,14 +35,12 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
     {
         self.dismissViewControllerAnimated(true) {
             self.block = nil
-            XPhotoHandle.Share.clean()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        //self.automaticallyAdjustsScrollViewInsets = false
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 5.0
@@ -96,7 +94,7 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
         let asset = assets[indexPath.row]
         cell.asset = asset
 
-        cell.choose.selected = XPhotoHandle.Share.chooseArr.contains(asset )
+        cell.choose.selected = XPhotoHandle.Share.chooseArr.map{$0.id}.contains(asset.id)
         
         cell.doChoose {[weak self] (asset) ->Bool in
             if self == nil {return false}
@@ -110,19 +108,7 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
     func doChoose(asset:XPhotoAssetModel)->Bool
     {
     
-        if let index = XPhotoHandle.Share.chooseArr.indexOf(asset)
-        {
-            XPhotoHandle.Share.chooseArr.removeAtIndex(index)
-        }
-        else
-        {
-            if XPhotoHandle.Share.chooseArr.count == XPhotoLibVC.maxNum{return false}
-            XPhotoHandle.Share.chooseArr.append(asset)
-        }
-        
-        //tool.count = XPhotoHandle.Share.chooseArr.count
-        
-        return true
+        return XPhotoHandle.Share.doChoose(asset)
         
     }
     
@@ -136,7 +122,7 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
             {
                 if c == r {break}
                 
-                if !XPhotoHandle.Share.chooseArr.contains(asset )
+                if !(XPhotoHandle.Share.chooseArr.map{$0.id}).contains(asset.id)
                 {
                     XPhotoHandle.Share.chooseArr.append(asset )
                     
@@ -188,6 +174,7 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
 
         let vc = XPhotoBrowse()
         vc.assets = assets
+
         vc.indexPath = indexPath
         vc.block = block
         self.navigationController?.pushViewController(vc, animated: true)
@@ -202,9 +189,10 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
         var b1 = true
         
         for item in XPhotoHandle.Share.chooseArr {
-            if !tempChooseArr.contains(item)
+            if !(tempChooseArr.map{$0.id}.contains(item.id))
             {
                 b1 = false
+                break
             }
         }
         
@@ -251,52 +239,11 @@ class XPhotoChooseVC: UIViewController,UICollectionViewDelegate,UICollectionView
         
     }
     
-    
-    
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        print("viewDidAppear !!!!!!")
-        
-        if let nvBar = self.navigationController?.navigationBar
-        {
-            print(nvBar.frame)
-            
-            for item in nvBar.subviews
-            {
-//                if "\(item)".has("_UINavigationBarBackIndicatorView")
-//                {
-//                    item.frame.origin.y += 20
-//                }
-                
-                print(item)
-            }
-
-        }
-
-        
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        //print("viewWillDisappear !!!!!!")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        //print("viewDidDisappear !!!!!!")
-    }
-    
-    
 
     deinit
     {
         assets.removeAll(keepCapacity: false)
     }
-    
-    
-    
-    
     
 
 }

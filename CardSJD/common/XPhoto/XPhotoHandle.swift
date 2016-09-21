@@ -34,12 +34,14 @@ class XPhotoAssetModel: NSObject {
         }
     }
     var image:UIImage?
+    var id = ""
     
     @available(iOS 8.0, *)
     private func version8()
     {
         if let set = alasset as? PHAsset
         {
+            id = set.localIdentifier
 //偶尔会卡  cpu 飙升到200%左右  猜测为同一时间进行的任务太多  使用队列进行控制下
             XPhotoHandle.Share.AssetQueue.addOperationWithBlock { () -> Void in
                 
@@ -63,10 +65,22 @@ class XPhotoAssetModel: NSObject {
     {
         if let set = alasset as? ALAsset
         {
+
+            if let dic = set.valueForProperty(ALAssetPropertyURLs) as? [NSObject:AnyObject]
+            {
+                for (_,value) in dic
+                {
+                    let url:NSURL = value as! NSURL
+                    id = url.query!
+                }
+            }
+            
             image = UIImage(CGImage: set.aspectRatioThumbnail().takeUnretainedValue())
         }
 
     }
+    
+
     
 }
 
@@ -204,25 +218,36 @@ class XPhotoHandle: NSObject {
     {
         if running {return}
         running = true
-        clean()
         
-        if #available(iOS 8.0, *) {
-            
-            if XPhotoUseVersion7
-            {
-                self.version7()
-            }
-            else
-            {
-                self.version8()
-            }
+        autoreleasepool { 
             
             
-        } else {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+                
+                if #available(iOS 8.0, *) {
+                    
+                    if XPhotoUseVersion7
+                    {
+                        self.version7()
+                    }
+                    else
+                    {
+                        self.version8()
+                    }
+                    
+                    
+                } else {
+                    
+                    self.version7()
+                    
+                }
+                
+                
+            })
             
-            self.version7()
             
         }
+        
         
     }
     
@@ -342,6 +367,23 @@ class XPhotoHandle: NSObject {
             print("error: \(error)")
         }
         
+    }
+    
+    func doChoose(asset:XPhotoAssetModel)->Bool
+    {
+        let index = chooseArr.map{$0.id}.indexOf(asset.id)
+        
+        if let i = index
+        {
+            chooseArr.removeAtIndex(i)
+        }
+        else
+        {
+            if chooseArr.count == XPhotoLibVC.maxNum{return false}
+            chooseArr.append(asset)
+        }
+        
+        return true
     }
     
     class func getGroupID(g:ALAssetsGroup)->String
