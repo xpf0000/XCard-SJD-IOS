@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1711DA061D8FBEBC00058880 /* XAlertListMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */; };
+		1744198C1D94D2F300F5CD2B /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744198A1D94D2F300F5CD2B /* MessageListCell.swift */; };
+		1744198D1D94D2F300F5CD2B /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1744198B1D94D2F300F5CD2B /* MessageListCell.xib */; };
+		1744198F1D94D64400F5CD2B /* MessageManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744198E1D94D64400F5CD2B /* MessageManageVC.swift */; };
+		174419911D94D91400F5CD2B /* CreateMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174419901D94D91400F5CD2B /* CreateMessageVC.swift */; };
+		174419931D94FDE500F5CD2B /* CardManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174419921D94FDE500F5CD2B /* CardManageVC.swift */; };
+		174419951D95054500F5CD2B /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174419941D95054500F5CD2B /* AddCardVC.swift */; };
+		174419981D9506D700F5CD2B /* AddCardColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174419961D9506D700F5CD2B /* AddCardColorCell.swift */; };
+		174419991D9506D700F5CD2B /* AddCardColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174419971D9506D700F5CD2B /* AddCardColorCell.xib */; };
+		1744199B1D9511E900F5CD2B /* ShopSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744199A1D9511E900F5CD2B /* ShopSetupVC.swift */; };
+		1744199D1D9511FE00F5CD2B /* ShopSetupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */; };
 		174B55D81D90E38B00DD5431 /* TopupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */; };
 		174B55DB1D90E60F00DD5431 /* TopupDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */; };
 		174B55DC1D90E60F00DD5431 /* TopupDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */; };
@@ -332,6 +342,16 @@
 
 /* Begin PBXFileReference section */
 		1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAlertListMenu.swift; sourceTree = "<group>"; };
+		1744198A1D94D2F300F5CD2B /* MessageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
+		1744198B1D94D2F300F5CD2B /* MessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
+		1744198E1D94D64400F5CD2B /* MessageManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManageVC.swift; sourceTree = "<group>"; };
+		174419901D94D91400F5CD2B /* CreateMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMessageVC.swift; sourceTree = "<group>"; };
+		174419921D94FDE500F5CD2B /* CardManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardManageVC.swift; sourceTree = "<group>"; };
+		174419941D95054500F5CD2B /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
+		174419961D9506D700F5CD2B /* AddCardColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardColorCell.swift; sourceTree = "<group>"; };
+		174419971D9506D700F5CD2B /* AddCardColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardColorCell.xib; sourceTree = "<group>"; };
+		1744199A1D9511E900F5CD2B /* ShopSetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSetupVC.swift; sourceTree = "<group>"; };
+		1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSetupTableVC.swift; sourceTree = "<group>"; };
 		174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopupDetailVC.swift; sourceTree = "<group>"; };
 		174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopupDetailCell.swift; sourceTree = "<group>"; };
 		174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopupDetailCell.xib; sourceTree = "<group>"; };
@@ -706,6 +726,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		174419891D94D2CE00F5CD2B /* message */ = {
+			isa = PBXGroup;
+			children = (
+				1744198A1D94D2F300F5CD2B /* MessageListCell.swift */,
+				1744198B1D94D2F300F5CD2B /* MessageListCell.xib */,
+				1744198E1D94D64400F5CD2B /* MessageManageVC.swift */,
+				174419901D94D91400F5CD2B /* CreateMessageVC.swift */,
+			);
+			name = message;
+			sourceTree = "<group>";
+		};
 		1792498B1D5B7613002E5529 = {
 			isa = PBXGroup;
 			children = (
@@ -1149,6 +1180,7 @@
 		17C7FAA21D8682DF00A3EFCC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				174419891D94D2CE00F5CD2B /* message */,
 				17B06F6A1D91147F0070D242 /* activity */,
 				17CEF3161D8F8CE50018BBAC /* member */,
 				17C7FBA81D868B8400A3EFCC /* card */,
@@ -1369,6 +1401,8 @@
 				17C7FACC1D8682DF00A3EFCC /* UserMessageVC.swift */,
 				17C7FAB21D8682DF00A3EFCC /* MessageCell.swift */,
 				17C7FAB31D8682DF00A3EFCC /* MessageCell.xib */,
+				1744199A1D9511E900F5CD2B /* ShopSetupVC.swift */,
+				1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -1395,6 +1429,9 @@
 			isa = PBXGroup;
 			children = (
 				17C7FAC71D8682DF00A3EFCC /* OpenCardVC.swift */,
+				174419941D95054500F5CD2B /* AddCardVC.swift */,
+				174419961D9506D700F5CD2B /* AddCardColorCell.swift */,
+				174419971D9506D700F5CD2B /* AddCardColorCell.xib */,
 				17CEF3121D8F87A80018BBAC /* OpenCardInputTableVC.swift */,
 				17CEF3141D8F88850018BBAC /* OpenCardInputVC.swift */,
 				17C7FAA71D8682DF00A3EFCC /* ChooseTypeVC.swift */,
@@ -1410,6 +1447,7 @@
 				174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */,
 				174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */,
 				174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */,
+				174419921D94FDE500F5CD2B /* CardManageVC.swift */,
 			);
 			name = card;
 			sourceTree = "<group>";
@@ -1650,6 +1688,7 @@
 				17CEF31A1D8F8D060018BBAC /* MemberListCell.xib in Resources */,
 				17C7FB8B1D86836F00A3EFCC /* Info.plist in Resources */,
 				17C7FB491D86833D00A3EFCC /* 3701店铺设置.jpg in Resources */,
+				174419991D9506D700F5CD2B /* AddCardColorCell.xib in Resources */,
 				17C7FB501D86833D00A3EFCC /* arrow01.png in Resources */,
 				17C7FB5B1D86833D00A3EFCC /* right.png in Resources */,
 				17C7FB711D86833D00A3EFCC /* login02.png in Resources */,
@@ -1658,6 +1697,7 @@
 				17C7FB891D86836100A3EFCC /* LaunchScreen.storyboard in Resources */,
 				17C7FB701D86833D00A3EFCC /* login01.png in Resources */,
 				17C7FB7C1D86833D00A3EFCC /* index_icon09.png in Resources */,
+				1744198D1D94D2F300F5CD2B /* MessageListCell.xib in Resources */,
 				17C7FB481D86833D00A3EFCC /* 3301消费明细.jpg in Resources */,
 				17C7FB591D86833D00A3EFCC /* radio01.png in Resources */,
 				17C7FB511D86833D00A3EFCC /* arrow02.png in Resources */,
@@ -1770,6 +1810,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C7FAD01D8682DF00A3EFCC /* APPConfig.swift in Sources */,
+				174419981D9506D700F5CD2B /* AddCardColorCell.swift in Sources */,
 				17C7FBC01D869FDD00A3EFCC /* GWListVC.swift in Sources */,
 				17C7FA8A1D8682C500A3EFCC /* ConstraintAttributes.swift in Sources */,
 				17C7FA2C1D8682C400A3EFCC /* NVActivityIndicatorAnimationPacman.swift in Sources */,
@@ -1819,6 +1860,7 @@
 				17C7FA941D8682C500A3EFCC /* ViewController+SnapKit.swift in Sources */,
 				17C7FBB61D869BAC00A3EFCC /* PowerModel.swift in Sources */,
 				17C7FA841D8682C500A3EFCC /* SkyRadiusView.m in Sources */,
+				174419911D94D91400F5CD2B /* CreateMessageVC.swift in Sources */,
 				17C7FA621D8682C500A3EFCC /* Reflect+Class.swift in Sources */,
 				17CEF2FD1D8F6C4E0018BBAC /* XPhotoBrowse.swift in Sources */,
 				17CEF31E1D8F8E710018BBAC /* MemberListVC.swift in Sources */,
@@ -1832,6 +1874,7 @@
 				17C7FBA21D86880500A3EFCC /* LocationShareModel.m in Sources */,
 				17C7FA191D8682C400A3EFCC /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				17B06F6D1D9117640070D242 /* ActivityListCell.swift in Sources */,
+				1744198F1D94D64400F5CD2B /* MessageManageVC.swift in Sources */,
 				17C7FA981D8682C500A3EFCC /* XDownLoadView.swift in Sources */,
 				17CEF3041D8F6C4E0018BBAC /* XPhotoUtil.swift in Sources */,
 				17B06F741D9121110070D242 /* CreatActivityVC.swift in Sources */,
@@ -1846,6 +1889,7 @@
 				17C7FA161D8682C400A3EFCC /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				17B06F721D911E3F0070D242 /* ActivityModel.swift in Sources */,
 				17C7FAD81D8682DF00A3EFCC /* HomeMiddleCell.swift in Sources */,
+				1744199B1D9511E900F5CD2B /* ShopSetupVC.swift in Sources */,
 				17C7FA651D8682C500A3EFCC /* Reflect+Type.swift in Sources */,
 				17C7FAF31D8682DF00A3EFCC /* OpenCardVC.swift in Sources */,
 				17B06F701D911D710070D242 /* ActivityListVC.swift in Sources */,
@@ -1877,6 +1921,7 @@
 				17C7FA561D8682C500A3EFCC /* UIButton.swift in Sources */,
 				17C7FA381D8682C400A3EFCC /* XBootView.swift in Sources */,
 				17C7FA371D8682C400A3EFCC /* XAlertView.swift in Sources */,
+				174419951D95054500F5CD2B /* AddCardVC.swift in Sources */,
 				17CEF3001D8F6C4E0018BBAC /* XPhotoHandle.swift in Sources */,
 				17C7FA971D8682C500A3EFCC /* XDownLoadManager.swift in Sources */,
 				17C7FA131D8682C400A3EFCC /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
@@ -1930,6 +1975,7 @@
 				17C7FA4D1D8682C500A3EFCC /* Datecalculate.swift in Sources */,
 				17C7FA871D8682C500A3EFCC /* pchHeader.swift in Sources */,
 				17C7FA671D8682C500A3EFCC /* SwiftyJSON.swift in Sources */,
+				174419931D94FDE500F5CD2B /* CardManageVC.swift in Sources */,
 				17C7FA311D8682C400A3EFCC /* NVActivityIndicatorShape.swift in Sources */,
 				17C7FA151D8682C400A3EFCC /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				17C7FA521D8682C500A3EFCC /* NSDate.swift in Sources */,
@@ -1946,7 +1992,9 @@
 				17C7FA6A1D8682C500A3EFCC /* XHttpRequest.swift in Sources */,
 				17C7FA991D8682C500A3EFCC /* XCollectionView.swift in Sources */,
 				17CEF3051D8F6C4E0018BBAC /* XZoomImageView.swift in Sources */,
+				1744198C1D94D2F300F5CD2B /* MessageListCell.swift in Sources */,
 				17CEF3021D8F6C4E0018BBAC /* XPhotoPicker.swift in Sources */,
+				1744199D1D9511FE00F5CD2B /* ShopSetupTableVC.swift in Sources */,
 				17B06F791D91262C0070D242 /* CreatActivityPicCell.swift in Sources */,
 				17CEF3081D8F6FBA0018BBAC /* CardTypeCell.swift in Sources */,
 				17C7FA281D8682C400A3EFCC /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,

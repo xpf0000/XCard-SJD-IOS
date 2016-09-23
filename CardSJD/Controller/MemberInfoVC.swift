@@ -77,6 +77,8 @@ class MemberInfoVC: UITableViewController {
         }
         
         line.backgroundColor = tableView.separatorColor
+        line1.backgroundColor = tableView.separatorColor
+        line2.backgroundColor = tableView.separatorColor
         linew.constant = 0.5
         
         let v=UIView()

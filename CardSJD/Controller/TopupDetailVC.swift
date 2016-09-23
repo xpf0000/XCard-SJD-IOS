@@ -23,6 +23,10 @@ class TopupDetailVC: UIViewController {
     
     @IBOutlet var table: XTableView!
     
+    override func pop() {
+        edit.removeTextChangeBlock()
+        super.pop()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

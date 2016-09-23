@@ -231,6 +231,10 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
                 let vc = "OpenCardVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
                 
+            case 1:
+                let vc = "CardConsumeDoVC".VC("Main")
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             case 2:
                 let vc = "CardTopupVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -254,11 +258,22 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
                 let vc = ActivityListVC()
                 self.navigationController?.pushViewController(vc, animated: true)
             case 4:
-                let vc = UserMessageVC()
+                let vc = MessageManageVC()
+                self.navigationController?.pushViewController(vc, animated: true)
+            case 5:
+                let vc = CardManageVC()
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 6:
+                let vc = "ShopSetupVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case 7:
                 let vc = YGManageVC()
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 8:
+                let vc = UserMessageVC()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case 9:

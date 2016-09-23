@@ -10,6 +10,13 @@ import UIKit
 
 class ChooseTypeVC: UITableViewController {
 
+    var block:AnyBlock?
+    
+    func getType(b:AnyBlock)
+    {
+        block = b
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
@@ -26,8 +33,16 @@ class ChooseTypeVC: UITableViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let vc = "OpenCardInputVC".VC("Main")
-        self.navigationController?.pushViewController(vc, animated: true)
+        if self.block != nil
+        {
+            block?("xxx")
+        }
+        else
+        {
+            let vc = "OpenCardInputVC".VC("Main")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         
         
     }

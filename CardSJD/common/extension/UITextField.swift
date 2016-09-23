@@ -208,29 +208,53 @@ extension UITextField{
         
     }
     
-    func autoReturn()
+    func autoReturn(textField:UITextField...)
     {
-        self.xdelegate = XTextDelegate(v: self)
-        self.delegate = self.xdelegate
+        var arr = textField
+        arr.insert(self, atIndex: 0)
+        self.xdelegate = XTextDelegate(v: arr)
     }
     
-    
+    func autoReturnClose()
+    {
+        self.xdelegate?.txtArr.removeAll(keepCapacity: false)
+        self.xdelegate = nil
+    }
     
 }
 
 
 
 class XTextDelegate: NSObject,UITextFieldDelegate,UITextViewDelegate {
+
+    lazy var txtArr:[UITextField] = []
     
-    weak var view:UIView?
-    
-    init(v:UIView) {
-        view = v
+    init(v:[UITextField])
+    {
+        super.init()
+        
+        txtArr = v
+        
+        for item in txtArr
+        {
+            item.delegate = self
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        view?.endEdit()
+        if let i = txtArr.indexOf(textField)
+        {
+            if i == txtArr.count-1
+            {
+                textField.endEdit()
+            }
+            else
+            {
+                txtArr[i+1].becomeFirstResponder()
+            }
+        }
+        
         return true
         
     }
