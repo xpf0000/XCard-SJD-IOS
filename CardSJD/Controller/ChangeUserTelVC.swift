@@ -1,5 +1,5 @@
 //
-//  FBPassNewVC.swift
+//  ChangeUserTelVC.swift
 //  chengshi
 //
 //  Created by X on 15/11/29.
@@ -8,34 +8,47 @@
 
 import UIKit
 
-class FBPassNewVC: UITableViewController,UITextFieldDelegate {
-    
-    @IBOutlet var table: UITableView!
+class ChangeUserTelVC: UITableViewController,UITextFieldDelegate {
     
     @IBOutlet var phone: UITextField!
     
+    @IBOutlet var newPhone: UITextField!
+    
     @IBOutlet var verCode: UITextField!
     
-    @IBOutlet var cellContent: UIView!
+    @IBOutlet var verfyBtn: XVerifyButton!
     
-    var tel = ""
-    var code = ""
-
     weak var rootVC:LoginVC?
+    
+    override func pop() {
+        
+        newPhone.removeTextChangeBlock()
+        super.pop()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
         self.phone.addEndButton()
-        self.verCode.addEndButton()
+        newPhone.addEndButton()
         
-        phone.secureTextEntry = true
-        verCode.secureTextEntry = true
+        verfyBtn.needHas = false
+        
+        phone.keyboardType = .PhonePad
+        newPhone.keyboardType = .PhonePad
+        
+        newPhone.onTextChange { [weak self](str) in
+            
+            self?.verfyBtn.phone = str
+        }
+        
+        
         
         let view1=UIView()
         view1.backgroundColor=UIColor.clearColor()
-        table.tableFooterView=view1
-        table.tableHeaderView=view1
+        tableView.tableFooterView=view1
+        tableView.tableHeaderView=view1
         
         
     }
@@ -57,19 +70,19 @@ class FBPassNewVC: UITableViewController,UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        if(indexPath.row == 1)
+        if(indexPath.row == 0 || indexPath.row == 3)
         {
-            cell.separatorInset=UIEdgeInsetsMake(0, 15, 0, 15)
+            cell.separatorInset=UIEdgeInsetsMake(0, 0, 0, 0)
             if(IOS_Version>=8.0)
             {
                 if #available(iOS 8.0, *) {
-                    cell.layoutMargins=UIEdgeInsetsMake(0, 15, 0, 15)
+                    cell.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
                 } else {
                     // Fallback on earlier versions
                 }
             }
         }
-        else
+        else if(indexPath.row > 3)
         {
             cell.separatorInset=UIEdgeInsetsMake(0, swidth, 0, 0)
             if(IOS_Version>=8.0)
@@ -81,6 +94,21 @@ class FBPassNewVC: UITableViewController,UITextFieldDelegate {
                 }
             }
         }
+        else
+        {
+            
+            cell.separatorInset=UIEdgeInsetsMake(0, 15, 0, 15)
+            if(IOS_Version>=8.0)
+            {
+                if #available(iOS 8.0, *) {
+                    cell.layoutMargins=UIEdgeInsetsMake(0, 15, 0, 15)
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+            
+            
+        }
         
         
         
@@ -90,89 +118,64 @@ class FBPassNewVC: UITableViewController,UITextFieldDelegate {
         
         super.viewDidLayoutSubviews()
         
-        self.table.separatorInset=UIEdgeInsetsMake(0, swidth, 0, 0)
-        if(IOS_Version>=8.0)
-        {
-            if #available(iOS 8.0, *) {
-                self.table.layoutMargins=UIEdgeInsetsMake(0, swidth, 0, 0)
-            } else {
-                // Fallback on earlier versions
-            }
+        tableView.separatorInset=UIEdgeInsetsMake(0, swidth, 0, 0)
+        if #available(iOS 8.0, *) {
+            tableView.layoutMargins=UIEdgeInsetsMake(0, swidth, 0, 0)
+        } else {
+            // Fallback on earlier versions
         }
     }
     
     
     @IBAction func next(sender: UIButton) {
-
-        if !self.phone.checkNull() || !self.verCode.checkNull()
+        
+        if !newPhone.checkNull() || !phone.checkNull() || !verCode.checkNull()
         {
             return
         }
-
-        let p=self.verCode.text!.trim()
-        let p1=self.phone.text!.trim()
         
-        self.view.endEdit()
+        let code=self.verCode.text!.trim()
+        let tel=self.phone.text!.trim()
+        let newTel = newPhone.text!.trim()
         
-        if p != p1
+        if tel != UMob
         {
-            ShowMessage("新密码和确认密码不一致")
+            ShowMessage("原手机号码有误")
+            return
+        }
+        
+        if tel == newTel
+        {
+            ShowMessage("新手机号码不能和原手机号码一样")
             return
         }
         
         sender.enabled = false
         XWaitingView.show()
         
-        let url=APPURL+"Public/Found/?service=User.updatePass"
-        let body="mobile="+tel+"&code="+code+"&password="+p
+        let url=APPURL+"Public/Found/?service=User.updateMobile"
+        let body="mobile="+tel+"&newmobile="+newTel+"&code="+code
         
         XHttpPool.requestJson(url, body: body, method: .POST) { (o) -> Void in
+            
             XWaitingView.hide()
             
             if(o?["data"]["code"].int == 0)
             {
-                XAlertView.show("密码重置成功", block: { [weak self]() in
-                    
-                    
-                    var vc:UIViewController?
-                    if let arr = self?.navigationController?.viewControllers
-                    {
-                        for item in arr
-                        {
-                            if item is LoginVC
-                            {
-                                vc = item
-                            }
-                        }
-                    }
-                    
-                    if vc != nil
-                    {
-                        self?.navigationController?.popToViewController(vc!, animated: true)
-                    }
-                    else
-                    {
-                        self?.pop()
-                    }
-                    
-                    })
-                
-                DataCache.Share.User.password = p
+                ShowMessage("手机号码修改成功")
+                DataCache.Share.User.mobile = newTel
                 DataCache.Share.User.save()
-                
-                
-                return
-                
+                self.pop()
             }
             else
             {
                 var msg = o?["data"]["msg"].stringValue
-                msg = msg == "" ? "密码重置失败" : msg
+                msg = msg == "" ? "验证失败" : msg
+                
                 sender.enabled = true
-                
-                XAlertView.show(msg!, block: nil)
-                
+                UIApplication.sharedApplication().keyWindow?.showAlert(msg!, block: nil)
             }
+            
             
         }
         

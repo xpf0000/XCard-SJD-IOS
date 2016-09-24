@@ -162,14 +162,7 @@ extension UIView
     
     func showAlert(str:String, block:AnyBlock?)
     {
-        let alert:XAlertView = XAlertView(msg: str, flag: 0)
-        alert.block = block
-        self.addSubview(alert)
-    }
-    
-    func showWaiting()
-    {
-        self.addSubview(XWaitingView.Share())
+        XAlertView.show(str, block: block)
     }
     
     var windowFrame:CGRect?

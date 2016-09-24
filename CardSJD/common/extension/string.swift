@@ -385,6 +385,11 @@ extension String{
         NSNotificationCenter.defaultCenter().postNotificationName(self, object: nil)
     }
     
+    func postNotice(obj:AnyObject)
+    {
+        NSNotificationCenter.defaultCenter().postNotificationName(self, object: obj)
+    }
+    
     func UserDefaultsValue()->AnyObject?
     {
         return NSUserDefaults.standardUserDefaults().valueForKey(self)

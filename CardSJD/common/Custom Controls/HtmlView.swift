@@ -76,7 +76,6 @@ class JSHandle:NSObject,XJSExports
 class HtmlView: UIView,UIWebViewDelegate ,WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler{
 
     var webView:UIView?
-    var waiting:XWaitingView=XWaitingView(msg: "加载中...", flag: 0)
     var url=""
     var html:String=""
     var block:AnyBlock?
@@ -129,7 +128,7 @@ class HtmlView: UIView,UIWebViewDelegate ,WKNavigationDelegate,WKUIDelegate,WKSc
             return
         }
         
-        self.viewController?.view.addSubview(waiting)
+        XWaitingView.show()
         
         if #available(iOS 8.0, *) {
             
@@ -214,11 +213,11 @@ class HtmlView: UIView,UIWebViewDelegate ,WKNavigationDelegate,WKUIDelegate,WKSc
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        waiting.removeFromSuperview()
+        XWaitingView.hide()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        waiting.removeFromSuperview()
+        XWaitingView.hide()
         
         NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "WebKitCacheModelPreferenceKey")
         NSUserDefaults.standardUserDefaults().synchronize()
@@ -236,12 +235,12 @@ class HtmlView: UIView,UIWebViewDelegate ,WKNavigationDelegate,WKUIDelegate,WKSc
     @available(iOS 8.0, *)
     func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {
         
-        waiting.removeFromSuperview()
+        XWaitingView.hide()
     }
     
     @available(iOS 8.0, *)
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        waiting.removeFromSuperview()
+        XWaitingView.hide()
         
         if(self.block != nil)
         {

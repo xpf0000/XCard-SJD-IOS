@@ -65,11 +65,12 @@ class UserCenterVC: UITableViewController,UIAlertViewDelegate {
 
     func userChanged()
     {
-        btn.selected = DataCache.Share.User.id != ""
-        num.text = DataCache.Share.User.coins
+//        btn.selected = DataCache.Share.User.id != ""
+//        num.text = DataCache.Share.User.coins
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.title = "个人中心"
         

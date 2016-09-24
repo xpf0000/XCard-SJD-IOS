@@ -10,7 +10,7 @@ import UIKit
 
 var UID:String
 {
-    return DataCache.Share.User.id
+    return DataCache.Share.User.uid
 }
 
 var UMob:String
@@ -18,43 +18,37 @@ var UMob:String
     return DataCache.Share.User.mobile
 }
 
-var UIdentify:String
-{
-    return DataCache.Share.User.identify
-}
-
 class UserModel: Reflect {
-
-    var id=""   //用户ID编号
-    var mobile=""   //用户手机号
-    var identify=""   //用户认证码
-    var avatar=""   //用户头像
-    var points=""   //用户积分
-    var coins="0.00"   //用户金额
-    var pass = ""
+    
+    var uid=""
+    var username=""
+    var mobile=""
+    var truename=""
+    var shopid=""
+    var shopname=""
+    var password = ""
     
     func reset()
     {
-        id=""
+        uid=""
+        username=""
         mobile=""
-        identify=""
-        avatar=""
-        points=""
-        coins="0.00"
-        pass = ""
-        
+        truename=""
+        shopid=""
+        shopname=""
+        password = ""
         save()
     }
     
     func reset(model:UserModel)
     {
-        id=model.id
+        uid=model.uid
+        username=model.username
         mobile=model.mobile
-        identify=model.identify
-        avatar=model.avatar
-        points=model.points
-        coins=model.coins
-        pass = model.pass
+        truename=model.truename
+        shopid=model.shopid
+        shopname=model.shopname
+        password = model.password
         
         UserModel.save(obj: self, name: "UserModel")
         NoticeWord.UpdateMoney.rawValue.postNotice()
@@ -85,6 +79,6 @@ class UserModel: Reflect {
     func save()
     {
         UserModel.save(obj: self, name: "UserModel")
-        NoticeWord.UserChanged.rawValue.postNotice()
+        NoticeWord.UserChanged.rawValue.postNotice(self)
     }
 }

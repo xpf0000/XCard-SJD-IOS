@@ -74,6 +74,8 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
             flowLayout.itemSize = CGSizeMake(1, 1)
             layoutIfNeeded()
             setNeedsLayout()
+            //self.reloadData()
+            
             if bannerArr.count > 1 && scrollInterval > 0
             {
                 self.start()
@@ -215,7 +217,11 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if bannerArr.count == 1
+        if bannerArr.count == 0
+        {
+            return 0
+        }
+        else if bannerArr.count == 1
         {
             return 1;
         }
@@ -223,7 +229,7 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
         {
             return bannerArr.count+4
         }
-
+        
     }
     
     func getTrueIndex(row:Int)->Int

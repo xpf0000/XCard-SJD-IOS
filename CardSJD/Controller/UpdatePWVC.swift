@@ -28,6 +28,10 @@ class UpdatePWVC: UITableViewController,UITextFieldDelegate {
         self.new.addEndButton()
         self.new1.addEndButton()
         
+        old.secureTextEntry = true
+        new.secureTextEntry = true
+        new1.secureTextEntry = true
+        
         let view1=UIView()
         view1.backgroundColor=UIColor.clearColor()
         table.tableFooterView=view1
@@ -98,36 +102,56 @@ class UpdatePWVC: UITableViewController,UITextFieldDelegate {
     }
     
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(sender: UIButton) {
+ 
+        if !old.checkNull() || !new.checkNull() || !new1.checkNull()
+        {
+            return
+        }
         
+        let o=self.old.text!.trim()
+        let n=self.new.text!.trim()
+        let n1=self.new1.text!.trim()
         
-        let vc = "UserFeedVC".VC("Main")
+        if n != n1
+        {
+            ShowMessage("新密码和确认新密码不一致")
+            return
+        }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        XWaitingView.show()
+        sender.enabled = false
         
-        return
+        let url=APPURL+"Public/Found/?service=User.updatePass2"
+        let body="mobile="+UMob+"&oldpass="+o+"&newpass="+n
         
-        
-//        let code=self.verCode.text!.trim()
-//        let phone=self.phone.text!.trim()
-//        
-//        let url=APPURL+"Public/Found/?service=User.smsVerify"
-//        let body="mobile="+phone+"&code="+code
-        
-        XHttpPool.requestJson( "", body: "", method: .POST) { (o) -> Void in
+        XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             
+            XWaitingView.hide()
             
-            if(o?["data"]["code"].intValue == 0)
+            if(o?["data"]["code"].int == 0)
             {
-                //                let vc:RegistVC = "RegistVC".VC("User") as! RegistVC
-                //                vc.code = code
-                //                vc.registPhone = phone
-                //                vc.rootVC = self.rootVC
-                //                self.navigationController?.pushViewController(vc, animated: true)
+                XAlertView.show("修改密码成功", block: { [weak self]() in
+                    
+                    self?.pop()
+                    
+                })
+                
+                DataCache.Share.User.password = n
+                DataCache.Share.User.save()
+                
+ 
+                return
+                
             }
             else
             {
-                UIApplication.sharedApplication().keyWindow?.showAlert("验证失败", block: nil)
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "密码修改失败" : msg
+                sender.enabled = true
+                
+                XAlertView.show(msg!, block: nil)
+
             }
             
         }

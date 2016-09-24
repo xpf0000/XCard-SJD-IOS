@@ -7,19 +7,19 @@ class XWaitingView:UIView
     var now=0
     var view:NVActivityIndicatorView!
     
-    class func Share() ->XWaitingView! {
-        
-        struct Once {
-            static var token:dispatch_once_t = 0
-            static var dataCenterObj:XWaitingView! = nil
-        }
-        dispatch_once(&Once.token, {
-            Once.dataCenterObj = XWaitingView(frame: CGRectMake(0, 0, swidth, sheight))
-        })
-        return Once.dataCenterObj
+    static let Share = XWaitingView(frame: CGRectMake(0, 0, swidth, sheight))
+    
+    class func show()
+    {
+        UIApplication.sharedApplication().keyWindow?.addSubview(Share)
     }
     
-    override init(frame: CGRect) {
+    class func hide()
+    {
+        Share.removeFromSuperview()
+    }
+    
+    override private init(frame: CGRect) {
         super.init(frame: frame)
         
         self.alpha = 1.0
@@ -30,15 +30,6 @@ class XWaitingView:UIView
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-
-    
-    init(msg:String,flag:Int)
-    {
-        super.init(frame: CGRectMake(0, 0, swidth, sheight))
-        self.alpha = 1.0
-        self.userInteractionEnabled=true
-        self.creatView()
     }
     
     func creatView()

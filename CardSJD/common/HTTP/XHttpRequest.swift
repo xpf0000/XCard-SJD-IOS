@@ -206,6 +206,11 @@ class XHttpRequest: NSObject,NSURLConnectionDataDelegate{
             postStr = "\(body)"
         }
         
+        if XHttpPool.Debug
+        {
+            print("body: \(postStr)")
+        }
+        
         return postStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
         
     }

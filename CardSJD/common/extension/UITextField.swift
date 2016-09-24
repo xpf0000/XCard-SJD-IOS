@@ -168,7 +168,7 @@ extension UITextField{
         self.textChangeBlock = nil
     }
     
-    func setTextChangeBlock(b:XTextChangeBlock)
+    func onTextChange(b:XTextChangeBlock)
     {
         self.textChangeBlock?.block = nil
         self.textChangeBlock = nil

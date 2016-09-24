@@ -23,9 +23,8 @@ extension UIViewController{
     
     func checkIsLogin()->Bool
     {
-        if(DataCache.Share.User.id == "")
+        if(UID == "")
         {
-
             let vc = "LoginVC".VC("Main")
             
             let nav:XNavigationController = XNavigationController(rootViewController: vc)

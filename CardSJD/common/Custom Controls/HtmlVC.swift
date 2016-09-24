@@ -85,7 +85,7 @@ class HtmlVC: UIViewController,UIWebViewDelegate ,WKNavigationDelegate,WKUIDeleg
         }
         
         self.view.addSubview(webView!)
-        self.view.showWaiting()
+        XWaitingView.show()
         
         webView?.snp_makeConstraints(closure: { (make) in
             make.top.equalTo(0.0)
@@ -98,22 +98,22 @@ class HtmlVC: UIViewController,UIWebViewDelegate ,WKNavigationDelegate,WKUIDeleg
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        RemoveWaiting()
+        XWaitingView.hide()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        RemoveWaiting()
+        XWaitingView.hide()
     }
     
     @available(iOS 8.0, *)
     func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {
         
-        RemoveWaiting()
+        XWaitingView.hide()
     }
     
     @available(iOS 8.0, *)
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        RemoveWaiting()
+        XWaitingView.hide()
         
     }
 

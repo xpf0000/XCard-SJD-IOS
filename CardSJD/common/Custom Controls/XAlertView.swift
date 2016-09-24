@@ -1,19 +1,25 @@
 
 import Foundation
 import UIKit
+
 class XAlertView:UIView
 {
     var message:String=""
     var visualEffectView:UIView?
-    var flag:Int?
     let label=UILabel()
-    weak var nav:XNavigationController?
-    var block:AnyBlock?
+    var block:XNoBlock?
     
-    init(msg:String,flag:Int)
+    class func show(str: String, block: XNoBlock?)
+    {
+        let view = XAlertView(msg: str)
+        view.block = block
+        UIApplication.sharedApplication().keyWindow?.addSubview(view)
+        
+    }
+    
+    init(msg:String)
     {
         super.init(frame: CGRectMake(0, 0, swidth, sheight))
-        self.flag=flag
         self.message=msg
         self.alpha = 0.0
         self.userInteractionEnabled=true
@@ -56,10 +62,6 @@ class XAlertView:UIView
         label.alpha=0.0
         self.addSubview(label)
         
-        self.animateAppearance()
-        
-        
-        
     }
     
     func animateAppearance()
@@ -89,7 +91,7 @@ class XAlertView:UIView
                                     
                                     if(finished)
                                     {
-                                        self.block?(nil)
+                                        self.block?()
                                         self.removeFromSuperview()
                                     }
                             }
@@ -105,19 +107,13 @@ class XAlertView:UIView
     }
     
     override func willMoveToSuperview(newSuperview: UIView?) {
-        if(newSuperview != nil)
+        super.willMoveToSuperview(newSuperview)
+        
+        if newSuperview != nil
         {
-            if(newSuperview!.viewController is XNavigationController)
-            {
-                nav = (newSuperview!.viewController as! XNavigationController)
-            }
-            else if(newSuperview!.viewController?.navigationController is XNavigationController)
-            {
-                nav = (newSuperview!.viewController?.navigationController as! XNavigationController)
-            }
-            
+            self.animateAppearance()
         }
-      
+        
     }
 
 

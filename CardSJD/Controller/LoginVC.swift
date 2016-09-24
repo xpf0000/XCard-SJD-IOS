@@ -20,10 +20,6 @@ class LoginVC: UITableViewController,UITextFieldDelegate {
     
     @IBOutlet var loginButton: UIButton!
     
-
-    var block:AnyBlock?
-    
-    
     @IBAction func login(sender: AnyObject) {
         
         if(!user.checkNull() || !pass.checkNull())
@@ -47,44 +43,33 @@ class LoginVC: UITableViewController,UITextFieldDelegate {
         let u = user.text!.trim()
         let body="password="+p+"&mobile="+u
         
-        XHttpPool.requestJson(url, body: body, method: .POST) { (o) -> Void in
+        XHttpPool.requestJson(url, body: body, method: .POST) { [weak self](o) -> Void in
             
             if(o?["data"].dictionaryValue.count > 0)
             {
                 if(o!["data"]["code"].intValue == 0 && o?["data"]["info"].arrayValue.count > 0)
                 {
                     
-//                    DataCache.Share.userModel = UserModel.parse(json: o!["data"]["info"][0], replace: nil)
-//                    DataCache.Share.userModel.password = p
-//                    
-//                    DataCache.Share.userModel.save()
+                    DataCache.Share.User = UserModel.parse(json: o!["data"]["info"][0], replace: nil)
+                    DataCache.Share.User.password = p
+                    DataCache.Share.User.save()
                     
-                    if(self.block != nil)
-                    {
-                        self.block!("loginSuccess")
-                    }
-                    
-                    NoticeWord.LoginSuccess.rawValue.postNotice()
-                    
-                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        
-                        
-                    })
+                    self?.pop()
                     
                     return
                 }
                 else
                 {
-                    self.navigationController?.view.showAlert(o!["data"]["msg"].stringValue, block: nil)
+                    self?.navigationController?.view.showAlert(o!["data"]["msg"].stringValue, block: nil)
                     
-                    self.reSetButton()
+                    self?.reSetButton()
                     return
                 }
             }
             else
             {
-                self.reSetButton()
-                self.navigationController?.view.showAlert("登录失败", block: nil)
+                self?.reSetButton()
+                self?.navigationController?.view.showAlert("登录失败", block: nil)
             }
             
         }
@@ -119,6 +104,8 @@ class LoginVC: UITableViewController,UITextFieldDelegate {
         
         self.user.addEndButton()
         self.pass.addEndButton()
+        
+        user.keyboardType = .PhonePad
         
         self.user.delegate = self
         self.pass.delegate = self

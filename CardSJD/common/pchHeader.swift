@@ -65,11 +65,6 @@ let APPBlackColor = "333333".color!
 let APPMiddleColor = "666666".color!
 let APPGrayColor = "999999".color!
 
-func RemoveWaiting()
-{
-    XWaitingView.Share().removeFromSuperview()
-}
-
 func RegistPushNotice()
 {
     if #available(iOS 8.0, *) {
@@ -94,7 +89,7 @@ func ShowMessage(str:String)
     XMessage.Share().showMessage(str)
 }
 
-let APPURL="http://101.201.169.38/hfapi/"
+let APPURL="http://182.92.70.85/hfshopapi/"
 
 let BaseHtml = "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n" +
     "<head>\r\n" +

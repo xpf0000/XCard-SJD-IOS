@@ -317,6 +317,7 @@
 		17CEF31C1D8F8DBB0018BBAC /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF31B1D8F8DBB0018BBAC /* MemberModel.swift */; };
 		17CEF31E1D8F8E710018BBAC /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF31D1D8F8E710018BBAC /* MemberListVC.swift */; };
 		17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EB7C841D858AC7007C0361 /* WebKit.framework */; };
+		17EDD5861D96612B008FB846 /* ChangeUserTelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EDD5851D96612B008FB846 /* ChangeUserTelVC.swift */; };
 		17EFD9A31D8F96C800E59478 /* arrow02_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A21D8F96C800E59478 /* arrow02_w.png */; };
 		17EFD9A51D8F99D400E59478 /* MemberInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */; };
 		17EFD9A71D8FBAF300E59478 /* right_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A61D8FBAF300E59478 /* right_more.png */; };
@@ -672,6 +673,7 @@
 		17CEF31B1D8F8DBB0018BBAC /* MemberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
 		17CEF31D1D8F8E710018BBAC /* MemberListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
 		17EB7C841D858AC7007C0361 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		17EDD5851D96612B008FB846 /* ChangeUserTelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserTelVC.swift; sourceTree = "<group>"; };
 		17EFD9A21D8F96C800E59478 /* arrow02_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow02_w.png; sourceTree = "<group>"; };
 		17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoVC.swift; sourceTree = "<group>"; };
 		17EFD9A61D8FBAF300E59478 /* right_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_more.png; sourceTree = "<group>"; };
@@ -1403,6 +1405,7 @@
 				17C7FAB31D8682DF00A3EFCC /* MessageCell.xib */,
 				1744199A1D9511E900F5CD2B /* ShopSetupVC.swift */,
 				1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */,
+				17EDD5851D96612B008FB846 /* ChangeUserTelVC.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -1958,6 +1961,7 @@
 				17C7FA691D8682C500A3EFCC /* XHttpPoolHandle.swift in Sources */,
 				17CEF3151D8F88850018BBAC /* OpenCardInputVC.swift in Sources */,
 				174B55E21D90EB0000DD5431 /* ConsumeDetailVC.swift in Sources */,
+				17EDD5861D96612B008FB846 /* ChangeUserTelVC.swift in Sources */,
 				17CEF3011D8F6C4E0018BBAC /* XPhotoLibVC.swift in Sources */,
 				17C7FB9F1D86880500A3EFCC /* BackgroundTaskManager.m in Sources */,
 				17C7FA261D8682C400A3EFCC /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,

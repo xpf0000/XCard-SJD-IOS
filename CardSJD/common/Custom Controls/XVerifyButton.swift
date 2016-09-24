@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class XVerifyButton: UIButton {
 
     class postTimeModel: Reflect {
@@ -30,12 +29,17 @@ class XVerifyButton: UIButton {
     private var outTimer:NSTimer?
     private let hideView:UIView=UIView()
     var phone:String = ""
+    {
+        didSet
+        {
+            phoneChange()
+        }
+    }
     var postPhone:String = ""
     var outTime:NSTimeInterval = 300
     var block:AnyBlock?
-    var waiting:XWaitingView=XWaitingView(msg: "发送中...", flag: 0)
     private lazy var timeModel:postTimeModel=postTimeModel()
-    var type=1
+    var needHas = true
     
     override func willMoveToSuperview(newSuperview: UIView?) {
         
@@ -100,8 +104,8 @@ class XVerifyButton: UIButton {
             make.height.equalTo(self)
         }
         hideView.alpha = 0.45
-        self.contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16)
-        self.titleLabel?.font = UIFont.systemFontOfSize(14.0)
+        self.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+        self.titleLabel?.font = UIFont.systemFontOfSize(13.0)
         self.enabled = false
         self.setBackgroundImage(bgColor.image, forState: UIControlState.Normal)
         self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -111,10 +115,8 @@ class XVerifyButton: UIButton {
         self.addTarget(self, action: #selector(btnClick), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    func Phone(str:String)
+    private func phoneChange()
     {
-        self.phone = str
-        
         if(self.timer != nil)
         {
             return
@@ -171,13 +173,13 @@ class XVerifyButton: UIButton {
     func btnClick()
     {
         let temp=self.phone
-        let url=APPURL+"Public/Found/?service=User.getUserM&mobile="+temp
+        let url=APPURL+"Public/Found/?service=User.getUserInfoM&mobile="+temp
         
         XHttpPool.requestJson(url, body: nil, method: .POST) { (o) -> Void in
             
             if(o?["data"]["code"].intValue == 0)
             {
-                if(self.type == 1)
+                if(!self.needHas)
                 {
                     UIApplication.sharedApplication().keyWindow?.showAlert("手机号已注册", block: nil)
                     
@@ -190,7 +192,7 @@ class XVerifyButton: UIButton {
             else if(o?["data"]["code"].intValue == 1)
             {
                 
-                if(self.type == 2)
+                if(self.needHas)
                 {
                     UIApplication.sharedApplication().keyWindow?.showAlert("无此用户", block: nil)
                     
@@ -214,7 +216,7 @@ class XVerifyButton: UIButton {
     
     func doPost(str:String)
     {
-        UIApplication.sharedApplication().keyWindow?.addSubview(self.waiting)
+        XWaitingView.show()
         
         self.postPhone = str
         
@@ -225,11 +227,13 @@ class XVerifyButton: UIButton {
         
         let url1=APPURL+"Public/Found/?service=User.smsSend"
         
-        let body="mobile="+str+"&type=\(self.type)"
+        let type = needHas ? "2" : "1"
+        
+        let body="mobile="+str+"&type="+type
         
         XHttpPool.requestJson(url1, body: body, method: .POST, block: { (o) -> Void in
             
-            self.waiting.removeFromSuperview()
+            XWaitingView.hide()
             
             if(o?["data"]["code"].intValue != 0)
             {
@@ -256,7 +260,7 @@ class XVerifyButton: UIButton {
         {
             self.timer!.invalidate()
             self.timer = nil
-            self.Phone(self.phone)
+            self.phoneChange()
         }
     }
     

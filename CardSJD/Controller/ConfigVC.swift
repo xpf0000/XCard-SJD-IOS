@@ -10,6 +10,9 @@ import UIKit
 
 class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
     
+    @IBOutlet var tel: UILabel!
+    
+    
     @IBOutlet var logoutButton: UIButton!
     
     @IBOutlet var cacheNum: UILabel!
@@ -124,48 +127,37 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
         
         if(indexPath.row == 1)
         {
-            let alertView = UIAlertView()
-            alertView.delegate = self
-            alertView.title = "清除缓存"
-            alertView.message = "熬枯受淡金风科技啊爽快点积分卡束带结发空就按迪斯科"
-            alertView.addButtonWithTitle("取消")
-            alertView.addButtonWithTitle("确定")
-            alertView.addButtonWithTitle("A")
-            alertView.addButtonWithTitle("B")
-            alertView.addButtonWithTitle("C")
-            alertView.addButtonWithTitle("D")
-            alertView.addButtonWithTitle("E")
-            alertView.addButtonWithTitle("F")
-            alertView.addButtonWithTitle("G")
-            alertView.addButtonWithTitle("H")
-            alertView.addButtonWithTitle("1")
-            alertView.addButtonWithTitle("2")
-            alertView.addButtonWithTitle("3")
-            alertView.addButtonWithTitle("4")
-            alertView.addButtonWithTitle("5")
-            alertView.addButtonWithTitle("6")
-            alertView.addButtonWithTitle("7")
-            alertView.addButtonWithTitle("8")
-            alertView.show()
+            if !self.checkIsLogin() {return}
+            
+            let vc = "ChangeUserTelVC".VC("Main")
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
         if(indexPath.row == 2)
         {
 
+            if !self.checkIsLogin() {return}
             
-
+            let vc = "UpdatePWVC".VC("Main")
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        if(indexPath.row == 3)
+        if(indexPath.row == 6)
         {
             let vc:UserFeedVC = "UserFeedVC".VC("Main") as! UserFeedVC
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        if(indexPath.row == 4)
+        if(indexPath.row == 7)
         {
-            let vc:AboutVC = "AboutVC".VC("Main") as! AboutVC
+            let vc:AboutVC = AboutVC()
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        if(indexPath.row == 5)
+        {
+            XImageUtil.removeAllFile()
+            self.cacheNum.text = "0.00M"
         }
         
     }
@@ -182,10 +174,9 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
         if(alertView ==  logoutAlert && buttonIndex == 1)
         {
             
-            //DataCache.Share.userModel.reSet()
+            DataCache.Share.User.reset()
             logoutButton.hidden = true
-            NoticeWord.LogoutSuccess.rawValue.postNotice()
-
+            tel.text = "请先登录"
             return
             
         }
@@ -199,6 +190,17 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        logoutButton.hidden = UID == ""
+        
+        if UMob.length() > 7
+        {
+            tel.text = UMob.subStringToIndex(3)+"****"+UMob.subStringFromIndex(7)
+        }
+        else
+        {
+            tel.text = "请先登录"
+        }
+        
         
         self.cacheNum.text = String(format: "%.2fM", XImageUtil.ImageCachesSize()/1024.0/1024.0)
     }

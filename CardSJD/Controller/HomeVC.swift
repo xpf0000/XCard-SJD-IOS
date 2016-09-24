@@ -28,6 +28,7 @@ class HomeCellModel: Reflect {
 
 class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCollectionViewDelegateFlowLayout {
     
+    lazy var bannerArr:Array<XBannerModel>=[]
     let banner = XBanner()
     let page = UIPageControl()
     
@@ -52,31 +53,49 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
         
     }
     
+    func getBanner()
+    {
+        self.bannerArr.removeAll(keepCapacity: false)
+        
+        let url = APPURL+"Public/Found/?service=Setting.getGuanggao&typeid=83"
+        
+        XHttpPool.requestJson(url, body: nil, method: .GET) { (o) -> Void in
+            
+            if(o == nil)
+            {
+                return
+            }
+            
+            for item in o!["data"]["info"].arrayValue
+            {
+                let model:XBannerModel=XBannerModel()
+                model.image = item["picurl"].stringValue
+                model.title=item["title"].stringValue
+                model.obj = item["url"].stringValue
+                
+                self.bannerArr.append(model)
+                
+            }
+            
+            self.page.numberOfPages = self.bannerArr.count
+            self.banner.bannerArr = self.bannerArr
+            self.banner.reloadData()
+            self.collectionView?.reloadData()
+
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "车港湾"
         
+        self.getBanner()
+        
         banner.frame = CGRectMake(0, 12, swidth, swidth*0.3)
         page.frame = CGRectMake(0, (12+swidth*0.3)-24, swidth, 24)
         
-        var arr:[XBannerModel] = []
         
-        let model = XBannerModel()
-        model.image = "http://pic2.ooopic.com/12/19/25/59b1OOOPIC45.jpg"
-        arr.append(model)
-        
-        let model1 = XBannerModel()
-        model1.image = "http://pic28.nipic.com/20130426/5194434_163415086319_2.jpg"
-        arr.append(model1)
-        
-        let model2 = XBannerModel()
-        model2.image = "http://www.ahyunmo.com/images/4.jpg"
-        arr.append(model2)
-        
-        banner.bannerArr = arr
-        
-        page.numberOfPages = arr.count
         page.pageIndicatorTintColor = "dcdcdc".color
         page.currentPageIndicatorTintColor = APPNVColor
         
@@ -222,6 +241,12 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.row < 8
+        {
+            if !self.checkIsLogin() {return}
+        }
+        
         
         switch indexPath.section {
         case 0:

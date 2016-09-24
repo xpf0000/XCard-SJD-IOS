@@ -28,7 +28,7 @@ class FBPassVerifyVC: UITableViewController,UITextFieldDelegate {
         self.addBackButton()
         self.phone.addEndButton()
 
-        verifyBtn.type = 1
+        verifyBtn.needHas = true
         
         
         verifyBtn.block={
@@ -55,7 +55,7 @@ class FBPassVerifyVC: UITableViewController,UITextFieldDelegate {
         {
             var txt=textField.text!
             txt=(txt as NSString).stringByReplacingCharactersInRange(range, withString: string)
-            verifyBtn.Phone(txt)
+            verifyBtn.phone = txt
         }
         
         
@@ -119,20 +119,22 @@ class FBPassVerifyVC: UITableViewController,UITextFieldDelegate {
     }
 
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(sender: UIButton) {
         
-        
-        let vc = "FBPassNewVC".VC("Main")
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        return
-        
-        
-        if(!self.verCode.checkNull())
+        if(!self.phone.checkNull() || !self.verCode.checkNull())
         {
             return
         }
+        
+        self.view.endEdit()
+        
+        if !self.phone.checkPhone()
+        {
+            return
+        }
+        
+        sender.enabled = false
+        XWaitingView.show()
         
         let code=self.verCode.text!.trim()
         let phone=self.phone.text!.trim()
@@ -141,19 +143,23 @@ class FBPassVerifyVC: UITableViewController,UITextFieldDelegate {
         let body="mobile="+phone+"&code="+code
         
         XHttpPool.requestJson(url, body: body, method: .POST) { (o) -> Void in
+            XWaitingView.hide()
             
-            
-            if(o?["data"]["code"].intValue == 0)
+            if(o?["data"]["code"].int == 0)
             {
-//                let vc:RegistVC = "RegistVC".VC("User") as! RegistVC
-//                vc.code = code
-//                vc.registPhone = phone
-//                vc.rootVC = self.rootVC
-//                self.navigationController?.pushViewController(vc, animated: true)
+                let vc = "FBPassNewVC".VC("Main") as! FBPassNewVC
+                vc.tel = phone
+                vc.code = code
+                
+                self.navigationController?.pushViewController(vc, animated: true)
             }
             else
             {
-                UIApplication.sharedApplication().keyWindow?.showAlert("验证失败", block: nil)
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "验证失败" : msg
+                sender.enabled = true
+                
+                XAlertView.show(msg!, block: nil)
             }
             
         }

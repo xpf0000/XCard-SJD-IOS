@@ -4,7 +4,7 @@
 //
 //  Created by 徐鹏飞 on 16/8/10.
 //  Copyright © 2016年 QS. All rights reserved.
-//
+//  http://182.92.70.85/hfshopapi/Public/Found/all.php
 
 import UIKit
 import AVFoundation

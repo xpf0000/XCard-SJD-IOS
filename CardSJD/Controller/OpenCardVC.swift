@@ -48,7 +48,7 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
         edit.leftView = leftView
         edit.leftViewMode = .Always
         
-        edit.setTextChangeBlock {[weak self] (txt) in
+        edit.onTextChange {[weak self] (txt) in
             
             print("txt: "+txt)
             self?.reshow()
