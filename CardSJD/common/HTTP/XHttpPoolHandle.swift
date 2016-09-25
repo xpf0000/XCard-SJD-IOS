@@ -75,35 +75,35 @@ class XHttpPoolHandle: NSObject,NSURLSessionDelegate
         completionHandler(.Allow)
     }
     
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, willCacheResponse proposedResponse: NSCachedURLResponse, completionHandler: (NSCachedURLResponse?) -> Void) {
-        
-        let response = proposedResponse.response
-        
-        let HTTPResponse = response as? NSHTTPURLResponse
-        
-        let headers = HTTPResponse!.allHeaderFields
-        
-        var cachedResponse:NSCachedURLResponse!
-        
-        if headers["Cache-Control"] != nil
-        {
-            var modifiedHeaders = headers as! [String:String]
-            modifiedHeaders["Cache-Control"] = "max-age=60"
-            
-            let modifiedResponse = NSHTTPURLResponse(URL: HTTPResponse!.URL!, statusCode: HTTPResponse!.statusCode, HTTPVersion: "HTTP/1.1", headerFields: modifiedHeaders)
-            
-            cachedResponse = NSCachedURLResponse(response: modifiedResponse!, data: proposedResponse.data , userInfo: proposedResponse.userInfo, storagePolicy: proposedResponse.storagePolicy)
-        }
-        else
-        {
-            cachedResponse = proposedResponse
-        }
-        
-        completionHandler(cachedResponse)
-        
-        
-        
-    }
+//    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, willCacheResponse proposedResponse: NSCachedURLResponse, completionHandler: (NSCachedURLResponse?) -> Void) {
+//        
+//        let response = proposedResponse.response
+//        
+//        let HTTPResponse = response as? NSHTTPURLResponse
+//        
+//        let headers = HTTPResponse!.allHeaderFields
+//        
+//        var cachedResponse:NSCachedURLResponse!
+//        
+//        if headers["Cache-Control"] != nil
+//        {
+//            var modifiedHeaders = headers as! [String:String]
+//            modifiedHeaders["Cache-Control"] = "max-age=60"
+//            
+//            let modifiedResponse = NSHTTPURLResponse(URL: HTTPResponse!.URL!, statusCode: HTTPResponse!.statusCode, HTTPVersion: "HTTP/1.1", headerFields: modifiedHeaders)
+//            
+//            cachedResponse = NSCachedURLResponse(response: modifiedResponse!, data: proposedResponse.data , userInfo: proposedResponse.userInfo, storagePolicy: proposedResponse.storagePolicy)
+//        }
+//        else
+//        {
+//            cachedResponse = proposedResponse
+//        }
+//        
+//        completionHandler(cachedResponse)
+//        
+//        
+//        
+//    }
     
     func URLSession(session: NSURLSession, didBecomeInvalidWithError error: NSError?) {
         

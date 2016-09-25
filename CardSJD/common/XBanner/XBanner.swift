@@ -74,7 +74,6 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
             flowLayout.itemSize = CGSizeMake(1, 1)
             layoutIfNeeded()
             setNeedsLayout()
-            //self.reloadData()
             
             if bannerArr.count > 1 && scrollInterval > 0
             {
@@ -140,7 +139,7 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
         clipsToBounds = true
         
         backgroundColor = UIColor.whiteColor()
-        registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "XBannerCell")
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
@@ -223,7 +222,7 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
         }
         else if bannerArr.count == 1
         {
-            return 1;
+            return 1
         }
         else
         {
@@ -262,7 +261,7 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("XBannerCell", forIndexPath: indexPath)
         
         for item in cell.contentView.subviews
         {
@@ -326,7 +325,7 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
-        if !scrollView.scrollEnabled{return}
+        if !scrollView.scrollEnabled || bannerArr.count == 0{return}
 
         if(scrollView.contentOffset.x <= frame.size.width )
         {
@@ -351,7 +350,7 @@ class XBanner: UICollectionView ,UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        
+   
         if scrollView.contentOffset.x % frame.size.width != 0
         {
             let x = round(scrollView.contentOffset.x / frame.size.width)
