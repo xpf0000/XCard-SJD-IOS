@@ -12,7 +12,8 @@ class YGManageVC: UIViewController {
 
     let menu = XHorizontalMenuView()
     let main = XHorizontalMainView()
-    
+    let subVC1 = YGListVC()
+    let subVC2 = GWListVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,17 +56,15 @@ class YGManageVC: UIViewController {
         let model = XHorizontalMenuModel()
         model.title = "员工"
         
-        let vc = YGListVC()
-        self.addChildViewController(vc)
-        model.view = vc.view
+        self.addChildViewController(subVC1)
+        model.view = subVC1.view
         
         
         let model1 = XHorizontalMenuModel()
         model1.title = "岗位管理"
-        
-        let vc1 = GWListVC()
-        self.addChildViewController(vc1)
-        model1.view = vc1.view
+
+        self.addChildViewController(subVC2)
+        model1.view = subVC2.view
         
         arr = [model,model1]
         
@@ -120,6 +119,7 @@ class YGManageVC: UIViewController {
             if index == 1 && !text.checkNull() {return false}
             
             text.endEdit()
+            self?.addGW(text.text!.trim())
             
             return true
             
@@ -130,6 +130,34 @@ class YGManageVC: UIViewController {
         text.autoHeightOpen(44.0, moveView: alert.mainView)
     }
 
+    func addGW(str:String)
+    {
+        let url=APPURL+"Public/Found/?service=Power.addShopJob"
+        let body="shopid="+SID+"&name="+str
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                self.subVC2.refresh()
+                XAlertView.show("岗位添加成功", block: { [weak self]() in
+                    if self == nil {return}
+                    
+                })
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "岗位添加失败" : msg
+                
+                XAlertView.show(msg!, block: nil)
+            }
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

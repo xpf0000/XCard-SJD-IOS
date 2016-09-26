@@ -10,18 +10,23 @@ import UIKit
 
 class ShopSetupVC: UIViewController {
 
+    weak var subVC:ShopSetupTableVC!
     
     @IBOutlet var btn: UIButton!
     
-    @IBAction func submit(sender: AnyObject) {
+    @IBAction func submit(sender: UIButton) {
+        
+        print("!!!!!!!!!!!!!")
+        
+        subVC.submit(sender)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
+        subVC = self.childViewControllers[0] as! ShopSetupTableVC
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,14 +35,5 @@ class ShopSetupVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

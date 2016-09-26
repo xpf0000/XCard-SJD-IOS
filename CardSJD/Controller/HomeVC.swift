@@ -81,6 +81,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             }
             
             self?.page.numberOfPages = self!.bannerArr.count
+            self?.page.currentPage = 0
             self?.banner.bannerArr = self!.bannerArr
         }
     }
@@ -96,30 +97,6 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
         
         banner.frame = CGRectMake(0, 12, swidth, swidth*0.3)
         page.frame = CGRectMake(0, (12+swidth*0.3)-24, swidth, 24)
-        
-        
-        
-        
-        
-        let model = XBannerModel()
-        model.image = "http://pic2.ooopic.com/12/19/25/59b1OOOPIC45.jpg"
-        arr.append(model)
-        
-        let model1 = XBannerModel()
-        model1.image = "http://pic28.nipic.com/20130426/5194434_163415086319_2.jpg"
-        arr.append(model1)
-        
-        let model2 = XBannerModel()
-        model2.image = "http://www.ahyunmo.com/images/4.jpg"
-        arr.append(model2)
-        
-        //banner.bannerArr = arr
-        
-        //page.numberOfPages = arr.count
-        
-        
-        page.pageIndicatorTintColor = "dcdcdc".color
-        page.currentPageIndicatorTintColor = APPNVColor
         
         banner.Block(index: { [weak self](index, m) in
             

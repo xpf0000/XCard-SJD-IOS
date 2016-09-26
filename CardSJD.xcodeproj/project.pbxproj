@@ -39,6 +39,7 @@
 		179C208C1D6175A70087C33A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208B1D6175A70087C33A /* Foundation.framework */; };
 		179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208D1D6175B30087C33A /* UIKit.framework */; };
 		179C20901D6175C40087C33A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208F1D6175C40087C33A /* libz.tbd */; };
+		179C75361D992A3600953A43 /* ShopsDescriptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C75351D992A3600953A43 /* ShopsDescriptVC.swift */; };
 		17A33A081D8FF57E007650A2 /* TopUpManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */; };
 		17B06F6D1D9117640070D242 /* ActivityListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F6B1D9117640070D242 /* ActivityListCell.swift */; };
 		17B06F6E1D9117640070D242 /* ActivityListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B06F6C1D9117640070D242 /* ActivityListCell.xib */; };
@@ -377,6 +378,7 @@
 		179C208B1D6175A70087C33A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		179C208D1D6175B30087C33A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		179C208F1D6175C40087C33A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		179C75351D992A3600953A43 /* ShopsDescriptVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsDescriptVC.swift; sourceTree = "<group>"; };
 		17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopUpManageVC.swift; sourceTree = "<group>"; };
 		17B06F6B1D9117640070D242 /* ActivityListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityListCell.swift; sourceTree = "<group>"; };
 		17B06F6C1D9117640070D242 /* ActivityListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityListCell.xib; sourceTree = "<group>"; };
@@ -1405,6 +1407,7 @@
 				17C7FAB31D8682DF00A3EFCC /* MessageCell.xib */,
 				1744199A1D9511E900F5CD2B /* ShopSetupVC.swift */,
 				1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */,
+				179C75351D992A3600953A43 /* ShopsDescriptVC.swift */,
 				17EDD5851D96612B008FB846 /* ChangeUserTelVC.swift */,
 			);
 			name = user;
@@ -1993,6 +1996,7 @@
 				17CEF3191D8F8D060018BBAC /* MemberListCell.swift in Sources */,
 				17C7FA121D8682C400A3EFCC /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				17C7FA9A1D8682C500A3EFCC /* XHttpHandle.swift in Sources */,
+				179C75361D992A3600953A43 /* ShopsDescriptVC.swift in Sources */,
 				17C7FA6A1D8682C500A3EFCC /* XHttpRequest.swift in Sources */,
 				17C7FA991D8682C500A3EFCC /* XCollectionView.swift in Sources */,
 				17CEF3051D8F6C4E0018BBAC /* XZoomImageView.swift in Sources */,

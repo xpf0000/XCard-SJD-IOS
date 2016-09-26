@@ -9,8 +9,6 @@
 import UIKit
 
 class AddYGVC: UITableViewController,UITextFieldDelegate {
-
-    @IBOutlet var header: UIImageView!
     
     @IBOutlet var name: UITextField!
     
@@ -20,15 +18,69 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
     
     @IBOutlet var type: UILabel!
     
+    var gwModel:GangweiModel!
+    {
+        didSet
+        {
+            self.type.text = gwModel?.name
+        }
+    }
+    
     @IBAction func doADD(sender: UIButton) {
         
+        if !name.checkNull() || !orderNum.checkNull() || !tel.checkNull()
+        {
+            return
+        }
+        
+        if !tel.checkPhone(){return}
+        
+        if gwModel == nil
+        {
+            ShowMessage("请选择岗位")
+            return
+        }
+        
+        sender.enabled = false
+        XWaitingView.show()
+        
+        let url=APPURL+"Public/Found/?service=Power.addShopWorker"
+        let body="uid="+UID+"&shopid="+SID+"&jobid="+gwModel.id+"&wnumber="+orderNum.text!.trim()
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                NoticeWord.ADDYGSuccess.rawValue.postNotice()
+                XAlertView.show("员工添加成功", block: { [weak self]() in
+                    if self == nil {return}
+                    
+                    self?.pop()
+                    
+                })
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "员工添加失败" : msg
+                
+                XAlertView.show(msg!, block: nil)
+            }
+            
+            sender.enabled = true
+            
+        }
+
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.addBackButton()
+        
+        tel.keyboardType = .PhonePad
         
         let view1=UIView()
         view1.backgroundColor=UIColor.clearColor()
@@ -38,7 +90,7 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        if(indexPath.row == 0 || indexPath.row == 5)
+        if(indexPath.row == 0 || indexPath.row == 4)
         {
             cell.separatorInset=UIEdgeInsetsMake(0, 0, 0, 0)
             if(IOS_Version>=8.0)
@@ -50,7 +102,7 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
                 }
             }
         }
-        else if(indexPath.row > 5 )
+        else if(indexPath.row > 4 )
         {
             cell.separatorInset=UIEdgeInsetsMake(0, swidth, 0, 0)
             if(IOS_Version>=8.0)
@@ -95,24 +147,19 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         switch indexPath.row {
-        case 1:
-            ""
-            let picker = XPhotoPicker()
-            picker.allowsEditing = true
             
-            picker.getPhoto(self, result: {[weak self] (res) in
-                
-                    let m = res[0]
-                    self?.header.image = m.image
- 
-            })
-        case 5:
+        case 4:
             ""
             let vc = GWListVC()
             vc.title = "选择岗位"
-            vc.getGW({[weak self] (str) in
+            vc.getGW({[weak self] (model) in
                 
-                self?.type.text = str as? String
+                if let m = model as? GangweiModel
+                {
+                    self?.gwModel = m
+                }
+                
+                
             })
             
             self.navigationController?.pushViewController(vc, animated: true)

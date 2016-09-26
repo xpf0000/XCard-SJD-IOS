@@ -18,10 +18,16 @@ class GWListVC: UIViewController,UITableViewDelegate {
         block = b
     }
     
-    let nameArr = ["经理","出纳","会计","客服","文案"]
+    func refresh()
+    {
+        table.httpHandle.reSet()
+        table.httpHandle.handle()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refresh), name: NoticeWord.UpDatePowerSuccess.rawValue, object: nil)
         
         if block != nil {self.addBackButton()}
         
@@ -33,23 +39,14 @@ class GWListVC: UIViewController,UITableViewDelegate {
         table.backgroundColor = APPBGColor
         table.cellHeight = 60
         
-        //        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
-        //
-        //        table.setHandle(url, pageStr: "[page]", keys: ["datas"], model: OrderModel.self, CellIdentifier: "MyOrderCancelCell")
-        //
-        //        table.show()
+        let url = APPURL+"Public/Found/?service=Power.getShopJob&id=1"
+        
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: GangweiModel.self, CellIdentifier: "GWListCell")
         
         table.Delegate(self)
-        table.setHandle("", pageStr: "", keys: ["data"], model: GangweiModel.self, CellIdentifier: "GWListCell")
         
-        for name in nameArr
-        {
-            let m = GangweiModel()
-            m.name = name
-            table.httpHandle.listArr.append(m)
-        }
-        
-        table.reloadData()
+        table.show()
+ 
         
     }
     
@@ -59,7 +56,7 @@ class GWListVC: UIViewController,UITableViewDelegate {
         
         if block != nil
         {
-            block?(nameArr[indexPath.row])
+            block?(table.httpHandle.listArr[indexPath.row])
             pop()
             return
         }
@@ -71,10 +68,120 @@ class GWListVC: UIViewController,UITableViewDelegate {
             
             alert.click({[weak self] (index) -> Bool in
                 
+                if index == 0
+                {
+                    self?.toEditName(indexPath.row)
+                }
+                
+                if index == 1
+                {
+                    self?.toEditPower(indexPath.row)
+                }
+                
+                
                 return true
                 })
         }
         
+    }
+    
+    func toEditPower(index:Int)
+    {
+        if let m = table.httpHandle.listArr[index] as? GangweiModel
+        {
+            let vc = "PowerListVC".VC("Main") as! PowerListVC
+            vc.gw = m
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
+    
+    func toEditName(index:Int)
+    {
+        if let m = table.httpHandle.listArr[index] as? GangweiModel
+        {
+            showAlert(m)
+        }
+    }
+    
+    
+    func showAlert(m:GangweiModel)
+    {
+        let text = UITextField()
+        text.frame = CGRectMake(10, 10, XAlertWidth-20, 50-SINGLE_LINE_WIDTH)
+        text.placeholder = "输入点什么吧"
+        text.text = m.name
+        text.textAlignment = .Center
+        text.addEndButton()
+        text.autoReturn()
+        
+        let view = UIView()
+        view.frame = CGRectMake(0, 0, XAlertWidth, 60)
+        
+        let line = UIView()
+        line.frame = CGRectMake(0, 10-SINGLE_LINE_ADJUST_OFFSET, XAlertWidth, SINGLE_LINE_WIDTH)
+        line.backgroundColor = "dadade".color
+        
+        view.addSubview(line)
+        view.addSubview(text)
+        
+        
+        let alert = XCommonAlert(title: "请输入岗位名称", message: nil, expand: ({
+            ()->UIView in
+            
+            
+            return view
+            
+        }), buttons: "取消","确定")
+        
+        alert.click({ [weak self](index) -> Bool in
+            
+            print("点击了 \(index)")
+            
+            if index == 1 && !text.checkNull() {return false}
+            
+            if index == 1
+            {
+                text.endEdit()
+                self?.addGW(text.text!.trim(),m: m)
+            }
+
+            return true
+            
+            })
+        
+        alert.show()
+        
+        text.autoHeightOpen(44.0, moveView: alert.mainView)
+    }
+    
+    func addGW(str:String,m:GangweiModel)
+    {
+        let url=APPURL+"Public/Found/?service=Power.updateShopJob"
+        let body="id="+m.id+"&name="+str
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) {[weak self](o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                m.name = str
+                self?.table.reloadData()
+                XAlertView.show("岗位修改成功", block: { [weak self]() in
+                    if self == nil {return}
+                    
+                    })
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "岗位修改失败" : msg
+                
+                XAlertView.show(msg!, block: nil)
+            }
+            
+        }
     }
     
     

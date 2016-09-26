@@ -14,8 +14,8 @@ import ImageIO
 
 enum NoticeWord : String{
     
-    case UpDateFriendCell="UpDateFriendCell"
-    case FriendPostSuccess="FriendPostSuccess"
+    case ADDYGSuccess="ADDYGSuccess"
+    case UpDatePowerSuccess = "UpDatePowerSuccess"
     case LoginSuccess="LoginSuccess"
     case LogoutSuccess="LogoutSuccess"
     case UserChanged="UserChanged"

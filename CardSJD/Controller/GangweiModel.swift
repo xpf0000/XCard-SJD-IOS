@@ -10,6 +10,8 @@ import UIKit
 
 class GangweiModel: Reflect {
 
+    var id = ""
+    var power = ""
     var name = ""
     
 }

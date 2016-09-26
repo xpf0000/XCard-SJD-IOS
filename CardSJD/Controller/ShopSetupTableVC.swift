@@ -16,42 +16,94 @@ class ShopSetupTableVC: UITableViewController {
     
     @IBOutlet var describe: UILabel!
     
-    @IBOutlet var msgRCount: UILabel!
-    
-    @IBOutlet var cardRCount: UILabel!
-    
-    @IBOutlet var ygRCount: UILabel!
-    
     @IBOutlet var address: UITextField!
     
     @IBOutlet var tel: UITextField!
     
-    @IBOutlet var ownerName: UITextField!
-    
-    @IBOutlet var renjun: UITextField!
-    
-    @IBOutlet var openTime: UITextField!
-    
     @IBOutlet var info: UITextField!
     
-    @IBOutlet var endTime: UITextField!
     
-    @IBOutlet var line: UIView!
+    func submit(sender:UIButton)
+    {
+        if !address.checkNull() || !tel.checkNull() || !info.checkNull()
+        {
+            return
+        }
+        
+        sender.enabled=false
+        XWaitingView.show()
+        
+        let url=APPURL+"Public/Found/?service=Shopd.updateShopInfo"
+        let body="id="+UID+"&address="+address.text!.trim()+"&tel="+tel.text!.trim()+"&info="+info.text!.trim()
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                XAlertView.show("信息修改成功", block: { [weak self]() in
+                    if self == nil {return}
+                })
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "信息修改失败" : msg
+         
+                XAlertView.show(msg!, block: nil)
+            }
+            
+            sender.enabled = true
+            
+        }
+        
+        
+    }
     
-    @IBOutlet var line1: UIView!
+    func http()
+    {
+        let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopd.getShopInfo&id="+SID
+        
+        XHttpPool.requestJson(url, body: nil, method: .POST) { [weak self](o) -> Void in
+            
+            if(o?["data"].dictionaryValue.count > 0)
+            {
+                if(o!["data"]["code"].intValue == 0 && o?["data"]["info"].arrayValue.count > 0)
+                {
+                    
+                    let model = UserModel.parse(json: o!["data"]["info"][0], replace: nil)
+                    
+                    DataCache.Share.User.logo = model.logo
+                    DataCache.Share.User.shopname = model.shopname
+                    DataCache.Share.User.tel = model.tel
+                    DataCache.Share.User.address = model.address
+                    DataCache.Share.User.info = model.info
+                    
+                    self?.show()
+                    
+                }
+                
+            }
+        }
+        
+    }
     
-    @IBOutlet var line2: UIView!
-    
-    @IBOutlet var linew: NSLayoutConstraint!
-    
+    func show()
+    {
+        icon.url = DataCache.Share.User.logo
+        name.text = DataCache.Share.User.shopname
+        describe.text = ""
+        address.text = DataCache.Share.User.address
+        tel.text = DataCache.Share.User.tel
+        info.text = DataCache.Share.User.info
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        line.backgroundColor = tableView.separatorColor
-        line1.backgroundColor = tableView.separatorColor
-        line2.backgroundColor = tableView.separatorColor
-        linew.constant = 0.5
+        
+        self.http()
         
         let v=UIView()
         v.backgroundColor=UIColor.clearColor()
@@ -62,7 +114,9 @@ class ShopSetupTableVC: UITableViewController {
         icon.layer.borderColor = "dcdcdc".color?.CGColor
         icon.layer.borderWidth = 2.0
         
-        address.autoReturn(tel,ownerName,renjun,openTime,info)
+        info.enabled = false
+        
+        address.autoReturn(tel)
  
     }
 
@@ -89,6 +143,18 @@ class ShopSetupTableVC: UITableViewController {
             // Fallback on earlier versions
         }
         icon.layer.cornerRadius = icon.frame.size.width/2.0
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.row == 5
+        {
+            let vc = ShopsDescriptVC()
+            vc.info = DataCache.Share.User.info
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
 

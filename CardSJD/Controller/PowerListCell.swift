@@ -17,6 +17,7 @@ class PowerListCell: UITableViewCell {
     @IBAction func doClick(sender: UIButton) {
         
         sender.selected = !sender.selected
+        model.checked = sender.selected
         
     }
     

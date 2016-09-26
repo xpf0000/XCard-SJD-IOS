@@ -16,40 +16,99 @@ class PowerListVC: UIViewController {
     
     @IBOutlet var btn: UIButton!
     
+    var gw:GangweiModel = GangweiModel()
+    {
+        didSet
+        {
+            pwArr = gw.power.split(",")
+        }
+    }
+    var pwArr:[String] = []
     
     @IBAction func doClick(sender: UIButton) {
         
+        XWaitingView.show()
+        sender.enabled = false
+        
+        var power = ""
+        
+        for item in table.httpHandle.listArr
+        {
+            if let m = item as? PowerModel
+            {
+                if m.checked
+                {
+                    if power == ""
+                    {
+                        power += m.id
+                    }
+                    else
+                    {
+                        power += ","+m.id
+                    }
+                    
+                }
+            }
+        }
+        
+        let url=APPURL+"Public/Found/?service=Power.updateJobPower"
+        let body="shopid="+SID+"&jobid="+gw.id+"&power="+power
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                NoticeWord.UpDatePowerSuccess.rawValue.postNotice()
+                XAlertView.show("权限修改成功", block: { [weak self]() in
+                    
+                })
+
+                return
+                
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "权限修改失败" : msg
+                sender.enabled = true
+                
+                XAlertView.show(msg!, block: nil)
+                
+            }
+            
+        }
+        
         
     }
-    
-    let nameArr = ["新用户开卡","充值","消费","管理卡类","岗位设置","消息","活动","会员管理","会员密码重置","店铺设置","员工管理"]
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.addBackButton()
+        
+        ptitle.text = "当前岗位: "+gw.name
         table.cellHeight = 70
         
-        //        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
-        //
-        //        table.setHandle(url, pageStr: "[page]", keys: ["datas"], model: OrderModel.self, CellIdentifier: "MyOrderCancelCell")
-        //
-        //        table.show()
+        let url = APPURL+"Public/Found/?service=Setting.getShopPower"
         
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: PowerModel.self, CellIdentifier: "PowerListCell")
         
-        table.setHandle("", pageStr: "", keys: ["data"], model: PowerModel.self, CellIdentifier: "PowerListCell")
-        
-        for name in nameArr
-        {
-            let m = PowerModel()
-            m.name = name
-            table.httpHandle.listArr.append(m)
+        table.httpHandle.BeforeBlock { [weak self](arr) in
+            if self == nil {return}
+            for item in arr
+            {
+                if let m = item as? PowerModel
+                {
+                    m.checked = self!.pwArr.contains(m.id)
+                }
+            }
         }
         
-        table.reloadData()
-
-       
+        table.show()
+        
     }
 
     override func didReceiveMemoryWarning() {

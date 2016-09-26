@@ -13,6 +13,11 @@ var UID:String
     return DataCache.Share.User.uid
 }
 
+var SID:String
+{
+    return DataCache.Share.User.shopid
+}
+
 var UMob:String
 {
     return DataCache.Share.User.mobile
@@ -28,6 +33,11 @@ class UserModel: Reflect {
     var shopname=""
     var password = ""
     
+    var logo = ""
+    var tel = ""
+    var address = ""
+    var info = ""
+
     func reset()
     {
         uid=""

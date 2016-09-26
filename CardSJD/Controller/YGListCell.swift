@@ -17,11 +17,12 @@ class YGListCell: UITableViewCell {
     @IBOutlet var tel: UILabel!
     
     
-    var model:YuangongModel = YuangongModel()
+    var model:YuangongModel?
     {
         didSet
         {
-            
+            name.text = model?.truename
+            tel.text = model?.mobile
         }
     }
     

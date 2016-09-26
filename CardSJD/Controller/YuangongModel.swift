@@ -10,4 +10,9 @@ import UIKit
 
 class YuangongModel: Reflect {
 
+    var id=""
+    var truename=""
+    var mobile=""
+    var name=""
+    
 }

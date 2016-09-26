@@ -12,8 +12,16 @@ class YGListVC: UIViewController,UITableViewDelegate {
 
     let table = XTableView()
     
+    func refresh()
+    {
+        table.httpHandle.reSet()
+        table.httpHandle.handle()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refresh), name: NoticeWord.ADDYGSuccess.rawValue, object: nil)
 
         self.view.backgroundColor = APPBGColor
         table.backgroundColor = APPBGColor
@@ -23,22 +31,11 @@ class YGListVC: UIViewController,UITableViewDelegate {
         table.backgroundColor = APPBGColor
         table.cellHeight = 90
         
-        //        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
-        //
-        //        table.setHandle(url, pageStr: "[page]", keys: ["datas"], model: OrderModel.self, CellIdentifier: "MyOrderCancelCell")
-        //
-        //        table.show()
+        let url = APPURL+"Public/Found/?service=Power.getShopWorker&id=1"
         
-        table.Delegate(self)
-        table.setHandle("", pageStr: "", keys: ["data"], model: YuangongModel.self, CellIdentifier: "YGListCell")
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: YuangongModel.self, CellIdentifier: "YGListCell")
         
-        for _ in 0...20
-        {
-            let m = YuangongModel()
-            table.httpHandle.listArr.append(m)
-        }
-        
-        table.reloadData()
+        table.show()
         
     }
     
@@ -81,7 +78,10 @@ class YGListVC: UIViewController,UITableViewDelegate {
         
     }
     
-
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
 
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class PowerModel: Reflect {
     
+    var id = ""
     var name = ""
     var checked = false
 
