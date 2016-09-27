@@ -24,6 +24,10 @@ class MemberListCell: UITableViewCell {
     {
         didSet
         {
+            name.text = model.truename
+            tel.text = model.mobile
+            num.text = "NO."+model.uid
+            
             btn.enabled = model.enable
             btn.selected = model.selected
         }

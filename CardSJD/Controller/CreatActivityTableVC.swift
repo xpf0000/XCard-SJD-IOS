@@ -23,34 +23,14 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
     
     @IBOutlet var endtime: UITextField!
     
-    @IBOutlet var picCollection: XCollectionView!
+    @IBOutlet var address: UITextField!
     
+    @IBOutlet var tel: UITextField!
+    
+    
+    
+
     @IBOutlet var mark: XTextView!
-    
-    var imgArr:[XPhotoAssetModel] = []
-    {
-        didSet
-        {
-            picCollection.httpHandle.listArr.removeAll(keepCapacity: false)
-            
-            for item in imgArr
-            {
-                let m = CreatActivityPicModel()
-                m.img = item.image
-                    
-                picCollection.httpHandle.listArr.append(m)
-            }
-            
-            if imgArr.count < 9
-            {
-                let m = CreatActivityPicModel()
-                m.img = "ac_photo.png".image
-                picCollection.httpHandle.listArr.append(m)
-            }
-         
-            picCollection.reloadData()
-        }
-    }
     
     var headerImg:UIImage?
     {
@@ -61,14 +41,20 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         }
     }
     
-    var harr:[CGFloat] = [0,60,60,60,94,100]
+    var harr:[CGFloat] = [0,60,60,60,60,60,100]
+    
+    var stime:NSDate?
+    var etime:NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         header.adjustsImageWhenDisabled = false
         
         atitle.autoReturn()
+        address.autoReturn()
+        tel.autoReturn()
+        
         mark.placeHolder("请输入活动描述!")
         
         harr[0] = SW * 9.0 / 16.0
@@ -77,24 +63,6 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         v.backgroundColor=UIColor.clearColor()
         tableView.tableFooterView=v
         tableView.tableHeaderView=v
-        
-        picCollection.Delegate(self)
-        
-        picCollection.ViewLayout.scrollDirection = .Horizontal
-        picCollection.ViewLayout.itemSize = CGSizeMake(70.0, 70.0)
-        //picCollection.ViewLayout.minimumInteritemSpacing = 5.0
-        picCollection.ViewLayout.minimumLineSpacing = 5.0
-        
-        picCollection.setHandle("", pageStr: "", keys: [], model: CreatActivityPicModel.self, CellIdentifier: "CreatActivityPicCell")
-        
-        let m = CreatActivityPicModel()
-        m.img = "ac_photo.png".image
-        
-        picCollection.httpHandle.listArr.append(m)
-        
-        picCollection.reloadData()
-        
-        tableView.reloadData()
         
         
     }
@@ -113,7 +81,7 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
                 }
             }
         }
-        else if(indexPath.row > 4)
+        else if(indexPath.row > 5)
         {
             cell.separatorInset=UIEdgeInsetsMake(0, SW, 0, 0)
             if(IOS_Version>=8.0)
@@ -185,7 +153,11 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
             let picker = XDatePicker()
             picker.minDate = NSDate()
             
+            picker.datePicker.maximumDate = etime
+            
             picker.getDate({[weak self] (date, str) in
+                
+                self?.stime = date
                 
                 self?.starttime.text = str
                 
@@ -196,7 +168,11 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
             let picker = XDatePicker()
             picker.minDate = NSDate()
             
+            picker.datePicker.minimumDate = stime
+            
             picker.getDate({[weak self] (date, str) in
+                
+                self?.etime = date
                 
                 self?.endtime.text = str
                 
@@ -210,42 +186,68 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    
+    func submit(sender:UIButton)
+    {
+        self.view.endEdit()
         
-        if indexPath.row == (picCollection.httpHandle.listArr.count-1) && imgArr.count < 9
+        if headerImg == nil{ShowMessage("请选择活动封面"); return}
+        if !atitle.checkNull() || !starttime.checkNull() || !endtime.checkNull() || !address.checkNull() || !tel.checkNull() || !mark.checkNull()
         {
-            let picker = XPhotoPicker()
-            picker.maxNum = 9 - imgArr.count
-            picker.getPhoto(self) {[weak self] (res) in
-                
-                self?.imgArr += res
-
+            return
+        }
+        
+        sender.enabled = false
+        XWaitingView.show()
+        
+        let imgDataArr:[NSData] = [headerImg!.data(0.5)!]
+        let url=APPURL+"Public/Found/?service=Shopa.addShopHD"
+        
+        let dict=[
+            "uid":UID,
+            "shopid":SID,
+            "title":atitle.text!.trim(),
+            "stime":starttime.text!.trim(),
+            "etime":endtime.text!.trim(),
+            "address":address.text!.trim(),
+            "tel":tel.text!.trim(),
+            "content":mark.text!.trim()
+        ]
+        
+        print(dict)
+        
+        XHttpPool.upLoadWithMutableName(url, parameters: dict, file: imgDataArr, name: "file", progress: nil) { [weak self](o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                NoticeWord.ADDActivitySuccess.rawValue.postNotice()
+                XAlertView.show("发布活动成功", block: { [weak self]() in
+                    
+                    self?.pop()
+                    
+                })
             }
-  
-        }
-        else
-        {
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "发布活动失败" : msg
+                sender.enabled = true
+                
+                XAlertView.show(msg!, block: nil)
+                
+            }
 
-            let alert = XCommonAlert(title: "确认删除?", message: nil, buttons: nil)
-            
-            alert.click({[weak self] (index) -> Bool in
-                if self == nil {return false}
-                
-                print(index)
-                
-                self?.imgArr.removeAtIndex(indexPath.row)
-                collectionView.reloadData()
-                
-                return true
-            })
-            
-            alert.show()
-            
         }
-        
-     
     }
-
+    
+    deinit
+    {
+        atitle.autoReturnClose()
+        address.autoReturnClose()
+        tel.autoReturnClose()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

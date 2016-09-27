@@ -22,7 +22,8 @@ enum NoticeWord : String{
     case UpdateUserSuccess="UpdateUserSuccess"
     case OrderChanged="OrderChanged"
     case MsgChange="MsgChange"
-    case UpdateMoney="UpdateMoney"
+    case ShopsCardUpdateSuccess="ShopsCardUpdateSuccess"
+    case ADDActivitySuccess="ADDActivitySuccess"
     
 }
 

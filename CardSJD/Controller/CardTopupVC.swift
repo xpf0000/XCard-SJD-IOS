@@ -72,15 +72,15 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
         table.hideFootRefresh()
         table.hideHeadRefresh()
         table.cellHeight = 80.0
-        for(index,name) in names.enumerate()
-        {
-            let m = CardTypeModel()
-            m.name = name
-            m.img = "card_type\(index).png"
-            m.info = "卡说明"
-            m.enable = true
-            table.httpHandle.listArr.append(m)
-        }
+//        for(index,name) in names.enumerate()
+//        {
+//            let m = CardTypeModel()
+//            m.name = name
+//            m.img = "card_type\(index).png"
+//            m.info = "卡说明"
+//            m.enable = true
+//            table.httpHandle.listArr.append(m)
+//        }
         table.Delegate(self)
         
         table.reloadData()

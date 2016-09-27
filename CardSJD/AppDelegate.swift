@@ -12,6 +12,8 @@ import AVFoundation
 let JPushKey = "3060da25a2635f881d5fe505"
 let JPushSecret = "64bb3fc6f61f5adff5be82e6"
 
+let XCardColor = ["e49100","446ab4","f2666b","e6bd2c","19ad83","1d1e20","c322ec"]
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -20,12 +20,9 @@ class ShopSetupTableVC: UITableViewController {
     
     @IBOutlet var tel: UITextField!
     
-    @IBOutlet var info: UITextField!
-    
-    
     func submit(sender:UIButton)
     {
-        if !address.checkNull() || !tel.checkNull() || !info.checkNull()
+        if !address.checkNull() || !tel.checkNull()
         {
             return
         }
@@ -34,7 +31,7 @@ class ShopSetupTableVC: UITableViewController {
         XWaitingView.show()
         
         let url=APPURL+"Public/Found/?service=Shopd.updateShopInfo"
-        let body="id="+UID+"&address="+address.text!.trim()+"&tel="+tel.text!.trim()+"&info="+info.text!.trim()
+        let body="id="+SID+"&address="+address.text!.trim()+"&tel="+tel.text!.trim()
         
         XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             
@@ -96,8 +93,6 @@ class ShopSetupTableVC: UITableViewController {
         describe.text = ""
         address.text = DataCache.Share.User.address
         tel.text = DataCache.Share.User.tel
-        info.text = DataCache.Share.User.info
-        
     }
     
     override func viewDidLoad() {
@@ -113,8 +108,6 @@ class ShopSetupTableVC: UITableViewController {
         icon.layer.masksToBounds = true
         icon.layer.borderColor = "dcdcdc".color?.CGColor
         icon.layer.borderWidth = 2.0
-        
-        info.enabled = false
         
         address.autoReturn(tel)
  
@@ -147,14 +140,6 @@ class ShopSetupTableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if indexPath.row == 5
-        {
-            let vc = ShopsDescriptVC()
-            vc.info = DataCache.Share.User.info
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
         
     }
 

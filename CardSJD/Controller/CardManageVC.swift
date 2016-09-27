@@ -18,7 +18,7 @@ class CardManageVC: UIViewController,UITableViewDelegate {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -35,27 +35,15 @@ class CardManageVC: UIViewController,UITableViewDelegate {
         table.frame = CGRectMake(0, 12, swidth, sheight-64-12)
         table.backgroundColor = APPBGColor
         
-        //        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
-        //
-        //        table.setHandle(url, pageStr: "[page]", keys: ["datas"], model: OrderModel.self, CellIdentifier: "MyOrderCancelCell")
-        //
-        //        table.show()
-        
-        
-        let names = ["充值卡","积分卡","计次卡","打折卡"]
-        
-        table.setHandle("", pageStr: "", keys: ["data"], model: CardTypeModel.self, CellIdentifier: "CardTypeCell")
-        table.hideFootRefresh()
-        table.hideHeadRefresh()
         table.cellHeight = 80.0
-        for(index,name) in names.enumerate()
-        {
-            let m = CardTypeModel()
-            m.name = name
-            m.img = "card_type\(index).png"
-            m.info = "卡说明"
-            table.httpHandle.listArr.append(m)
-        }
+        table.refreshWord = NoticeWord.ShopsCardUpdateSuccess.rawValue
+        
+        let url = APPURL+"Public/Found/?service=Hyk.getShopCard&shopid="+SID+"&uid="+UID
+        
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: CardTypeModel.self, CellIdentifier: "CardTypeCell")
+        
+        table.show()
+        
         table.Delegate(self)
         
         table.reloadData()
@@ -68,9 +56,23 @@ class CardManageVC: UIViewController,UITableViewDelegate {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let alert = XCommonAlert(title: nil, message: nil, buttons: "删除","编辑","取消")
+        let alert = XCommonAlert(title: nil, message: nil, buttons: "作废","编辑","取消")
         
         alert.click {[weak self] (index) -> Bool in
+            if self == nil {return false}
+            
+            if index == 0
+            {
+                self?.delCard(indexPath.row)
+            }
+            
+            if index == 1
+            {
+                let vc = "AddCardVC".VC("Main") as! AddCardVC
+                vc.model = self!.table.httpHandle.listArr[indexPath.row] as! CardTypeModel
+                self?.navigationController?.pushViewController(vc, animated: true)
+                
+            }
             
             return true
         }
@@ -79,7 +81,53 @@ class CardManageVC: UIViewController,UITableViewDelegate {
         
     }
     
+    func delCard(row:Int)
+    {
+        let alert = XCommonAlert(title: "提醒", message: "确定要作废该会员卡?", buttons: "取消","确定")
+        
+        alert.click {[weak self] (index) -> Bool in
+            if self == nil {return false}
+
+            if index == 1
+            {
+                self?.doDel(row)
+            }
+            
+            return true
+        }
+        
+        alert.show()
+    }
     
+    func doDel(row:Int)
+    {
+        XWaitingView.show()
+        
+        let m = table.httpHandle.listArr[row] as! CardTypeModel
+        
+        let url=APPURL+"Public/Found/?service=Shopd.delShopCard"
+        let body="id="+m.id
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) { [weak self](o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                self?.table.noticedRefresh()
+                XAlertView.show("会员卡作废成功", block: nil)
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "会员卡作废失败" : msg
+
+                XAlertView.show(msg!, block: nil)
+                
+            }
+            
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

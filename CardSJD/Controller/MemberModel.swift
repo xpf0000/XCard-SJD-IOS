@@ -10,10 +10,11 @@ import UIKit
 
 class MemberModel: Reflect {
     
-    var name = ""
-    var tel = ""
+    var uid = ""
+    var truename = ""
     var img = ""
-    var num = ""
+    var mobile = ""
+    
     var enable = false
     var selected = false
     

@@ -77,7 +77,7 @@ class XHttpHandle: NSObject {
     
     func handle()
     {
-        if(self.end || self.running)
+        if(self.end || self.running || self.url == "")
         {
             return
         }
@@ -89,6 +89,8 @@ class XHttpHandle: NSObject {
         XHttpPool.requestJson(url, body: nil, method: .GET) {[weak self] (o) -> Void in
             
             if(self == nil){return}
+            
+            
             
             if(o != nil)
             {

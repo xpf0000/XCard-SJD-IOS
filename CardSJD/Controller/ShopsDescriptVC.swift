@@ -12,6 +12,13 @@ class ShopsDescriptVC: UIViewController {
 
     let text = UITextView()
     
+    var block:AnyBlock?
+    
+    func onEditResult(b:AnyBlock)
+    {
+        self.block = b
+    }
+    
     var info = ""
     {
         didSet
@@ -39,10 +46,33 @@ class ShopsDescriptVC: UIViewController {
     
     func submit() {
         
-        print(text.text)
-        print("-------------------------")
-        print(text.attributedText)
+        //print(text.text)
+        //print("-------------------------")
+        //print(text.attributedText.string)
+        
+        self.block?(NSAttributedStringToString(text.attributedText))
+        self.pop()
     }
+    
+    func NSAttributedStringToString(attr:NSAttributedString) -> String
+    {
+        
+        do
+        {
+            if let htmlData = try? attr.dataFromRange(NSMakeRange(0, attr.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType])
+            {
+                if let htmlString = String(data: htmlData, encoding: NSUTF8StringEncoding) {
+                    
+                    print(htmlString)
+                    
+                    return htmlString
+                }
+            }
+        }
+        
+        return ""
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

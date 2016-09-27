@@ -15,11 +15,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="430" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_type0.png" translatesAutoresizingMaskIntoConstraints="NO" id="IrW-GI-2hA">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_vip.png" translatesAutoresizingMaskIntoConstraints="NO" id="IrW-GI-2hA">
                         <rect key="frame" x="12" y="12" width="118" height="74"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="IrW-GI-2hA" secondAttribute="height" multiplier="8:5" id="Swj-4G-kYz"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gi-gm-Mpj">
                         <rect key="frame" x="140" y="15" width="244" height="22"/>
@@ -69,7 +75,7 @@
     </objects>
     <resources>
         <image name="arrow02.png" width="64" height="64"/>
-        <image name="card_type0.png" width="160" height="100"/>
+        <image name="card_vip.png" width="320" height="200"/>
         <image name="radio01.png" width="68" height="68"/>
         <image name="radio02.png" width="68" height="68"/>
     </resources>

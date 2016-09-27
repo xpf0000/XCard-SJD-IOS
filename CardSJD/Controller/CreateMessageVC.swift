@@ -12,10 +12,51 @@ class CreateMessageVC: UITableViewController {
 
     @IBOutlet var info: XTextView!
     
-    @IBOutlet var type: UILabel!
+    @IBOutlet var mtitle: UITextField!
     
     @IBAction func submit(sender: UIButton)
     {
+        if !mtitle.checkNull() || !info.checkNull()
+        {
+            return
+        }
+        
+        sender.enabled = false
+        XWaitingView.show()
+        
+        let uname = DataCache.Share.User.username
+        
+        let url=APPURL+"Public/Found/?service=Shopa.addMessages"
+        let body="uid="+UID+"&username="+uname+"&title="+mtitle.text!.trim()+"&content="+info.text!.trim()
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) {[weak self] (o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                NoticeWord.MsgChange.rawValue.postNotice()
+                XAlertView.show("消息发送成功", block: { [weak self]() in
+                    if self == nil {return}
+                    
+                    self?.pop()
+                    
+                    })
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "消息发送失败" : msg
+                
+                XAlertView.show(msg!, block: nil)
+            }
+            
+            sender.enabled = true
+            
+        }
+        
+        
+        
         
     }
 
@@ -23,6 +64,7 @@ class CreateMessageVC: UITableViewController {
         super.viewDidLoad()
         self.title = "发布消息"
         self.addBackButton()
+        mtitle.autoReturn()
         
         info.placeHolder("请输入消息内容")
         
@@ -89,17 +131,6 @@ class CreateMessageVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if indexPath.row == 2
-        {
-            let vc = "ChooseTypeVC".VC("Main") as! ChooseTypeVC
-            vc.getType({ [weak self](str) in
-                
-                self?.type.text = str as? String
-                
-            })
-            
-        }
         
     }
     

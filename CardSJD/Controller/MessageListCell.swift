@@ -10,8 +10,6 @@ import UIKit
 
 class MessageListCell: UITableViewCell {
 
-    @IBOutlet var img: UIImageView!
-    
     @IBOutlet var mtitle: UILabel!
     
     @IBOutlet var time: UILabel!
@@ -20,26 +18,18 @@ class MessageListCell: UITableViewCell {
     {
         didSet
         {
-            img.url = "http://s14.sinaimg.cn/mw690/003Sbk9jty6U95ptUHrad"
             mtitle.text = model?.title
-            time.text = model?.time
-            
+            time.text = model?.create_time
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        img.layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        img.layer.cornerRadius = img.frame.size.width/2.0
-        img.layer.borderColor = "dcdcdc".color?.CGColor
-        img.layer.borderWidth = 2.0
-        
-        
+  
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

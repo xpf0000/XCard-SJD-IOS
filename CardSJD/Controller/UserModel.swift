@@ -47,6 +47,12 @@ class UserModel: Reflect {
         shopid=""
         shopname=""
         password = ""
+        
+        logo = ""
+        tel = ""
+        address = ""
+        info = ""
+        
         save()
     }
     
@@ -60,9 +66,10 @@ class UserModel: Reflect {
         shopname=model.shopname
         password = model.password
         
-        UserModel.save(obj: self, name: "UserModel")
-        NoticeWord.UpdateMoney.rawValue.postNotice()
-        
+        logo = model.logo
+        tel = model.tel
+        address = model.address
+        info = model.info
         
     }
     

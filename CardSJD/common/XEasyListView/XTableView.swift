@@ -12,6 +12,14 @@ import Foundation
 
 class XTableView: UITableView ,UITableViewDataSource,UITableViewDelegate{
 
+    var refreshWord = ""
+    {
+        didSet
+        {
+             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(noticedRefresh), name: refreshWord, object: nil)
+        }
+    }
+    
     var CellIdentifier:String = ""
         {
             didSet
@@ -92,6 +100,11 @@ class XTableView: UITableView ,UITableViewDataSource,UITableViewDelegate{
 
     }
     
+    func noticedRefresh()
+    {
+        httpHandle.reSet()
+        httpHandle.handle()
+    }
     
     func refresh()
     {
@@ -289,6 +302,7 @@ class XTableView: UITableView ,UITableViewDataSource,UITableViewDelegate{
     
     deinit
     {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
         self.delegate = nil
         self.dataSource = nil
         xdelegate = nil

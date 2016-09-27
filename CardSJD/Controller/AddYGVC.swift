@@ -18,6 +18,8 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
     
     @IBOutlet var type: UILabel!
     
+    var addUid = ""
+    
     var gwModel:GangweiModel!
     {
         didSet
@@ -28,12 +30,18 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
     
     @IBAction func doADD(sender: UIButton) {
         
-        if !name.checkNull() || !orderNum.checkNull() || !tel.checkNull()
+        if !tel.checkNull() || !orderNum.checkNull()
         {
             return
         }
         
         if !tel.checkPhone(){return}
+        
+        if name.text?.trim() == ""
+        {
+            ShowMessage("该手机号码尚未注册为怀府网会员,请先注册为会员")
+            return
+        }
         
         if gwModel == nil
         {
@@ -45,7 +53,7 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
         XWaitingView.show()
         
         let url=APPURL+"Public/Found/?service=Power.addShopWorker"
-        let body="uid="+UID+"&shopid="+SID+"&jobid="+gwModel.id+"&wnumber="+orderNum.text!.trim()
+        let body="uid="+addUid+"&shopid="+SID+"&jobid="+gwModel.id+"&wnumber="+orderNum.text!.trim()
         
         XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             
@@ -75,12 +83,47 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
 
     }
     
+    func checkMember(str:String)
+    {
+        let url=APPURL+"Public/Found/?service=Shopd.getUserInfoM"
+        let body="mobile="+str+"&shopid="+SID
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) {[weak self] (o) -> Void in
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                if let name = o?["data"]["info"][0]["truename"].string
+                {
+                    self?.name.text = name
+                    self?.addUid = o!["data"]["info"][0]["uid"].stringValue
+                }
+            
+            }
+            
+        }
+    }
+    
+    override func pop() {
+        tel.removeTextChangeBlock()
+        super.pop()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
+        name.enabled = false
         
+        tel.addEndButton()
         tel.keyboardType = .PhonePad
+    
+        tel.onTextChange { [weak self](str) in
+            
+            if str.length() ==  11
+            {
+                self?.checkMember(str)
+            }
+            
+        }
         
         let view1=UIView()
         view1.backgroundColor=UIColor.clearColor()

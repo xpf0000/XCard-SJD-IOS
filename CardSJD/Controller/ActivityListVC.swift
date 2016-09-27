@@ -10,9 +10,7 @@ import UIKit
 
 class ActivityListVC: UIViewController {
 
-    var tarr = ["全部","进行中","未开始","已结束"]
-    let menu = XHorizontalMenuView()
-    let main = XHorizontalMainView()
+    let table = XTableView()
     
     func toCreatActivity()
     {
@@ -30,47 +28,16 @@ class ActivityListVC: UIViewController {
             self?.toCreatActivity()
         }
 
+        table.frame = CGRectMake(0, 0, SW, SH-64)
+        self.view.addSubview(table)
         
-        menu.main = main
-        menu.frame = CGRectMake(0, 0, SW, 40)
-        main.frame = CGRectMake(0, 40, SW, SH-64-40)
-        self.view.addSubview(menu)
-        self.view.addSubview(main)
+        table.separatorStyle = .None
+        table.refreshWord = NoticeWord.ADDActivitySuccess.rawValue
+        table.setHandle("http://182.92.70.85/hfshopapi/Public/Found/?service=Shopa.getShopHD&id="+SID, pageStr: "[page]", keys: ["data","info"], model: ActivityModel.self, CellIdentifier: "ActivityListCell")
+        table.cellHeight = SW * 10.0 / 16.0
         
-        menu.menuBGColor = APPBGColor
-        menu.menuPageNum = 4
-        menu.menuSelectColor = APPNVColor
-        
-        var marr:[XHorizontalMenuModel] = []
-        
-        for str in tarr
-        {
-            let m = XHorizontalMenuModel()
-            m.title = str
-            
-            let table = XTableView()
-            table.separatorStyle = .None
-            table.setHandle("", pageStr: "", keys: ["data"], model: ActivityModel.self, CellIdentifier: "ActivityListCell")
-            table.cellHeight = SW * 10.0 / 16.0
-            
-            for _ in 0...9
-            {
-                let m = ActivityModel()
-                table.httpHandle.listArr.append(m)
-            }
-        
-            table.reloadData()
-            
-            m.view = table
+        table.show()
 
-            marr.append(m)
-        }
-        
-        menu.menuArr = marr
-
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

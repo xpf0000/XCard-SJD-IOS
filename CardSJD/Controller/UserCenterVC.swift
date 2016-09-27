@@ -75,7 +75,6 @@ class UserCenterVC: UITableViewController,UIAlertViewDelegate {
         self.title = "个人中心"
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(userChanged), name: NoticeWord.UserChanged.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(userChanged), name: NoticeWord.UpdateMoney.rawValue, object: nil)
         
         userChanged()
     }

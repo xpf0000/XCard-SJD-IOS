@@ -23,9 +23,9 @@ class CardTypeCell: UITableViewCell {
         {
         didSet
         {
-            name.text = model.name
-            img.image = model.img.image
-            info.text = model.info
+            name.text = model.type
+            img.backgroundColor = model.color.color
+            info.text = ""
             btn.enabled = model.enable
             btn.selected = model.selected
         }
@@ -33,7 +33,7 @@ class CardTypeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

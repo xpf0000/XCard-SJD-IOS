@@ -25,6 +25,9 @@
 		174B55E01D90E92A00DD5431 /* ConsumeManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */; };
 		174B55E21D90EB0000DD5431 /* ConsumeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */; };
 		1764BEC41D90D40800C9FB77 /* ExamplesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */; };
+		1769FA5A1D9A0A740066942C /* vip1.8x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA591D9A0A740066942C /* vip1.8x.png */; };
+		1769FA601D9A0C9C0066942C /* card_vip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA5F1D9A0C9C0066942C /* card_vip.png */; };
+		1769FA621D9A6D0A0066942C /* ValueSumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769FA611D9A6D0A0066942C /* ValueSumModel.swift */; };
 		179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20711D61724D0087C33A /* CoreLocation.framework */; };
 		179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20731D6172580087C33A /* QuartzCore.framework */; };
 		179C20761D61725F0087C33A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20751D61725F0087C33A /* OpenGLES.framework */; };
@@ -361,6 +364,9 @@
 		174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeManageVC.swift; sourceTree = "<group>"; };
 		174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeDetailVC.swift; sourceTree = "<group>"; };
 		1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesDefaults.swift; sourceTree = "<group>"; };
+		1769FA591D9A0A740066942C /* vip1.8x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vip1.8x.png; sourceTree = "<group>"; };
+		1769FA5F1D9A0C9C0066942C /* card_vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_vip.png; sourceTree = "<group>"; };
+		1769FA611D9A6D0A0066942C /* ValueSumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSumModel.swift; sourceTree = "<group>"; };
 		179249941D5B7613002E5529 /* CardSJD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSJD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179249A81D5B7613002E5529 /* CardSJD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSJD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		179249B31D5B7613002E5529 /* CardSJD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSJD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1206,6 +1212,8 @@
 				17C7FB031D86833D00A3EFCC /* 3701店铺设置.jpg */,
 				17EFD9A21D8F96C800E59478 /* arrow02_w.png */,
 				17EFD9A61D8FBAF300E59478 /* right_more.png */,
+				1769FA591D9A0A740066942C /* vip1.8x.png */,
+				1769FA5F1D9A0C9C0066942C /* card_vip.png */,
 				17C7FB041D86833D00A3EFCC /* 充值管理01 */,
 				17C7FB0A1D86833D00A3EFCC /* 共用01 */,
 				17C7FB191D86833D00A3EFCC /* 办卡充值01 */,
@@ -1417,6 +1425,7 @@
 			isa = PBXGroup;
 			children = (
 				17C7FAA41D8682DF00A3EFCC /* APPConfig.swift */,
+				1769FA611D9A6D0A0066942C /* ValueSumModel.swift */,
 				17B06F711D911E3F0070D242 /* ActivityModel.swift */,
 				17CEF30A1D8F70D80018BBAC /* CardTypeModel.swift */,
 				17C7FAC81D8682DF00A3EFCC /* OrderModel.swift */,
@@ -1660,6 +1669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C7FBB21D86964C00A3EFCC /* YGListCell.xib in Resources */,
+				1769FA601D9A0C9C0066942C /* card_vip.png in Resources */,
 				17C7FB4E1D86833D00A3EFCC /* Recharge04.png in Resources */,
 				17C7FB6F1D86833D00A3EFCC /* card_type02.png in Resources */,
 				17C7FBBE1D869F3C00A3EFCC /* GWListCell.xib in Resources */,
@@ -1732,6 +1742,7 @@
 				17C7FB6C1D86833D00A3EFCC /* system_msg_icon.png in Resources */,
 				17C7FB801D86833D00A3EFCC /* index_top02.png in Resources */,
 				17C7FB551D86833D00A3EFCC /* card_type3.png in Resources */,
+				1769FA5A1D9A0A740066942C /* vip1.8x.png in Resources */,
 				17C7FB4A1D86833D00A3EFCC /* orange_search.png in Resources */,
 				17C7FB751D86833D00A3EFCC /* index_icon02.png in Resources */,
 				17C7FB581D86833D00A3EFCC /* orange_btn.png in Resources */,
@@ -1836,6 +1847,7 @@
 				17C7FA601D8682C500A3EFCC /* Reflect+Parse.swift in Sources */,
 				17EFD9A51D8F99D400E59478 /* MemberInfoVC.swift in Sources */,
 				17C7FBC21D86A02D00A3EFCC /* GangweiModel.swift in Sources */,
+				1769FA621D9A6D0A0066942C /* ValueSumModel.swift in Sources */,
 				17C7FACF1D8682DF00A3EFCC /* AboutVC.swift in Sources */,
 				17C7FA1D1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
 				17CEF3111D8F85310018BBAC /* CardConsumeDoVC.swift in Sources */,

@@ -34,28 +34,15 @@ class MessageManageVC: UIViewController {
         self.view.addSubview(table)
         table.frame = CGRectMake(0, 0, swidth, sheight-64)
         table.backgroundColor = APPBGColor
-        table.cellHeight = 90
+        table.cellHeight = 65
         
-        //        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
-        //
-        //        table.setHandle(url, pageStr: "[page]", keys: ["datas"], model: OrderModel.self, CellIdentifier: "MyOrderCancelCell")
-        //
-        //        table.show()
+        table.refreshWord = NoticeWord.MsgChange.rawValue
         
+        let url = APPURL+"Public/Found/?service=Shopa.getMessagesList&shopid="+SID+"&page=[page]&perNumber=20"
         
-        table.setHandle("", pageStr: "", keys: ["data"], model: MessageModel.self, CellIdentifier: "MessageListCell")
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: MessageModel.self, CellIdentifier: "MessageListCell")
         
-        for _ in 0...20
-        {
-            let m = MessageModel()
-            m.title = "仅售228元,价值261元精致洗车"
-            m.time = "2016-08-15 10:35"
-            table.httpHandle.listArr.append(m)
-        }
-        
-        table.reloadData()
-        
-        
+        table.show()
         
     }
     

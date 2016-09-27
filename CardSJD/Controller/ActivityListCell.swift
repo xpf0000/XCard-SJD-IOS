@@ -20,7 +20,9 @@ class ActivityListCell: UITableViewCell {
     {
         didSet
         {
-            img.url = "http://img.mp.itc.cn/upload/20160919/b4d5518ceb8d4518a4e4998979fe1580.gif"
+            img.url = model.url
+            time.text = model.s_time+"至"+model.e_time
+            atitle.text = model.title
         }
     }
 
