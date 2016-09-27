@@ -26,12 +26,29 @@ class XCamera: UIView ,UIImagePickerControllerDelegate,UINavigationControllerDel
         }
     }
     
+    var sourceType:UIImagePickerControllerSourceType?
+    {
+        didSet
+        {
+            if sourceType == nil {return}
+            if UIImagePickerController.isSourceTypeAvailable(sourceType!)
+            {
+                imagePicker.sourceType = sourceType!
+            }
+
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         imagePicker.delegate=self
-        imagePicker.sourceType=UIImagePickerControllerSourceType.Camera
         
+        if UIImagePickerController.isSourceTypeAvailable(.Camera)
+        {
+                imagePicker.sourceType = .Camera
+        }
+
         imagePicker.allowsEditing=false
         imagePicker.modalTransitionStyle=UIModalTransitionStyle.CoverVertical
         

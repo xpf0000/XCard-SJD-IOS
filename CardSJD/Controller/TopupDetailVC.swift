@@ -28,10 +28,14 @@ class TopupDetailVC: UIViewController {
         super.pop()
     }
     
+    var model:ValueSumModel = ValueSumModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
         edit.addEndButton()
+        
+        total.text = "￥"+model.year
         
         let leftView = UIView()
         leftView.frame = CGRectMake(0, 0, 42, 42)
@@ -59,17 +63,36 @@ class TopupDetailVC: UIViewController {
         endTime.layer.borderColor =  "dcdcdc".color?.CGColor
         endTime.layer.borderWidth = 0.7
         
-        table.setHandle("", pageStr: "", keys: ["data"], model: MoneyDetailModel.self, CellIdentifier: "TopupDetailCell")
+        
         table.cellHeight = 50.0
         
-        for _ in 0...19
-        {
-            let m = MoneyDetailModel()
-            table.httpHandle.listArr.append(m)
+        let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopt.getValueList&shopid="+SID+"&stime=&etime=&page=[page]&perNumber=20"
+        
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: MoneyDetailModel.self, CellIdentifier: "TopupDetailCell")
+        
+        table.show()
+        
+        
+        startTime.click { [weak self](btn) in
+            
+            
         }
-   
-        table.reloadData()
-
+        
+        endTime.click { [weak self](btn) in
+            
+            
+        }
+        
+        searchBtn.click { [weak self](btn) in
+            
+            
+        }
+        
+        
+    }
+    
+    func chooseTime(sender:UIButton)
+    {
         
     }
 

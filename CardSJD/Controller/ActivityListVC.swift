@@ -33,7 +33,10 @@ class ActivityListVC: UIViewController {
         
         table.separatorStyle = .None
         table.refreshWord = NoticeWord.ADDActivitySuccess.rawValue
-        table.setHandle("http://182.92.70.85/hfshopapi/Public/Found/?service=Shopa.getShopHD&id="+SID, pageStr: "[page]", keys: ["data","info"], model: ActivityModel.self, CellIdentifier: "ActivityListCell")
+        
+        let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopa.getShopHD&id="+SID+"&page=[page]&perNumber=20"
+        
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: ActivityModel.self, CellIdentifier: "ActivityListCell")
         table.cellHeight = SW * 10.0 / 16.0
         
         table.show()

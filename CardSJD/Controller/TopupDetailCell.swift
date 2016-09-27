@@ -22,7 +22,14 @@ class TopupDetailCell: UITableViewCell {
     {
         didSet
         {
-            
+            if let m = model
+            {
+                name.text = m.truename+"\r\n"+m.mobile
+                time.text = m.create_time
+                who.text = m.opername
+                num.text = "￥"+m.money
+                
+            }
         }
     }
     

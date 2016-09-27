@@ -138,7 +138,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
         switch indexPath.section {
         case 0:
             ""
-            return CGSizeMake(CGFloat(swidth/300*100), CGFloat(swidth/3.0))
+            return CGSizeMake(CGFloat(swidth/3.0), CGFloat(swidth/3.0))
         case 1:
             ""
             return CGSizeMake((swidth-3.0)/4.0, swidth/4.0-10)

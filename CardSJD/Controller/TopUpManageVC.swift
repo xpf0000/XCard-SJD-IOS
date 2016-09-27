@@ -82,7 +82,10 @@ class TopUpManageVC: UITableViewController {
         
         if indexPath.row == 2
         {
-            let vc = "TopupDetailVC".VC("Main")
+            let vc = "TopupDetailVC".VC("Main") as! TopupDetailVC
+            
+            vc.model = self.model
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

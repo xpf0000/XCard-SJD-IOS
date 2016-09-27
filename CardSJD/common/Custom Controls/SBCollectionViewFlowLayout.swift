@@ -127,6 +127,7 @@ class SBCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         if let arr = attrs
         {
+            if arr.count == 0 {return arr}
             for i in 1...arr.count-1
             {
                 let currentLayoutAttributes = arr[i]
