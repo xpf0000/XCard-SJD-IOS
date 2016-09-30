@@ -26,6 +26,7 @@
 		174B55E21D90EB0000DD5431 /* ConsumeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */; };
 		17657BC31D9E086D009671E4 /* my_time@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17657BC21D9E086D009671E4 /* my_time@3x.png */; };
 		17657BC51D9E099A009671E4 /* CardMoneyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17657BC41D9E099A009671E4 /* CardMoneyDetailVC.swift */; };
+		17657BC71D9E4F0E009671E4 /* MessageInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17657BC61D9E4F0E009671E4 /* MessageInfoVC.swift */; };
 		1769FA5A1D9A0A740066942C /* vip1.8x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA591D9A0A740066942C /* vip1.8x.png */; };
 		1769FA601D9A0C9C0066942C /* card_vip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA5F1D9A0C9C0066942C /* card_vip.png */; };
 		1769FA621D9A6D0A0066942C /* ValueSumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769FA611D9A6D0A0066942C /* ValueSumModel.swift */; };
@@ -365,6 +366,7 @@
 		174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeDetailVC.swift; sourceTree = "<group>"; };
 		17657BC21D9E086D009671E4 /* my_time@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_time@3x.png"; sourceTree = "<group>"; };
 		17657BC41D9E099A009671E4 /* CardMoneyDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMoneyDetailVC.swift; sourceTree = "<group>"; };
+		17657BC61D9E4F0E009671E4 /* MessageInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInfoVC.swift; sourceTree = "<group>"; };
 		1769FA591D9A0A740066942C /* vip1.8x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vip1.8x.png; sourceTree = "<group>"; };
 		1769FA5F1D9A0C9C0066942C /* card_vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_vip.png; sourceTree = "<group>"; };
 		1769FA611D9A6D0A0066942C /* ValueSumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSumModel.swift; sourceTree = "<group>"; };
@@ -1412,6 +1414,7 @@
 				1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */,
 				179C75351D992A3600953A43 /* ShopsDescriptVC.swift */,
 				17EDD5851D96612B008FB846 /* ChangeUserTelVC.swift */,
+				17657BC61D9E4F0E009671E4 /* MessageInfoVC.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -1853,6 +1856,7 @@
 				17C7FA351D8682C400A3EFCC /* SBCollectionViewFlowLayout.swift in Sources */,
 				17C7FA851D8682C500A3EFCC /* XOC.m in Sources */,
 				17C7FBA31D86880500A3EFCC /* LocationTracker.m in Sources */,
+				17657BC71D9E4F0E009671E4 /* MessageInfoVC.swift in Sources */,
 				17C7FA141D8682C400A3EFCC /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				17C7FAE01D8682DF00A3EFCC /* MessageModel.swift in Sources */,
 				17C7FAD71D8682DF00A3EFCC /* FBPassVerifyVC.swift in Sources */,

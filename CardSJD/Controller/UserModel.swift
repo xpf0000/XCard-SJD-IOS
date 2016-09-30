@@ -49,6 +49,11 @@ class UserModel: Reflect {
     var jobname = ""
     var shopcategory = ""
     var powerArr:[String] = []
+    
+    override func excludedKey() -> [String]? {
+        
+        return ["power","powerArr"]
+    }
 
     func reset()
     {
@@ -91,6 +96,26 @@ class UserModel: Reflect {
 //            }
 //            
 //        }
+    }
+    
+    func getPower()
+    {
+        if shopid == "" || uid == "" {return}
+        
+        self.powerArr.removeAll(keepCapacity: false)
+        self.power = ""
+        
+        let url = APPURL+"Public/Found/?service=user.getuserpower&shopid="+shopid+"&uid="+uid
+        
+        XHttpPool.requestJson(url, body: nil, method: .POST) { [weak self](o) -> Void in
+            
+            if let p = o?["data"]["info"][0]["power"].string
+            {
+                self?.power = p
+            }
+            
+        }
+        
     }
     
     func save()

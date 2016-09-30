@@ -22,7 +22,7 @@ class MessageModel: Reflect {
     var name = ""
     var view = ""
     var picList:[MessagePicModel] = []
-    
+    var update_time=""
     
     override func setValue(value: AnyObject?, forKey key: String) {
         
@@ -33,6 +33,17 @@ class MessageModel: Reflect {
             {
                 let date=NSDate(timeIntervalSince1970: value!.doubleValue)
                 self.create_time = date.toStr("yyyy-MM-dd hh:mm:ss")!
+                return
+            }
+            
+        }
+        
+        if(key == "update_time" && value != nil)
+        {
+            if value?.doubleValue > 0
+            {
+                let date=NSDate(timeIntervalSince1970: value!.doubleValue)
+                self.update_time = date.toStr("yyyy-MM-dd hh:mm:ss")!
                 return
             }
             

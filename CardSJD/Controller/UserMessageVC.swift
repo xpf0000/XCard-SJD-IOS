@@ -17,7 +17,7 @@ class UserMessageVC: UIViewController {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
         self.addBackButton()
-        self.title = "消息"
+        self.title = "系统公告"
         self.view.backgroundColor = APPBGColor
         self.view.addSubview(table)
         table.frame = CGRectMake(0, 12, swidth, sheight-64-12)

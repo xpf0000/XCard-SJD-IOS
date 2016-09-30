@@ -66,6 +66,8 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
     
     func toNext()
     {
+        
+        
         if self.title == "充值"
         {
             let vc = "CardTopupDoVC".VC("Main") as! CardTopupDoVC
@@ -163,10 +165,19 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
         table.refreshWord = NoticeWord.CardConsumSuccess.rawValue
         
         table.httpHandle.BeforeBlock { [weak self](arr) in
+            if self == nil {return}
             
-            self?.btn.enabled = arr.count > 0
+        self?.btn.enabled = arr.count > 0
             
-            for (i,item) in arr.enumerate()
+            if self?.title == "充值"
+            {
+                self?.table.httpHandle.listArr = arr.filter({ (item) -> Bool in
+                    
+                    return (item as! CardTypeModel).type == "充值卡" || (item as! CardTypeModel).type == "计次卡"
+                })
+            }
+
+            for (i,item) in self!.table.httpHandle.listArr.enumerate()
             {
                 if let m = item as? CardTypeModel
                 {

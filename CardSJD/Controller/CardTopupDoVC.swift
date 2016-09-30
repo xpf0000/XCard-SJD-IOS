@@ -26,6 +26,10 @@ class CardTopupDoVC: UITableViewController {
     
     @IBOutlet var realnum: UITextField!
     
+    @IBOutlet var numTitle1: UILabel!
+    
+    @IBOutlet var numTitle2: UILabel!
+    
     @IBOutlet var line: UIView!
     
     @IBOutlet var linew: NSLayoutConstraint!
@@ -46,7 +50,7 @@ class CardTopupDoVC: UITableViewController {
         sender.enabled = false
         
         let url=APPURL+"Public/Found/?service=Hyk.addValues"
-        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.cardid+"&money="+realnum.text!.trim()+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
+        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.mcardid+"&money="+realnum.text!.trim()+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
         
         XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             
@@ -106,8 +110,16 @@ class CardTopupDoVC: UITableViewController {
         tel.text = userModel?.mobile
         img.backgroundColor = typeModel?.color.color
         type.text = typeModel?.type
-        yunum.text = "￥"+typeModel!.values
-
+        
+        if typeModel?.type == "计次卡"
+        {
+            numTitle1.text = "充值次数"
+            yunum.text = typeModel!.values+"次"
+        }
+        else
+        {
+            yunum.text = "￥"+typeModel!.values
+        }
         
     }
     
@@ -116,37 +128,28 @@ class CardTopupDoVC: UITableViewController {
         if(indexPath.row == 1 || indexPath.row == 4)
         {
             cell.separatorInset=UIEdgeInsetsMake(0, 15, 0, 15)
-            if(IOS_Version>=8.0)
-            {
-                if #available(iOS 8.0, *) {
-                    cell.layoutMargins=UIEdgeInsetsMake(0, 15, 0, 15)
-                } else {
-                    // Fallback on earlier versions
-                }
+            if #available(iOS 8.0, *) {
+                cell.layoutMargins=UIEdgeInsetsMake(0, 15, 0, 15)
+            } else {
+                // Fallback on earlier versions
             }
         }
         else if(indexPath.row > 5)
         {
             cell.separatorInset=UIEdgeInsetsMake(0, swidth, 0, 0)
-            if(IOS_Version>=8.0)
-            {
-                if #available(iOS 8.0, *) {
-                    cell.layoutMargins=UIEdgeInsetsMake(0, swidth, 0, 0)
-                } else {
-                    // Fallback on earlier versions
-                }
+            if #available(iOS 8.0, *) {
+                cell.layoutMargins=UIEdgeInsetsMake(0, swidth, 0, 0)
+            } else {
+                // Fallback on earlier versions
             }
         }
         else
         {
             cell.separatorInset=UIEdgeInsetsMake(0, 0, 0, 0)
-            if(IOS_Version>=8.0)
-            {
-                if #available(iOS 8.0, *) {
-                    cell.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
-                } else {
-                    // Fallback on earlier versions
-                }
+            if #available(iOS 8.0, *) {
+                cell.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
+            } else {
+                // Fallback on earlier versions
             }
         }
         
@@ -159,13 +162,10 @@ class CardTopupDoVC: UITableViewController {
         super.viewDidLayoutSubviews()
         
         tableView.separatorInset=UIEdgeInsetsMake(0, swidth, 0, 0)
-        if(IOS_Version>=8.0)
-        {
-            if #available(iOS 8.0, *) {
-                tableView.layoutMargins=UIEdgeInsetsMake(0, swidth, 0, 0)
-            } else {
-                // Fallback on earlier versions
-            }
+        if #available(iOS 8.0, *) {
+            tableView.layoutMargins=UIEdgeInsetsMake(0, swidth, 0, 0)
+        } else {
+            // Fallback on earlier versions
         }
     }
 

@@ -361,6 +361,11 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        DataCache.Share.User.getPower()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -35,7 +35,16 @@ class MessageListCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
+        if selected
+        {
+            self.deSelect()
+            
+            let vc = "MessageInfoVC".VC("Main") as! MessageInfoVC
+            vc.model = model
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+
     }
     
 }

@@ -24,6 +24,13 @@ class CardConsumeDoVC: UITableViewController {
     
     @IBOutlet var cznum: UITextField!
     
+    @IBOutlet var realnum: UITextField!
+    
+    @IBOutlet var numTitle1: UILabel!
+    
+    @IBOutlet var numTitle2: UILabel!
+    
+    
     @IBOutlet var line: UIView!
     
     @IBOutlet var linew: NSLayoutConstraint!
@@ -45,7 +52,7 @@ class CardConsumeDoVC: UITableViewController {
         sender.enabled = false
         
         let url=APPURL+"Public/Found/?service=Hyk.addCost"
-        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.cardid+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
+        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.mcardid+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
         
         XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             
@@ -101,7 +108,46 @@ class CardConsumeDoVC: UITableViewController {
         tel.text = userModel?.mobile
         img.backgroundColor = typeModel?.color.color
         type.text = typeModel?.type
-        yunum.text = "￥"+typeModel!.values
+        
+        cznum.onTextChange {[weak self] (str) in
+            
+            if self?.typeModel?.type == "打折卡"
+            {
+                if let v = self?.typeModel?.values
+                {
+                    let r = str.numberValue.doubleValue * v.numberValue.doubleValue
+                    
+                    self?.realnum.text = String.init(format: "%.2f", r)
+                }
+                
+            }
+            else
+            {
+                self?.realnum.text = str
+            }
+            
+        }
+        
+        if typeModel?.type == "计次卡"
+        {
+            yunum.text = typeModel!.values+"次"
+            numTitle1.text = "消费次数"
+            numTitle2.text = "实扣次数"
+        }
+        else if typeModel?.type == "打折卡"
+        {
+            yutitle.text = "折扣:"
+            yunum.text = typeModel?.values
+            numTitle1.text = "消费金额"
+            numTitle2.text = "实扣金额"
+        }
+        else
+        {
+            yunum.text = "￥"+typeModel!.values
+            numTitle1.text = "消费金额"
+            numTitle2.text = "实扣金额"
+        }
+        
         
     }
     
