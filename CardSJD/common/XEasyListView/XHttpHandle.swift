@@ -21,7 +21,13 @@ class XHttpHandle: NSObject {
     var replace:[String:String]?
     var modelClass:AnyClass!
     
+    private var resultBlock:JsonBlock?
     private var beforeBlock:XHttpHandleBlock?
+    
+    func ResultBlock(b:JsonBlock)
+    {
+        resultBlock = b
+    }
     
     func BeforeBlock(b:XHttpHandleBlock)
     {
@@ -90,7 +96,7 @@ class XHttpHandle: NSObject {
             
             if(self == nil){return}
             
-            
+            self?.resultBlock?(o)
             
             if(o != nil)
             {

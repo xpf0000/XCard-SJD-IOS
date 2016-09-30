@@ -47,7 +47,7 @@ class MemberInfoVC: UITableViewController {
             
         }
         
-        let url = APPURL+"Public/Found/?service=Hyk.getShopCardY&shopid="+SID+"&uid="+UID
+        let url = APPURL+"Public/Found/?service=Hyk.getShopCardY&shopid="+SID+"&uid="+model.uid
         table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: CardTypeModel.self, CellIdentifier: "CardTypeCell")
         table.show()
 

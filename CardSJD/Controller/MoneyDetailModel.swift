@@ -18,6 +18,7 @@ class MoneyDetailModel: Reflect {
     var money=""
     var create_time=""
     var opername=""
+    var cname = ""
     
     override func setValue(value: AnyObject?, forKey key: String) {
         

@@ -9,7 +9,11 @@
 import UIKit
 
 class CardTypeModel: Reflect {
- 
+
+    
+    
+    var cardid = ""
+    var mcardid = ""
     var id=""
     var logo=""
     var shopname=""
@@ -19,9 +23,18 @@ class CardTypeModel: Reflect {
     var uid=""
     var orlq=0
     var hcmid=""
+    var values=""
     
+    var info = ""
     var enable = false
     var selected = false
+    {
+        didSet
+        {
+            self.valueChangeBlock?("selected")
+        }
+    }
+    var iconHidden = false
     
     override func setValue(value: AnyObject?, forKey key: String) {
         
@@ -34,6 +47,8 @@ class CardTypeModel: Reflect {
         }
         
         super.setValue(value, forKey: key)
+        
+        
         
     }
 

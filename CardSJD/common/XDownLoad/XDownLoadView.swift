@@ -25,7 +25,7 @@ let s6 = "http://dl.ke8u.com/down.php?sid=358"
 
 
 
-class XDownLoadView: UIView {
+class XDownLoadView: UIView,CAAnimationDelegate {
     
     let circlePathLayer = CAShapeLayer()
     let bgPathLayer = CAShapeLayer()
@@ -326,6 +326,7 @@ class XDownLoadView: UIView {
         topTransform.timingFunction = CAMediaTimingFunction(controlPoints: 0.5, -0.8, 0.5, 1.85)
         topTransform.duration = 0.6
         topTransform.fillMode = kCAFillModeBackwards
+        topTransform.delegate = self
         
         let translation = CATransform3DMakeTranslation(0, 0, 0)
         
@@ -449,8 +450,7 @@ class XDownLoadView: UIView {
         return path
     }
     
-
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         superview?.layer.mask = nil
     }
     

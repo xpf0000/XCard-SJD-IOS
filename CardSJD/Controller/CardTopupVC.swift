@@ -10,6 +10,12 @@ import UIKit
 
 class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
     
+    @IBOutlet var noView: UIView!
+    
+    @IBOutlet var noMsg: UILabel!
+    
+    @IBOutlet var hasView: UIView!
+    
     @IBOutlet var edit: UITextField!
     
     @IBOutlet var btn: UIButton!
@@ -20,6 +26,38 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
     
     @IBOutlet var name: UILabel!
     
+    var typeModel:CardTypeModel?
+    
+    var model:MemberModel?
+        {
+        didSet
+        {
+            if model == nil || model?.uid == ""
+            {
+                tel.text = ""
+                name.text = ""
+                btn.enabled = false
+                noMsg.text = "该手机号码暂时不是会员, 请先注册为怀府网会员"
+                noView.hidden = false
+                
+            }
+            else
+            {
+
+                tel.text = model?.mobile
+                name.text = model?.truename
+                noView.hidden = true
+                
+                let url = APPURL+"Public/Found/?service=Hyk.getShopCardY&shopid="+SID+"&uid="+model!.uid
+                
+                table.httpHandle.url = url
+                table.httpHandle.reSet()
+                table.httpHandle.handle()
+                
+            }
+            
+        }
+    }
     
     override func pop() {
         edit.removeTextChangeBlock()
@@ -28,15 +66,67 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
     
     func toNext()
     {
-        let vc = "CardTopupDoVC".VC("Main")
-        self.navigationController?.pushViewController(vc, animated: true)
+        if self.title == "充值"
+        {
+            let vc = "CardTopupDoVC".VC("Main") as! CardTopupDoVC
+            vc.userModel = model
+            vc.typeModel = typeModel
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else
+        {
+            let vc = "CardConsumeDoVC".VC("Main") as! CardConsumeDoVC
+            vc.userModel = model
+            vc.typeModel = typeModel
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
+    
+    
+    func reshow()
+    {
+        let txt = edit.text!
+        
+        if txt.length() == 11
+        {
+            
+            let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopd.getUserInfoM&mobile="+txt+"&shopid="+SID
+            
+            XHttpPool.requestJson(url, body: nil, method: .POST) { [weak self](o) -> Void in
+                
+                if let info = o?["data"]["info"][0]
+                {
+                    self?.model = MemberModel.parse(json: info, replace: nil)
+                }
+                
+            }
+            
+            
+        }
+        else
+        {
+            table.httpHandle.listArr.removeAll(keepCapacity: false)
+            table.reloadData()
+            tel.text = "请输入手机号"
+            name.text = ""
+            btn.enabled = false
+            noView.hidden = true
+        }
+
+
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
         edit.addEndButton()
         edit.delegate = self
+        
+        noView.hidden = true
         
         let leftView = UIView()
         leftView.frame = CGRectMake(0, 0, 42, 42)
@@ -66,43 +156,38 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
             self?.toNext()
         }
         
-        let names = ["充值卡","积分卡","计次卡","打折卡"]
-        
-        table.setHandle("", pageStr: "", keys: ["data"], model: CardTypeModel.self, CellIdentifier: "CardTypeCell")
-        table.hideFootRefresh()
-        table.hideHeadRefresh()
         table.cellHeight = 80.0
-//        for(index,name) in names.enumerate()
-//        {
-//            let m = CardTypeModel()
-//            m.name = name
-//            m.img = "card_type\(index).png"
-//            m.info = "卡说明"
-//            m.enable = true
-//            table.httpHandle.listArr.append(m)
-//        }
+
         table.Delegate(self)
+        table.refreshWord = NoticeWord.CardTopupSuccess.rawValue
+        table.refreshWord = NoticeWord.CardConsumSuccess.rawValue
         
-        table.reloadData()
+        table.httpHandle.BeforeBlock { [weak self](arr) in
+            
+            self?.btn.enabled = arr.count > 0
+            
+            for (i,item) in arr.enumerate()
+            {
+                if let m = item as? CardTypeModel
+                {
+                    m.enable = true
+                    m.selected = i == 0
+                    
+                    if i == 0
+                    {
+                        self?.typeModel = m
+                    }
+                    
+                }
+            }
+            
+            
+        }
         
+        table.setHandle("", pageStr: "[page]", keys: ["data","info"], model: CardTypeModel.self, CellIdentifier: "CardTypeCell")
         
     }
-    
-    func reshow()
-    {
-        let txt = edit.text!
-        
-        if txt.length() == 11
-        {
-            btn.enabled = true
-        }
-        else
-        {
-            btn.enabled = false
-        }
-        
-        
-    }
+
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
@@ -127,15 +212,14 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
             if row == indexPath.row
             {
                 (item as! CardTypeModel).selected = true
+                self.typeModel = (item as! CardTypeModel)
             }
             else
             {
                 (item as! CardTypeModel).selected = false
             }
+            
         }
-        
-        table.reloadData()
-        
         
     }
     
@@ -151,7 +235,7 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
     
     deinit
     {
-        print("OpenCardVC deinit !!!!!!!!!!!!")
+        print("CardTopupVC deinit !!!!!!!!!!!!")
     }
     
 }

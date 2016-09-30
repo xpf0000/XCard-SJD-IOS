@@ -106,7 +106,7 @@ class XWaitingView:UIView
         if(newSuperview != nil)
         {
             self.visualEffectView!.alpha=0.0
-           self.visualEffectView!.alertAnimation(0.3, delegate: self)
+           self.visualEffectView!.alertAnimation(0.3, delegate: nil)
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                self.visualEffectView!.alpha=1.0
             })

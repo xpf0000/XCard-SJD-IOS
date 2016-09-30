@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import SwiftCharts
+
+let CardType = ["计次卡":"1","充值卡":"2","打折卡":"3","积分卡":"4"]
 
 class ConsumeManageVC: UITableViewController {
     
@@ -21,92 +22,48 @@ class ConsumeManageVC: UITableViewController {
     
     @IBOutlet var num3: UILabel!
     
-    @IBOutlet var chartView: UIView!
+    var hArr:[CGFloat] = [170, 12,55,55,55,55]
     
-    private var chart: Chart? // arc
+    var model = CardTypeModel()
     
-    var hArr:[CGFloat] = [170, 12,55,55,55,55,12,50,100]
-    
-    
-    func showChart()
-    {
-        let labelSettings = ChartLabelSettings(font: ExamplesDefaults.labelFont,fontColor: APPOrangeColor)
-        
-        let chartPoints1 = [
-            self.createChartPoint(0, 0, labelSettings),
-            self.createChartPoint(1, 1, labelSettings),
-            self.createChartPoint(2, 0, labelSettings),
-            self.createChartPoint(3, 4, labelSettings),
-            self.createChartPoint(5, 2, labelSettings),
-            self.createChartPoint(6, 3, labelSettings)
-        ]
-        
-        let xValues = [
-            ChartAxisValueString("08-20", order: 0, labelSettings: labelSettings),
-            ChartAxisValueString("08-21", order: 1, labelSettings: labelSettings),
-            ChartAxisValueString("08-22", order: 2, labelSettings: labelSettings),
-            ChartAxisValueString("08-23", order: 3, labelSettings: labelSettings),
-            ChartAxisValueString("08-24", order: 4, labelSettings: labelSettings),
-            ChartAxisValueString("08-25", order: 5, labelSettings: labelSettings),
-            ChartAxisValueString("08-26", order: 6, labelSettings: labelSettings)
-        ]
-        
-        let yValues = [
-            ChartAxisValueString("", order: 0, labelSettings: labelSettings),
-            ChartAxisValueString("", order: 1, labelSettings: labelSettings),
-            ChartAxisValueString("", order: 2, labelSettings: labelSettings),
-            ChartAxisValueString("", order: 3, labelSettings: labelSettings),
-            ChartAxisValueString("", order: 4, labelSettings: labelSettings),
-            ChartAxisValueString("", order: 5, labelSettings: labelSettings)
-        ]
-        
-        
-        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "最近7日", settings: labelSettings))
-        
-        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "", settings: labelSettings.defaultVertical()))
-        
-        let chartFrame = CGRectMake(-10, 0, SW, SW)
-        
-        // calculate coords space in the background to keep UI smooth
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+    var tmodel:ValueSumModel = ValueSumModel()
+        {
+        didSet
+        {
+            total.text = tmodel.day
+            tmsg.text = "今日消费次数: "+tmodel.daycnum+"次"
+            num1.text = "￥"+tmodel.week
+            num2.text = "￥"+tmodel.month
+            num3.text = "￥"+tmodel.year
             
-            let chartSettings = ExamplesDefaults.chartSettings
-            chartSettings.trailing = 15
-            
-            let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
-                
-                let lineModel1 = ChartLineModel(chartPoints: chartPoints1, lineColor: APPOrangeColor, animDuration: 1, animDelay: 0)
-                
-                let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [lineModel1])
-                
-                let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: ExamplesDefaults.guidelinesWidth)
-                let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: settings)
-                
-                //        self.automaticallyAdjustsScrollViewInsets = false // nested view controller - this is in parent
-                
-                let chart = Chart(
-                    frame: chartFrame,
-                    layers: [
-                        xAxis,
-                        yAxis,
-                        guidelinesLayer,
-                        chartPointsLineLayer
-                    ]
-                )
-                
-                
-                self.chartView.addSubview(chart.view)
-                self.chart = chart
-                
-            }
         }
     }
     
-    private func createChartPoint(x: Double, _ y: Double, _ labelSettings: ChartLabelSettings) -> ChartPoint {
-        return ChartPoint(x: ChartAxisValueDouble(x, labelSettings: labelSettings), y: ChartAxisValueDouble(y))
+    func http()
+    {
+        if let id = CardType[model.type]
+        {
+            let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopt.getCostSum&shopid="+SID+"&ctypeid="+id
+        
+            XHttpPool.requestJson(url, body: nil, method: .POST) { [weak self](o) -> Void in
+                
+                if let info = o?["data"]["info"]
+                {
+                    self?.tmodel = ValueSumModel.parse(json: info, replace: nil)
+                }
+                else
+                {
+                    var msg = o?["data"]["msg"].stringValue
+                    msg = msg == "" ? "统计数据获取失败" : msg
+                    
+                    XAlertView.show(msg!, block: nil)
+                }
+                
+            }
+            
+            
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -119,13 +76,7 @@ class ConsumeManageVC: UITableViewController {
         tableView.tableFooterView=v
         tableView.tableHeaderView=v
         
-        hArr[8] = SW
-        
-        
-        showChart()
-        
-        tableView.reloadData()
-        
+        http()
         
     }
     
@@ -135,7 +86,10 @@ class ConsumeManageVC: UITableViewController {
         
         if indexPath.row == 2
         {
-            let vc = "ConsumeDetailVC".VC("Main")
+            let vc = "ConsumeDetailVC".VC("Main") as! ConsumeDetailVC
+            vc.ctypeid = CardType[model.type]!
+            vc.model = self.tmodel
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -152,25 +106,19 @@ class ConsumeManageVC: UITableViewController {
         if(!sarr.contains(indexPath.row))
         {
             cell.separatorInset=UIEdgeInsetsMake(0, 15, 0, 15)
-            if(IOS_Version>=8.0)
-            {
-                if #available(iOS 8.0, *) {
-                    cell.layoutMargins=UIEdgeInsetsMake(0, 15, 0, 15)
-                } else {
-                    // Fallback on earlier versions
-                }
+            if #available(iOS 8.0, *) {
+                cell.layoutMargins=UIEdgeInsetsMake(0, 15, 0, 15)
+            } else {
+                // Fallback on earlier versions
             }
         }
         else
         {
             cell.separatorInset=UIEdgeInsetsMake(0, 0, 0, 0)
-            if(IOS_Version>=8.0)
-            {
-                if #available(iOS 8.0, *) {
-                    cell.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
-                } else {
-                    // Fallback on earlier versions
-                }
+            if #available(iOS 8.0, *) {
+                cell.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
+            } else {
+                // Fallback on earlier versions
             }
         }
         
@@ -183,14 +131,12 @@ class ConsumeManageVC: UITableViewController {
         super.viewDidLayoutSubviews()
         
         tableView.separatorInset=UIEdgeInsetsMake(0, 0, 0, 0)
-        if(IOS_Version>=8.0)
-        {
-            if #available(iOS 8.0, *) {
-                tableView.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
-            } else {
-                // Fallback on earlier versions
-            }
+        if #available(iOS 8.0, *) {
+            tableView.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
+        } else {
+            // Fallback on earlier versions
         }
+        
     }
     
     

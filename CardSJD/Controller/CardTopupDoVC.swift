@@ -32,17 +32,66 @@ class CardTopupDoVC: UITableViewController {
     
     @IBOutlet var mark: UITextField!
     
+    var userModel:MemberModel?
+    var typeModel:CardTypeModel?
     
-    @IBAction func submit(sender: AnyObject) {
+    @IBAction func submit(sender: UIButton) {
         
+        if !cznum.checkNull() || !realnum.checkNull()
+        {
+            return
+        }
+        
+        XWaitingView.show()
+        sender.enabled = false
+        
+        let url=APPURL+"Public/Found/?service=Hyk.addValues"
+        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.cardid+"&money="+realnum.text!.trim()+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                NoticeWord.CardTopupSuccess.rawValue.postNotice()
+                XAlertView.show("充值成功", block: { [weak self]() in
+                    
+                    self?.pop()
+                    
+                })
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "充值失败" : msg
+                sender.enabled = true
+                
+                XAlertView.show(msg!, block: nil)
+                
+            }
+            
+        }
         
     }
     
+    override func pop() {
+        mark.autoReturnClose()
+        super.pop()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
         self.title="充值"
+        cznum.keyboardType = .DecimalPad
+        realnum.keyboardType = .DecimalPad
+        
+        cznum.addEndButton()
+        realnum.addEndButton()
+        
+        mark.autoReturn()
+        
         
         line.backgroundColor = tableView.separatorColor
         linew.constant = 0.5
@@ -51,6 +100,14 @@ class CardTopupDoVC: UITableViewController {
         v.backgroundColor=UIColor.clearColor()
         tableView.tableFooterView=v
         tableView.tableHeaderView=v
+        
+        
+        name.text = userModel?.truename
+        tel.text = userModel?.mobile
+        img.backgroundColor = typeModel?.color.color
+        type.text = typeModel?.type
+        yunum.text = "￥"+typeModel!.values
+
         
     }
     

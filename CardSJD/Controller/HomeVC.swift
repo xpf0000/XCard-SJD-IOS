@@ -26,6 +26,24 @@ class HomeCellModel: Reflect {
     
 }
 
+let APPPower = ["1":"新用户开卡","2":"充值","3":"消费","4":"会员管理",
+"5":"充值管理","6":"消费管理","7":"活动管理","8":"消息管理","9":"卡类管理",
+"10":"店铺设置","11":"员工管理"
+]
+
+func CheckUserPower(str:String)->Bool
+{
+    let b = DataCache.Share.User.powerArr.contains(str)
+    
+    if !b
+    {
+        ShowMessage("您没有该操作权限,无法使用此功能")
+    }
+    
+    return b
+}
+
+
 class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCollectionViewDelegateFlowLayout {
     
     lazy var bannerArr:[XBannerModel]=[]
@@ -107,9 +125,6 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             print(m)
         }
 
-        
-        
-        
         self.collectionView?.registerNib("HomeTopCell".Nib, forCellWithReuseIdentifier: "HomeTopCell")
         self.collectionView?.registerNib("HomeMiddleCell".Nib, forCellWithReuseIdentifier: "HomeMiddleCell")
         self.collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -250,15 +265,26 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             
             switch indexPath.row {
             case 0:
+                
+                if !CheckUserPower("1"){return}
+                
                 let vc = "OpenCardVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case 1:
-                let vc = "CardConsumeDoVC".VC("Main")
+                
+                if !CheckUserPower("2"){return}
+                
+                let vc = "CardTopupVC".VC("Main")
+                vc.title = "消费"
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case 2:
+                
+                if !CheckUserPower("3"){return}
+                
                 let vc = "CardTopupVC".VC("Main")
+                vc.title = "充值"
                 self.navigationController?.pushViewController(vc, animated: true)
             default:
                 ""
@@ -268,29 +294,53 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             
             switch indexPath.row {
             case 0:
+                
+                if !CheckUserPower("4"){return}
+                
                 let vc = "MemberListVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
             case 1:
+                
+                if !CheckUserPower("5"){return}
+                
                 let vc = "TopUpManageVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
             case 2:
-                let vc = "ConsumeManageVC".VC("Main")
+                
+                if !CheckUserPower("6"){return}
+                
+                let vc = CoseManageVC()
                 self.navigationController?.pushViewController(vc, animated: true)
             case 3:
+                
+                if !CheckUserPower("7"){return}
+                
                 let vc = ActivityListVC()
                 self.navigationController?.pushViewController(vc, animated: true)
             case 4:
+                
+                if !CheckUserPower("8"){return}
+                
                 let vc = MessageManageVC()
                 self.navigationController?.pushViewController(vc, animated: true)
             case 5:
+                
+                if !CheckUserPower("9"){return}
+                
                 let vc = CardManageVC()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case 6:
+                
+                if !CheckUserPower("10"){return}
+                
                 let vc = "ShopSetupVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case 7:
+                
+                if !CheckUserPower("11"){return}
+                
                 let vc = YGManageVC()
                 self.navigationController?.pushViewController(vc, animated: true)
                 

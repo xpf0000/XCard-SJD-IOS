@@ -18,6 +18,33 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var msg: UILabel!
     
+    var model:MemberModel?
+    {
+        didSet
+        {
+            if model == nil || model?.uid == ""
+            {
+                msg.text = "该手机号码暂时不是会员, 请先注册为怀府网会员"
+                
+                icon.hidden = false
+                msg.hidden = false
+                btn.enabled = false
+                
+            }
+            else
+            {
+                print(model)
+                
+                msg.text = "会员编号: NO.\(model!.uid), 姓名: \(model!.truename)"
+                
+                icon.hidden = true
+                msg.hidden = false
+                btn.enabled = true
+            }
+            
+        }
+    }
+    
     override func pop() {
         edit.removeTextChangeBlock()
         super.pop()
@@ -25,7 +52,10 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
     
     func toChooseType()
     {
-        let vc = "ChooseTypeVC".VC("Main")
+        let vc = ChooseTypeVC()
+        
+        vc.user = model!
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -74,19 +104,23 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
         
         if txt.length() == 11
         {
-            msg.text = "\(txt)暂时不是会员, 点击下一步继续"
             
-            icon.hidden = false
-            msg.hidden = false
+            let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopd.getUserInfoM&mobile="+txt+"&shopid="+SID
             
-            btn.enabled = true
+            XHttpPool.requestJson(url, body: nil, method: .POST) { [weak self](o) -> Void in
+                
+                if let info = o?["data"]["info"][0]
+                {
+                    self?.model = MemberModel.parse(json: info, replace: nil)
+                }
+                
+            }
+            
+
         }
         else
         {
-            icon.hidden = true
-            msg.hidden = true
-            
-            btn.enabled = false
+            self.model = nil
         }
         
         

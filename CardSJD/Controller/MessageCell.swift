@@ -23,7 +23,9 @@ class MessageCell: UITableViewCell {
     {
         didSet
         {
-            
+            mtitle.text = model.title
+            info.text = model.descript
+            time.text = model.create_time
         }
     }
     

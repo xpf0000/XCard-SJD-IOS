@@ -23,11 +23,27 @@ class CardTypeCell: UITableViewCell {
         {
         didSet
         {
+            
+            model.onValueChange {[weak self] (key) in
+                
+                if key == "selected"
+                {
+                    self?.btn.selected = self!.model.selected
+                }
+            }
+            
             name.text = model.type
             img.backgroundColor = model.color.color
-            info.text = ""
+            info.text = model.info
             btn.enabled = model.enable
             btn.selected = model.selected
+            btn.hidden = model.iconHidden
+            
+            if btn.hidden
+            {
+                info.textColor = APPOrangeColor
+            }
+            
         }
     }
     

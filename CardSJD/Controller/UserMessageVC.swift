@@ -24,24 +24,12 @@ class UserMessageVC: UIViewController {
         table.backgroundColor = APPBGColor
         table.cellHeight = 90
         
-//        let url = "http://api.0539cn.com/index.php?c=Order&a=orderList&mob=\(UMob)&identify=\(UIdentify)&nowpage=[page]&perpage=20&status=3"
-//        
-//        table.setHandle(url, pageStr: "[page]", keys: ["datas"], model: OrderModel.self, CellIdentifier: "MyOrderCancelCell")
-//        
-//        table.show()
+        let url = APPURL+"Public/Found/?service=Shopd.getGonggao&page=[page]&perNumber=20"
         
-        
-        table.setHandle("", pageStr: "", keys: ["data"], model: MessageModel.self, CellIdentifier: "MessageCell")
-        
-        for _ in 0...20
-        {
-            let m = MessageModel()
-            table.httpHandle.listArr.append(m)
-        }
-        
-        table.reloadData()
-
-        
+        table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: MessageModel.self, CellIdentifier: "MessageCell")
+        table.httpHandle.replace = ["descript":"description"]
+        table.show()
+ 
         
     }
 

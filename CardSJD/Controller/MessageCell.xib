@@ -21,14 +21,14 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="世界最轻婴儿 与灯笼椒等重仅有0.4斤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI9-Yn-uWB">
-                        <rect key="frame" x="89" y="56" width="251" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI9-Yn-uWB">
+                        <rect key="frame" x="89" y="74" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08-15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiH-uQ-JtV">
-                        <rect key="frame" x="350" y="57" width="43" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08-15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiH-uQ-JtV">
+                        <rect key="frame" x="99" y="57" width="294" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -43,8 +43,8 @@
                 <constraints>
                     <constraint firstItem="jI9-Yn-uWB" firstAttribute="leading" secondItem="tnW-sQ-j6i" secondAttribute="leading" id="1ud-eU-6Hd"/>
                     <constraint firstItem="1A8-6I-P6z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3Xk-Li-zFT"/>
-                    <constraint firstItem="JiH-uQ-JtV" firstAttribute="centerY" secondItem="jI9-Yn-uWB" secondAttribute="centerY" id="3vL-f7-o5Y"/>
                     <constraint firstItem="tnW-sQ-j6i" firstAttribute="leading" secondItem="1A8-6I-P6z" secondAttribute="trailing" constant="9" id="4La-4Q-42d"/>
+                    <constraint firstItem="JiH-uQ-JtV" firstAttribute="bottom" secondItem="jI9-Yn-uWB" secondAttribute="bottom" id="Bxc-4d-tDG"/>
                     <constraint firstAttribute="trailing" secondItem="JiH-uQ-JtV" secondAttribute="trailing" constant="12" id="Rqg-7v-F0i"/>
                     <constraint firstItem="tnW-sQ-j6i" firstAttribute="top" secondItem="1A8-6I-P6z" secondAttribute="top" constant="5" id="eeE-0F-Qwa"/>
                     <constraint firstItem="jI9-Yn-uWB" firstAttribute="bottom" secondItem="1A8-6I-P6z" secondAttribute="bottom" constant="-6" id="fE4-Ts-kRm"/>

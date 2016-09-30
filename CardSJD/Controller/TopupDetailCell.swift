@@ -42,7 +42,16 @@ class TopupDetailCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        if selected
+        {
+            self.deSelect()
+            
+            let vc = "CardMoneyDetailVC".VC("Main") as! CardMoneyDetailVC
+            vc.model = self.model
+            vc.title = self.viewController?.title
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
     
 }

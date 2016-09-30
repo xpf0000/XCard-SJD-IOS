@@ -10,10 +10,19 @@ import UIKit
 
 class MessageModel: Reflect {
     
+    class MessagePicModel: Reflect {
+        var url = ""
+    }
+    
     var id=""
     var title=""
+    var descript=""
     var content=""
     var create_time=""
+    var name = ""
+    var view = ""
+    var picList:[MessagePicModel] = []
+    
     
     override func setValue(value: AnyObject?, forKey key: String) {
         

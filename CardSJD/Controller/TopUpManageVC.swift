@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import SwiftCharts
-
 
 class TopUpManageVC: UITableViewController {
     
@@ -29,7 +27,7 @@ class TopUpManageVC: UITableViewController {
         didSet
         {
             total.text = model.day
-            tmsg.text = "今日充值次数: "+model.day+"次"
+            tmsg.text = "今日充值次数: "+model.daycnum+"次"
             num1.text = "￥"+model.week
             num2.text = "￥"+model.month
             num3.text = "￥"+model.year

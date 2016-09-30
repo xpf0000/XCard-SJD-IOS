@@ -24,7 +24,8 @@
 		174B55DE1D90E73600DD5431 /* MoneyDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55DD1D90E73600DD5431 /* MoneyDetailModel.swift */; };
 		174B55E01D90E92A00DD5431 /* ConsumeManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */; };
 		174B55E21D90EB0000DD5431 /* ConsumeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */; };
-		1764BEC41D90D40800C9FB77 /* ExamplesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */; };
+		17657BC31D9E086D009671E4 /* my_time@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17657BC21D9E086D009671E4 /* my_time@3x.png */; };
+		17657BC51D9E099A009671E4 /* CardMoneyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17657BC41D9E099A009671E4 /* CardMoneyDetailVC.swift */; };
 		1769FA5A1D9A0A740066942C /* vip1.8x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA591D9A0A740066942C /* vip1.8x.png */; };
 		1769FA601D9A0C9C0066942C /* card_vip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA5F1D9A0C9C0066942C /* card_vip.png */; };
 		1769FA621D9A6D0A0066942C /* ValueSumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769FA611D9A6D0A0066942C /* ValueSumModel.swift */; };
@@ -43,6 +44,7 @@
 		179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208D1D6175B30087C33A /* UIKit.framework */; };
 		179C20901D6175C40087C33A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208F1D6175C40087C33A /* libz.tbd */; };
 		179C75361D992A3600953A43 /* ShopsDescriptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C75351D992A3600953A43 /* ShopsDescriptVC.swift */; };
+		17A14BF31D9B60E100CE8C73 /* CoseManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A14BF21D9B60E100CE8C73 /* CoseManageVC.swift */; };
 		17A33A081D8FF57E007650A2 /* TopUpManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */; };
 		17B06F6D1D9117640070D242 /* ActivityListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B06F6B1D9117640070D242 /* ActivityListCell.swift */; };
 		17B06F6E1D9117640070D242 /* ActivityListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B06F6C1D9117640070D242 /* ActivityListCell.xib */; };
@@ -102,7 +104,6 @@
 		17C7FA3F1D8682C400A3EFCC /* XDeleteAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C7F97A1D8682C400A3EFCC /* XDeleteAlert.xib */; };
 		17C7FA401D8682C400A3EFCC /* XMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F97B1D8682C400A3EFCC /* XMessage.swift */; };
 		17C7FA411D8682C400A3EFCC /* XNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F97C1D8682C400A3EFCC /* XNavigationController.swift */; };
-		17C7FA451D8682C500A3EFCC /* XProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9801D8682C400A3EFCC /* XProgressView.swift */; };
 		17C7FA461D8682C500A3EFCC /* XTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9811D8682C400A3EFCC /* XTextView.swift */; };
 		17C7FA471D8682C500A3EFCC /* XUICollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9821D8682C400A3EFCC /* XUICollectionViewFlowLayout.swift */; };
 		17C7FA481D8682C500A3EFCC /* XVerifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F9831D8682C400A3EFCC /* XVerifyButton.swift */; };
@@ -325,7 +326,6 @@
 		17EFD9A31D8F96C800E59478 /* arrow02_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A21D8F96C800E59478 /* arrow02_w.png */; };
 		17EFD9A51D8F99D400E59478 /* MemberInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */; };
 		17EFD9A71D8FBAF300E59478 /* right_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EFD9A61D8FBAF300E59478 /* right_more.png */; };
-		5783CA04DB4FD66BD706B98D /* Pods_CardSJD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CB7CC4AF2282230C7EF0B0 /* Pods_CardSJD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -363,7 +363,8 @@
 		174B55DD1D90E73600DD5431 /* MoneyDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyDetailModel.swift; sourceTree = "<group>"; };
 		174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeManageVC.swift; sourceTree = "<group>"; };
 		174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeDetailVC.swift; sourceTree = "<group>"; };
-		1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesDefaults.swift; sourceTree = "<group>"; };
+		17657BC21D9E086D009671E4 /* my_time@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_time@3x.png"; sourceTree = "<group>"; };
+		17657BC41D9E099A009671E4 /* CardMoneyDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMoneyDetailVC.swift; sourceTree = "<group>"; };
 		1769FA591D9A0A740066942C /* vip1.8x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vip1.8x.png; sourceTree = "<group>"; };
 		1769FA5F1D9A0C9C0066942C /* card_vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_vip.png; sourceTree = "<group>"; };
 		1769FA611D9A6D0A0066942C /* ValueSumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSumModel.swift; sourceTree = "<group>"; };
@@ -385,6 +386,7 @@
 		179C208D1D6175B30087C33A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		179C208F1D6175C40087C33A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		179C75351D992A3600953A43 /* ShopsDescriptVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsDescriptVC.swift; sourceTree = "<group>"; };
+		17A14BF21D9B60E100CE8C73 /* CoseManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoseManageVC.swift; sourceTree = "<group>"; };
 		17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopUpManageVC.swift; sourceTree = "<group>"; };
 		17B06F6B1D9117640070D242 /* ActivityListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityListCell.swift; sourceTree = "<group>"; };
 		17B06F6C1D9117640070D242 /* ActivityListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityListCell.xib; sourceTree = "<group>"; };
@@ -446,7 +448,6 @@
 		17C7F97A1D8682C400A3EFCC /* XDeleteAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDeleteAlert.xib; sourceTree = "<group>"; };
 		17C7F97B1D8682C400A3EFCC /* XMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMessage.swift; sourceTree = "<group>"; };
 		17C7F97C1D8682C400A3EFCC /* XNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNavigationController.swift; sourceTree = "<group>"; };
-		17C7F9801D8682C400A3EFCC /* XProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XProgressView.swift; sourceTree = "<group>"; };
 		17C7F9811D8682C400A3EFCC /* XTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTextView.swift; sourceTree = "<group>"; };
 		17C7F9821D8682C400A3EFCC /* XUICollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XUICollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		17C7F9831D8682C400A3EFCC /* XVerifyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XVerifyButton.swift; sourceTree = "<group>"; };
@@ -685,9 +686,6 @@
 		17EFD9A21D8F96C800E59478 /* arrow02_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow02_w.png; sourceTree = "<group>"; };
 		17EFD9A41D8F99D400E59478 /* MemberInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoVC.swift; sourceTree = "<group>"; };
 		17EFD9A61D8FBAF300E59478 /* right_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_more.png; sourceTree = "<group>"; };
-		26F03C0EDBC96552F6542173 /* Pods-CardSJD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSJD.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD.release.xcconfig"; sourceTree = "<group>"; };
-		45CB7CC4AF2282230C7EF0B0 /* Pods_CardSJD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardSJD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93B2312B6FA5EF289833D6B3 /* Pods-CardSJD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSJD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -715,7 +713,6 @@
 				179C20761D61725F0087C33A /* OpenGLES.framework in Frameworks */,
 				179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */,
 				179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */,
-				5783CA04DB4FD66BD706B98D /* Pods_CardSJD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,8 +754,6 @@
 				179249AB1D5B7613002E5529 /* CradSJDTests */,
 				179249B61D5B7613002E5529 /* CradSJDUITests */,
 				179249951D5B7613002E5529 /* Products */,
-				99FB745FAF0AD243D7793798 /* Pods */,
-				250756BE081F5682F991E128 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -866,7 +861,6 @@
 				17C7F97A1D8682C400A3EFCC /* XDeleteAlert.xib */,
 				17C7F97B1D8682C400A3EFCC /* XMessage.swift */,
 				17C7F97C1D8682C400A3EFCC /* XNavigationController.swift */,
-				17C7F9801D8682C400A3EFCC /* XProgressView.swift */,
 				17C7F9811D8682C400A3EFCC /* XTextView.swift */,
 				17C7F9821D8682C400A3EFCC /* XUICollectionViewFlowLayout.swift */,
 				17C7F9831D8682C400A3EFCC /* XVerifyButton.swift */,
@@ -1207,6 +1201,7 @@
 		17C7FB001D86833D00A3EFCC /* 会员卡icon */ = {
 			isa = PBXGroup;
 			children = (
+				17657BC21D9E086D009671E4 /* my_time@3x.png */,
 				17C7FB011D86833D00A3EFCC /* 02首页.jpg */,
 				17C7FB021D86833D00A3EFCC /* 3301消费明细.jpg */,
 				17C7FB031D86833D00A3EFCC /* 3701店铺设置.jpg */,
@@ -1456,13 +1451,14 @@
 				17CEF30E1D8F81FE0018BBAC /* CardTopupDoVC.swift */,
 				17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */,
 				17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */,
-				1764BEC31D90D40800C9FB77 /* ExamplesDefaults.swift */,
 				174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */,
 				174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */,
 				174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */,
 				174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */,
+				17A14BF21D9B60E100CE8C73 /* CoseManageVC.swift */,
 				174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */,
 				174419921D94FDE500F5CD2B /* CardManageVC.swift */,
+				17657BC41D9E099A009671E4 /* CardMoneyDetailVC.swift */,
 			);
 			name = card;
 			sourceTree = "<group>";
@@ -1537,23 +1533,6 @@
 			name = lib;
 			sourceTree = "<group>";
 		};
-		250756BE081F5682F991E128 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				45CB7CC4AF2282230C7EF0B0 /* Pods_CardSJD.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		99FB745FAF0AD243D7793798 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				93B2312B6FA5EF289833D6B3 /* Pods-CardSJD.debug.xcconfig */,
-				26F03C0EDBC96552F6542173 /* Pods-CardSJD.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1561,12 +1540,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 179249BC1D5B7613002E5529 /* Build configuration list for PBXNativeTarget "CardSJD" */;
 			buildPhases = (
-				441FFC894A060B8A23F5193C /* [CP] Check Pods Manifest.lock */,
 				179249901D5B7613002E5529 /* Sources */,
 				179249911D5B7613002E5529 /* Frameworks */,
 				179249921D5B7613002E5529 /* Resources */,
-				EB5C147D39E9FBD89479F1E3 /* [CP] Embed Pods Frameworks */,
-				06CF4904FA2A7B159FFF588B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1669,6 +1645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C7FBB21D86964C00A3EFCC /* YGListCell.xib in Resources */,
+				17657BC31D9E086D009671E4 /* my_time@3x.png in Resources */,
 				1769FA601D9A0C9C0066942C /* card_vip.png in Resources */,
 				17C7FB4E1D86833D00A3EFCC /* Recharge04.png in Resources */,
 				17C7FB6F1D86833D00A3EFCC /* card_type02.png in Resources */,
@@ -1773,54 +1750,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		06CF4904FA2A7B159FFF588B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		441FFC894A060B8A23F5193C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EB5C147D39E9FBD89479F1E3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardSJD/Pods-CardSJD-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		179249901D5B7613002E5529 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1883,7 +1812,6 @@
 				17CEF2FD1D8F6C4E0018BBAC /* XPhotoBrowse.swift in Sources */,
 				17CEF31E1D8F8E710018BBAC /* MemberListVC.swift in Sources */,
 				17C7FA4C1D8682C500A3EFCC /* Preloading.swift in Sources */,
-				17C7FA451D8682C500A3EFCC /* XProgressView.swift in Sources */,
 				17C7FA2D1D8682C400A3EFCC /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				17C7FA4A1D8682C500A3EFCC /* XWebView.swift in Sources */,
 				17CEF3031D8F6C4E0018BBAC /* XPhotoToolbar.swift in Sources */,
@@ -1895,6 +1823,7 @@
 				1744198F1D94D64400F5CD2B /* MessageManageVC.swift in Sources */,
 				17C7FA981D8682C500A3EFCC /* XDownLoadView.swift in Sources */,
 				17CEF3041D8F6C4E0018BBAC /* XPhotoUtil.swift in Sources */,
+				17A14BF31D9B60E100CE8C73 /* CoseManageVC.swift in Sources */,
 				17B06F741D9121110070D242 /* CreatActivityVC.swift in Sources */,
 				17C7FA551D8682C500A3EFCC /* string.swift in Sources */,
 				17C7FA411D8682C400A3EFCC /* XNavigationController.swift in Sources */,
@@ -1982,10 +1911,10 @@
 				17C7FA261D8682C400A3EFCC /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				17C7FBBD1D869F3C00A3EFCC /* GWListCell.swift in Sources */,
 				17C7FA641D8682C500A3EFCC /* Reflect+Property.swift in Sources */,
+				17657BC51D9E099A009671E4 /* CardMoneyDetailVC.swift in Sources */,
 				17C7FAF71D8682DF00A3EFCC /* UserFeedVC.swift in Sources */,
 				17C7FA1F1D8682C400A3EFCC /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				17C7FBB91D869BD200A3EFCC /* PowerListCell.swift in Sources */,
-				1764BEC41D90D40800C9FB77 /* ExamplesDefaults.swift in Sources */,
 				17C7FA511D8682C500A3EFCC /* NSData.swift in Sources */,
 				17C7FA3A1D8682C400A3EFCC /* XBuyNumView.swift in Sources */,
 				17C7FA461D8682C500A3EFCC /* XTextView.swift in Sources */,
@@ -2175,7 +2104,6 @@
 		};
 		179249BD1D5B7613002E5529 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93B2312B6FA5EF289833D6B3 /* Pods-CardSJD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2208,12 +2136,12 @@
 				PRODUCT_NAME = CardSJD;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardSJD/CardSJD-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		179249BE1D5B7613002E5529 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26F03C0EDBC96552F6542173 /* Pods-CardSJD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2246,6 +2174,7 @@
 				PRODUCT_NAME = CardSJD;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardSJD/CardSJD-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

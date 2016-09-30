@@ -37,6 +37,18 @@ class UserModel: Reflect {
     var tel = ""
     var address = ""
     var info = ""
+    
+    var power = ""
+    {
+        didSet
+        {
+            powerArr = power.split(",")
+        }
+    }
+    
+    var jobname = ""
+    var shopcategory = ""
+    var powerArr:[String] = []
 
     func reset()
     {
@@ -53,24 +65,12 @@ class UserModel: Reflect {
         address = ""
         info = ""
         
+        power = ""
+        jobname = ""
+        shopcategory = ""
+        powerArr.removeAll(keepCapacity: false)
+        
         save()
-    }
-    
-    func reset(model:UserModel)
-    {
-        uid=model.uid
-        username=model.username
-        mobile=model.mobile
-        truename=model.truename
-        shopid=model.shopid
-        shopname=model.shopname
-        password = model.password
-        
-        logo = model.logo
-        tel = model.tel
-        address = model.address
-        info = model.info
-        
     }
     
     func doLogin()

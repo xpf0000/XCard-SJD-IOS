@@ -41,6 +41,14 @@ class XHttpRequest: NSObject,NSURLConnectionDataDelegate{
         var json:JSON? = nil
         var html = ""
         
+//        if let d = reciveData
+//        {
+//            let str = String.init(data: d, encoding: NSUTF8StringEncoding)
+//            
+//            print(str)
+//            
+//        }
+        
         autoreleasepool {
             
             switch self.resultType

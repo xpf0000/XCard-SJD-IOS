@@ -14,6 +14,7 @@ class MemberModel: Reflect {
     var truename = ""
     var img = ""
     var mobile = ""
+    var username=""
     
     var enable = false
     var selected = false

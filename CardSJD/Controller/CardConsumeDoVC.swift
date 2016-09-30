@@ -30,10 +30,54 @@ class CardConsumeDoVC: UITableViewController {
     
     @IBOutlet var mark: UITextField!
     
+    var userModel:MemberModel?
+    var typeModel:CardTypeModel?
     
-    @IBAction func submit(sender: AnyObject) {
+    
+    @IBAction func submit(sender: UIButton) {
         
+        if !cznum.checkNull()
+        {
+            return
+        }
         
+        XWaitingView.show()
+        sender.enabled = false
+        
+        let url=APPURL+"Public/Found/?service=Hyk.addCost"
+        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.cardid+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
+            
+            XWaitingView.hide()
+            
+            print(o)
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                NoticeWord.CardConsumSuccess.rawValue.postNotice()
+                XAlertView.show("消费成功", block: { [weak self]() in
+                    
+                    self?.pop()
+                    
+                    })
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                
+                print(o)
+                print(o?["data"])
+                
+                msg = msg == "" ? "消费失败" : msg
+                sender.enabled = true
+                
+                XAlertView.show(msg!, block: nil)
+                
+            }
+            
+        }
+
     }
     
     
@@ -46,6 +90,18 @@ class CardConsumeDoVC: UITableViewController {
         v.backgroundColor=UIColor.clearColor()
         tableView.tableFooterView=v
         tableView.tableHeaderView=v
+        
+        cznum.keyboardType = .DecimalPad
+        
+        cznum.addEndButton()
+        
+        mark.autoReturn()
+        
+        name.text = userModel?.truename
+        tel.text = userModel?.mobile
+        img.backgroundColor = typeModel?.color.color
+        type.text = typeModel?.type
+        yunum.text = "￥"+typeModel!.values
         
     }
     

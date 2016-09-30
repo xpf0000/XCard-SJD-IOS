@@ -10,10 +10,12 @@ import UIKit
 
 class ValueSumModel: Reflect {
     
+    var all=""
     var year=""
     var jidu=""
     var month=""
     var week=""
     var day=""
+    var daycnum = ""
 
 }

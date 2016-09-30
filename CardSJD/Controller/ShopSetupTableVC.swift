@@ -90,7 +90,7 @@ class ShopSetupTableVC: UITableViewController {
     {
         icon.url = DataCache.Share.User.logo
         name.text = DataCache.Share.User.shopname
-        describe.text = ""
+        describe.text = DataCache.Share.User.shopcategory
         address.text = DataCache.Share.User.address
         tel.text = DataCache.Share.User.tel
     }
