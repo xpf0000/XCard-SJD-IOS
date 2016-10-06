@@ -31,7 +31,7 @@ class YGListVC: UIViewController,UITableViewDelegate {
         table.backgroundColor = APPBGColor
         table.cellHeight = 90
         
-        let url = APPURL+"Public/Found/?service=Power.getShopWorker&id=1"
+        let url = APPURL+"Public/Found/?service=Power.getShopWorker&id="+SID
         
         table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: YuangongModel.self, CellIdentifier: "YGListCell")
         
