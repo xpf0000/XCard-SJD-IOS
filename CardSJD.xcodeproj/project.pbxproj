@@ -30,6 +30,7 @@
 		1769FA5A1D9A0A740066942C /* vip1.8x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA591D9A0A740066942C /* vip1.8x.png */; };
 		1769FA601D9A0C9C0066942C /* card_vip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1769FA5F1D9A0C9C0066942C /* card_vip.png */; };
 		1769FA621D9A6D0A0066942C /* ValueSumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769FA611D9A6D0A0066942C /* ValueSumModel.swift */; };
+		177DBD6D1DA9F02D0016079F /* CardConsumeDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CEF3101D8F85310018BBAC /* CardConsumeDoVC.swift */; };
 		179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20711D61724D0087C33A /* CoreLocation.framework */; };
 		179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20731D6172580087C33A /* QuartzCore.framework */; };
 		179C20761D61725F0087C33A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C20751D61725F0087C33A /* OpenGLES.framework */; };
@@ -1473,8 +1474,8 @@
 				17C7FBAB1D8692C700A3EFCC /* YGListVC.swift */,
 				17C7FBAF1D86964C00A3EFCC /* YGListCell.swift */,
 				17C7FBB01D86964C00A3EFCC /* YGListCell.xib */,
-				17C7FBB31D869B0900A3EFCC /* PowerListVC.swift */,
 				17C7FBB71D869BD200A3EFCC /* PowerListCell.swift */,
+				17C7FBB31D869B0900A3EFCC /* PowerListVC.swift */,
 				17C7FBB81D869BD200A3EFCC /* PowerListCell.xib */,
 				17C7FBBF1D869FDD00A3EFCC /* GWListVC.swift */,
 				17C7FBBB1D869F3C00A3EFCC /* GWListCell.swift */,
@@ -1985,6 +1986,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177DBD6D1DA9F02D0016079F /* CardConsumeDoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
