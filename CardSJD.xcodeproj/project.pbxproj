@@ -1606,6 +1606,7 @@
 					179249931D5B7613002E5529 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 24AVM954YM;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1614,10 +1615,12 @@
 					};
 					179249A71D5B7613002E5529 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 179249931D5B7613002E5529;
 					};
 					179249B21D5B7613002E5529 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 179249931D5B7613002E5529;
 					};
 				};
@@ -2192,6 +2195,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.X.TJQSTests;
 				PRODUCT_NAME = CardSJD;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardSJD.app/CardSJD";
 			};
 			name = Debug;
@@ -2204,6 +2208,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.X.TJQSTests;
 				PRODUCT_NAME = CardSJD;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardSJD.app/CardSJD";
 			};
 			name = Release;
@@ -2215,6 +2220,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.X.TJQSUITests;
 				PRODUCT_NAME = CardSJD;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = TJQS;
 			};
 			name = Debug;
@@ -2226,6 +2232,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.X.TJQSUITests;
 				PRODUCT_NAME = CardSJD;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = TJQS;
 			};
 			name = Release;

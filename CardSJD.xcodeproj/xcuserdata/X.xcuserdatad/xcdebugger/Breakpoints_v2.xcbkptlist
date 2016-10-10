@@ -144,7 +144,7 @@
             startingLineNumber = "241"
             endingLineNumber = "241"
             landmarkName = "initView()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,7 +160,7 @@
             startingLineNumber = "235"
             endingLineNumber = "235"
             landmarkName = "initView()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,7 +176,7 @@
             startingLineNumber = "280"
             endingLineNumber = "280"
             landmarkName = "init(title:message:buttons:)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,7 +192,7 @@
             startingLineNumber = "108"
             endingLineNumber = "108"
             landmarkName = "initView()"
-            landmarkType = "5">
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -240,7 +240,7 @@
             startingLineNumber = "110"
             endingLineNumber = "110"
             landmarkName = "initView()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

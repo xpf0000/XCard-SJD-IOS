@@ -99,7 +99,7 @@ extension String{
         {
             if(p[i] != 0)
             {
-                strlength++
+                strlength += 1
             }
             else
             {
@@ -122,7 +122,7 @@ extension String{
             }
             else
             {
-                length++
+                length += 1
             }
             
         }
