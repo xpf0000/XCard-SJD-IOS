@@ -203,6 +203,8 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         let imgDataArr:[NSData] = [headerImg!.data(0.5)!]
         let url=APPURL+"Public/Found/?service=Shopa.addShopHD"
         
+        
+        
         let dict=[
             "uid":UID,
             "shopid":SID,

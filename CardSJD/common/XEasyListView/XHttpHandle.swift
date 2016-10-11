@@ -48,7 +48,6 @@ class XHttpHandle: NSObject {
         afterBlock = b
     }
     
-    
     lazy var listArr:[AnyObject] = []
     lazy var keys:[String]=[]
     

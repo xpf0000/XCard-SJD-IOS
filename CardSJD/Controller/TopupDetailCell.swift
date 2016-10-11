@@ -18,6 +18,10 @@ class TopupDetailCell: UITableViewCell {
     
     @IBOutlet var num: UILabel!
     
+    @IBOutlet weak var icon: UIImageView!
+    
+    var xf = false
+    
     var model:MoneyDetailModel?
     {
         didSet
@@ -27,7 +31,33 @@ class TopupDetailCell: UITableViewCell {
                 name.text = m.truename+"\r\n"+m.mobile
                 time.text = m.create_time
                 who.text = m.opername
-                num.text = "￥"+m.money
+                
+                if !xf
+                {
+                    num.text = "￥"+m.money
+                }
+                else
+                {
+                    num.text = m.cname
+                }
+                
+                
+                if(m.status == "-1")
+                {
+                    name.textColor = "dcdcdc".color
+                    time.textColor = "dcdcdc".color
+                    who.textColor = "dcdcdc".color
+                    num.textColor = "dcdcdc".color
+                    icon.hidden = false
+                }
+                else
+                {
+                    name.textColor = UIColor.blackColor()
+                    time.textColor = UIColor.blackColor()
+                    who.textColor = UIColor.blackColor()
+                    num.textColor = UIColor.blackColor()
+                    icon.hidden = true
+                }
                 
             }
         }

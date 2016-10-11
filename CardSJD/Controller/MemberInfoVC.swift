@@ -47,33 +47,11 @@ class MemberInfoVC: UITableViewController {
             
         }
         
+        table.Delegate(self)
+        
         let url = APPURL+"Public/Found/?service=Hyk.getShopCardY&shopid="+SID+"&uid="+model.uid
         table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: CardTypeModel.self, CellIdentifier: "CardTypeCell")
         table.show()
-
-        
-//        
-//        let names = ["充值卡","积分卡","计次卡","打折卡"]
-//        
-//        table.setHandle("", pageStr: "", keys: ["data"], model: CardTypeModel.self, CellIdentifier: "CardTypeCell")
-//        table.hideFootRefresh()
-//        table.hideHeadRefresh()
-//        table.cellHeight = 80.0
-////        for(index,name) in names.enumerate()
-////        {
-////            let m = CardTypeModel()
-////            m.name = name
-////            m.img = "card_type\(index).png"
-////            m.info = "卡说明"
-////            table.httpHandle.listArr.append(m)
-////        }
-//        table.Delegate(self)
-//        
-//        table.reloadData()
-//        
-//        hArr[5] = 80.0 * CGFloat(names.count)
-//        
-//        tableView.reloadData()
 
         
     }
@@ -142,6 +120,23 @@ class MemberInfoVC: UITableViewController {
                 // Fallback on earlier versions
             }
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if(tableView == table)
+        {
+            let cm=table.httpHandle.listArr[indexPath.row] as! CardTypeModel
+            
+            let vc = MemberRecardVC()
+            vc.umodel = model
+            vc.cmodel = cm
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     

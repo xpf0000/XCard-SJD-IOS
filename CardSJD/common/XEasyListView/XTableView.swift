@@ -176,12 +176,12 @@ class XTableView: UITableView ,UITableViewDataSource,UITableViewDelegate{
         
         let model = self.httpHandle.listArr[indexPath.row]
         
-        cell.setValue(model, forKey: "model")
-    
         for (key,val) in self.postDict
         {
             cell.setValue(val, forKey: key)
         }
+        
+        cell.setValue(model, forKey: "model")
         
         return cell
         
@@ -229,6 +229,11 @@ class XTableView: UITableView ,UITableViewDataSource,UITableViewDelegate{
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return xdataSource?.tableView?(tableView, titleForHeaderInSection: section)
+    }
+    
+    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        
+        return xdelegate?.tableView?(tableView, titleForDeleteConfirmationButtonForRowAtIndexPath: indexPath)
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

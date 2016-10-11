@@ -43,6 +43,13 @@ class ActivityListCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        if(selected)
+        {
+            self.deSelect()
+            let vc = "CardActivitysInfoVC".VC("Main") as! CardActivitysInfoVC
+            vc.model = model
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
     

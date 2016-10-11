@@ -14,53 +14,49 @@ class ConsumeManageVC: UITableViewController {
     
     @IBOutlet var total: UILabel!
     
-    @IBOutlet var tmsg: UILabel!
-    
     @IBOutlet var num1: UILabel!
     
     @IBOutlet var num2: UILabel!
     
     @IBOutlet var num3: UILabel!
     
-    var hArr:[CGFloat] = [170, 12,55,55,55,55]
+    @IBOutlet weak var num4: UILabel!
     
-    var model = CardTypeModel()
+    @IBOutlet weak var num5: UILabel!
+    
+    var hArr:[CGFloat] = [140, 12,55,55,55,55,55,55]
     
     var tmodel:ValueSumModel = ValueSumModel()
         {
         didSet
         {
-            total.text = tmodel.day
-            tmsg.text = "今日消费次数: "+tmodel.daycnum+"次"
-            num1.text = "￥"+tmodel.week
-            num2.text = "￥"+tmodel.month
-            num3.text = "￥"+tmodel.year
+            total.text = tmodel.daycnum+"次"
+            num1.text = tmodel.week+"次"
+            num2.text = tmodel.month+"次"
+            num3.text = tmodel.all+"次"
+            num4.text = tmodel.jidu+"次"
+            num5.text = tmodel.year+"次"
             
         }
     }
     
     func http()
     {
-        if let id = CardType[model.type]
-        {
-            let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopt.getCostSum&shopid="+SID+"&ctypeid="+id
+        let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopt.getCostSum&shopid="+SID+"&ctypeid=0"
         
-            XHttpPool.requestJson(url, body: nil, method: .POST) { [weak self](o) -> Void in
-                
-                if let info = o?["data"]["info"]
-                {
-                    self?.tmodel = ValueSumModel.parse(json: info, replace: nil)
-                }
-                else
-                {
-                    var msg = o?["data"]["msg"].stringValue
-                    msg = msg == "" ? "统计数据获取失败" : msg
-                    
-                    XAlertView.show(msg!, block: nil)
-                }
-                
-            }
+        XHttpPool.requestJson(url, body: nil, method: .POST) { [weak self](o) -> Void in
             
+            if let info = o?["data"]["info"]
+            {
+                self?.tmodel = ValueSumModel.parse(json: info, replace: nil)
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "统计数据获取失败" : msg
+                
+                XAlertView.show(msg!, block: nil)
+            }
             
         }
         
@@ -70,6 +66,8 @@ class ConsumeManageVC: UITableViewController {
         super.viewDidLoad()
         self.addBackButton()
         self.title="消费管理"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(http), name: "DelRecardSuccess", object: nil)
         
         let v=UIView()
         v.backgroundColor=UIColor.clearColor()
@@ -87,7 +85,7 @@ class ConsumeManageVC: UITableViewController {
         if indexPath.row == 2
         {
             let vc = "ConsumeDetailVC".VC("Main") as! ConsumeDetailVC
-            vc.ctypeid = CardType[model.type]!
+    
             vc.model = self.tmodel
             
             self.navigationController?.pushViewController(vc, animated: true)
@@ -145,6 +143,8 @@ class ConsumeManageVC: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
 }

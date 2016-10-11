@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConsumeDetailVC: UIViewController {
+class ConsumeDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet var startTime: UIButton!
     
@@ -34,8 +34,6 @@ class ConsumeDetailVC: UIViewController {
         super.viewDidLoad()
         self.addBackButton()
         
-        total.text = "￥"+model.all
-        
         let leftView = UIView()
         leftView.frame = CGRectMake(0, 0, 42, 42)
         let left = UIImageView()
@@ -54,10 +52,23 @@ class ConsumeDetailVC: UIViewController {
         endTime.layer.borderWidth = 0.7
         
         table.cellHeight = 50.0
+        table.Delegate(self)
+        table.DataSource(self)
         
         let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopt.getCostList&shopid="+SID+"&stime="+stimeStr+"&etime="+etimeStr+"&page=[page]&perNumber=20&ctypeid="+ctypeid
         
+        table.postDict = ["xf":true]
+        
         table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: MoneyDetailModel.self, CellIdentifier: "TopupDetailCell")
+        
+        table.httpHandle.ResultBlock {[weak self] (o) in
+            
+            if let sum = o?["data"]["sum"].string
+            {
+                self?.total.text = sum+"次"
+            }
+            
+        }
         
         table.show()
         
@@ -124,6 +135,65 @@ class ConsumeDetailVC: UIViewController {
         table.httpHandle.handle()
         
     }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        
+        return  (table.httpHandle.listArr[indexPath.row] as! MoneyDetailModel).status != "-1"
+        
+    }
+    
+    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        
+        return "作废"
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if(editingStyle == UITableViewCellEditingStyle.Delete)
+        {
+            
+            let id=(self.table.httpHandle.listArr[indexPath.row] as! MoneyDetailModel).id
+            
+            let url=APPURL+"Public/Found/?service=Shopt.delCost&id="+id
+            
+            XHttpPool.requestJson(url, body: nil, method: .GET, block: { (json) in
+                
+                if let status = json?["data"]["code"].int
+                {
+                    if status == 0
+                    {
+                        (self.table.httpHandle.listArr[indexPath.row] as! MoneyDetailModel).status = "-1"
+                        
+                        self.table.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                        
+                        "DelRecardSuccess".postNotice()
+                        
+                    }
+                    else
+                    {
+                        ShowMessage(json!["data"]["msg"].stringValue)
+                    }
+                }
+                else
+                {
+                    ShowMessage("消费记录作废失败!")
+                }
+                
+            })
+            
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

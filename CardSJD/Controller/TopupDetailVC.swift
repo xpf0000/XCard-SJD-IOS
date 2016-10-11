@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopupDetailVC: UIViewController,UITableViewDelegate {
+class TopupDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var startTime: UIButton!
     
@@ -67,6 +67,7 @@ class TopupDetailVC: UIViewController,UITableViewDelegate {
         }
         
         table.Delegate(self)
+        table.DataSource(self)
         table.cellHeight = 50.0
         
         let url = "http://182.92.70.85/hfshopapi/Public/Found/?service=Shopt.getValueList&shopid="+SID+"&stime="+stimeStr+"&etime="+etimeStr+"&page=[page]&perNumber=20"
@@ -138,6 +139,65 @@ class TopupDetailVC: UIViewController,UITableViewDelegate {
         table.httpHandle.handle()
   
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        
+        return  (table.httpHandle.listArr[indexPath.row] as! MoneyDetailModel).status != "-1"
+        
+    }
+    
+    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        
+        return "作废"
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if(editingStyle == UITableViewCellEditingStyle.Delete)
+        {
+            
+            let id=(self.table.httpHandle.listArr[indexPath.row] as! MoneyDetailModel).id
+    
+            let url=APPURL+"Public/Found/?service=Shopt.delValue&id="+id
+            
+            XHttpPool.requestJson(url, body: nil, method: .GET, block: { (json) in
+                
+                if let status = json?["data"]["code"].int
+                {
+                    if status == 0
+                    {
+                        (self.table.httpHandle.listArr[indexPath.row] as! MoneyDetailModel).status = "-1"
+                        
+                        self.table.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                    }
+                    else
+                    {
+                        ShowMessage(json!["data"]["msg"].stringValue)
+                    }
+                }
+                else
+                {
+                    ShowMessage("充值记录作废失败!")
+                }
+                
+            })
+            
+        }
+    }
+    
+    
+    
+    
+    
     
 
     override func didReceiveMemoryWarning() {

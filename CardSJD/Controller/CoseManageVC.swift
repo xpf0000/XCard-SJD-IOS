@@ -46,7 +46,6 @@ class CoseManageVC: UIViewController,UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let vc = "ConsumeManageVC".VC("Main") as! ConsumeManageVC
-        vc.model = table.httpHandle.listArr[indexPath.row] as! CardTypeModel
         
         self.navigationController?.pushViewController(vc, animated: true)
         

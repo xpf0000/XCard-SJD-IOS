@@ -20,17 +20,23 @@ class TopUpManageVC: UITableViewController {
     
     @IBOutlet var num3: UILabel!
     
-    var hArr:[CGFloat] = [170, 12,55,55,55,55]
+    @IBOutlet weak var num4: UILabel!
+    
+    @IBOutlet weak var num5: UILabel!
+    
+    var hArr:[CGFloat] = [170, 12,55,55,55,55,55,55]
     
     var model:ValueSumModel = ValueSumModel()
     {
         didSet
         {
-            total.text = model.day
+            total.text = "￥"+model.day
             tmsg.text = "今日充值次数: "+model.daycnum+"次"
             num1.text = "￥"+model.week
             num2.text = "￥"+model.month
-            num3.text = "￥"+model.year
+            num3.text = "￥"+model.all
+            num4.text = "￥"+model.jidu
+            num5.text = "￥"+model.year
             
         }
     }
@@ -62,6 +68,8 @@ class TopUpManageVC: UITableViewController {
         super.viewDidLoad()
         self.addBackButton()
         self.title="充值管理"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(http), name: "DelRecardSuccess", object: nil)
         
         let v=UIView()
         v.backgroundColor=UIColor.clearColor()
@@ -140,6 +148,9 @@ class TopUpManageVC: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     
 }

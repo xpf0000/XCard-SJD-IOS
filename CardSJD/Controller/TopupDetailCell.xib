@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,38 +12,40 @@
             <rect key="frame" x="0.0" y="0.0" width="546" height="88"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="546" height="87"/>
+                <frame key="frameInset" width="546" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCi-Mp-XdI">
-                        <rect key="frame" x="0.0" y="0.0" width="546" height="87"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBx-c6-qsA">
-                                <rect key="frame" x="10" y="28" width="143" height="32"/>
                                 <string key="text">张无忌
 15896612345</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLh-TW-cv6">
-                                <rect key="frame" x="153" y="28" width="133" height="32"/>
                                 <string key="text">2016-08-25
 10:56:23</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥86.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a08-kL-Fbd">
-                                <rect key="frame" x="408" y="36" width="128" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="什么人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYd-Vl-zl2">
-                                <rect key="frame" x="286" y="36" width="122" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fei.png" translatesAutoresizingMaskIntoConstraints="NO" id="OYI-CV-nZN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7kf-go-9AC"/>
+                                    <constraint firstAttribute="width" constant="30" id="wRC-xS-q94"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tLh-TW-cv6" firstAttribute="width" secondItem="fBx-c6-qsA" secondAttribute="width" constant="-10" id="394-Pk-adW"/>
                             <constraint firstItem="fYd-Vl-zl2" firstAttribute="leading" secondItem="tLh-TW-cv6" secondAttribute="trailing" id="5Ie-ml-w2A"/>
@@ -51,10 +54,12 @@
                             <constraint firstItem="fBx-c6-qsA" firstAttribute="leading" secondItem="UCi-Mp-XdI" secondAttribute="leading" constant="10" id="8IT-eY-ZHj"/>
                             <constraint firstItem="fYd-Vl-zl2" firstAttribute="width" secondItem="fBx-c6-qsA" secondAttribute="width" constant="-20" id="DPe-Jd-WGN"/>
                             <constraint firstItem="a08-kL-Fbd" firstAttribute="leading" secondItem="fYd-Vl-zl2" secondAttribute="trailing" id="HLn-fU-xmi"/>
+                            <constraint firstItem="OYI-CV-nZN" firstAttribute="top" secondItem="UCi-Mp-XdI" secondAttribute="top" id="ISO-FV-KRV"/>
                             <constraint firstAttribute="trailing" secondItem="a08-kL-Fbd" secondAttribute="trailing" constant="10" id="N7C-BZ-SHW"/>
                             <constraint firstItem="a08-kL-Fbd" firstAttribute="centerY" secondItem="UCi-Mp-XdI" secondAttribute="centerY" id="VPP-iG-oOG"/>
                             <constraint firstItem="fYd-Vl-zl2" firstAttribute="centerY" secondItem="UCi-Mp-XdI" secondAttribute="centerY" id="daa-ds-bFe"/>
                             <constraint firstItem="tLh-TW-cv6" firstAttribute="centerY" secondItem="UCi-Mp-XdI" secondAttribute="centerY" id="fCi-Os-XT9"/>
+                            <constraint firstAttribute="trailing" secondItem="OYI-CV-nZN" secondAttribute="trailing" id="gnA-36-XfH"/>
                             <constraint firstItem="a08-kL-Fbd" firstAttribute="width" secondItem="fBx-c6-qsA" secondAttribute="width" constant="-15" id="va8-d1-dw0"/>
                         </constraints>
                     </view>
@@ -67,6 +72,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="icon" destination="OYI-CV-nZN" id="4uv-wV-tBn"/>
                 <outlet property="name" destination="fBx-c6-qsA" id="iVE-Qm-4a4"/>
                 <outlet property="num" destination="a08-kL-Fbd" id="xIM-Dp-hgC"/>
                 <outlet property="time" destination="tLh-TW-cv6" id="4Yd-NU-8fi"/>
@@ -75,4 +81,7 @@
             <point key="canvasLocation" x="275" y="280"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="fei.png" width="99" height="99"/>
+    </resources>
 </document>

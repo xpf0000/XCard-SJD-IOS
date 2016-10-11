@@ -14,11 +14,17 @@ class MoneyDetailModel: Reflect {
     var uid=""
     var truename=""
     var mobile=""
+    var cname=""
     var value=""
     var money=""
     var create_time=""
     var opername=""
-    var cname = ""
+    var bak=""
+    var status=""
+    var shopname=""
+    var xftype=""
+    var cardtype=""
+    
     
     override func setValue(value: AnyObject?, forKey key: String) {
         

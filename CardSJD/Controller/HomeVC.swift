@@ -77,7 +77,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
         
         let url = APPURL+"Public/Found/?service=Setting.getGuanggao&typeid=83"
         
-        XHttpPool.requestJson(url, body: nil, method: .GET) {[weak self] (o) -> Void in
+        XHttpPool.requestJsonAutoConnect(url, body: nil, method: .GET) {[weak self] (o) -> Void in
             
             if(o == nil)
             {
@@ -309,7 +309,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
                 
                 if !CheckUserPower("6"){return}
                 
-                let vc = CoseManageVC()
+                let vc = "ConsumeManageVC".VC("Main")
                 self.navigationController?.pushViewController(vc, animated: true)
             case 3:
                 

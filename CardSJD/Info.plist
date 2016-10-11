@@ -5,7 +5,7 @@
 	<key>.</key>
 	<string>请打开定位</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
 	<string>CardSJD1</string>
 	<key>CFBundleExecutable</key>
