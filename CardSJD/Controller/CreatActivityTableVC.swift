@@ -51,13 +51,15 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         
         header.adjustsImageWhenDisabled = false
         
+        header.imageView?.contentMode = .ScaleToFill
+        
         atitle.autoReturn()
         address.autoReturn()
         tel.autoReturn()
         
         mark.placeHolder("请输入活动描述!")
         
-        harr[0] = SW * 9.0 / 16.0
+        harr[0] = (SW-24) * 8.4 / 16.0
         
         let v=UIView()
         v.backgroundColor=UIColor.clearColor()
@@ -140,13 +142,19 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         case 0:
             ""
             let picker = XPhotoPicker()
-            picker.allowsEditing = true
-            picker.getPhoto(self) { (res) in
+            picker.useSystem = true
+            picker.getPhoto(self) { [weak self](res) in
                 
                 if let img = res[0].image
                 {
-                    self.headerImg = img
+                    let v = XPhotoCrap()
+                    v.show(img, wh: 16.0/8.4, b: {[weak self] (image) in
+                        
+                        self?.headerImg = image
+                        
+                    })
                 }
+                
             }
         case 2 :
             ""
@@ -203,14 +211,15 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
         let imgDataArr:[NSData] = [headerImg!.data(0.5)!]
         let url=APPURL+"Public/Found/?service=Shopa.addShopHD"
         
-        
+        let sstr = "\(stime!.timeIntervalSince1970)"
+        let estr = "\(etime!.timeIntervalSince1970)"
         
         let dict=[
             "uid":UID,
             "shopid":SID,
             "title":atitle.text!.trim(),
-            "stime":starttime.text!.trim(),
-            "etime":endtime.text!.trim(),
+            "stime":sstr,
+            "etime":estr,
             "address":address.text!.trim(),
             "tel":tel.text!.trim(),
             "content":mark.text!.trim()

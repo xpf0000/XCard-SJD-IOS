@@ -14,8 +14,9 @@ class CreatActivityVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addBackButton()
 
-       subVC = self.childViewControllers[0] as! CreatActivityTableVC
+        subVC = self.childViewControllers[0] as! CreatActivityTableVC
         
     }
     

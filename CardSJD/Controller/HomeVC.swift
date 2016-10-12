@@ -139,7 +139,6 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
         
         self.collectionView?.reloadData()
         
-        
     }
     
     
@@ -360,6 +359,8 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
             ""
         }
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

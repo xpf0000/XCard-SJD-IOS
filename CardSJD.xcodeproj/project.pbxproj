@@ -18,6 +18,11 @@
 		174419991D9506D700F5CD2B /* AddCardColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174419971D9506D700F5CD2B /* AddCardColorCell.xib */; };
 		1744199B1D9511E900F5CD2B /* ShopSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744199A1D9511E900F5CD2B /* ShopSetupVC.swift */; };
 		1744199D1D9511FE00F5CD2B /* ShopSetupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */; };
+		1747EEB81DADBB89005BE4F8 /* XPhotoCrap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1747EEB71DADBB89005BE4F8 /* XPhotoCrap.xib */; };
+		1747EEBA1DADBE6C005BE4F8 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1747EEB91DADBE6C005BE4F8 /* test.jpg */; };
+		1747EEBD1DADC0F0005BE4F8 /* cancle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1747EEBB1DADC0F0005BE4F8 /* cancle.png */; };
+		1747EEBE1DADC0F0005BE4F8 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 1747EEBC1DADC0F0005BE4F8 /* check.png */; };
+		1747EEC01DADC1C6005BE4F8 /* XPhotoCrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747EEBF1DADC1C6005BE4F8 /* XPhotoCrap.swift */; };
 		174B55D81D90E38B00DD5431 /* TopupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */; };
 		174B55DB1D90E60F00DD5431 /* TopupDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */; };
 		174B55DC1D90E60F00DD5431 /* TopupDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */; };
@@ -46,6 +51,7 @@
 		179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208D1D6175B30087C33A /* UIKit.framework */; };
 		179C20901D6175C40087C33A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C208F1D6175C40087C33A /* libz.tbd */; };
 		179C75361D992A3600953A43 /* ShopsDescriptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C75351D992A3600953A43 /* ShopsDescriptVC.swift */; };
+		179F12DB1DAE3DCE00FDBFF4 /* RegistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F12DA1DAE3DCE00FDBFF4 /* RegistVC.swift */; };
 		17A14BF31D9B60E100CE8C73 /* CoseManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A14BF21D9B60E100CE8C73 /* CoseManageVC.swift */; };
 		17A33A081D8FF57E007650A2 /* TopUpManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */; };
 		17A6CB311DAD22C400B7C983 /* MyWalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6CB2F1DAD22C400B7C983 /* MyWalletCell.swift */; };
@@ -366,6 +372,11 @@
 		174419971D9506D700F5CD2B /* AddCardColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardColorCell.xib; sourceTree = "<group>"; };
 		1744199A1D9511E900F5CD2B /* ShopSetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSetupVC.swift; sourceTree = "<group>"; };
 		1744199C1D9511FE00F5CD2B /* ShopSetupTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSetupTableVC.swift; sourceTree = "<group>"; };
+		1747EEB71DADBB89005BE4F8 /* XPhotoCrap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XPhotoCrap.xib; sourceTree = "<group>"; };
+		1747EEB91DADBE6C005BE4F8 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		1747EEBB1DADC0F0005BE4F8 /* cancle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancle.png; sourceTree = "<group>"; };
+		1747EEBC1DADC0F0005BE4F8 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		1747EEBF1DADC1C6005BE4F8 /* XPhotoCrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPhotoCrap.swift; sourceTree = "<group>"; };
 		174B55D71D90E38B00DD5431 /* TopupDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopupDetailVC.swift; sourceTree = "<group>"; };
 		174B55D91D90E60F00DD5431 /* TopupDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopupDetailCell.swift; sourceTree = "<group>"; };
 		174B55DA1D90E60F00DD5431 /* TopupDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopupDetailCell.xib; sourceTree = "<group>"; };
@@ -396,6 +407,7 @@
 		179C208D1D6175B30087C33A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		179C208F1D6175C40087C33A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		179C75351D992A3600953A43 /* ShopsDescriptVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsDescriptVC.swift; sourceTree = "<group>"; };
+		179F12DA1DAE3DCE00FDBFF4 /* RegistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistVC.swift; sourceTree = "<group>"; };
 		17A14BF21D9B60E100CE8C73 /* CoseManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoseManageVC.swift; sourceTree = "<group>"; };
 		17A33A071D8FF57E007650A2 /* TopUpManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopUpManageVC.swift; sourceTree = "<group>"; };
 		17A6CB2F1DAD22C400B7C983 /* MyWalletCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWalletCell.swift; sourceTree = "<group>"; };
@@ -886,6 +898,8 @@
 				17C7F9851D8682C400A3EFCC /* XWebView.swift */,
 				17C909561D878FBE0051A2F2 /* XCommonAlert.swift */,
 				1711DA051D8FBEBC00058880 /* XAlertListMenu.swift */,
+				1747EEBF1DADC1C6005BE4F8 /* XPhotoCrap.swift */,
+				1747EEB71DADBB89005BE4F8 /* XPhotoCrap.xib */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -1219,6 +1233,9 @@
 		17C7FB001D86833D00A3EFCC /* 会员卡icon */ = {
 			isa = PBXGroup;
 			children = (
+				1747EEBB1DADC0F0005BE4F8 /* cancle.png */,
+				1747EEBC1DADC0F0005BE4F8 /* check.png */,
+				1747EEB91DADBE6C005BE4F8 /* test.jpg */,
 				17E5A6631DAD30BE00486529 /* fei.png */,
 				17A6CB351DAD2A8F00B7C983 /* recharge05.png */,
 				17A6CB361DAD2A8F00B7C983 /* recharge06.png */,
@@ -1421,6 +1438,7 @@
 			isa = PBXGroup;
 			children = (
 				17C7FAC91D8682DF00A3EFCC /* UpdatePWVC.swift */,
+				179F12DA1DAE3DCE00FDBFF4 /* RegistVC.swift */,
 				17C7FACA1D8682DF00A3EFCC /* UserCenterVC.swift */,
 				17C7FACB1D8682DF00A3EFCC /* UserFeedVC.swift */,
 				17C7FAAA1D8682DF00A3EFCC /* FBPassNewVC.swift */,
@@ -1695,6 +1713,7 @@
 				17C7FB771D86833D00A3EFCC /* index_icon04.png in Resources */,
 				17C7FB7D1D86833D00A3EFCC /* index_icon10.png in Resources */,
 				17C7FB691D86833D00A3EFCC /* shop_icon07.png in Resources */,
+				1747EEB81DADBB89005BE4F8 /* XPhotoCrap.xib in Resources */,
 				17C7FADF1D8682DF00A3EFCC /* MessageCell.xib in Resources */,
 				17EFD9A31D8F96C800E59478 /* arrow02_w.png in Resources */,
 				17C7FB541D86833D00A3EFCC /* card_type2.png in Resources */,
@@ -1708,6 +1727,7 @@
 				17C7FB651D86833D00A3EFCC /* shop_icon03.png in Resources */,
 				17C7FBBA1D869BD200A3EFCC /* PowerListCell.xib in Resources */,
 				17CEF31A1D8F8D060018BBAC /* MemberListCell.xib in Resources */,
+				1747EEBD1DADC0F0005BE4F8 /* cancle.png in Resources */,
 				17C7FB8B1D86836F00A3EFCC /* Info.plist in Resources */,
 				17C7FB491D86833D00A3EFCC /* 3701店铺设置.jpg in Resources */,
 				174419991D9506D700F5CD2B /* AddCardColorCell.xib in Resources */,
@@ -1750,11 +1770,13 @@
 				17C7FB641D86833D00A3EFCC /* shop_icon02.png in Resources */,
 				17C7FB6C1D86833D00A3EFCC /* system_msg_icon.png in Resources */,
 				17C7FB801D86833D00A3EFCC /* index_top02.png in Resources */,
+				1747EEBA1DADBE6C005BE4F8 /* test.jpg in Resources */,
 				17C7FB551D86833D00A3EFCC /* card_type3.png in Resources */,
 				1769FA5A1D9A0A740066942C /* vip1.8x.png in Resources */,
 				17C7FB4A1D86833D00A3EFCC /* orange_search.png in Resources */,
 				17C7FB751D86833D00A3EFCC /* index_icon02.png in Resources */,
 				17C7FB581D86833D00A3EFCC /* orange_btn.png in Resources */,
+				1747EEBE1DADC0F0005BE4F8 /* check.png in Resources */,
 				17CEF2FA1D8F6C4E0018BBAC /* Checkmark-0@2x.png in Resources */,
 				17C7FB741D86833D00A3EFCC /* index_icon01.png in Resources */,
 				17C7FA391D8682C400A3EFCC /* XBootView.xib in Resources */,
@@ -1821,6 +1843,7 @@
 				17C7FADD1D8682DF00A3EFCC /* LoginVC.swift in Sources */,
 				17C7FBB11D86964C00A3EFCC /* YGListCell.swift in Sources */,
 				17C7FA4F1D8682C500A3EFCC /* array.swift in Sources */,
+				1747EEC01DADC1C6005BE4F8 /* XPhotoCrap.swift in Sources */,
 				17C7FA961D8682C500A3EFCC /* XDownLoad.swift in Sources */,
 				17C7FA811D8682C500A3EFCC /* DDCollectionViewFlowLayout.m in Sources */,
 				17C7FA301D8682C400A3EFCC /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
@@ -1918,6 +1941,7 @@
 				17C7FA4B1D8682C500A3EFCC /* DataCache.swift in Sources */,
 				17C7FAD61D8682DF00A3EFCC /* FBPassNewVC.swift in Sources */,
 				17B06F761D9121280070D242 /* CreatActivityTableVC.swift in Sources */,
+				179F12DB1DAE3DCE00FDBFF4 /* RegistVC.swift in Sources */,
 				17C7FA231D8682C400A3EFCC /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				17C7FA3D1D8682C400A3EFCC /* XCornerRadiusTextField.swift in Sources */,
 				17C7FA321D8682C400A3EFCC /* NVActivityIndicatorView.swift in Sources */,

@@ -22,12 +22,8 @@ class XPhotoPicker: UIView,UIActionSheetDelegate {
     }
     
     var allowsEditing = false
-    {
-        didSet
-        {
-                
-        }
-    }
+ 
+    var useSystem = false
     
     override private init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,10 +88,10 @@ class XPhotoPicker: UIView,UIActionSheetDelegate {
         }
         else if(buttonIndex == 2)
         {
-            if self.allowsEditing
+            if self.allowsEditing || self.useSystem
             {
                 let c = XCamera()
-                c.canEdit = true
+                c.canEdit = allowsEditing
                 c.imagePicker.sourceType=UIImagePickerControllerSourceType.PhotoLibrary
                 c.CameraImage(pushVC, block: {[weak self] (img) in
                     if self == nil {return}

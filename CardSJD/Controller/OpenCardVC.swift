@@ -28,7 +28,14 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
                 
                 icon.hidden = false
                 msg.hidden = false
-                btn.enabled = false
+                if edit.text?.length() == 11
+                {
+                    btn.enabled = true
+                }
+                else
+                {
+                    btn.enabled = false
+                }
                 
             }
             else
@@ -52,11 +59,23 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
     
     func toChooseType()
     {
-        let vc = ChooseTypeVC()
+        if model?.uid != ""
+        {
+            let vc = ChooseTypeVC()
+            
+            vc.user = model!
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else
+        {
+            let vc = "RegistVC".VC("Main") as! RegistVC
+            vc.mobil = edit.text!.trim()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
-        vc.user = model!
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 
     override func viewDidLoad() {
@@ -64,6 +83,8 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
         self.addBackButton()
         edit.addEndButton()
         edit.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reshow), name: "RegistSuccess", object: nil)
         
         icon.hidden = true
         msg.hidden = true
@@ -151,6 +172,7 @@ class OpenCardVC: UIViewController,UITextFieldDelegate {
     
     deinit
     {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
         print("OpenCardVC deinit !!!!!!!!!!!!")
     }
 

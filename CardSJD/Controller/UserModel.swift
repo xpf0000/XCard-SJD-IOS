@@ -38,6 +38,8 @@ class UserModel: Reflect {
     var address = ""
     var info = ""
     
+    var banner=""
+    
     var power = ""
     {
         didSet

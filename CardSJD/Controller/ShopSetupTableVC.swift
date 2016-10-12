@@ -10,6 +10,8 @@ import UIKit
 
 class ShopSetupTableVC: UITableViewController {
 
+    @IBOutlet var banner: UIImageView!
+    
     @IBOutlet var icon: UIImageView!
     
     @IBOutlet var name: UILabel!
@@ -19,6 +21,31 @@ class ShopSetupTableVC: UITableViewController {
     @IBOutlet var address: UITextField!
     
     @IBOutlet var tel: UITextField!
+    
+    var bImage:UIImage?
+    {
+        didSet
+        {
+            if(bImage != nil)
+            {
+                banner.image = bImage
+            }
+        }
+    }
+    
+    var hImage:UIImage?
+        {
+        didSet
+        {
+            if(hImage != nil)
+            {
+                icon.image = hImage
+            }
+            
+        }
+    }
+    
+    var harr:[CGFloat] = [12,100,140,50,50]
     
     func submit(sender:UIButton)
     {
@@ -56,6 +83,51 @@ class ShopSetupTableVC: UITableViewController {
         }
         
         
+        if(hImage != nil)
+        {
+            let dict=[
+                "id":SID
+            ]
+            
+            let imgDataArr:[NSData] = [hImage!.data(0.5)!]
+            let url=APPURL+"Public/Found/?service=Shopd.updateShopLogo"
+            
+            hImage = nil
+            
+            XHttpPool.upLoad(url, parameters: dict, file: imgDataArr, name: "file", progress: nil) { [weak self](o) -> Void in
+                
+                if o == nil || o?["ret"].int != 200
+                {
+                    ShowMessage("头像上传失败")
+                }
+                
+            }
+            
+        }
+        
+        if(bImage != nil)
+        {
+            let dict=[
+                "id":SID
+            ]
+            
+            bImage = nil
+            
+            let imgDataArr:[NSData] = [bImage!.data(0.5)!]
+            let url=APPURL+"Public/Found/?service=Shopd.updateShopBanner"
+            
+            XHttpPool.upLoad(url, parameters: dict, file: imgDataArr, name: "file", progress: nil) { [weak self](o) -> Void in
+                
+                if o == nil || o?["ret"].int != 200
+                {
+                    ShowMessage("广告图上传失败")
+                }
+                
+            }
+            
+        }
+        
+        
     }
     
     func http()
@@ -76,6 +148,7 @@ class ShopSetupTableVC: UITableViewController {
                     DataCache.Share.User.tel = model.tel
                     DataCache.Share.User.address = model.address
                     DataCache.Share.User.info = model.info
+                    DataCache.Share.User.banner = model.banner
                     
                     self?.show()
                     
@@ -93,12 +166,16 @@ class ShopSetupTableVC: UITableViewController {
         describe.text = DataCache.Share.User.shopcategory
         address.text = DataCache.Share.User.address
         tel.text = DataCache.Share.User.tel
+        banner.url = DataCache.Share.User.banner
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.http()
+        
+        harr[2] = swidth * 313.0 / 750.0 + 48
+        tableView.reloadData()
         
         let v=UIView()
         v.backgroundColor=UIColor.clearColor()
@@ -139,7 +216,50 @@ class ShopSetupTableVC: UITableViewController {
         
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return harr[indexPath.row]
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.row == 1
+        {
+            let picker = XPhotoPicker()
+            picker.useSystem = true
+            picker.getPhoto(self) { [weak self](res) in
+                
+                if let img = res[0].image
+                {
+                    let v = XPhotoCrap()
+                    v.show(img, wh: 1.0, b: {[weak self] (image) in
+                        
+                        self?.hImage = image
+                        
+                        })
+                }
+                
+            }
+        }
+        
+        if indexPath.row == 2
+        {
+            let picker = XPhotoPicker()
+            picker.useSystem = true
+            picker.getPhoto(self) { [weak self](res) in
+                
+                if let img = res[0].image
+                {
+                    let v = XPhotoCrap()
+                    v.show(img, wh: 750.0/313.0, b: {[weak self] (image) in
+                        
+                        self?.bImage = image
+                        
+                        })
+                }
+                
+            }
+        }
         
     }
 
