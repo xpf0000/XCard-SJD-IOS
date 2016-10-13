@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         XHttpPool.Debug = true
         
+        sleep(3)
+        
         return true
     }
     

@@ -109,8 +109,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "车港湾"
-        
+        self.title = ""
         self.getBanner()
         
         banner.frame = CGRectMake(0, 12, swidth, swidth*0.3)
@@ -364,6 +363,15 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if(UID != "")
+        {
+            self.title = DataCache.Share.User.shopname
+        }
+        else
+        {
+            self.title = "怀府网"
+        }
         
         DataCache.Share.User.getPower()
     }

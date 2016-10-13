@@ -39,7 +39,7 @@ class GWListVC: UIViewController,UITableViewDelegate {
         table.backgroundColor = APPBGColor
         table.cellHeight = 60
         
-        let url = APPURL+"Public/Found/?service=Power.getShopJob&id=1"
+        let url = APPURL+"Public/Found/?service=Power.getShopJob&id="+SID
         
         table.setHandle(url, pageStr: "[page]", keys: ["data","info"], model: GangweiModel.self, CellIdentifier: "GWListCell")
         
@@ -62,7 +62,7 @@ class GWListVC: UIViewController,UITableViewDelegate {
         }
         else
         {
-            let alert = XCommonAlert(title: nil, message: nil, buttons: "修改岗位名称","修改岗位权限","取消")
+            let alert = XCommonAlert(title: nil, message: nil, buttons: "修改岗位名称","修改岗位权限","删除岗位","取消")
             
             alert.show()
             
@@ -78,11 +78,66 @@ class GWListVC: UIViewController,UITableViewDelegate {
                     self?.toEditPower(indexPath.row)
                 }
                 
+                if index == 2
+                {
+                    self?.delPower(indexPath.row)
+                }
+
+                
                 
                 return true
                 })
         }
         
+    }
+    
+    func delPower(index:Int)
+    {
+        
+        let alert = XCommonAlert(title: "确定删除岗位?", message: nil, buttons: "确定","取消")
+        
+        alert.show()
+        
+        alert.click({[weak self] (p) -> Bool in
+            
+            if p == 0
+            {
+                self?.doDel(index)
+            }
+            
+            return true
+        })
+        
+        
+        
+    }
+    
+    func doDel(index:Int)
+    {
+        XWaitingView.show()
+        
+        let m = table.httpHandle.listArr[index] as! GangweiModel
+        let url=APPURL+"Public/Found/?service=Power.delShopJob"
+        let body="id="+m.id
+        
+        XHttpPool.requestJson( url, body: body, method: .POST) {[weak self](o) -> Void in
+            
+            XWaitingView.hide()
+            
+            if(o?["data"]["code"].int == 0)
+            {
+                self?.table.httpHandle.listArr.removeAtIndex(index)
+                self?.table.deleteRowsAtIndexPaths([NSIndexPath.init(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+            }
+            else
+            {
+                var msg = o?["data"]["msg"].stringValue
+                msg = msg == "" ? "岗位删除失败" : msg
+                
+                XAlertView.show(msg!, block: nil)
+            }
+            
+        }
     }
     
     func toEditPower(index:Int)

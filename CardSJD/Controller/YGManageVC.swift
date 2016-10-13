@@ -118,8 +118,12 @@ class YGManageVC: UIViewController {
             
             if index == 1 && !text.checkNull() {return false}
             
-            text.endEdit()
-            self?.addGW(text.text!.trim())
+            if index == 1
+            {
+                text.endEdit()
+                self?.addGW(text.text!.trim())
+            }
+            
             
             return true
             

@@ -27,7 +27,7 @@ class CreateMessageVC: UITableViewController {
         let uname = DataCache.Share.User.username
         
         let url=APPURL+"Public/Found/?service=Shopa.addMessages"
-        let body="uid="+UID+"&username="+uname+"&title="+mtitle.text!.trim()+"&content="+info.text!.trim()
+        let body="uid="+UID+"&username="+uname+"&title="+mtitle.text!.trim()+"&content="+info.text!.trim()+"&shopid="+SID
         
         XHttpPool.requestJson( url, body: body, method: .POST) {[weak self] (o) -> Void in
             

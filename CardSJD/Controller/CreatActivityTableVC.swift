@@ -158,6 +158,7 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
             }
         case 2 :
             ""
+            self.view.endEdit()
             let picker = XDatePicker()
             picker.minDate = NSDate()
             
@@ -173,6 +174,7 @@ class CreatActivityTableVC: UITableViewController,UICollectionViewDelegate {
             
         case 3 :
             ""
+            self.view.endEdit()
             let picker = XDatePicker()
             picker.minDate = NSDate()
             
