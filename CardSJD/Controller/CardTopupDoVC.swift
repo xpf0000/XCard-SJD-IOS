@@ -50,7 +50,7 @@ class CardTopupDoVC: UITableViewController {
         sender.enabled = false
         
         let url=APPURL+"Public/Found/?service=Hyk.addValues"
-        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.mcardid+"&money="+realnum.text!.trim()+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
+        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.mcardid+"&money="+realnum.text!.trim()+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()+"&operuid="+UID
         
         XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             

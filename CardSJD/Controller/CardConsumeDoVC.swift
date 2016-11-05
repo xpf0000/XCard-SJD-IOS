@@ -52,7 +52,7 @@ class CardConsumeDoVC: UITableViewController {
         sender.enabled = false
         
         let url=APPURL+"Public/Found/?service=Hyk.addCost"
-        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.mcardid+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()
+        let body="uid="+userModel!.uid+"&username="+userModel!.username+"&mcardid="+typeModel!.mcardid+"&value="+cznum.text!.trim()+"&bak="+mark.text!.trim()+"&operuid="+UID
         
         XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             
