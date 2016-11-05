@@ -10,6 +10,7 @@ import UIKit
 
 class MemberModel: Reflect {
     
+    var id=""
     var uid = ""
     var truename = ""
     var img = ""

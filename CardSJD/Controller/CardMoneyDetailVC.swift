@@ -76,7 +76,7 @@ class CardMoneyDetailVC: UIViewController {
         }
         
         str1 = str + str1
-        str1 = "卡类型: "+model!.cname+"\r\n"+str1
+        str1 = "卡类型: "+model!.cname+"\r\n"+str1+"\r\n备注: "+model!.bak+"\r\n操作人: "+model!.opername
         
         let attributedString1=NSMutableAttributedString(string: str1)
         let paragraphStyle1=NSMutableParagraphStyle()

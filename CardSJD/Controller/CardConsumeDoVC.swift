@@ -143,9 +143,13 @@ class CardConsumeDoVC: UITableViewController {
         }
         else
         {
-            yunum.text = "￥"+typeModel!.values
-            numTitle1.text = "消费金额"
-            numTitle2.text = "实扣金额"
+            if let v = typeModel?.values
+            {
+                yunum.text = "￥"+v
+                numTitle1.text = "消费金额"
+                numTitle2.text = "实扣金额"
+            }
+            
         }
         
         

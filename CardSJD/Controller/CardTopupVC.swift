@@ -27,6 +27,12 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
     @IBOutlet var name: UILabel!
     
     var typeModel:CardTypeModel?
+    {
+        didSet
+        {
+            btn.enabled = typeModel != nil
+        }
+    }
     
     var model:MemberModel?
         {
@@ -166,8 +172,6 @@ class CardTopupVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
         
         table.httpHandle.BeforeBlock { [weak self](arr) in
             if self == nil {return}
-            
-        self?.btn.enabled = arr.count > 0
             
             if self?.title == "充值"
             {

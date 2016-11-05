@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemberListVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
+class MemberListVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet var edit: UITextField!
     
@@ -95,6 +95,7 @@ class MemberListVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
         
         table.cellHeight = 90.0
         table.Delegate(self)
+        table.DataSource(self)
         
         table.httpHandle.BeforeBlock { [weak self](arr) in
             
@@ -140,6 +141,63 @@ class MemberListVC: UIViewController,UITextFieldDelegate,UITableViewDelegate {
         
         
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
+    }
+
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        
+        return  true
+        
+    }
+    
+    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        
+        return "删除"
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if(editingStyle == UITableViewCellEditingStyle.Delete)
+        {
+            
+            let id=(self.table.httpHandle.listArr[indexPath.row] as! MemberModel).id
+            
+            let url=APPURL+"Public/Found/?service=Shopd.delShopUser&id="+id
+            
+            XHttpPool.requestJson(url, body: nil, method: .GET, block: { (json) in
+                
+                if let status = json?["data"]["code"].int
+                {
+                    if status == 0
+                    {
+                        self.table.httpHandle.listArr.removeAtIndex(indexPath.row)
+                        self.table.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                        
+                        self.all.text = "全部共\(self.table.httpHandle.listArr.count)位会员"
+                    }
+                    else
+                    {
+                        ShowMessage(json!["data"]["msg"].stringValue)
+                    }
+                }
+                else
+                {
+                    ShowMessage("删除会员失败!")
+                }
+                
+            })
+            
+        }
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

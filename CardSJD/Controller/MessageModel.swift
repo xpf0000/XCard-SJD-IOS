@@ -32,7 +32,7 @@ class MessageModel: Reflect {
             if value?.doubleValue > 0
             {
                 let date=NSDate(timeIntervalSince1970: value!.doubleValue)
-                self.create_time = date.toStr("yyyy-MM-dd hh:mm:ss")!
+                self.create_time = date.toStr("yyyy-MM-dd HH:mm:ss")!
                 return
             }
             
@@ -43,7 +43,7 @@ class MessageModel: Reflect {
             if value?.doubleValue > 0
             {
                 let date=NSDate(timeIntervalSince1970: value!.doubleValue)
-                self.update_time = date.toStr("yyyy-MM-dd hh:mm:ss")!
+                self.update_time = date.toStr("yyyy-MM-dd HH:mm:ss")!
                 return
             }
             

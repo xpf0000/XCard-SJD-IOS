@@ -118,7 +118,11 @@ class CardTopupDoVC: UITableViewController {
         }
         else
         {
-            yunum.text = "￥"+typeModel!.values
+            if let v = typeModel?.values
+            {
+               yunum.text = "￥"+v
+            }
+            
         }
         
     }
