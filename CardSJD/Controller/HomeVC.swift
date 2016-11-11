@@ -107,9 +107,23 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
     
     var arr:[XBannerModel] = []
     
+    
+    func showAccountLogout()
+    {
+        DataCache.Share.User.unRegistNotice()
+        DataCache.Share.User.reset()
+        
+        let alert = UIAlertView(title: "提醒", message: "您的账户已在其他设备登录", delegate: nil, cancelButtonTitle: "确定")
+        
+        alert.show()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ""
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(showAccountLogout), name: "ShowAccountLogout", object: nil)
+        
         self.getBanner()
         
         banner.frame = CGRectMake(0, 12, swidth, swidth*0.3)
@@ -137,6 +151,8 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout,SBCo
         }
         
         self.collectionView?.reloadData()
+        
+        
         
     }
     

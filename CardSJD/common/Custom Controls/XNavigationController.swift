@@ -39,8 +39,24 @@ class XNavigationController: UINavigationController,UINavigationControllerDelega
         navBar.layer.shadowColor = nil
         navBar.shadowImage = "088bde".color?.image
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(accountLogout), name: "AccountLogout", object: nil)
+        
     }
     
+    func accountLogout()
+    {
+        print("topViewController: \(self.topViewController)")
+        print("visibleViewController: \(self.visibleViewController)")
+        print("parentViewController: \(self.parentViewController)")
+        
+        self.topViewController?.dismissViewControllerAnimated(false, completion: nil)
+        
+        self.popToRootViewControllerAnimated(false)
+        
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("ShowAccountLogout", object: nil)
+    
+    }
     
     
     func setAlpha(a:CGFloat)

@@ -97,6 +97,10 @@ class XHttpPool:NSObject
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(XHttpPool.networkStatusChanged(_:)), name: ReachabilityStatusChangedNotification, object: nil)
         Reach().monitorReachabilityChanges()
         
+        session.dataTaskWithURL("https://www.baidu.com".url!) { (data, response, err) in
+            
+        }
+        
     }
     
     static func removeAllCookies()

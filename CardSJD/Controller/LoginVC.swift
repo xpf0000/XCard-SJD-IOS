@@ -54,6 +54,8 @@ class LoginVC: UITableViewController,UITextFieldDelegate {
                     DataCache.Share.User.password = p
                     DataCache.Share.User.save()
                     
+                    DataCache.Share.User.registNotice()
+                    
                     self?.pop()
                     
                     return

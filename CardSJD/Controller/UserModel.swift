@@ -39,6 +39,22 @@ class UserModel: Reflect {
     var info = ""
     
     var banner=""
+    var token = ""
+    
+    func registNotice()
+    {
+        if token != ""
+        {
+            CloudPushSDK.bindAccount(token) {[weak self] (res) in}
+        }
+    }
+    
+    func unRegistNotice()
+    {
+        CloudPushSDK.unbindAccount({ (res) in})
+    }
+    
+    
     
     var power = ""
     {

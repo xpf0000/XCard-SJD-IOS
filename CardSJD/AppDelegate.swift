@@ -11,6 +11,8 @@ import AVFoundation
 
 let JPushKey = "3060da25a2635f881d5fe505"
 let JPushSecret = "64bb3fc6f61f5adff5be82e6"
+let AliAppKey:String="23527438"
+let AliAppMSecret:String="bba99dcddeb86666951fe1421cf1c750"
 
 let XCardColor = ["e49100","446ab4","f2666b","e6bd2c","19ad83","1d1e20","c322ec"]
 
@@ -18,17 +20,86 @@ let XCardColor = ["e49100","446ab4","f2666b","e6bd2c","19ad83","1d1e20","c322ec"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func handleNoticeInfo(info:[NSObject : AnyObject]?)
+    {
+        print(info)
+    }
+    
+    func RegistPushNotice()
+    {
+        if #available(iOS 8.0, *) {
+            let settings:UIUserNotificationSettings=UIUserNotificationSettings(forTypes: [.Alert,.Sound], categories: nil)
+            
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+            
+            //UMessage.registerRemoteNotificationAndUserNotificationSettings(settings)
+            
+        } else {
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes([.Alert,.Sound])
+            //UMessage.registerForRemoteNotificationTypes([.Alert,.Sound])
+        }
+        
+    }
 
+    func onMessageReceived(notification:NSNotification)
+    {
+        print(notification.object)
+        
+        if let message = notification.object as? CCPSysMessage
+        {
+            let title = String.init(data: message.title, encoding: NSUTF8StringEncoding)
+            
+            let body = String.init(data: message.body, encoding: NSUTF8StringEncoding)
+            
+            print("Receive message title: \(title) | content: \(body)")
+            
+            if let str = title
+            {
+                if str == "账号在其它设备已登陆"
+                {
+                    NSNotificationCenter.defaultCenter().postNotificationName("AccountLogout", object: nil)
+                }
+            }
+            
+            
+        }
+
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
       
         application.setStatusBarStyle(.LightContent, animated: true)
         application.statusBarStyle = .LightContent
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived(_:)), name: "CCPDidReceiveMessageNotification", object: nil)
+        
         XHttpPool.Debug = true
+        RegistPushNotice()
+        initCloudPush()
         
         sleep(3)
         
         return true
+    }
+    
+    func initCloudPush()
+    {
+        
+        let man = ALBBMANAnalytics.getInstance()
+        man.initWithAppKey(AliAppKey, secretKey: AliAppMSecret)
+        
+        CloudPushSDK.asyncInit(AliAppKey, appSecret: AliAppMSecret) { (res) in
+            
+            if (res.success) {
+                
+            } else {
+                
+            }
+        }
+        
+        CloudPushSDK.turnOnDebug()
     }
     
 
@@ -50,6 +121,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        CloudPushSDK.registerDevice(deviceToken) { (res) in
+            
+            if (res.success) {
+                
+            } else {
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        CloudPushSDK.handleReceiveRemoteNotification(userInfo)
+        handleNoticeInfo(userInfo)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        CloudPushSDK.handleReceiveRemoteNotification(userInfo)
+        handleNoticeInfo(userInfo)
+    }
+
+    
     deinit
     {
     

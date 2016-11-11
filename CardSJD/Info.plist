@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>.</key>
-	<string>请打开定位</string>
+    
+    
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
@@ -31,8 +31,13 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    
+	<key>NSCameraUsageDescription</key>
+	<string>允许使用相机</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>请打开定位</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>允许使用图库</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -52,11 +57,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>允许使用图库</string>
-    <key>NSCameraUsageDescription</key>
-    <string>允许使用相机</string>
-    
 </dict>
 </plist>

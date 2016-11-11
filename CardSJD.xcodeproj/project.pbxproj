@@ -29,6 +29,13 @@
 		174B55DE1D90E73600DD5431 /* MoneyDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55DD1D90E73600DD5431 /* MoneyDetailModel.swift */; };
 		174B55E01D90E92A00DD5431 /* ConsumeManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */; };
 		174B55E21D90EB0000DD5431 /* ConsumeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */; };
+		1759F0F71DD5AAF1002589CC /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1759F0F61DD5AAF1002589CC /* libresolv.tbd */; };
+		1759F10C1DD5AB8D002589CC /* ALBBSessionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1759F1061DD5AB8D002589CC /* ALBBSessionSDK.framework */; };
+		1759F10D1DD5AB8D002589CC /* AlicloudMobileAnalitics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1759F1071DD5AB8D002589CC /* AlicloudMobileAnalitics.framework */; };
+		1759F10E1DD5AB8D002589CC /* AlicloudUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1759F1081DD5AB8D002589CC /* AlicloudUtils.framework */; };
+		1759F10F1DD5AB8D002589CC /* CloudPushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1759F1091DD5AB8D002589CC /* CloudPushSDK.framework */; };
+		1759F1101DD5AB8D002589CC /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1759F10A1DD5AB8D002589CC /* UTDID.framework */; };
+		1759F1111DD5AB8D002589CC /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1759F10B1DD5AB8D002589CC /* UTMini.framework */; };
 		17657BC31D9E086D009671E4 /* my_time@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17657BC21D9E086D009671E4 /* my_time@3x.png */; };
 		17657BC51D9E099A009671E4 /* CardMoneyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17657BC41D9E099A009671E4 /* CardMoneyDetailVC.swift */; };
 		17657BC71D9E4F0E009671E4 /* MessageInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17657BC61D9E4F0E009671E4 /* MessageInfoVC.swift */; };
@@ -383,6 +390,13 @@
 		174B55DD1D90E73600DD5431 /* MoneyDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyDetailModel.swift; sourceTree = "<group>"; };
 		174B55DF1D90E92A00DD5431 /* ConsumeManageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeManageVC.swift; sourceTree = "<group>"; };
 		174B55E11D90EB0000DD5431 /* ConsumeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeDetailVC.swift; sourceTree = "<group>"; };
+		1759F0F61DD5AAF1002589CC /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		1759F1061DD5AB8D002589CC /* ALBBSessionSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALBBSessionSDK.framework; sourceTree = "<group>"; };
+		1759F1071DD5AB8D002589CC /* AlicloudMobileAnalitics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlicloudMobileAnalitics.framework; sourceTree = "<group>"; };
+		1759F1081DD5AB8D002589CC /* AlicloudUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlicloudUtils.framework; sourceTree = "<group>"; };
+		1759F1091DD5AB8D002589CC /* CloudPushSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudPushSDK.framework; sourceTree = "<group>"; };
+		1759F10A1DD5AB8D002589CC /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		1759F10B1DD5AB8D002589CC /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
 		17657BC21D9E086D009671E4 /* my_time@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_time@3x.png"; sourceTree = "<group>"; };
 		17657BC41D9E099A009671E4 /* CardMoneyDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMoneyDetailVC.swift; sourceTree = "<group>"; };
 		17657BC61D9E4F0E009671E4 /* MessageInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInfoVC.swift; sourceTree = "<group>"; };
@@ -722,12 +736,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1759F0F71DD5AAF1002589CC /* libresolv.tbd in Frameworks */,
 				17EB7C851D858AC7007C0361 /* WebKit.framework in Frameworks */,
+				1759F1111DD5AB8D002589CC /* UTMini.framework in Frameworks */,
 				17C7FB9E1D86880500A3EFCC /* AMapFoundationKit.framework in Frameworks */,
+				1759F1101DD5AB8D002589CC /* UTDID.framework in Frameworks */,
 				17C7FBA01D86880500A3EFCC /* BaiduMapAPI_Base.framework in Frameworks */,
 				179C20901D6175C40087C33A /* libz.tbd in Frameworks */,
 				179C208E1D6175B30087C33A /* UIKit.framework in Frameworks */,
+				1759F10F1DD5AB8D002589CC /* CloudPushSDK.framework in Frameworks */,
 				17C7FA771D8682C500A3EFCC /* jpush-ios-2.1.8.a in Frameworks */,
+				1759F10C1DD5AB8D002589CC /* ALBBSessionSDK.framework in Frameworks */,
 				179C208C1D6175A70087C33A /* Foundation.framework in Frameworks */,
 				179C208A1D61759C0087C33A /* CoreFoundation.framework in Frameworks */,
 				17C7FBA11D86880500A3EFCC /* BaiduMapAPI_Utils.framework in Frameworks */,
@@ -737,10 +756,12 @@
 				17C7FA6F1D8682C500A3EFCC /* WebP.framework in Frameworks */,
 				179C207E1D61727E0087C33A /* libsqlite3.0.tbd in Frameworks */,
 				179C207C1D6172760087C33A /* Security.framework in Frameworks */,
+				1759F10E1DD5AB8D002589CC /* AlicloudUtils.framework in Frameworks */,
 				179C207A1D61726E0087C33A /* CoreGraphics.framework in Frameworks */,
 				179C20781D6172660087C33A /* SystemConfiguration.framework in Frameworks */,
 				179C20761D61725F0087C33A /* OpenGLES.framework in Frameworks */,
 				179C20741D6172580087C33A /* QuartzCore.framework in Frameworks */,
+				1759F10D1DD5AB8D002589CC /* AlicloudMobileAnalitics.framework in Frameworks */,
 				179C20721D61724D0087C33A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,6 +794,27 @@
 			name = message;
 			sourceTree = "<group>";
 		};
+		1759F0F51DD5AAF0002589CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1759F0F61DD5AAF1002589CC /* libresolv.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1759F1051DD5AB7E002589CC /* AliPush */ = {
+			isa = PBXGroup;
+			children = (
+				1759F1061DD5AB8D002589CC /* ALBBSessionSDK.framework */,
+				1759F1071DD5AB8D002589CC /* AlicloudMobileAnalitics.framework */,
+				1759F1081DD5AB8D002589CC /* AlicloudUtils.framework */,
+				1759F1091DD5AB8D002589CC /* CloudPushSDK.framework */,
+				1759F10A1DD5AB8D002589CC /* UTDID.framework */,
+				1759F10B1DD5AB8D002589CC /* UTMini.framework */,
+			);
+			path = AliPush;
+			sourceTree = "<group>";
+		};
 		1792498B1D5B7613002E5529 = {
 			isa = PBXGroup;
 			children = (
@@ -783,6 +825,7 @@
 				179249AB1D5B7613002E5529 /* CradSJDTests */,
 				179249B61D5B7613002E5529 /* CradSJDUITests */,
 				179249951D5B7613002E5529 /* Products */,
+				1759F0F51DD5AAF0002589CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -846,6 +889,7 @@
 		17C7F9291D8682C400A3EFCC /* common */ = {
 			isa = PBXGroup;
 			children = (
+				1759F1051DD5AB7E002589CC /* AliPush */,
 				17CEF2ED1D8F6C4E0018BBAC /* XPhoto */,
 				17C7FB941D86880500A3EFCC /* Location */,
 				17C7F92A1D8682C400A3EFCC /* Custom Controls */,
@@ -2170,6 +2214,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 24AVM954YM;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2182,6 +2227,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/ShareSDK",
 					"$(PROJECT_DIR)/CardSJD/common/ShareSDK/UI",
 					"$(PROJECT_DIR)/CardSJD/common/Location",
+					"$(PROJECT_DIR)/CardSJD/common/AliPush",
 				);
 				INFOPLIST_FILE = CardSJD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2194,7 +2240,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/JPush",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.HFW.cardsjd-1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huaifu.cardsjd;
 				PRODUCT_NAME = CardSJD;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardSJD/CardSJD-Bridging-Header.h";
@@ -2209,6 +2255,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 24AVM954YM;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2221,6 +2268,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/ShareSDK",
 					"$(PROJECT_DIR)/CardSJD/common/ShareSDK/UI",
 					"$(PROJECT_DIR)/CardSJD/common/Location",
+					"$(PROJECT_DIR)/CardSJD/common/AliPush",
 				);
 				INFOPLIST_FILE = CardSJD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2233,7 +2281,7 @@
 					"$(PROJECT_DIR)/CardSJD/common/JPush",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.HFW.cardsjd-1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huaifu.cardsjd;
 				PRODUCT_NAME = CardSJD;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardSJD/CardSJD-Bridging-Header.h";

@@ -173,7 +173,7 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
         
         if(alertView ==  logoutAlert && buttonIndex == 1)
         {
-            
+            DataCache.Share.User.unRegistNotice()
             DataCache.Share.User.reset()
             logoutButton.hidden = true
             tel.text = "请先登录"
