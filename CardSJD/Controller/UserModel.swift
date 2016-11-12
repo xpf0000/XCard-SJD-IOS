@@ -91,6 +91,9 @@ class UserModel: Reflect {
         power = ""
         jobname = ""
         shopcategory = ""
+        
+        token = ""
+        
         powerArr.removeAll(keepCapacity: false)
         
         save()
