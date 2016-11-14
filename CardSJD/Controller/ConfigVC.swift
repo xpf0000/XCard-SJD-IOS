@@ -23,14 +23,17 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
     
     @IBOutlet var allowPutNoticy: UISwitch!
     
-    @IBAction func logout(sender: AnyObject) {
-        
-        logoutAlert.delegate = self
-        logoutAlert.title = "注销登录"
-        logoutAlert.message = "确定要登出账户吗?"
-        logoutAlert.addButtonWithTitle("取消")
-        logoutAlert.addButtonWithTitle("确定")
-        logoutAlert.show()
+    @IBAction func logout(sender: UIButton) {
+       
+        if checkIsLogin()
+        {
+            logoutAlert.delegate = self
+            logoutAlert.title = "注销登录"
+            logoutAlert.message = "确定要登出账户吗?"
+            logoutAlert.addButtonWithTitle("取消")
+            logoutAlert.addButtonWithTitle("确定")
+            logoutAlert.show()
+        }
         
     }
     
@@ -53,8 +56,6 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
         super.viewDidLoad()
         
         self.addBackButton()
-        
-//        logoutButton.hidden = (DataCache.Share.userModel.uid != "") ? false : true
 
         allowPutNoticy.setOn(DataCache.Share.appConfig.notic, animated: false)
         
@@ -175,7 +176,7 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
         {
             DataCache.Share.User.unRegistNotice()
             DataCache.Share.User.reset()
-            logoutButton.hidden = true
+            logoutButton.selected = true
             tel.text = "请先登录"
             return
             
@@ -190,7 +191,7 @@ class ConfigVC: UITableViewController ,UIAlertViewDelegate,UITextFieldDelegate{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        logoutButton.hidden = UID == ""
+        logoutButton.selected = UID == ""
         
         if UMob.length() > 7
         {

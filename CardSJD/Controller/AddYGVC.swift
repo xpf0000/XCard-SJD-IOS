@@ -30,18 +30,12 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
     
     @IBAction func doADD(sender: UIButton) {
         
-        if !tel.checkNull() || !orderNum.checkNull()
+        if !tel.checkNull() || !name.checkNull() || !orderNum.checkNull()
         {
             return
         }
         
         if !tel.checkPhone(){return}
-        
-        if name.text?.trim() == ""
-        {
-            ShowMessage("该手机号码尚未注册为怀府网会员,请先注册为会员")
-            return
-        }
         
         if gwModel == nil
         {
@@ -53,7 +47,7 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
         XWaitingView.show()
         
         let url=APPURL+"Public/Found/?service=Power.addShopWorker"
-        let body="uid="+addUid+"&shopid="+SID+"&jobid="+gwModel.id+"&wnumber="+orderNum.text!.trim()
+        let body="mobile="+tel.text!.trim()+"&truename="+name.text!.trim()+"&shopid="+SID+"&jobid="+gwModel.id+"&wnumber="+orderNum.text!.trim()
         
         XHttpPool.requestJson( url, body: body, method: .POST) { (o) -> Void in
             
@@ -96,6 +90,7 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
                 {
                     self?.name.text = name
                     self?.addUid = o!["data"]["info"][0]["uid"].stringValue
+                    self?.name.enabled = false
                 }
             
             }
@@ -111,7 +106,7 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackButton()
-        name.enabled = false
+        name.enabled = true
         
         tel.addEndButton()
         tel.keyboardType = .PhonePad
@@ -121,6 +116,10 @@ class AddYGVC: UITableViewController,UITextFieldDelegate {
             if str.length() ==  11
             {
                 self?.checkMember(str)
+            }
+            else
+            {
+                self?.name.enabled = true
             }
             
         }
