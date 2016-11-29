@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if let str = title
             {
-                if str == "账号在其它设备已登陆"
+                if str == "账号在其它设备已登陆" && UID != ""
                 {
                     NSNotificationCenter.defaultCenter().postNotificationName("AccountLogout", object: nil)
                 }
